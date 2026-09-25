@@ -1,0 +1,36 @@
+{
+  "version": "1.0.0",
+  "_note": "Geschützte Datei. Nur Menschen ändern sie (PreToolUse-Hook blockiert Claude). Änderungen per Pull Request mit Review.",
+  "checkpoints": [
+    {"id": "intake", "label": "Eingang", "requires": "Quelle, Anfragender, Mandant, Projekt, Frist, gewünschtes Ergebnis, Vertraulichkeit"},
+    {"id": "scope", "label": "Umfang", "requires": "Abgrenzung, Mandant bestätigt, Definition of Done aus dem Ablauf übernommen"},
+    {"id": "plan", "label": "Plan", "requires": "Teilschritte, zuständige Agenten/Skills, Freigabepunkte, Budget"},
+    {"id": "execute", "label": "Ausführung", "requires": "Ergebnisse je Teilschritt mit Belegpfad"},
+    {"id": "verify", "label": "Prüfung", "requires": "Unabhängige Prüfung (nicht der Ausführende) gegen Definition of Done"},
+    {"id": "confirmed_change", "label": "Bestätigte Änderung", "requires": "Alle externen Aktionen freigegeben und genau einmal ausgeführt, Änderungen dokumentiert"},
+    {"id": "close", "label": "Abschluss", "requires": "Alle DoD-Kriterien erfüllt, Belege verlinkt"}
+  ],
+  "external_action_types": [
+    "send_email", "send_message", "publish_post", "send_offer", "calendar_invite",
+    "crm_write", "crm_stage_change", "share_file", "run_security_test", "purchase", "delete_record"
+  ],
+  "approvers": [],
+  "_approvers_note": "Leer bis die Inhaberin ihre Kennung einträgt. Ohne Eintrag ist keine Freigabe möglich (gewollt).",
+  "shared_roots": ["nigel/shared"],
+  "defaults": {
+    "budget": {"retry_limit": 2, "max_execution_minutes": 15, "max_cost_chf": 5}
+  },
+  "night": {
+    "max_tasks": 5,
+    "max_minutes": 60,
+    "external_actions": false
+  },
+  "learning": {
+    "allowed_file_prefixes": [".claude/skills/", "nigel/notes/"],
+    "protected_paths": ["nigel/policy/", "nigel/engine/", "nigel/hooks/", ".claude/settings.json", ".claude/agents/"],
+    "protected_registry_fields": [
+      "status", "company_scope", "tools_allowed", "actions_allowed", "actions_forbidden",
+      "data_classes_allowed", "approval_gates", "cost_limit", "owner", "definition"
+    ]
+  }
+}

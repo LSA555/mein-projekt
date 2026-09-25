@@ -1,0 +1,31 @@
+{
+  "flow_id": "linkedin-lead",
+  "name": "LinkedIn bis Lead",
+  "version": "1.0.0",
+  "source": "Auftrag Punkt 4; Gates aus linkedin/04-prozess-qualitaet.md (Branch claude/cyspa-linkedin-strategy-vte419)",
+  "roles": ["orchestrator", "marketing-content", "marketing-qa", "security", "revops", "reviewer"],
+  "steps": [
+    {"id": "brief", "phase": "plan", "role": "marketing-content", "output": "Briefing: Zielgruppe, Ziel, Erkenntnis in einem Satz, Conversion-Hypothese"},
+    {"id": "draft", "phase": "execute", "role": "marketing-content", "output": "Beitragsentwurf + Visual-Briefing + Alt-Text"},
+    {"id": "fact-check", "phase": "execute", "role": "security", "output": "Aussagenliste mit Quelle je Aussage"},
+    {"id": "tracking", "phase": "execute", "role": "revops", "output": "UTM-Link und Landingpage-Ziel"},
+    {"id": "gates", "phase": "verify", "role": "marketing-qa", "output": "Gate 1-4 (Fach, Legal, Accessibility, Security-Redline) mit Vermerk"},
+    {"id": "publish", "phase": "confirmed_change", "role": "marketing-content", "output": "Publikation nach Freigabe, URL"},
+    {"id": "lead-capture", "phase": "confirmed_change", "role": "revops", "output": "Lead mit Quelle und Rechtsgrundlage im CRM, Dublettenprüfung"}
+  ],
+  "approval_gates": [
+    {"gate_id": "publication", "action_types": ["publish_post"], "description": "Finale Freigabe Head of Content / Inhaberin"},
+    {"gate_id": "crm-handoff", "action_types": ["crm_write", "send_message"], "description": "CRM-Eintrag und Erstkontakt nur nach Freigabe"}
+  ],
+  "forbidden_action_types": ["purchase", "delete_record", "run_security_test", "send_offer"],
+  "night_allowed_phases": ["plan", "execute"],
+  "dod": [
+    {"id": "claims-verified", "description": "Anteil geprüfter Aussagen mit Quelle", "metric": "ratio", "op": ">=", "target": 1.0, "evidence": "Pfad Faktenliste"},
+    {"id": "gates-passed", "description": "Bestandene Gates (Fach, Legal, Accessibility, Security-Redline)", "metric": "count", "op": ">=", "target": 4, "evidence": "Gate-Vermerke in der Beitragsdatei"},
+    {"id": "utm-defined", "description": "UTM-Parameter definiert und getestet", "metric": "bool", "op": "==", "target": true, "evidence": "UTM-Link"},
+    {"id": "published-once", "description": "Anzahl Publikationen (genau eine, nach Freigabe)", "metric": "count", "op": "==", "target": 1, "evidence": "Aktionsschlüssel + Post-URL"},
+    {"id": "lead-recorded", "description": "Qualifizierte Leads mit Quelle und Rechtsgrundlage erfasst (0 ist zulässig, muss aber gemessen sein)", "metric": "count", "op": ">=", "target": 0, "evidence": "CRM-Referenz oder Messprotokoll nach 7 Tagen"},
+    {"id": "no-duplicate-contact", "description": "Dubletten im CRM durch diesen Lauf", "metric": "count", "op": "==", "target": 0, "evidence": "Dublettenprüfung"}
+  ],
+  "budget": {"retry_limit": 2, "max_execution_minutes": 30}
+}

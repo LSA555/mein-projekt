@@ -1,0 +1,5 @@
+{
+  "version": "1.0.0",
+  "_note": "Geschützte Datei. Mandanten sind noch nicht bestätigt (Zugriffsanfrage A7). Ohne Eintrag lehnt die Engine neue Aufgaben ab (gewollt). Beispiel für einen Eintrag: \"cyspa\": {\"owner\": \"<kennung>\", \"data_roots\": [\"data/cyspa\"], \"classification\": \"internal\"}",
+  "tenants": {}
+}
