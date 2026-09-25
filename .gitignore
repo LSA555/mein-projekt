@@ -1,0 +1,3 @@
+# NIGEL live state (tasks, ledger, outbox) - operational data, not versioned
+.nigel/
+__pycache__/

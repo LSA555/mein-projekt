@@ -1,0 +1,22 @@
+{
+  "flow_id": "night-run",
+  "name": "Begrenzte Nachtbearbeitung",
+  "version": "1.0.0",
+  "source": "Auftrag Punkt 4; Blueprint 2.0 Abschnitt 1 (Zeitbudget, Kostenlimit, Wiederholungsgrenze, Stoppbedingungen)",
+  "roles": ["orchestrator", "reviewer"],
+  "steps": [
+    {"id": "select", "phase": "plan", "role": "orchestrator", "output": "night plan: nur Aufgaben, deren nächste Phase nachts erlaubt ist"},
+    {"id": "work", "phase": "execute", "role": "orchestrator", "output": "Interne Schritte (Entwürfe, Analyse), vor jedem Schritt night check"},
+    {"id": "report", "phase": "verify", "role": "reviewer", "output": "Morgenbericht: erledigt, blockiert, wartet auf Freigabe"}
+  ],
+  "approval_gates": [],
+  "forbidden_action_types": ["send_email", "send_message", "publish_post", "send_offer", "calendar_invite", "crm_write", "crm_stage_change", "share_file", "run_security_test", "purchase", "delete_record"],
+  "night_allowed_phases": ["intake", "scope", "plan", "execute", "verify"],
+  "dod": [
+    {"id": "within-time", "description": "Laufzeit in Minuten", "metric": "minutes", "op": "<=", "target": 60, "evidence": "night-Datei started_at/closed_at"},
+    {"id": "within-tasks", "description": "Bearbeitete Aufgaben", "metric": "count", "op": "<=", "target": 5, "evidence": "night-Datei tasks"},
+    {"id": "no-external-actions", "description": "Externe Aktionen im Lauf", "metric": "count", "op": "==", "target": 0, "evidence": "Ledger-Auszug"},
+    {"id": "report-written", "description": "Morgenbericht erstellt", "metric": "bool", "op": "==", "target": true, "evidence": "Pfad Bericht"}
+  ],
+  "budget": {"retry_limit": 1, "max_execution_minutes": 60}
+}

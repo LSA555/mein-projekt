@@ -1,0 +1,41 @@
+{
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": ".claude/skills/nigel-run/SKILL.md",
+      "version": "1.0.0",
+      "owner": "human-owner-required",
+      "status": "sandbox",
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "note": "Erstanlage Abschnitt 13",
+          "at": "2026-09-25"
+        }
+      ]
+    }
+  ],
+  "account_skills_seen": [
+    "cyspa-angebot",
+    "cyspa-designer",
+    "cyspa-docx",
+    "cyspa-kantonsdeck",
+    "cyspa-organigramm",
+    "cyspa-pptx",
+    "deep-research",
+    "lumen-competitive",
+    "morning",
+    "text-revision-style",
+    "docx",
+    "pptx",
+    "xlsx",
+    "pdf",
+    "docs",
+    "skill-creator",
+    "import-memory",
+    "built-in-browser",
+    "chrome-browser",
+    "computer-use"
+  ],
+  "_note": "Account-Skills sind synchronisiert, nicht im Repo versioniert. Änderungen daran laufen über claude.ai, nicht über learn apply."
+}

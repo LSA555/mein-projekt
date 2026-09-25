@@ -1,0 +1,1109 @@
+{
+  "version": "1.0.0",
+  "reconciled_at": "2026-09-25",
+  "status_values": [
+    "proposed",
+    "sandbox",
+    "approved",
+    "active",
+    "suspended",
+    "retired"
+  ],
+  "evidence_levels": {
+    "blueprint-only": "nur Name im Blueprint",
+    "organigramm-documented": "im Company-OS-Organigramm beschrieben, keine Laufzeit nachgewiesen",
+    "definition-file": "Agentendatei im Projekt vorhanden und getestet",
+    "runtime-verified": "in echter Session aufgerufen und protokolliert"
+  },
+  "sources_checked": [
+    "Repo lsa555/mein-projekt (alle Branches): keine Agentendateien",
+    "~/.claude/agents in dieser Session: nicht vorhanden",
+    "Account-Skills (synchronisiert): cyspa-organigramm beschreibt Company OS",
+    "Obsidian Vault Agent Registry: NICHT geprüft (kein Zugriff)"
+  ],
+  "company_os_roles_without_blueprint_match": [
+    "Hermes Input",
+    "Hermes Sammler",
+    "Hermes Recherche",
+    "Hermes Prompt-Engineer",
+    "Hermes Produktion",
+    "02 Outreach-Agent",
+    "02 Nachfass-Agent",
+    "03 Rechnungs-Agent",
+    "03 Forderungs-Agent"
+  ],
+  "agents": [
+    {
+      "agent_id": "nigel-orchestrator",
+      "name": "Nigel",
+      "team": "Executive Office",
+      "version": "0.1.0",
+      "status": "sandbox",
+      "evidence_level": "definition-file",
+      "evidence": [
+        ".claude/agents/nigel-orchestrator.md",
+        "nigel/tests/test_nigel.py (synthetisch)"
+      ],
+      "company_os_match": "Hermes Conductor (gleiche Aufgabe: Routing, Delegation, Workflow-Steuerung)",
+      "open_decision": "Nigel und Hermes Conductor überschneiden sich. Entscheid der Inhaberin nötig: ersetzen, umbenennen oder Nigel als Executive-Schicht über Hermes.",
+      "roles": [
+        "orchestrator",
+        "reviewer"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": ".claude/agents/nigel-orchestrator.md",
+      "tools_allowed": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash"
+      ],
+      "actions_allowed": [
+        "engine-Befehle ausser approve",
+        "Lesen im Repo"
+      ],
+      "actions_forbidden": [
+        "approve",
+        "externe Aktionen ausführen",
+        "Dateien schreiben",
+        "Policy/Hook/Register ändern"
+      ],
+      "data_classes_allowed": [
+        "internal"
+      ],
+      "approval_gates": [
+        "alle external_action_types aus policy.json"
+      ],
+      "cost_limit": "pending",
+      "retry_limit": 2,
+      "max_execution_minutes": 15,
+      "acceptance_tests": [
+        "nigel/tests/test_nigel.py"
+      ],
+      "last_review": null,
+      "next_review": null,
+      "rollback_plan": "Datei .claude/agents/nigel-orchestrator.md entfernen; Engine-State in .nigel/ bleibt als Audit erhalten"
+    },
+    {
+      "agent_id": "ava",
+      "name": "Ava",
+      "team": "Executive Office",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "organigramm-documented",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
+        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
+      ],
+      "company_os_match": "01 Executive Assistant · E-Mail-Agent · Meeting-Agent",
+      "match_quality": "gut",
+      "related_skills": [
+        "morning"
+      ],
+      "roles": [
+        "executive-ops"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "atlas",
+      "name": "Atlas",
+      "team": "Executive Office",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "organigramm-documented",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
+        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
+      ],
+      "company_os_match": "Hermes Planer · 04 Projekt-Agent",
+      "match_quality": "teilweise",
+      "related_skills": [],
+      "roles": [
+        "orchestrator"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "iris",
+      "name": "Iris",
+      "team": "Executive Office",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "organigramm-documented",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
+        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
+      ],
+      "company_os_match": "Steuerebene Wissensmanager · 01 Dokumenten-Agent",
+      "match_quality": "teilweise",
+      "related_skills": [],
+      "roles": [
+        "knowledge"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "morgan",
+      "name": "Morgan",
+      "team": "Marketing",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "organigramm-documented",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
+        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
+      ],
+      "company_os_match": "05 CMO-Agent",
+      "match_quality": "gut",
+      "related_skills": [],
+      "roles": [
+        "marketing-content"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "alex",
+      "name": "Alex",
+      "team": "Marketing",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "organigramm-documented",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
+        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
+      ],
+      "company_os_match": "05 Content-Strategist",
+      "match_quality": "teilweise (kein LinkedIn-Spezialist im Organigramm)",
+      "related_skills": [],
+      "roles": [
+        "marketing-content"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "sofia",
+      "name": "Sofia",
+      "team": "Marketing",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "blueprint-only",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
+      ],
+      "company_os_match": "—",
+      "match_quality": "keine",
+      "related_skills": [],
+      "roles": [
+        "security",
+        "marketing-qa"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "elena",
+      "name": "Elena",
+      "team": "Marketing",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "blueprint-only",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
+      ],
+      "company_os_match": "—",
+      "match_quality": "keine",
+      "related_skills": [
+        "text-revision-style"
+      ],
+      "roles": [
+        "marketing-content"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "maya",
+      "name": "Maya",
+      "team": "Marketing",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "blueprint-only",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
+      ],
+      "company_os_match": "—",
+      "match_quality": "keine",
+      "related_skills": [
+        "cyspa-designer",
+        "cyspa-pptx",
+        "cyspa-kantonsdeck"
+      ],
+      "roles": [
+        "marketing-content"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "noah",
+      "name": "Noah",
+      "team": "Marketing",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "blueprint-only",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
+      ],
+      "company_os_match": "—",
+      "match_quality": "keine",
+      "related_skills": [],
+      "roles": [
+        "marketing-content"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "robin",
+      "name": "Robin",
+      "team": "Marketing",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "organigramm-documented",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
+        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
+      ],
+      "company_os_match": "05 Kampagnen-Agent · SEO-/Growth-Agent",
+      "match_quality": "teilweise",
+      "related_skills": [],
+      "roles": [
+        "revops",
+        "marketing-content"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "grace",
+      "name": "Grace",
+      "team": "Marketing",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "organigramm-documented",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
+        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
+      ],
+      "company_os_match": "Hermes Prüfer",
+      "match_quality": "teilweise",
+      "related_skills": [],
+      "roles": [
+        "marketing-qa",
+        "reviewer"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "victor",
+      "name": "Victor",
+      "team": "Sales",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "organigramm-documented",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
+        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
+      ],
+      "company_os_match": "02 Vertriebsleiter",
+      "match_quality": "gut",
+      "related_skills": [],
+      "roles": [
+        "sales"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "lena",
+      "name": "Lena",
+      "team": "Sales",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "organigramm-documented",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
+        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
+      ],
+      "company_os_match": "02 Lead-Rechercheur · Recherche-Agent",
+      "match_quality": "gut",
+      "related_skills": [
+        "deep-research",
+        "lumen-competitive"
+      ],
+      "roles": [
+        "research"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "oliver",
+      "name": "Oliver",
+      "team": "Sales",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "organigramm-documented",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
+        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
+      ],
+      "company_os_match": "02 Angebots-Intelligenz",
+      "match_quality": "gut",
+      "related_skills": [
+        "cyspa-angebot",
+        "cyspa-docx",
+        "xlsx"
+      ],
+      "roles": [
+        "proposal"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "nora",
+      "name": "Nora",
+      "team": "Sales",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "organigramm-documented",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
+        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
+      ],
+      "company_os_match": "04 Kundenleiter · Onboarding-Agent · Success-Agent",
+      "match_quality": "gut",
+      "related_skills": [],
+      "roles": [
+        "sales"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "ethan",
+      "name": "Ethan",
+      "team": "Sales",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "blueprint-only",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
+      ],
+      "company_os_match": "—",
+      "match_quality": "keine",
+      "related_skills": [],
+      "roles": [
+        "sales"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "felix",
+      "name": "Felix",
+      "team": "Sales",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "blueprint-only",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
+      ],
+      "company_os_match": "—",
+      "match_quality": "keine",
+      "related_skills": [],
+      "roles": [
+        "revops"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "michael",
+      "name": "Michael",
+      "team": "Security",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "organigramm-documented",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
+        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
+      ],
+      "company_os_match": "06 Sicherheit & Governance",
+      "match_quality": "teilweise",
+      "related_skills": [],
+      "roles": [
+        "security"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "sentinel",
+      "name": "Sentinel",
+      "team": "Security",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "blueprint-only",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
+      ],
+      "company_os_match": "—",
+      "match_quality": "keine",
+      "related_skills": [],
+      "roles": [
+        "security"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "raven",
+      "name": "Raven",
+      "team": "Security",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "blueprint-only",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
+      ],
+      "company_os_match": "—",
+      "match_quality": "keine",
+      "related_skills": [],
+      "roles": [
+        "security"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "cora",
+      "name": "Cora",
+      "team": "Security",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "blueprint-only",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
+      ],
+      "company_os_match": "—",
+      "match_quality": "keine",
+      "related_skills": [],
+      "roles": [
+        "grc"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "quinn",
+      "name": "Quinn",
+      "team": "Security",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "blueprint-only",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
+      ],
+      "company_os_match": "—",
+      "match_quality": "keine",
+      "related_skills": [],
+      "roles": [
+        "security"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "rhea",
+      "name": "Rhea",
+      "team": "Security",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "blueprint-only",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
+      ],
+      "company_os_match": "—",
+      "match_quality": "keine",
+      "related_skills": [],
+      "roles": [
+        "security"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "adrian",
+      "name": "Adrian",
+      "team": "Engineering",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "organigramm-documented",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
+        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
+      ],
+      "company_os_match": "06 CTO-Agent",
+      "match_quality": "teilweise",
+      "related_skills": [],
+      "roles": [
+        "engineering"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "jules",
+      "name": "Jules",
+      "team": "Engineering",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "blueprint-only",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
+      ],
+      "company_os_match": "—",
+      "match_quality": "keine",
+      "related_skills": [],
+      "roles": [
+        "engineering"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "jasper",
+      "name": "Jasper",
+      "team": "Engineering",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "blueprint-only",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
+      ],
+      "company_os_match": "—",
+      "match_quality": "keine",
+      "related_skills": [],
+      "roles": [
+        "engineering"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "jade",
+      "name": "Jade",
+      "team": "Engineering",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "blueprint-only",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
+      ],
+      "company_os_match": "—",
+      "match_quality": "keine",
+      "related_skills": [],
+      "roles": [
+        "engineering"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "devon",
+      "name": "Devon",
+      "team": "Engineering",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "organigramm-documented",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
+        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
+      ],
+      "company_os_match": "06 Automatisierungs-Ingenieur",
+      "match_quality": "gut",
+      "related_skills": [],
+      "roles": [
+        "engineering"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "kira",
+      "name": "Kira",
+      "team": "Engineering",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "organigramm-documented",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
+        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
+      ],
+      "company_os_match": "06 DevOps-Agent · Monitoring-Agent",
+      "match_quality": "gut",
+      "related_skills": [],
+      "roles": [
+        "engineering"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "theo",
+      "name": "Theo",
+      "team": "Engineering",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "organigramm-documented",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
+        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
+      ],
+      "company_os_match": "04 Delivery-QA-Agent",
+      "match_quality": "teilweise",
+      "related_skills": [],
+      "roles": [
+        "reviewer",
+        "engineering"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "clara",
+      "name": "Clara",
+      "team": "Finance/Legal/HR/Control",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "organigramm-documented",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
+        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
+      ],
+      "company_os_match": "03 CFO-Agent · Controlling-Agent · Forecast-Agent",
+      "match_quality": "gut",
+      "related_skills": [],
+      "roles": [
+        "finance"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "helena",
+      "name": "Helena",
+      "team": "Finance/Legal/HR/Control",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "blueprint-only",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
+      ],
+      "company_os_match": "—",
+      "match_quality": "keine",
+      "related_skills": [],
+      "roles": [
+        "legal",
+        "reviewer"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "harper",
+      "name": "Harper",
+      "team": "Finance/Legal/HR/Control",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "blueprint-only",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
+      ],
+      "company_os_match": "—",
+      "match_quality": "keine",
+      "related_skills": [],
+      "roles": [
+        "hr"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "vera",
+      "name": "Vera",
+      "team": "Finance/Legal/HR/Control",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "organigramm-documented",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
+        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
+      ],
+      "company_os_match": "06 Sicherheit & Governance",
+      "match_quality": "teilweise",
+      "related_skills": [],
+      "roles": [
+        "reviewer",
+        "grc"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    },
+    {
+      "agent_id": "oscar",
+      "name": "Oscar",
+      "team": "Finance/Legal/HR/Control",
+      "version": "0.0.0",
+      "status": "proposed",
+      "evidence_level": "organigramm-documented",
+      "evidence": [
+        "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
+        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
+      ],
+      "company_os_match": "Hermes Prüfer",
+      "match_quality": "teilweise",
+      "related_skills": [],
+      "roles": [
+        "reviewer"
+      ],
+      "company_scope": [],
+      "owner": "human-owner-required",
+      "definition": null,
+      "tools_allowed": [],
+      "actions_allowed": [],
+      "actions_forbidden": [],
+      "data_classes_allowed": [],
+      "approval_gates": [],
+      "cost_limit": "pending",
+      "acceptance_tests": [],
+      "rollback_plan": ""
+    }
+  ]
+}
