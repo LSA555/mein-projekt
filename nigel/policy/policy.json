@@ -14,8 +14,8 @@
     "send_email", "send_message", "publish_post", "send_offer", "calendar_invite",
     "crm_write", "crm_stage_change", "share_file", "run_security_test", "purchase", "delete_record"
   ],
-  "approvers": [],
-  "_approvers_note": "Leer bis die Inhaberin ihre Kennung einträgt. Ohne Eintrag ist keine Freigabe möglich (gewollt).",
+  "approvers": ["LWE"],
+  "_approvers_note": "Eingetragen von LWE am 2026-09-25 (Aktivierungs-PR).",
   "shared_roots": ["nigel/shared"],
   "defaults": {
     "budget": {"retry_limit": 2, "max_execution_minutes": 15, "max_cost_chf": 5}
