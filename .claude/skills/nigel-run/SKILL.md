@@ -23,7 +23,19 @@ N --actor nigel-orchestrator checkpoint <ID> scope  --evidence "<Abgrenzung>" --
 N --actor nigel-orchestrator checkpoint <ID> plan   --evidence "<Plan-Pfad oder Schritte>" --confirm
 ```
 
-Abläufe (`--flow`): `meeting-followup`, `linkedin-lead`, `lead-offer`, `security-assessment`, `night-run`. Schritte, Freigabepunkte und Abschlusskriterien stehen in `nigel/flows/<flow>.json`.
+Abläufe (`--flow`): `meeting-followup`, `linkedin-lead`, `lead-offer`, `security-assessment`, `night-run` und **`general-task`** für jede andere mehrstufige Aufgabe (Recherche, Dokument, Analyse, Präsentation …). Bei `general-task` legt Nigel im Umfang 2 bis 5 prüfbare Abnahmekriterien fest. Schritte, Freigabepunkte und Abschlusskriterien stehen in `nigel/flows/<flow>.json`.
+
+Fachagenten (Status laut `nigel/registry/agents.json`):
+
+| Agent | Für | Mandanten |
+|---|---|---|
+| `ava` | Meetings, Briefings, Aufgaben, Mail-Entwürfe, Notizen | alle |
+| `oliver` | Angebote und Projektpläne (Skill `cyspa-angebot`) | cyspa |
+| `michael` | Security Assessment: Planung, Auswertung, Bericht, keine aktiven Tests | cyspa |
+
+Solange ein Agent auf `sandbox` steht, ist er nur bei `--sandbox`-Aufgaben routbar. Bei echten Aufgaben erledigt die Hauptsession seinen Schritt selbst mit derselben Arbeitsanweisung (`.claude/agents/<agent>.md`).
+
+Ergebnisse gehören nach `data/<mandant>/`. Vertrauliches kommt nach `data/<mandant>/privat/`, dieser Ordner wird nicht versioniert.
 
 ## 2. Ausführung
 
