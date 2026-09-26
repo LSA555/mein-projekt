@@ -1,5 +1,34 @@
 {
   "version": "1.0.0",
-  "_note": "Geschützte Datei. Mandanten sind noch nicht bestätigt (Zugriffsanfrage A7). Ohne Eintrag lehnt die Engine neue Aufgaben ab (gewollt). Beispiel für einen Eintrag: \"cyspa\": {\"owner\": \"<kennung>\", \"data_roots\": [\"data/cyspa\"], \"classification\": \"internal\"}",
-  "tenants": {}
+  "_note": "Geschützte Datei. Eingetragen von LWE am 2026-09-25. Zuordnung der Claude-Projekte: Angebots Skill CYSPA und CYSPA Skill-Presentation -> cyspa; Alpha-AI -> alpha-ai; Swiss Chocolate Gateway GCC -> swiss-chocolate-gcc; Claude Engineering -> intern; Tobi - Test ist kein Mandant. Weitere Mandanten (NEX, Rock & Arts, Pixel Valley, privat, Verein) folgen.",
+  "tenants": {
+    "cyspa": {
+      "owner": "LWE",
+      "data_roots": [
+        "data/cyspa"
+      ],
+      "classification": "confidential"
+    },
+    "alpha-ai": {
+      "owner": "LWE",
+      "data_roots": [
+        "data/alpha-ai"
+      ],
+      "classification": "confidential"
+    },
+    "swiss-chocolate-gcc": {
+      "owner": "LWE",
+      "data_roots": [
+        "data/swiss-chocolate-gcc"
+      ],
+      "classification": "confidential"
+    },
+    "intern": {
+      "owner": "LWE",
+      "data_roots": [
+        "data/intern"
+      ],
+      "classification": "internal"
+    }
+  }
 }

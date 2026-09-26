@@ -37,12 +37,13 @@
       "agent_id": "nigel-orchestrator",
       "name": "Nigel",
       "team": "Executive Office",
-      "version": "0.1.0",
-      "status": "sandbox",
-      "evidence_level": "definition-file",
+      "version": "1.0.0",
+      "status": "active",
+      "evidence_level": "runtime-verified",
       "evidence": [
         ".claude/agents/nigel-orchestrator.md",
-        "nigel/tests/test_nigel.py (synthetisch)"
+        "nigel/tests/test_nigel.py (synthetisch, 44+ Tests)",
+        "Live-Test 2026-09-25: NGL-20260925-a7d750, Ledger 8 Einträge verifiziert (Mandantentrennung, Routing-Ablehnung, Freigabestopp, Selbstfreigabe verweigert)"
       ],
       "company_os_match": "Hermes Conductor (gleiche Aufgabe: Routing, Delegation, Workflow-Steuerung)",
       "open_decision": "Nigel und Hermes Conductor überschneiden sich. Entscheid der Inhaberin nötig: ersetzen, umbenennen oder Nigel als Executive-Schicht über Hermes.",
@@ -50,8 +51,13 @@
         "orchestrator",
         "reviewer"
       ],
-      "company_scope": [],
-      "owner": "human-owner-required",
+      "company_scope": [
+        "cyspa",
+        "alpha-ai",
+        "swiss-chocolate-gcc",
+        "intern"
+      ],
+      "owner": "LWE",
       "definition": ".claude/agents/nigel-orchestrator.md",
       "tools_allowed": [
         "Read",
@@ -81,9 +87,16 @@
       "acceptance_tests": [
         "nigel/tests/test_nigel.py"
       ],
-      "last_review": null,
-      "next_review": null,
-      "rollback_plan": "Datei .claude/agents/nigel-orchestrator.md entfernen; Engine-State in .nigel/ bleibt als Audit erhalten"
+      "last_review": "2026-09-25",
+      "next_review": "2026-12-25",
+      "rollback_plan": "Datei .claude/agents/nigel-orchestrator.md entfernen; Engine-State in .nigel/ bleibt als Audit erhalten",
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "note": "Aktiviert durch LWE nach Live-Test",
+          "at": "2026-09-25"
+        }
+      ]
     },
     {
       "agent_id": "ava",

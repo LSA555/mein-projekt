@@ -149,8 +149,10 @@ class TestAgentInvocation(Sandbox):
     def test_real_registry_has_no_routable_specialist(self):
         with open(os.path.join(REPO, "nigel", "registry", "agents.json"), encoding="utf-8") as f:
             reg = json.load(f)
-        active = [a["agent_id"] for a in reg["agents"] if a["status"] in ("active", "approved")]
-        self.assertEqual(active, [], "no agent may be active without runtime evidence")
+        active = [a for a in reg["agents"] if a["status"] in ("active", "approved")]
+        self.assertEqual([a["agent_id"] for a in active], ["nigel-orchestrator"], "only Nigel is activated")
+        for a in active:
+            self.assertEqual(a["evidence_level"], "runtime-verified", "activation needs runtime evidence")
         self.assertEqual(len(reg["agents"]), 36)
 
     def test_claude_code_files_are_well_formed(self):
@@ -204,9 +206,18 @@ class TestTenantIsolation(Sandbox):
                             "--title", "x", "--requester", "r")
         self.assertEqual(code, 6)
 
-    def test_real_tenant_file_is_empty_until_owner_confirms(self):
-        with open(os.path.join(REPO, "nigel", "policy", "tenants.json"), encoding="utf-8") as f:
-            self.assertEqual(json.load(f)["tenants"], {})
+    def test_real_tenants_are_owned_by_an_approver(self):
+        tenants = jread(os.path.join(REPO, "nigel", "policy", "tenants.json"))["tenants"]
+        pol = jread(os.path.join(REPO, "nigel", "policy", "policy.json"))
+        reg = jread(os.path.join(REPO, "nigel", "registry", "agents.json"))
+        self.assertTrue(tenants)
+        for name, t in tenants.items():
+            self.assertIn(t["owner"], pol["approvers"], name)
+            self.assertTrue(t["data_roots"], name)
+        for a in reg["agents"]:
+            self.assertTrue(set(a.get("company_scope", [])) <= set(tenants), a["agent_id"])
+        agent_ids = {a["agent_id"] for a in reg["agents"]}
+        self.assertFalse(set(pol["approvers"]) & agent_ids, "approvers must be humans, not agents")
 
 
 # ------------------------------------------------------------------ 3. resume after interruption
@@ -532,6 +543,12 @@ class TestGuardHook(unittest.TestCase):
             ("Write", {"file_path": os.path.join(REPO, ".claude/skills/nigel-run/SKILL.md")}),
             ("Edit", {"file_path": "nigel/registry/agents.json"}),
             ("Edit", {"file_path": os.path.join(REPO, "nigel/hooks/guard.py")}),
+            # v1.1: disguised approvals and indirect writes
+            ("Bash", {"command": "python3 nigel/engine/nigel.py --actor=x approve NGL-1 --key k --by LWE"}),
+            ("Bash", {"command": "python3 nigel/engine/nigel.py \"approve\" NGL-1 --key k --by LWE"}),
+            ("Bash", {"command": "ls; python3 nigel/engine/nigel.py approve NGL-1 --gate g --by LWE"}),
+            ("Bash", {"command": "cd nigel/policy && rm policy.json"}),
+            ("Bash", {"command": "Set-Content -Path nigel\\policy\\policy.json -Value x"}),
         ]
         for tool, inp in cases:
             self.assertEqual(self.run_hook(tool, inp), 2, inp)
@@ -544,6 +561,10 @@ class TestGuardHook(unittest.TestCase):
             ("Bash", {"command": "git add nigel/registry && git status"}),
             ("Write", {"file_path": os.path.join(REPO, "linkedin/posts/neu.md")}),
             ("Read", {"file_path": os.path.join(REPO, "nigel/policy/policy.json")}),
+            # v1.1: free text in quotes and redirects to other targets are no longer false alarms
+            ("Bash", {"command": "python3 nigel/engine/nigel.py checkpoint NGL-1 intake --evidence \"Selbstfreigabe (approve) abgelehnt\" --confirm"}),
+            ("Bash", {"command": "python3 nigel/engine/nigel.py checkpoint NGL-1 plan --evidence \"brief -> agenda\" --confirm"}),
+            ("Bash", {"command": "python3 nigel/engine/nigel.py show NGL-1 > /tmp/task.json"}),
         ]
         for tool, inp in cases:
             self.assertEqual(self.run_hook(tool, inp), 0, inp)
