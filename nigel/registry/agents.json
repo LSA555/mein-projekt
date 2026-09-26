@@ -102,12 +102,14 @@
       "agent_id": "ava",
       "name": "Ava",
       "team": "Executive Office",
-      "version": "0.0.0",
-      "status": "proposed",
-      "evidence_level": "organigramm-documented",
+      "version": "0.1.0",
+      "status": "sandbox",
+      "evidence_level": "definition-file",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
-        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
+        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation",
+        ".claude/agents/ava.md",
+        "nigel/tests/test_nigel.py (synthetisch)"
       ],
       "company_os_match": "01 Executive Assistant · E-Mail-Agent · Meeting-Agent",
       "match_quality": "gut",
@@ -115,19 +117,55 @@
         "morning"
       ],
       "roles": [
-        "executive-ops"
+        "executive-ops",
+        "knowledge"
       ],
-      "company_scope": [],
-      "owner": "human-owner-required",
-      "definition": null,
-      "tools_allowed": [],
-      "actions_allowed": [],
-      "actions_forbidden": [],
-      "data_classes_allowed": [],
-      "approval_gates": [],
+      "company_scope": [
+        "cyspa",
+        "alpha-ai",
+        "swiss-chocolate-gcc",
+        "intern"
+      ],
+      "owner": "LWE",
+      "definition": ".claude/agents/ava.md",
+      "tools_allowed": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write",
+        "Edit",
+        "Bash"
+      ],
+      "actions_allowed": [
+        "Entwürfe in data/<mandant>/",
+        "engine-Befehle ausser approve/reconcile"
+      ],
+      "actions_forbidden": [
+        "approve",
+        "action reconcile",
+        "externe Aktionen ausführen",
+        "Policy/Hook/Register/Skills/Agentendateien ändern"
+      ],
+      "data_classes_allowed": [
+        "internal",
+        "confidential"
+      ],
+      "approval_gates": [
+        "alle external_action_types aus policy.json"
+      ],
       "cost_limit": "pending",
-      "acceptance_tests": [],
-      "rollback_plan": ""
+      "acceptance_tests": [
+        "nigel/tests/test_nigel.py",
+        "Live-Test ausstehend"
+      ],
+      "rollback_plan": "Datei .claude/agents/ava.md entfernen, Status auf retired",
+      "changelog": [
+        {
+          "version": "0.1.0",
+          "note": "Agentendatei angelegt, Sandbox",
+          "at": "2026-09-26"
+        }
+      ]
     },
     {
       "agent_id": "atlas",
@@ -489,12 +527,14 @@
       "agent_id": "oliver",
       "name": "Oliver",
       "team": "Sales",
-      "version": "0.0.0",
-      "status": "proposed",
-      "evidence_level": "organigramm-documented",
+      "version": "0.1.0",
+      "status": "sandbox",
+      "evidence_level": "definition-file",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
-        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
+        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation",
+        ".claude/agents/oliver.md",
+        "nigel/tests/test_nigel.py (synthetisch)"
       ],
       "company_os_match": "02 Angebots-Intelligenz",
       "match_quality": "gut",
@@ -504,19 +544,54 @@
         "xlsx"
       ],
       "roles": [
-        "proposal"
+        "proposal",
+        "sales",
+        "research"
       ],
-      "company_scope": [],
-      "owner": "human-owner-required",
-      "definition": null,
-      "tools_allowed": [],
-      "actions_allowed": [],
-      "actions_forbidden": [],
-      "data_classes_allowed": [],
-      "approval_gates": [],
+      "company_scope": [
+        "cyspa"
+      ],
+      "owner": "LWE",
+      "definition": ".claude/agents/oliver.md",
+      "tools_allowed": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write",
+        "Edit",
+        "Bash",
+        "Skill"
+      ],
+      "actions_allowed": [
+        "Entwürfe in data/<mandant>/",
+        "engine-Befehle ausser approve/reconcile"
+      ],
+      "actions_forbidden": [
+        "approve",
+        "action reconcile",
+        "externe Aktionen ausführen",
+        "Policy/Hook/Register/Skills/Agentendateien ändern"
+      ],
+      "data_classes_allowed": [
+        "internal",
+        "confidential"
+      ],
+      "approval_gates": [
+        "alle external_action_types aus policy.json"
+      ],
       "cost_limit": "pending",
-      "acceptance_tests": [],
-      "rollback_plan": ""
+      "acceptance_tests": [
+        "nigel/tests/test_nigel.py",
+        "Live-Test ausstehend"
+      ],
+      "rollback_plan": "Datei .claude/agents/oliver.md entfernen, Status auf retired",
+      "changelog": [
+        {
+          "version": "0.1.0",
+          "note": "Agentendatei angelegt, Sandbox",
+          "at": "2026-09-26"
+        }
+      ]
     },
     {
       "agent_id": "nora",
@@ -607,30 +682,65 @@
       "agent_id": "michael",
       "name": "Michael",
       "team": "Security",
-      "version": "0.0.0",
-      "status": "proposed",
-      "evidence_level": "organigramm-documented",
+      "version": "0.1.0",
+      "status": "sandbox",
+      "evidence_level": "definition-file",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
-        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
+        "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation",
+        ".claude/agents/michael.md",
+        "nigel/tests/test_nigel.py (synthetisch)"
       ],
       "company_os_match": "06 Sicherheit & Governance",
       "match_quality": "teilweise",
       "related_skills": [],
       "roles": [
-        "security"
+        "security",
+        "grc"
       ],
-      "company_scope": [],
-      "owner": "human-owner-required",
-      "definition": null,
-      "tools_allowed": [],
-      "actions_allowed": [],
-      "actions_forbidden": [],
-      "data_classes_allowed": [],
-      "approval_gates": [],
+      "company_scope": [
+        "cyspa"
+      ],
+      "owner": "LWE",
+      "definition": ".claude/agents/michael.md",
+      "tools_allowed": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write",
+        "Edit",
+        "Bash"
+      ],
+      "actions_allowed": [
+        "Entwürfe in data/<mandant>/",
+        "engine-Befehle ausser approve/reconcile"
+      ],
+      "actions_forbidden": [
+        "approve",
+        "action reconcile",
+        "externe Aktionen ausführen",
+        "Policy/Hook/Register/Skills/Agentendateien ändern"
+      ],
+      "data_classes_allowed": [
+        "internal",
+        "confidential"
+      ],
+      "approval_gates": [
+        "alle external_action_types aus policy.json"
+      ],
       "cost_limit": "pending",
-      "acceptance_tests": [],
-      "rollback_plan": ""
+      "acceptance_tests": [
+        "nigel/tests/test_nigel.py",
+        "Live-Test ausstehend"
+      ],
+      "rollback_plan": "Datei .claude/agents/michael.md entfernen, Status auf retired",
+      "changelog": [
+        {
+          "version": "0.1.0",
+          "note": "Agentendatei angelegt, Sandbox",
+          "at": "2026-09-26"
+        }
+      ]
     },
     {
       "agent_id": "sentinel",

@@ -1,3 +1,5 @@
 # NIGEL live state (tasks, ledger, outbox) - operational data, not versioned
 .nigel/
 __pycache__/
+# vertrauliche Mandantendaten nicht versionieren
+data/*/privat/
