@@ -27,7 +27,7 @@ Pendenzen aus dem letzten Check-out werden im Check-in unter Punkt 1 aufgerufen.
 
 ## Vorbereitung
 
-- **Vorschlag, noch nicht von LWE bestätigt: Freitag.** Ava erstellt den Brief (Skill `meeting-intelligence`), Michael das Cyber Security Briefing (Skill `cyber-briefing`), Vera prüft beide.
+- **Freitag vor dem Check-in (von LWE bestätigt, 27.09.2026):** Ava erstellt den Brief (Skill `meeting-intelligence`), Michael das Cyber Security Briefing (Skill `cyber-briefing`), Vera prüft beide.
 - Automatisch nur mit Zeitplan. Ohne Zeitplan bitte auslösen: «Nigel, bereite das Check-in am Montag vor.»
 
 ## Termine

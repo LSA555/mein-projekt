@@ -14,7 +14,7 @@ Drei wiederkehrende Formate pro Woche (laut LWE), dazu das übergreifende [[Abst
 
 | Format | Wann | Zweck | Vorbereitung |
 |---|---|---|---|
-| [[Check-in Meeting]] | **Montag 08:00** | Wochenstart: Marketing-Fortschritt, Freigaben der Woche, Cyber Security Briefing | Ava (Brief), Michael (Briefing), Vera (Prüfung); Vorschlag: Freitag davor, noch nicht von LWE bestätigt |
+| [[Check-in Meeting]] | **Montag 08:00** | Wochenstart: Marketing-Fortschritt, Freigaben der Woche, Cyber Security Briefing | Ava (Brief), Michael (Briefing), Vera (Prüfung); am Freitag davor (bestätigt 27.09.2026) |
 | [[One-to-One Meeting]] | **Dienstag 08:00** | Persönliche Abstimmung: Prioritäten, Blocker, Entwicklung, Feedback | Ava (Kurzbrief: offene Punkte und Zusagen seit dem letzten One-to-One) |
 | [[Check-out Meeting]] | **Mittwoch 16:00** | Wochenabschluss: Was ist erledigt, was ist offen, was kommt nächste Woche | Ava (Wochenbilanz aus den Nigel-Aufgaben und Pendenzen) |
 | [[Abstimmungsmeeting]] | `NEEDS INPUT` | Gesamtstand: Kunden, Sales, Services, Marketing, Partnerschaften, Organisation | Ava nach Vorlage [[2026-08-31 Abstimmungsmeeting]] |
