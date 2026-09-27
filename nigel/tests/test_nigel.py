@@ -125,7 +125,7 @@ class TestAgentInvocation(Sandbox):
         tid = self.new()
         code, out, _ = self.n("route", tid, "sofia")
         self.assertEqual(code, 6)
-        self.assertIn("proposed", out["error"])
+        self.assertIn("backup", out["error"])
 
     def test_unknown_agent_is_refused(self):
         code, out, _ = self.n("route", self.new(), "ghost-agent")
@@ -217,6 +217,40 @@ class TestSpecialistAgents(Sandbox):
                                     actor="nigel-orchestrator")[0], 0)
         self.assertEqual(self.n("checkpoint", tid, "close", "--evidence", "x", "--confirm")[0], 0)
         self.assertEqual(self.task(tid)["status"], "done")
+
+    def test_core_team_and_backup(self):
+        reg = jread(os.path.join(REPO, "nigel", "registry", "agents.json"))
+        core = [a for a in reg["agents"] if a.get("core_team")]
+        self.assertEqual({a["agent_id"] for a in core}, {"nigel-orchestrator", "ava", "alex", "oliver", "michael", "vera"})
+        self.assertEqual(set(reg["core_team"]), {a["agent_id"] for a in core})
+        backup = [a for a in reg["agents"] if not a.get("core_team")]
+        self.assertEqual(len(backup), 30)
+        targets = {a["agent_id"] for a in core} | {"claude-code (Hauptsession)"}
+        for a in backup:
+            self.assertEqual(a["status"], "backup", a["agent_id"])
+            self.assertIn(a["merged_into"], targets, a["agent_id"])
+            self.assertEqual(a["company_scope"], [], a["agent_id"])
+        absorbed = [x for a in core for x in a.get("absorbs", [])]
+        self.assertEqual(len(absorbed), len(set(absorbed)), "each backup agent belongs to exactly one core agent")
+
+    def test_only_vera_and_nigel_review(self):
+        reg = jread(os.path.join(REPO, "nigel", "registry", "agents.json"))
+        reviewers = {a["agent_id"] for a in reg["agents"] if a.get("core_team") and "reviewer" in a.get("roles", [])}
+        self.assertEqual(reviewers, {"nigel-orchestrator", "vera"}, "creators must not review")
+
+    def test_backup_agent_not_routable_even_in_sandbox(self):
+        self.assertEqual(self.n("route", self.new(sandbox=True), "grace")[0], 6)
+
+    def test_rubrics_complete(self):
+        folder = os.path.join(REPO, "nigel", "quality", "rubrics")
+        names = {f[:-3] for f in os.listdir(folder) if f.endswith(".md")}
+        self.assertEqual(names, {"angebot", "linkedin-post", "praesentation", "security-bericht", "dokument"})
+        for n in names:
+            text = read(os.path.join(folder, n + ".md"))
+            self.assertRegex(text, r"threshold: \d+")
+            points = [int(x) for x in re.findall(r"^\| \d+ \| [^|]+ \| (\d+) \|", text, re.M)]
+            self.assertEqual(sum(points), 100, n)
+            self.assertIn("Muss-Kriterien", text, n)
 
     def test_general_task_stops_before_external_effect(self):
         tid = self.new(flow="general-task")

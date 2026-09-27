@@ -6,6 +6,7 @@
     "sandbox",
     "approved",
     "active",
+    "backup",
     "suspended",
     "retired"
   ],
@@ -36,7 +37,7 @@
     {
       "agent_id": "nigel-orchestrator",
       "name": "Nigel",
-      "team": "Executive Office",
+      "team": "Core: Orchestrierung",
       "version": "1.0.0",
       "status": "active",
       "evidence_level": "runtime-verified",
@@ -96,13 +97,17 @@
           "note": "Aktiviert durch LWE nach Live-Test",
           "at": "2026-09-25"
         }
+      ],
+      "core_team": true,
+      "absorbs": [
+        "atlas"
       ]
     },
     {
       "agent_id": "ava",
       "name": "Ava",
-      "team": "Executive Office",
-      "version": "0.1.0",
+      "team": "Core: Executive & Wissen",
+      "version": "0.2.0",
       "status": "sandbox",
       "evidence_level": "definition-file",
       "evidence": [
@@ -156,7 +161,8 @@
       "cost_limit": "pending",
       "acceptance_tests": [
         "nigel/tests/test_nigel.py",
-        "Live-Test ausstehend"
+        "Test-Set je Ergebnisart (ausstehend)",
+        "Live-Test (ausstehend)"
       ],
       "rollback_plan": "Datei .claude/agents/ava.md entfernen, Status auf retired",
       "changelog": [
@@ -164,7 +170,16 @@
           "version": "0.1.0",
           "note": "Agentendatei angelegt, Sandbox",
           "at": "2026-09-26"
+        },
+        {
+          "version": "0.2.0",
+          "note": "Core-Team-Zuschnitt",
+          "at": "2026-09-27"
         }
+      ],
+      "core_team": true,
+      "absorbs": [
+        "iris"
       ]
     },
     {
@@ -172,7 +187,7 @@
       "name": "Atlas",
       "team": "Executive Office",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "organigramm-documented",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
@@ -194,14 +209,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "nigel-orchestrator",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt nigel-orchestrator",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "iris",
       "name": "Iris",
       "team": "Executive Office",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "organigramm-documented",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
@@ -223,14 +247,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "ava",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt ava",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "morgan",
       "name": "Morgan",
       "team": "Marketing",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "organigramm-documented",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
@@ -252,12 +285,21 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "alex",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt alex",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "alex",
       "name": "Alex",
-      "team": "Marketing",
+      "team": "Core: Marketing & Content",
       "version": "0.0.0",
       "status": "proposed",
       "evidence_level": "organigramm-documented",
@@ -271,24 +313,65 @@
       "roles": [
         "marketing-content"
       ],
-      "company_scope": [],
-      "owner": "human-owner-required",
+      "company_scope": [
+        "cyspa",
+        "alpha-ai",
+        "swiss-chocolate-gcc",
+        "intern"
+      ],
+      "owner": "LWE",
       "definition": null,
-      "tools_allowed": [],
+      "tools_allowed": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write",
+        "Edit",
+        "Bash",
+        "Skill"
+      ],
       "actions_allowed": [],
-      "actions_forbidden": [],
+      "actions_forbidden": [
+        "approve",
+        "action reconcile",
+        "externe Aktionen ausführen",
+        "Policy/Hook/Register/Skills/Agentendateien ändern"
+      ],
       "data_classes_allowed": [],
-      "approval_gates": [],
+      "approval_gates": [
+        "alle external_action_types aus policy.json"
+      ],
       "cost_limit": "pending",
-      "acceptance_tests": [],
-      "rollback_plan": ""
+      "acceptance_tests": [
+        "nigel/tests/test_nigel.py",
+        "Test-Set je Ergebnisart (ausstehend)",
+        "Live-Test (ausstehend)"
+      ],
+      "rollback_plan": "",
+      "core_team": true,
+      "absorbs": [
+        "morgan",
+        "elena",
+        "maya",
+        "noah",
+        "robin",
+        "sofia"
+      ],
+      "note": "Agentendatei liegt bereit, Upload durch LWE (Anlegen durch Claude vom Berechtigungsprüfer gestoppt)",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "Core-Team-Zuschnitt",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "sofia",
       "name": "Sofia",
       "team": "Marketing",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "blueprint-only",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
@@ -310,14 +393,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "alex",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt alex",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "elena",
       "name": "Elena",
       "team": "Marketing",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "blueprint-only",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
@@ -340,14 +432,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "alex",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt alex",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "maya",
       "name": "Maya",
       "team": "Marketing",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "blueprint-only",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
@@ -372,14 +473,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "alex",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt alex",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "noah",
       "name": "Noah",
       "team": "Marketing",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "blueprint-only",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
@@ -400,14 +510,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "alex",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt alex",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "robin",
       "name": "Robin",
       "team": "Marketing",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "organigramm-documented",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
@@ -430,14 +549,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "alex",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt alex",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "grace",
       "name": "Grace",
       "team": "Marketing",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "organigramm-documented",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
@@ -460,14 +588,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "vera",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt vera",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "victor",
       "name": "Victor",
       "team": "Sales",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "organigramm-documented",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
@@ -489,14 +626,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "oliver",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt oliver",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "lena",
       "name": "Lena",
       "team": "Sales",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "organigramm-documented",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
@@ -521,13 +667,22 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "oliver",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt oliver",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "oliver",
       "name": "Oliver",
-      "team": "Sales",
-      "version": "0.1.0",
+      "team": "Core: Revenue",
+      "version": "0.2.0",
       "status": "sandbox",
       "evidence_level": "definition-file",
       "evidence": [
@@ -546,10 +701,14 @@
       "roles": [
         "proposal",
         "sales",
-        "research"
+        "research",
+        "revops"
       ],
       "company_scope": [
-        "cyspa"
+        "cyspa",
+        "alpha-ai",
+        "swiss-chocolate-gcc",
+        "intern"
       ],
       "owner": "LWE",
       "definition": ".claude/agents/oliver.md",
@@ -582,7 +741,8 @@
       "cost_limit": "pending",
       "acceptance_tests": [
         "nigel/tests/test_nigel.py",
-        "Live-Test ausstehend"
+        "Test-Set je Ergebnisart (ausstehend)",
+        "Live-Test (ausstehend)"
       ],
       "rollback_plan": "Datei .claude/agents/oliver.md entfernen, Status auf retired",
       "changelog": [
@@ -590,7 +750,20 @@
           "version": "0.1.0",
           "note": "Agentendatei angelegt, Sandbox",
           "at": "2026-09-26"
+        },
+        {
+          "version": "0.2.0",
+          "note": "Core-Team-Zuschnitt",
+          "at": "2026-09-27"
         }
+      ],
+      "core_team": true,
+      "absorbs": [
+        "victor",
+        "lena",
+        "nora",
+        "ethan",
+        "felix"
       ]
     },
     {
@@ -598,7 +771,7 @@
       "name": "Nora",
       "team": "Sales",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "organigramm-documented",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
@@ -620,14 +793,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "oliver",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt oliver",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "ethan",
       "name": "Ethan",
       "team": "Sales",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "blueprint-only",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
@@ -648,14 +830,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "oliver",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt oliver",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "felix",
       "name": "Felix",
       "team": "Sales",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "blueprint-only",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
@@ -676,13 +867,22 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "oliver",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt oliver",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "michael",
       "name": "Michael",
-      "team": "Security",
-      "version": "0.1.0",
+      "team": "Core: Security & GRC",
+      "version": "0.2.0",
       "status": "sandbox",
       "evidence_level": "definition-file",
       "evidence": [
@@ -731,7 +931,8 @@
       "cost_limit": "pending",
       "acceptance_tests": [
         "nigel/tests/test_nigel.py",
-        "Live-Test ausstehend"
+        "Test-Set je Ergebnisart (ausstehend)",
+        "Live-Test (ausstehend)"
       ],
       "rollback_plan": "Datei .claude/agents/michael.md entfernen, Status auf retired",
       "changelog": [
@@ -739,7 +940,20 @@
           "version": "0.1.0",
           "note": "Agentendatei angelegt, Sandbox",
           "at": "2026-09-26"
+        },
+        {
+          "version": "0.2.0",
+          "note": "Core-Team-Zuschnitt",
+          "at": "2026-09-27"
         }
+      ],
+      "core_team": true,
+      "absorbs": [
+        "sentinel",
+        "raven",
+        "cora",
+        "quinn",
+        "rhea"
       ]
     },
     {
@@ -747,7 +961,7 @@
       "name": "Sentinel",
       "team": "Security",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "blueprint-only",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
@@ -768,14 +982,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "michael",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt michael",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "raven",
       "name": "Raven",
       "team": "Security",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "blueprint-only",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
@@ -796,14 +1019,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "michael",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt michael",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "cora",
       "name": "Cora",
       "team": "Security",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "blueprint-only",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
@@ -824,14 +1056,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "michael",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt michael",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "quinn",
       "name": "Quinn",
       "team": "Security",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "blueprint-only",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
@@ -852,14 +1093,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "michael",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt michael",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "rhea",
       "name": "Rhea",
       "team": "Security",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "blueprint-only",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
@@ -880,14 +1130,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "michael",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt michael",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "adrian",
       "name": "Adrian",
       "team": "Engineering",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "organigramm-documented",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
@@ -909,14 +1168,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "claude-code (Hauptsession)",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt claude-code (Hauptsession)",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "jules",
       "name": "Jules",
       "team": "Engineering",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "blueprint-only",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
@@ -937,14 +1205,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "claude-code (Hauptsession)",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt claude-code (Hauptsession)",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "jasper",
       "name": "Jasper",
       "team": "Engineering",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "blueprint-only",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
@@ -965,14 +1242,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "claude-code (Hauptsession)",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt claude-code (Hauptsession)",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "jade",
       "name": "Jade",
       "team": "Engineering",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "blueprint-only",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
@@ -993,14 +1279,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "claude-code (Hauptsession)",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt claude-code (Hauptsession)",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "devon",
       "name": "Devon",
       "team": "Engineering",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "organigramm-documented",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
@@ -1022,14 +1317,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "claude-code (Hauptsession)",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt claude-code (Hauptsession)",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "kira",
       "name": "Kira",
       "team": "Engineering",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "organigramm-documented",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
@@ -1051,14 +1355,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "claude-code (Hauptsession)",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt claude-code (Hauptsession)",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "theo",
       "name": "Theo",
       "team": "Engineering",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "organigramm-documented",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
@@ -1081,14 +1394,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "claude-code (Hauptsession)",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt claude-code (Hauptsession)",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "clara",
       "name": "Clara",
       "team": "Finance/Legal/HR/Control",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "organigramm-documented",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
@@ -1110,14 +1432,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "vera",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt vera",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "helena",
       "name": "Helena",
       "team": "Finance/Legal/HR/Control",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "blueprint-only",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
@@ -1139,14 +1470,23 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "vera",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt vera",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "harper",
       "name": "Harper",
       "team": "Finance/Legal/HR/Control",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "blueprint-only",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)"
@@ -1167,15 +1507,24 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "vera",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt vera",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "vera",
       "name": "Vera",
-      "team": "Finance/Legal/HR/Control",
-      "version": "0.0.0",
-      "status": "proposed",
-      "evidence_level": "organigramm-documented",
+      "team": "Core: Qualität & Kontrolle",
+      "version": "0.1.0",
+      "status": "sandbox",
+      "evidence_level": "definition-file",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
         "Skill cyspa-organigramm (Company-OS-Organigramm), nur Dokumentation"
@@ -1185,26 +1534,65 @@
       "related_skills": [],
       "roles": [
         "reviewer",
-        "grc"
+        "marketing-qa",
+        "legal",
+        "finance"
       ],
-      "company_scope": [],
-      "owner": "human-owner-required",
-      "definition": null,
-      "tools_allowed": [],
+      "company_scope": [
+        "cyspa",
+        "alpha-ai",
+        "swiss-chocolate-gcc",
+        "intern"
+      ],
+      "owner": "LWE",
+      "definition": ".claude/agents/vera.md",
+      "tools_allowed": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Write",
+        "Bash"
+      ],
       "actions_allowed": [],
-      "actions_forbidden": [],
+      "actions_forbidden": [
+        "approve",
+        "action reconcile",
+        "externe Aktionen ausführen",
+        "Policy/Hook/Register/Skills/Agentendateien ändern"
+      ],
       "data_classes_allowed": [],
-      "approval_gates": [],
+      "approval_gates": [
+        "alle external_action_types aus policy.json"
+      ],
       "cost_limit": "pending",
-      "acceptance_tests": [],
-      "rollback_plan": ""
+      "acceptance_tests": [
+        "nigel/tests/test_nigel.py",
+        "Test-Set je Ergebnisart (ausstehend)",
+        "Live-Test (ausstehend)"
+      ],
+      "rollback_plan": "",
+      "core_team": true,
+      "absorbs": [
+        "grace",
+        "oscar",
+        "helena",
+        "clara",
+        "harper"
+      ],
+      "changelog": [
+        {
+          "version": "0.1.0",
+          "note": "Core-Team-Zuschnitt",
+          "at": "2026-09-27"
+        }
+      ]
     },
     {
       "agent_id": "oscar",
       "name": "Oscar",
       "team": "Finance/Legal/HR/Control",
       "version": "0.0.0",
-      "status": "proposed",
+      "status": "backup",
       "evidence_level": "organigramm-documented",
       "evidence": [
         "nur Blueprint 2.0 Abschnitt 4 (Name ist kein Nachweis)",
@@ -1226,7 +1614,25 @@
       "approval_gates": [],
       "cost_limit": "pending",
       "acceptance_tests": [],
-      "rollback_plan": ""
+      "rollback_plan": "",
+      "core_team": false,
+      "merged_into": "vera",
+      "changelog": [
+        {
+          "version": "0.0.0",
+          "note": "backup, Aufgaben übernimmt vera",
+          "at": "2026-09-27"
+        }
+      ]
     }
-  ]
+  ],
+  "core_team": [
+    "nigel-orchestrator",
+    "ava",
+    "alex",
+    "oliver",
+    "michael",
+    "vera"
+  ],
+  "core_team_decided": "LWE, 2026-09-27: 6 Kern-Agenten arbeiten; alle übrigen bleiben als backup im Register"
 }

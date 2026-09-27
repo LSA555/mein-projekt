@@ -8,6 +8,26 @@ chat_url: "https://claude.ai/code/session_01JsQoSQbozeyt2EYitpEXuf"
 
 # Agentenregister: Abgleich Blueprint ↔ tatsächlicher Bestand
 
+## Core-Team (Entscheid LWE, 2026-09-27)
+
+Es arbeiten nur 6 Kern-Agenten. Alle übrigen 30 Blueprint-Agenten bleiben im Register mit Status **`backup`**: dokumentiert, jederzeit reaktivierbar (per PR durch LWE), aber nicht routbar.
+
+| Kern-Agent | Status | Übernimmt (backup) |
+|---|---|---|
+| Nigel (Orchestrierung) | active | Atlas |
+| Ava (Executive & Wissen) | sandbox | Iris |
+| Alex (Marketing & Content) | proposed, Datei-Upload durch LWE | Morgan, Elena, Maya, Noah, Robin, Sofia |
+| Oliver (Revenue) | sandbox | Victor, Lena, Nora, Ethan, Felix |
+| Michael (Security & GRC) | sandbox | Sentinel, Raven, Cora, Quinn, Rhea |
+| Vera (Qualität & Kontrolle) | sandbox | Grace, Oscar, Helena, Clara, Harper |
+| Claude Code (Hauptsession) | – | Adrian, Jules, Jasper, Jade, Devon, Kira, Theo |
+
+Grundsatz: **Wer erstellt, prüft nicht.** Vera ist die einzige Prüfinstanz, dazu kommt Nigel für die Abnahme.
+
+---
+
+## Ursprünglicher Abgleich (2026-09-25)
+
 Maschinenlesbar: `agents.json`. Ein Name im Blueprint ist kein Nachweis. Geprüfte Quellen:
 
 - Repo lsa555/mein-projekt (alle Branches): keine Agentendateien
