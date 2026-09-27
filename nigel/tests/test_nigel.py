@@ -211,8 +211,10 @@ class TestSpecialistAgents(Sandbox):
     def test_general_task_runs_to_done(self):
         tid = self.new(flow="general-task")
         self.to_phase(tid, "close")
+        deliverable = os.path.join(self.root, "data", "acme", "brief.md")
         for crit, val in [("deliverable-exists", "true"), ("acceptance-met", "1"), ("claims-sourced", "1"), ("open-issues", "0")]:
-            self.assertEqual(self.n("dod", tid, crit, "--value", val, "--evidence", "synthetic", actor="nigel-orchestrator")[0], 0)
+            self.assertEqual(self.n("dod", tid, crit, "--value", val, "--evidence", "synthetic", "--file", deliverable,
+                                    actor="nigel-orchestrator")[0], 0)
         self.assertEqual(self.n("checkpoint", tid, "close", "--evidence", "x", "--confirm")[0], 0)
         self.assertEqual(self.task(tid)["status"], "done")
 
@@ -221,6 +223,47 @@ class TestSpecialistAgents(Sandbox):
         code, _, _ = self.n("action", "request", tid, "--type", "send_email", "--target", "a", "--payload", "b")
         self.assertEqual(code, 3)
         self.assertEqual(self.n("action", "request", tid, "--type", "purchase", "--target", "a", "--payload", "b")[0], 6)
+
+
+class TestEvidenceFiles(Sandbox):
+    def ready(self):
+        tid = self.new(flow="general-task")
+        self.to_phase(tid, "close")
+        return tid
+
+    def dod(self, tid, crit, val, *files):
+        args = ["dod", tid, crit, "--value", val, "--evidence", "synthetic"]
+        for f in files:
+            args += ["--file", f]
+        return self.n(*args, actor="nigel-orchestrator")
+
+    def test_required_file_is_enforced(self):
+        tid = self.ready()
+        self.assertEqual(self.dod(tid, "deliverable-exists", "true")[0], 1, "no file given")
+        self.assertEqual(self.dod(tid, "deliverable-exists", "true", os.path.join(self.root, "data", "acme", "nope.md"))[0], 1)
+        outside = tempfile.NamedTemporaryFile(delete=False)
+        outside.close()
+        try:
+            self.assertEqual(self.dod(tid, "deliverable-exists", "true", outside.name)[0], 6, "outside project")
+        finally:
+            os.remove(outside.name)
+
+    def test_changed_evidence_blocks_close(self):
+        tid = self.ready()
+        f = os.path.join(self.root, "data", "acme", "brief.md")
+        for crit, val in [("deliverable-exists", "true"), ("acceptance-met", "1")]:
+            self.assertEqual(self.dod(tid, crit, val, f)[0], 0)
+        for crit, val in [("claims-sourced", "1"), ("open-issues", "0")]:
+            self.assertEqual(self.dod(tid, crit, val)[0], 0)
+        with open(f, "a", encoding="utf-8") as fh:
+            fh.write("changed after review\n")
+        code, out, _ = self.n("checkpoint", tid, "close", "--evidence", "x", "--confirm")
+        self.assertEqual(code, 1)
+        self.assertIn("changed after verification", out["error"])
+        for crit, val in [("deliverable-exists", "true"), ("acceptance-met", "1")]:
+            self.assertEqual(self.dod(tid, crit, val, f)[0], 0)
+        self.assertEqual(self.n("checkpoint", tid, "close", "--evidence", "x", "--confirm")[0], 0)
+        self.assertEqual(self.task(tid)["dod"]["deliverable-exists"]["files"][0]["path"], "data/acme/brief.md")
 
 
 class TestTenantIsolation(Sandbox):
@@ -620,6 +663,88 @@ class TestGuardHook(unittest.TestCase):
 
     def test_fails_closed(self):
         self.assertEqual(self.run_hook(None, None, raw="not json"), 2)
+
+
+class TestGuardConnectors(unittest.TestCase):
+    """Connector (MCP) tools: external effects only with a reserved, approved engine action."""
+
+    def setUp(self):
+        self.state = tempfile.mkdtemp(prefix="nigel-guard-")
+        os.makedirs(os.path.join(self.state, "tasks"))
+
+    def tearDown(self):
+        shutil.rmtree(self.state, ignore_errors=True)
+
+    def reserve(self, action_type, minutes_ago=1, state="reserved"):
+        import datetime as dt
+        at = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(minutes=minutes_ago)).strftime("%Y-%m-%dT%H:%M:%SZ")
+        task = {"task_id": "NGL-20260927-abcdef", "actions": {"k1": {"type": action_type, "state": state, "reserved_at": at}}}
+        with open(os.path.join(self.state, "tasks", "NGL-20260927-abcdef.json"), "w", encoding="utf-8") as f:
+            json.dump(task, f)
+
+    def hook(self, tool, inp=None):
+        data = json.dumps({"tool_name": tool, "tool_input": inp or {}, "cwd": REPO})
+        r = subprocess.run([sys.executable, GUARD], input=data, capture_output=True, text=True,
+                           env=dict(os.environ, CLAUDE_PROJECT_DIR=REPO, NIGEL_STATE=self.state))
+        return r.returncode
+
+    def test_reading_and_drafting_allowed(self):
+        for tool in ("mcp__Gmail__create_draft", "mcp__Gmail__search_threads", "mcp__HubSpot__search_crm_objects",
+                     "mcp__Google_Calendar__list_events", "mcp__Canva__generate-design", "mcp__Unknown__list_things"):
+            self.assertEqual(self.hook(tool), 0, tool)
+
+    def test_external_effect_needs_reservation(self):
+        for tool in ("mcp__HubSpot__manage_crm_objects", "mcp__Google_Calendar__create_event",
+                     "mcp__Google_Drive__share_file", "mcp__github__merge_pull_request", "mcp__Webflow__data_cms_tool"):
+            self.assertEqual(self.hook(tool), 2, tool)
+
+    def test_reservation_opens_only_matching_type(self):
+        self.reserve("crm_write")
+        self.assertEqual(self.hook("mcp__HubSpot__manage_crm_objects"), 0)
+        self.assertEqual(self.hook("mcp__Google_Calendar__create_event"), 2, "other type stays closed")
+
+    def test_stale_or_committed_reservation_does_not_open(self):
+        self.reserve("crm_write", minutes_ago=30)
+        self.assertEqual(self.hook("mcp__HubSpot__manage_crm_objects"), 2, "older than 15 minutes")
+        self.reserve("crm_write", state="committed")
+        self.assertEqual(self.hook("mcp__HubSpot__manage_crm_objects"), 2, "already used")
+        self.reserve("crm_write", state="awaiting_approval")
+        self.assertEqual(self.hook("mcp__HubSpot__manage_crm_objects"), 2, "not approved")
+
+    def test_github_writes_to_protected_paths_blocked(self):
+        self.assertEqual(self.hook("mcp__github__push_files", {"files": [{"path": "nigel/policy/policy.json", "content": "{}"}]}), 2)
+        self.assertEqual(self.hook("mcp__github__create_or_update_file", {"path": ".claude/settings.json"}), 2)
+        self.assertEqual(self.hook("mcp__github__delete_file", {"path": "nigel/hooks/guard.py"}), 2)
+        self.assertEqual(self.hook("mcp__github__push_files", {"files": [{"path": "linkedin/posts/neu.md", "content": "x"}]}), 0)
+        self.assertEqual(self.hook("mcp__github__create_pull_request", {"title": "x"}), 0)
+
+    def test_unknown_writing_tool_blocked(self):
+        self.assertEqual(self.hook("mcp__Unknown__do_something"), 2)
+
+    def test_settings_register_connectors_and_launcher(self):
+        settings = jread(os.path.join(REPO, ".claude", "settings.json"))
+        entry = settings["hooks"]["PreToolUse"][0]
+        self.assertIn("mcp__", entry["matcher"])
+        self.assertIn("run-guard.sh", entry["hooks"][0]["command"])
+
+    def test_launcher_fails_closed_without_python(self):
+        launcher = os.path.join(REPO, "nigel", "hooks", "run-guard.sh")
+        data = json.dumps({"tool_name": "Bash", "tool_input": {"command": "ls"}, "cwd": REPO})
+        ok = subprocess.run(["/bin/sh", launcher], input=data, capture_output=True, text=True,
+                            env=dict(os.environ, CLAUDE_PROJECT_DIR=REPO))
+        self.assertEqual(ok.returncode, 0, ok.stderr)
+        blocked = subprocess.run(["/bin/sh", launcher], input=json.dumps({"tool_name": "Bash", "tool_input": {
+            "command": "python3 nigel/engine/nigel.py approve NGL-1 --key k --by LWE"}}), capture_output=True, text=True,
+            env=dict(os.environ, CLAUDE_PROJECT_DIR=REPO))
+        self.assertEqual(blocked.returncode, 2)
+        empty = tempfile.mkdtemp(prefix="nopath-")
+        try:
+            nopy = subprocess.run(["/bin/sh", launcher], input=data, capture_output=True, text=True,
+                                  env={"PATH": empty, "CLAUDE_PROJECT_DIR": REPO})
+        finally:
+            shutil.rmtree(empty, ignore_errors=True)
+        self.assertEqual(nopy.returncode, 2)
+        self.assertIn("Kein Python 3", nopy.stderr)
 
 
 # ------------------------------------------------------------------ 10. flow definitions

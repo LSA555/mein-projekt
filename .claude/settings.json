@@ -2,11 +2,11 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "Bash|Edit|Write|MultiEdit|NotebookEdit",
+        "matcher": "Bash|Edit|Write|MultiEdit|NotebookEdit|mcp__.*",
         "hooks": [
           {
             "type": "command",
-            "command": "python3 \"$CLAUDE_PROJECT_DIR/nigel/hooks/guard.py\""
+            "command": "sh \"$CLAUDE_PROJECT_DIR/nigel/hooks/run-guard.sh\""
           }
         ]
       }

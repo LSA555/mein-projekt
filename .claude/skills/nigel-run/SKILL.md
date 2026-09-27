@@ -59,13 +59,15 @@ N action request <ID> --type send_email --target "<empfänger>" --payload-file <
 
 `approve` und `action reconcile` sind Befehle für Menschen. Der Hook blockiert sie für Claude. Nicht umgehen.
 
+**Connector-Werkzeuge** (Kalender, HubSpot, Drive teilen, GitHub-Merge, Webflow …) lässt der Hook nur zu, solange eine freigegebene und reservierte Aktion des passenden Typs besteht (höchstens 15 Minuten alt). Reihenfolge: `action request` → Freigabe durch LWE → `action request` erneut (reserviert) → Connector-Werkzeug aufrufen → `action commit`. Die Zuordnung Werkzeug → Aktionstyp steht in `nigel/policy/mcp_rules.json`.
+
 ## 4. Wiederaufnahme nach Unterbrechung
 
 `N resume <ID>` → bei `resume_at` weitermachen. Bestätigte Phasen nicht wiederholen. Phasen mit `saved_but_unconfirmed` prüfen: Beleg vorhanden, dann bestätigen, sonst Schritt neu. `actions_in_doubt` nie erneut ausführen.
 
 ## 5. Prüfung, bestätigte Änderung, Abschluss
 
-- Prüfung durch `nigel-orchestrator` (nicht durch den Ausführenden): DoD-Kriterien messen und erfassen: `N dod <ID> <kriterium> --value <messwert> --evidence "<beleg>"`. Danach `N --actor nigel-orchestrator checkpoint <ID> verify --evidence "<prüfprotokoll>" --confirm`.
+- Prüfung durch `nigel-orchestrator` (nicht durch den Ausführenden): DoD-Kriterien messen und erfassen: `N dod <ID> <kriterium> --value <messwert> --evidence "<beleg>" --file <pfad>`. Kriterien mit `requires_file` im Ablauf verlangen mindestens eine `--file`. Die Engine prüft, ob die Datei existiert, speichert ihren Hash und lehnt den Abschluss ab, wenn die Datei danach fehlt oder verändert wurde. Wer nach der Prüfung noch etwas ändert, erfasst das Kriterium neu. Danach `N --actor nigel-orchestrator checkpoint <ID> verify --evidence "<prüfprotokoll>" --confirm`.
 - `confirmed_change` geht erst, wenn keine externe Aktion offen ist.
 - `close` geht erst, wenn alle DoD-Kriterien erfüllt sind.
 

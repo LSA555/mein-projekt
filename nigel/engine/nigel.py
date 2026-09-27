@@ -24,7 +24,7 @@ import sys
 import time
 import uuid
 
-ENGINE_VERSION = "1.0.0"
+ENGINE_VERSION = "1.1.0"
 EXIT_OK, EXIT_ERR, EXIT_APPROVAL, EXIT_DOUBT, EXIT_LIMIT, EXIT_REFUSED = 0, 1, 3, 4, 5, 6
 FINAL_STATES = ("done", "cancelled", "failed")
 
@@ -54,6 +54,14 @@ def iso(t=None):
 
 def sha(text):
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def file_sha(path):
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(65536), b""):
+            h.update(chunk)
+    return h.hexdigest()
 
 
 def read_json(path, default=None):
@@ -360,6 +368,14 @@ def cmd_checkpoint(a):
                 missing = [k for k, v in t["dod"].items() if not v["met"]]
                 if missing:
                     raise NigelError("Definition of Done not met: %s" % ", ".join(missing))
+                changed = []
+                for k, v in t["dod"].items():
+                    for ev in v.get("files") or []:
+                        full = os.path.join(REPO, ev["path"])
+                        if not os.path.isfile(full) or file_sha(full) != ev["sha256"]:
+                            changed.append("%s (%s)" % (k, ev["path"]))
+                if changed:
+                    raise NigelError("evidence missing or changed after verification: %s" % ", ".join(changed))
             cp["status"] = "confirmed"
             cp["confirmed_by"] = a.actor
             t["attempts"].pop(a.phase, None)
@@ -408,7 +424,17 @@ def cmd_dod(a):
         elif isinstance(target, (int, float)):
             val = float(val)
         met = ops[c["op"]](val, target)
-        t["dod"][a.criterion] = {"met": met, "value": val, "evidence": a.evidence, "at": iso(), "by": a.actor}
+        files = []
+        for fp in (a.file or []):
+            full = fp if os.path.isabs(fp) else os.path.join(REPO, fp)
+            if not _inside(full, REPO):
+                raise NigelError("evidence file outside the project: %s" % fp, EXIT_REFUSED)
+            if not os.path.isfile(full):
+                raise NigelError("evidence file not found: %s" % fp)
+            files.append({"path": os.path.relpath(full, REPO), "sha256": file_sha(full)})
+        if c.get("requires_file") and not files:
+            raise NigelError("criterion %s needs at least one --file as evidence" % a.criterion)
+        t["dod"][a.criterion] = {"met": met, "value": val, "evidence": a.evidence, "files": files, "at": iso(), "by": a.actor}
         save(t)
         ledger(t, a.actor, "dod.recorded", {"criterion": a.criterion, "met": met})
     print(json.dumps({"criterion": a.criterion, "met": met, "value": val, "target": "%s %s" % (c["op"], target)}))
@@ -799,6 +825,7 @@ def build_parser():
     x = s.add_parser("fail"); x.set_defaults(fn=cmd_fail); x.add_argument("task_id"); x.add_argument("--reason", required=True)
     x = s.add_parser("dod"); x.set_defaults(fn=cmd_dod)
     x.add_argument("task_id"); x.add_argument("criterion"); x.add_argument("--value", required=True); x.add_argument("--evidence", required=True)
+    x.add_argument("--file", action="append", help="evidence file (checked, hashed, re-verified at close)")
     x = s.add_parser("route"); x.set_defaults(fn=cmd_route); x.add_argument("task_id"); x.add_argument("agent")
     x = s.add_parser("context"); x.set_defaults(fn=cmd_context); x.add_argument("task_id"); x.add_argument("path")
 
