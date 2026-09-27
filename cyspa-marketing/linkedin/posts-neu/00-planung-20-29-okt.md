@@ -21,10 +21,10 @@ Folgen und Abgrenzung:
 
 | # | Datum | Tag | Pfeiler / Serie | Arbeitstitel | Zielgruppe primär (sekundär) | Ziel | Format | CTA | Datei | Visual |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 13 | 20.10.2026, 08:15 | Di | P1 — QUICK TIP | Ein starkes Passwort schützt nicht auf der falschen Seite (Passkeys) | Technology Leadership (Technical) | A | Textpost + Single Graphic | **Dialog** | [2026-10-20-p01-passwordless.md](2026-10-20-p01-passwordless.md) | [PNG](../assets-neu/2026-10-20-p01-passwordless/) |
-| 14 | 22.10.2026, 08:15 | Do | P4 — RESILIENZ KONKRET | Der IT-Dienstleister-Vertrag im Ernstfall: 5 Fragen | Executive KMU (Technology Leadership) | B, E | Textpost + Single Graphic | Selbstcheck | [2026-10-22-p04-it-vertrag-ernstfall.md](2026-10-22-p04-it-vertrag-ernstfall.md) | [PNG](../assets-neu/2026-10-22-p04-it-vertrag/) |
-| 15 | 27.10.2026, 08:15 | Di | P5 — MICROSOFT SECURITY PRAXIS | Gastkonten in Entra ID: 5 Prüfpunkte | Technical (Technology Leadership) | A, C | Carousel 6 Slides (PDF) | Selbstcheck | [2026-10-27-p05-gastkonten-entra.md](2026-10-27-p05-gastkonten-entra.md) | [6 PNG + PDF](../assets-neu/2026-10-27-p05-gastkonten/) |
-| 16 | 29.10.2026, 08:15 | Do | P8 — AUS DEM CISO-ALLTAG | Die Security-Roadmap auf einer Seite: 3–6–12 Monate | Technology Leadership Mid-Market (Executive) | B, D, E | Carousel 6 Slides (PDF) | **hart: Erstgespräch CISO-as-a-Service** | [2026-10-29-p08-roadmap-eine-seite.md](2026-10-29-p08-roadmap-eine-seite.md) | [6 PNG + PDF](../assets-neu/2026-10-29-p08-roadmap/) |
+| 13 | 20.10.2026, 08:15 | Di | P1 — QUICK TIP | Ein starkes Passwort schützt nicht auf der falschen Seite (Passkeys) | Technology Leadership (Technical) | A | Textpost + Single Graphic | **Dialog** | [2026-10-20-p01-passwordless.md](2026-10-20-p01-passwordless.md) | [PNG](../visuals-ci3/13-passwordless/) |
+| 14 | 22.10.2026, 08:15 | Do | P4 — RESILIENZ KONKRET | Der IT-Dienstleister-Vertrag im Ernstfall: 5 Fragen | Executive KMU (Technology Leadership) | B, E | Textpost + Single Graphic | Selbstcheck | [2026-10-22-p04-it-vertrag-ernstfall.md](2026-10-22-p04-it-vertrag-ernstfall.md) | [PNG](../visuals-ci3/14-it-vertrag/) |
+| 15 | 27.10.2026, 08:15 | Di | P5 — MICROSOFT SECURITY PRAXIS | Gastkonten in Entra ID: 5 Prüfpunkte | Technical (Technology Leadership) | A, C | Carousel 6 Slides (PDF) | Selbstcheck | [2026-10-27-p05-gastkonten-entra.md](2026-10-27-p05-gastkonten-entra.md) | [6 PNG + PDF](../visuals-ci3/15-gastkonten/) |
+| 16 | 29.10.2026, 08:15 | Do | P8 — AUS DEM CISO-ALLTAG | Die Security-Roadmap auf einer Seite: 3–6–12 Monate | Technology Leadership Mid-Market (Executive) | B, D, E | Carousel 6 Slides (PDF) | **hart: Erstgespräch CISO-as-a-Service** | [2026-10-29-p08-roadmap-eine-seite.md](2026-10-29-p08-roadmap-eine-seite.md) | [6 PNG + PDF](../visuals-ci3/16-roadmap/) |
 
 Die Nummern #13–#16 setzen die Batch-1-Zählung fort (Vorschlag, nicht verbindlich).
 

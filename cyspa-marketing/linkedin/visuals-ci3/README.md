@@ -49,7 +49,7 @@ Die Slides folgen trotzdem der CI-Logik: Slide 1 Cover, Slide 2 Lead oder erster
    **Bitte liefern:** helle Variante der Bildmarke (SVG oder PNG ≥ 600 px Breite) für dunkle Flächen, dann kann sie auf Cover und CTA ergänzt werden. Offen bleibt zudem der Widerspruch aus der CI-Kurzreferenz: Der Skill verbietet den dreifarbigen Unterstrich, die Beispiele zeigen ihn.
 2. **Serien-Nummerierung.** Das Beispiel trägt «TIPP DER WOCHE #19». Die Nummerierung der bestehenden Serie ist unbekannt. Deshalb steht in Zeile 2 des Eyebrows die Rubrik des Posts (z. B. «EXECUTIVE BRIEFING»), ohne Nummer. Entscheid: Sollen die Oktober-Posts in die Zählung «TIPP DER WOCHE #NN» aufgenommen werden, und ab welcher Nummer? Die Änderung ist eine Zeile in `_build/content.mjs` (Feld `series`).
 3. **Carousel 6 statt 4 Slides** (siehe Begründung oben). Bestätigen oder auf 4 kürzen lassen.
-4. **Asset-Pfade in den Freigabepaketen.** In den Beitragsdateien wurden nur Visual-Briefing und Alt-Text angepasst, der Pfad zum neuen Visual steht dort. Steckbrief («Asset zur Publikation») und Publikationsanleitung in `freigabe/*.md` zeigen noch auf `freigabe/assets/…`. Beim Einplanen die Dateien aus `visuals-ci3/` verwenden.
+4. **Asset-Pfade in den Freigabepaketen.** Erledigt am 27.09.2026: Steckbrief und Publikationsanleitung in `freigabe/*.md` sowie `posts-neu/00-planung-20-29-okt.md` zeigen auf `visuals-ci3/`. Die alten Cyan-Dateien liegen in `freigabe/_alt-ci-assets/` und `assets-neu/` (nicht verwenden).
 
 ## Grafiktext-Änderungen (in den Beitragsdateien nachgetragen)
 
