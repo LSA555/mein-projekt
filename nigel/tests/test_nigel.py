@@ -123,7 +123,7 @@ class TestAgentInvocation(Sandbox):
 
     def test_blueprint_only_agent_is_refused(self):
         tid = self.new()
-        code, out, _ = self.n("route", tid, "ava")
+        code, out, _ = self.n("route", tid, "sofia")
         self.assertEqual(code, 6)
         self.assertIn("proposed", out["error"])
 
@@ -174,6 +174,55 @@ class TestAgentInvocation(Sandbox):
 
 
 # ------------------------------------------------------------------ 2. tenant isolation
+class TestSpecialistAgents(Sandbox):
+    def front(self, path):
+        m = re.match(r"^---\n(.*?)\n---\n", read(os.path.join(REPO, path)), re.S)
+        self.assertIsNotNone(m, path)
+        return dict((k.strip(), v.strip()) for k, v in (l.split(":", 1) for l in m.group(1).splitlines() if ":" in l))
+
+    def test_definition_files_match_registry(self):
+        reg = jread(os.path.join(REPO, "nigel", "registry", "agents.json"))
+        with_file = [a for a in reg["agents"] if a.get("definition")]
+        self.assertGreaterEqual(len(with_file), 4)
+        for a in with_file:
+            fm = self.front(a["definition"])
+            self.assertEqual(fm["name"], a["agent_id"])
+            tools = {t.strip() for t in fm["tools"].split(",")}
+            self.assertEqual(tools, set(a["tools_allowed"]), a["agent_id"])
+            self.assertTrue(set(a["roles"]), a["agent_id"])
+            if a["agent_id"] != "nigel-orchestrator":
+                self.assertIn(a["status"], ("sandbox", "active"), a["agent_id"])
+                text = read(os.path.join(REPO, a["definition"]))
+                self.assertIn("approve", text, "prohibition on approvals must be stated")
+                self.assertIn("action request", text, "external effects only via engine request")
+        for a in reg["agents"]:
+            if a["status"] == "proposed":
+                self.assertIsNone(a.get("definition"), a["agent_id"])
+
+    def test_sandbox_specialist_not_routable_on_real_task(self):
+        reg = self.jload("registry/agents.json")
+        for a in reg["agents"]:
+            if a["agent_id"] == "ava":
+                a["company_scope"] = ["acme-synth"]
+        self.jsave("registry/agents.json", reg)
+        self.assertEqual(self.n("route", self.new(flow="general-task"), "ava")[0], 6)
+        self.assertEqual(self.n("route", self.new(flow="general-task", sandbox=True), "ava")[0], 0)
+
+    def test_general_task_runs_to_done(self):
+        tid = self.new(flow="general-task")
+        self.to_phase(tid, "close")
+        for crit, val in [("deliverable-exists", "true"), ("acceptance-met", "1"), ("claims-sourced", "1"), ("open-issues", "0")]:
+            self.assertEqual(self.n("dod", tid, crit, "--value", val, "--evidence", "synthetic", actor="nigel-orchestrator")[0], 0)
+        self.assertEqual(self.n("checkpoint", tid, "close", "--evidence", "x", "--confirm")[0], 0)
+        self.assertEqual(self.task(tid)["status"], "done")
+
+    def test_general_task_stops_before_external_effect(self):
+        tid = self.new(flow="general-task")
+        code, _, _ = self.n("action", "request", tid, "--type", "send_email", "--target", "a", "--payload", "b")
+        self.assertEqual(code, 3)
+        self.assertEqual(self.n("action", "request", tid, "--type", "purchase", "--target", "a", "--payload", "b")[0], 6)
+
+
 class TestTenantIsolation(Sandbox):
     def test_own_context_allowed(self):
         tid = self.new()
@@ -580,7 +629,8 @@ class TestFlows(unittest.TestCase):
         pol = jread(os.path.join(REPO, "nigel", "policy", "policy.json"))
         phase_ids = [p["id"] for p in pol["checkpoints"]]
         flows = {f[:-5]: jread(os.path.join(folder, f)) for f in os.listdir(folder)}
-        self.assertEqual(set(flows), {"meeting-followup", "linkedin-lead", "lead-offer", "security-assessment", "night-run"})
+        self.assertEqual(set(flows), {"meeting-followup", "linkedin-lead", "lead-offer", "security-assessment", "night-run",
+                                      "general-task"})
         for fid, fl in flows.items():
             self.assertTrue(fl["dod"], fid)
             for c in fl["dod"]:
