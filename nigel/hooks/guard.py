@@ -10,17 +10,24 @@ Version 1.1: shell commands are tokenised like a shell (quotes, ;, &&, |, redire
 in quotes (e.g. --evidence "... approve ...", "a -> b") no longer triggers false alarms. Unparseable
 commands fall back to the strict v1.0 checks.
 
+Version 1.2: connector tools (mcp__*) are checked against nigel/policy/mcp_rules.json. Tools with
+external effect (calendar, CRM, publishing, sharing, deleting, merging) are allowed only while the
+engine holds a reserved, human-approved action of the matching type (reserved within the last
+reservation_minutes). Unknown non-reading connector tools are blocked. GitHub writes to protected
+paths are blocked.
+
 Exit 2 blocks the tool call and shows stderr to Claude. Fails closed on unreadable input.
 This is a guard rail, not a sandbox: a script file that does not name the protected paths is not
 detected. The final control is human review of every change via pull request.
 """
+import datetime as dt
 import json
 import os
 import re
 import shlex
 import sys
 
-VERSION = "1.1.0"
+VERSION = "1.2.0"
 
 # never changed by Claude
 LOCKED = ["nigel/policy/", "nigel/engine/", "nigel/hooks/", ".claude/settings.json", ".claude/agents/"]
@@ -174,6 +181,84 @@ def check_bash(cmd):
             block(MSG_WRITE % hit)
 
 
+def load_mcp_rules(root):
+    path = os.path.join(root, "nigel", "policy", "mcp_rules.json")
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return None
+
+
+def reserved_action(root, action_type, minutes):
+    """True if the engine holds a reserved (approved, not yet committed) action of this type."""
+    state = os.environ.get("NIGEL_STATE") or os.path.join(root, ".nigel")
+    folder = os.path.join(state, "tasks")
+    if not os.path.isdir(folder):
+        return False
+    now = dt.datetime.now(dt.timezone.utc)
+    for name in os.listdir(folder):
+        if not name.endswith(".json"):
+            continue
+        try:
+            with open(os.path.join(folder, name), encoding="utf-8") as f:
+                task = json.load(f)
+        except Exception:
+            continue
+        for act in task.get("actions", {}).values():
+            if act.get("type") != action_type or act.get("state") != "reserved" or not act.get("reserved_at"):
+                continue
+            at = dt.datetime.strptime(act["reserved_at"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=dt.timezone.utc)
+            if (now - at).total_seconds() <= minutes * 60:
+                return True
+    return False
+
+
+def github_paths(inp):
+    paths = [inp.get("path") or ""]
+    for f in inp.get("files") or []:
+        if isinstance(f, dict):
+            paths.append(f.get("path") or "")
+    return [p for p in paths if p]
+
+
+def check_mcp(tool, inp, root):
+    rules = load_mcp_rules(root)
+    name = tool.lower()
+    parts = name.split("__", 2)
+    short = parts[2] if len(parts) == 3 else name
+    if rules is None:
+        if re.match(r"^(get|list|search|read|query|describe|show|help|guide|fetch)", short):
+            return
+        block("Regeln für Connector-Werkzeuge (nigel/policy/mcp_rules.json) fehlen. Schreibende Connector-Aufrufe sind blockiert.")
+    for rule in rules.get("rules", []):
+        if not re.search(rule["match"], name):
+            continue
+        effect = rule["effect"]
+        if effect == "allow":
+            return
+        if effect == "block":
+            block("%s ist gesperrt: %s" % (tool, rule.get("why", "Policy")))
+        if effect == "allow_unless_protected":
+            for p in github_paths(inp):
+                hit = protected_ref(p)
+                if hit:
+                    block("%s auf geschützten Pfad %s: Policy, Hook, Engine, Register, Skills und Agentendateien "
+                          "ändert nur LWE per Pull Request." % (tool, hit))
+            return
+        if effect == "approval":
+            atype = rule["action_type"]
+            if reserved_action(root, atype, rules.get("reservation_minutes", 15)):
+                return
+            block("%s braucht eine freigegebene Aktion vom Typ '%s'. Ablauf: nigel.py action request <ID> --type %s "
+                  "... → LWE gibt frei → action request erneut (reserviert) → dann dieses Werkzeug → action commit."
+                  % (tool, atype, atype))
+    if re.match(rules.get("read_pattern", "^$"), short):
+        return
+    block("%s ist in nigel/policy/mcp_rules.json nicht erfasst und nicht lesend. Aus Sicherheitsgründen blockiert; "
+          "LWE kann eine Regel ergänzen." % tool)
+
+
 def rel(path, root):
     p = os.path.normpath(os.path.join(root, path)).replace("\\", "/")
     r = os.path.normpath(root).replace("\\", "/").rstrip("/") + "/"
@@ -191,6 +276,10 @@ def main():
 
     if tool == "Bash":
         check_bash(inp.get("command", ""))
+        sys.exit(0)
+
+    if tool.startswith("mcp__"):
+        check_mcp(tool, inp, root)
         sys.exit(0)
 
     if tool in ("Edit", "Write", "MultiEdit", "NotebookEdit"):

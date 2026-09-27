@@ -12,7 +12,7 @@
   ],
   "external_action_types": [
     "send_email", "send_message", "publish_post", "send_offer", "calendar_invite",
-    "crm_write", "crm_stage_change", "share_file", "run_security_test", "purchase", "delete_record"
+    "crm_write", "crm_stage_change", "share_file", "run_security_test", "purchase", "delete_record", "code_merge"
   ],
   "approvers": ["LWE"],
   "_approvers_note": "Eingetragen von LWE am 2026-09-25 (Aktivierungs-PR).",

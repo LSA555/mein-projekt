@@ -1,0 +1,46 @@
+{
+  "version": "1.0.0",
+  "_note": "Geschützte Datei (nur LWE per PR). Regeln für Connector-Werkzeuge (MCP) im Schutz-Hook. Erste passende Regel gilt. effect: allow = frei; approval = nur mit reservierter, freigegebener Engine-Aktion dieses Typs (max. reservation_minutes alt); block = nie. Nicht erfasste Werkzeuge: lesende (read_pattern) frei, alle anderen blockiert.",
+  "reservation_minutes": 15,
+  "read_pattern": "^(get|list|search|read|query|discover|describe|show|help|guide|fetch|download|resolve|render|find|lookup|ask|export|balance|transactions|jobs?_|job_|models_|apps_search|apps_describe|data_source_discovery|accounts_discovery|field_discovery|suggest_time|tool_guidance|get_today|webflow_guide|supermetrics_guide|campaign_and_resource_get|creative_picker|instagram_insights|element_snapshot|virality_predictor|video_analysis_(status|jobs))",
+  "rules": [
+    {"match": "^mcp__github__merge_pull_request$", "effect": "approval", "action_type": "code_merge", "why": "Merge nach main ist LWEs Freigabe"},
+    {"match": "^mcp__github__(enable|disable)_pr_auto_merge$", "effect": "approval", "action_type": "code_merge", "why": "Auto-Merge ist ein Merge"},
+    {"match": "^mcp__github__(push_files|create_or_update_file|delete_file)$", "effect": "allow_unless_protected", "why": "Geschützte Pfade blockiert, übrige über PR-Review"},
+    {"match": "^mcp__github__(create_repository|fork_repository|actions_run_trigger)$", "effect": "block", "why": "Ausserhalb des Auftrags"},
+    {"match": "^mcp__github__", "effect": "allow", "why": "Branches, PRs, Kommentare: prüfbar über Review"},
+
+    {"match": "^mcp__gmail__create_draft$", "effect": "allow", "why": "Entwurf, kein Versand"},
+    {"match": "^mcp__gmail__(trash|untrash)_", "effect": "approval", "action_type": "delete_record"},
+    {"match": "^mcp__gmail__", "effect": "allow", "why": "Labels/Spam-Markierung, kein Versand vorhanden"},
+
+    {"match": "^mcp__google_calendar__delete_event$", "effect": "approval", "action_type": "delete_record"},
+    {"match": "^mcp__google_calendar__(create_event|update_event|respond_to_event)$", "effect": "approval", "action_type": "calendar_invite"},
+
+    {"match": "^mcp__google_drive__share_file$", "effect": "approval", "action_type": "share_file"},
+    {"match": "^mcp__google_drive__trash_file$", "effect": "approval", "action_type": "delete_record"},
+    {"match": "^mcp__google_drive__(create_file|update_file|copy_file)$", "effect": "allow", "why": "Eigene Ablage, nicht geteilt"},
+
+    {"match": "^mcp__hubspot__(manage_blog_post|manage_landing_page|manage_website_page|import-claude-design-from-url)$", "effect": "approval", "action_type": "publish_post"},
+    {"match": "^mcp__hubspot__manage_", "effect": "approval", "action_type": "crm_write"},
+    {"match": "^mcp__hubspot__show_feedback_form$", "effect": "allow"},
+
+    {"match": "^mcp__supermetrics_marketing_analytics__manage_campaign$", "effect": "approval", "action_type": "purchase", "why": "Kampagnenänderung kann Werbebudget auslösen"},
+    {"match": "^mcp__supermetrics_marketing_analytics__(manage_|contact_supermetrics)", "effect": "approval", "action_type": "crm_write"},
+
+    {"match": "^mcp__canva__publish-brand-template$", "effect": "approval", "action_type": "publish_post"},
+    {"match": "^mcp__canva__", "effect": "allow", "why": "Gestaltung, keine Veröffentlichung"},
+    {"match": "^mcp__gamma__", "effect": "allow", "why": "Gestaltung, keine Veröffentlichung"},
+
+    {"match": "^mcp__higgsfield__(publish_website|deploy_website|tiktok_prepare_publish|tiktok_connect|tiktok_reconnect|participate_in_contest|create_website|rename_website|website_(db|secrets|repo_access))$", "effect": "approval", "action_type": "publish_post"},
+    {"match": "^mcp__higgsfield__cancel_trial_auto_renewal$", "effect": "approval", "action_type": "purchase"},
+    {"match": "^mcp__higgsfield__", "effect": "allow", "why": "Medienerstellung"},
+
+    {"match": "^mcp__webflow__(ask_webflow_ai|webflow_guide_tool|get_asset_preview|element_snapshot_tool|data_agent_instructions_tool)$", "effect": "allow"},
+    {"match": "^mcp__webflow__", "effect": "approval", "action_type": "publish_post", "why": "Webflow-Werkzeuge ändern die Live-Website"},
+
+    {"match": "^mcp__claude_docs__", "effect": "allow", "why": "Eigene Dokumente"},
+    {"match": "^mcp__booking_com__", "effect": "allow", "why": "Nur Suche"},
+    {"match": "^mcp__claude_code_remote__(create_session|archive_session|interrupt_session|create_trigger|update_trigger|delete_trigger|fire_trigger|send_later|add_repo)$", "effect": "approval", "action_type": "code_merge", "why": "Startet oder steuert weitere Agenten/Zeitpläne"}
+  ]
+}
