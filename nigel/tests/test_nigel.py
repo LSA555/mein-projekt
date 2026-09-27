@@ -244,7 +244,8 @@ class TestSpecialistAgents(Sandbox):
     def test_rubrics_complete(self):
         folder = os.path.join(REPO, "nigel", "quality", "rubrics")
         names = {f[:-3] for f in os.listdir(folder) if f.endswith(".md")}
-        self.assertEqual(names, {"angebot", "linkedin-post", "praesentation", "security-bericht", "dokument", "meeting-brief"})
+        self.assertEqual(names, {"angebot", "linkedin-post", "praesentation", "security-bericht", "dokument", "meeting-brief",
+                                 "cyber-briefing"})
         for n in names:
             text = read(os.path.join(folder, n + ".md"))
             self.assertRegex(text, r"threshold: \d+")
@@ -262,6 +263,17 @@ class TestSpecialistAgents(Sandbox):
         skill = read(os.path.join(REPO, ".claude", "skills", "meeting-intelligence", "SKILL.md"))
         for label in ("VERIFIED", "REPORTED", "INFERRED", "UNKNOWN", "NOT CHECKED", "READY", "NEEDS INPUT", "BLOCKED"):
             self.assertIn(label, skill)
+
+    def test_cyber_briefing_skill_and_limits(self):
+        reg = jread(os.path.join(REPO, "nigel", "registry", "agents.json"))
+        michael = next(a for a in reg["agents"] if a["agent_id"] == "michael")
+        self.assertIn("cyber-briefing", michael.get("skills", []))
+        skill = read(os.path.join(REPO, ".claude", "skills", "cyber-briefing", "SKILL.md"))
+        self.assertIn("REPORTED", skill)
+        self.assertIn("nie `VERIFIED`", skill)
+        tid = self.new(flow="cyber-briefing")
+        self.assertEqual(self.n("action", "request", tid, "--type", "send_email", "--target", "k", "--payload", "w")[0], 3)
+        self.assertEqual(self.n("action", "request", tid, "--type", "run_security_test", "--target", "k", "--payload", "w")[0], 6)
 
     def test_weekly_briefs_stop_before_sending(self):
         tid = self.new(flow="weekly-meeting-briefs")
@@ -805,7 +817,7 @@ class TestFlows(unittest.TestCase):
         phase_ids = [p["id"] for p in pol["checkpoints"]]
         flows = {f[:-5]: jread(os.path.join(folder, f)) for f in os.listdir(folder)}
         self.assertEqual(set(flows), {"meeting-followup", "linkedin-lead", "lead-offer", "security-assessment", "night-run",
-                                      "general-task", "weekly-meeting-briefs"})
+                                      "general-task", "weekly-meeting-briefs", "cyber-briefing"})
         for fid, fl in flows.items():
             self.assertTrue(fl["dod"], fid)
             for c in fl["dod"]:

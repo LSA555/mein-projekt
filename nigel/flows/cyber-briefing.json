@@ -1,0 +1,27 @@
+{
+  "flow_id": "cyber-briefing",
+  "name": "Cyber Security Briefing (GL/VR)",
+  "version": "1.0.0",
+  "source": "Auftrag LWE 2026-09-27: Briefing-Fähigkeit für Michael, Zielgruppe Geschäftsleitung; Skill cyber-briefing",
+  "roles": ["orchestrator", "security", "grc", "research", "reviewer"],
+  "steps": [
+    {"id": "collect", "phase": "execute", "role": "security", "output": "Quellenliste mit URL, Datum, Kennzeichnung"},
+    {"id": "filter", "phase": "execute", "role": "security", "output": "Relevanzfilter angewendet, höchstens 5 Kernaussagen"},
+    {"id": "brief", "phase": "execute", "role": "security", "output": "GL-Fassung plus Anhang für IT"},
+    {"id": "review", "phase": "verify", "role": "reviewer", "output": "Prüfprotokoll Vera nach cyber-briefing.md"}
+  ],
+  "approval_gates": [
+    {"gate_id": "customer-alert", "action_types": ["send_email", "publish_post", "share_file"], "description": "Kundenwarnung, Post oder Weitergabe nur nach Freigabe durch LWE"}
+  ],
+  "forbidden_action_types": ["purchase", "delete_record", "run_security_test", "send_offer", "crm_write", "crm_stage_change", "code_merge", "calendar_invite"],
+  "night_allowed_phases": ["scope", "plan", "execute"],
+  "dod": [
+    {"id": "briefing-file", "description": "Briefing liegt als Datei vor", "metric": "bool", "op": "==", "target": true, "evidence": "Pfad", "requires_file": true},
+    {"id": "claims-labelled", "description": "Anteil der Aussagen mit Kennzeichnung", "metric": "ratio", "op": ">=", "target": 1.0, "evidence": "Prüfprotokoll"},
+    {"id": "sources-dated", "description": "Anteil der Quellen mit URL und Datum", "metric": "ratio", "op": ">=", "target": 1.0, "evidence": "Quellenliste"},
+    {"id": "key-points-max5", "description": "Anzahl Kernaussagen", "metric": "count", "op": "<=", "target": 5, "evidence": "Briefing"},
+    {"id": "decisions-listed", "description": "Entscheidungsbedarf der GL ausgewiesen", "metric": "bool", "op": "==", "target": true, "evidence": "Briefing"},
+    {"id": "no-customer-names", "description": "Kundennamen im Briefing", "metric": "count", "op": "==", "target": 0, "evidence": "Prüfprotokoll"}
+  ],
+  "budget": {"retry_limit": 2, "max_execution_minutes": 30}
+}

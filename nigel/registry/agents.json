@@ -902,7 +902,7 @@
       "agent_id": "michael",
       "name": "Michael",
       "team": "Core: Security & GRC",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "status": "sandbox",
       "evidence_level": "definition-file",
       "evidence": [
@@ -929,7 +929,10 @@
         "Glob",
         "Write",
         "Edit",
-        "Bash"
+        "Bash",
+        "Skill",
+        "WebSearch",
+        "WebFetch"
       ],
       "actions_allowed": [
         "Entwürfe in data/<mandant>/",
@@ -965,6 +968,11 @@
           "version": "0.2.0",
           "note": "Core-Team-Zuschnitt",
           "at": "2026-09-27"
+        },
+        {
+          "version": "0.3.0",
+          "note": "Skill cyber-briefing, WebSearch/WebFetch lesend",
+          "at": "2026-09-27"
         }
       ],
       "core_team": true,
@@ -974,6 +982,9 @@
         "cora",
         "quinn",
         "rhea"
+      ],
+      "skills": [
+        "cyber-briefing"
       ]
     },
     {
