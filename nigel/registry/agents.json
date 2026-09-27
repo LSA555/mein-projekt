@@ -107,7 +107,7 @@
       "agent_id": "ava",
       "name": "Ava",
       "team": "Core: Executive & Wissen",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "status": "sandbox",
       "evidence_level": "definition-file",
       "evidence": [
@@ -139,7 +139,19 @@
         "Glob",
         "Write",
         "Edit",
-        "Bash"
+        "Bash",
+        "Skill",
+        "mcp__Google_Calendar__list_calendars",
+        "mcp__Google_Calendar__list_events",
+        "mcp__Google_Calendar__get_event",
+        "mcp__Google_Calendar__search_events",
+        "mcp__Gmail__search_threads",
+        "mcp__Gmail__get_thread",
+        "mcp__Gmail__get_message",
+        "mcp__Gmail__create_draft",
+        "mcp__HubSpot__search_crm_objects",
+        "mcp__HubSpot__get_crm_objects",
+        "mcp__HubSpot__search_owners"
       ],
       "actions_allowed": [
         "Entwürfe in data/<mandant>/",
@@ -175,11 +187,19 @@
           "version": "0.2.0",
           "note": "Core-Team-Zuschnitt",
           "at": "2026-09-27"
+        },
+        {
+          "version": "0.3.0",
+          "note": "Skill meeting-intelligence, lesende Connectoren (Kalender, Gmail, HubSpot), Gmail-Entwurf",
+          "at": "2026-09-27"
         }
       ],
       "core_team": true,
       "absorbs": [
         "iris"
+      ],
+      "skills": [
+        "meeting-intelligence"
       ]
     },
     {

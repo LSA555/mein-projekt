@@ -1,8 +1,9 @@
 ---
 rubric: linkedin-post
-version: 1.0.0
+version: 1.1.0
 threshold: 85
 applies_to: LinkedIn-Beitrag, Carousel, Visual mit Text
+not_applicable: "Kriterium 6 (Visual) bei reinem Textpost ohne Bild: n/a. Erreichte Punkte / 90, als Prozent; bestanden ab 85 %."
 ---
 
 # Bewertungsraster: LinkedIn-Beitrag
@@ -27,3 +28,7 @@ applies_to: LinkedIn-Beitrag, Carousel, Visual mit Text
 | 7 | Barrierefreiheit | 10 | Alt-Text, keine Unicode-Formatierung, CamelCase-Hashtags, Kontrast ≥ 4.5:1 |
 | 8 | Tracking | 5 | UTM-Link definiert |
 | 9 | Stil | 10 | Klingt nach LWE (Schreibstil.md), keine KI-Floskeln |
+
+## Nicht anwendbar (Entscheid LWE, 2026-09-27)
+
+Bei einem **reinen Textpost ohne Bild** entfällt Kriterium 6. Dann wird auf 90 Punkte bewertet und in Prozent umgerechnet: bestanden ab **85 %**, also ab 77 von 90 Punkten. Der Steckbrief muss das Format «Textpost» ausdrücklich nennen. Muss-Kriterien gelten unverändert.

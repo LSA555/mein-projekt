@@ -244,13 +244,29 @@ class TestSpecialistAgents(Sandbox):
     def test_rubrics_complete(self):
         folder = os.path.join(REPO, "nigel", "quality", "rubrics")
         names = {f[:-3] for f in os.listdir(folder) if f.endswith(".md")}
-        self.assertEqual(names, {"angebot", "linkedin-post", "praesentation", "security-bericht", "dokument"})
+        self.assertEqual(names, {"angebot", "linkedin-post", "praesentation", "security-bericht", "dokument", "meeting-brief"})
         for n in names:
             text = read(os.path.join(folder, n + ".md"))
             self.assertRegex(text, r"threshold: \d+")
             points = [int(x) for x in re.findall(r"^\| \d+ \| [^|]+ \| (\d+) \|", text, re.M)]
             self.assertEqual(sum(points), 100, n)
             self.assertIn("Muss-Kriterien", text, n)
+
+    def test_meeting_intelligence_is_read_only_for_connectors(self):
+        reg = jread(os.path.join(REPO, "nigel", "registry", "agents.json"))
+        ava = next(a for a in reg["agents"] if a["agent_id"] == "ava")
+        self.assertIn("meeting-intelligence", ava.get("skills", []))
+        writing = [t for t in ava["tools_allowed"] if t.startswith("mcp__") and not re.search(
+            r"__(list|get|search)_|__create_draft$", t)]
+        self.assertEqual(writing, [], "Ava gets only reading connector tools plus Gmail drafts")
+        skill = read(os.path.join(REPO, ".claude", "skills", "meeting-intelligence", "SKILL.md"))
+        for label in ("VERIFIED", "REPORTED", "INFERRED", "UNKNOWN", "NOT CHECKED", "READY", "NEEDS INPUT", "BLOCKED"):
+            self.assertIn(label, skill)
+
+    def test_weekly_briefs_stop_before_sending(self):
+        tid = self.new(flow="weekly-meeting-briefs")
+        self.assertEqual(self.n("action", "request", tid, "--type", "calendar_invite", "--target", "x", "--payload", "y")[0], 3)
+        self.assertEqual(self.n("action", "request", tid, "--type", "publish_post", "--target", "x", "--payload", "y")[0], 6)
 
     def test_general_task_stops_before_external_effect(self):
         tid = self.new(flow="general-task")
@@ -789,7 +805,7 @@ class TestFlows(unittest.TestCase):
         phase_ids = [p["id"] for p in pol["checkpoints"]]
         flows = {f[:-5]: jread(os.path.join(folder, f)) for f in os.listdir(folder)}
         self.assertEqual(set(flows), {"meeting-followup", "linkedin-lead", "lead-offer", "security-assessment", "night-run",
-                                      "general-task"})
+                                      "general-task", "weekly-meeting-briefs"})
         for fid, fl in flows.items():
             self.assertTrue(fl["dod"], fid)
             for c in fl["dod"]:
