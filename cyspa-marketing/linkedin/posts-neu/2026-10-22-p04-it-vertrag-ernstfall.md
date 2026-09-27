@@ -65,15 +65,17 @@ Oktober ist European Cybersecurity Month. Unser Beitrag dazu: die Fragen, die ma
 (Einzige ECSM-Erwähnung in den vier Posts, gemäss Mix-Regel nur im Kommentar.)
 
 ## Visual-Briefing
-- **Format:** Single Graphic 1200×1500 px, Deep Space Blue, Serien-Badge `RESILIENZ KONKRET`, Cyan-Akzentlinie über der Headline, Cyan-Striche als Listenmarker.
-- **Headline (Montserrat Bold):** «Lesen Sie den IT-Vertrag, bevor Sie ihn im Ernstfall brauchen.» (identisch mit Merksatz im Post)
-- **Unterzeile:** «Fünf Fragen vor der nächsten Verlängerung:»
-- **Liste:** Reaktion auch nachts und am Wochenende? · Vorfall im Vertrag oder nach Aufwand? · Ihr Zugang ohne den Dienstleister? · Wer sichert die Spuren? · Wer zieht Spezialisten bei?
-- **Merksatz-Zeile:** «Die Klärung schützt beide Seiten.»
-- **Datei:** `cyspa-marketing/linkedin/assets-neu/2026-10-22-p04-it-vertrag/2026-10-22-p04-it-vertrag.png` (visuell geprüft).
+- **Format (CI v3.0):** Fakten-Karte 1200×1200 px, Variante «rows» (fünf Zeilen mit Pill-Badge). Navy-Verlauf mit Raster, Gold-Kante links, Raleway.
+- **Eyebrow:** `SECURITY4KMU` / `RESILIENZ KONKRET`
+- **Kicker:** «Fünf Fragen vor der nächsten Verlängerung»
+- **Headline (zweizeilig):** «Lesen Sie den IT-Vertrag,» / «bevor Sie ihn im Ernstfall brauchen.» (identisch mit Merksatz im Post)
+- **Zeilen (Badge · Frage):** Bereitschaft · Reaktion auch nachts und am Wochenende? · Kosten · Vorfall im Vertrag oder nach Aufwand? · Zugang · Ihr Zugang ohne den Dienstleister? · Spuren · Wer sichert die Spuren? · Spezialisten · Wer zieht Spezialisten bei?
+- **Schlusszeile:** «Die Klärung schützt beide Seiten.»
+- **Fusszeile:** Wortmarke `CYSPA.ch` · «Selbstcheck vor der Vertragsverlängerung»
+- **Datei:** `cyspa-marketing/linkedin/visuals-ci3/14-it-vertrag/2026-10-22-p04-it-vertrag.png` (ersetzt das Asset im alten Repo-CI unter `assets-neu/`; geprüft am 27.09.2026). Neu gegenüber dem alten Visual: Themen-Badges je Frage und die Fusszeile; Fragen unverändert.
 
 ## Alt-Text
-«Grafik von CYSPA, Serie Resilienz konkret. Titel: Lesen Sie den IT-Vertrag, bevor Sie ihn im Ernstfall brauchen. Fünf Fragen vor der nächsten Verlängerung: Reaktion auch nachts und am Wochenende? Vorfall im Vertrag oder nach Aufwand? Ihr Zugang ohne den Dienstleister? Wer sichert die Spuren? Wer zieht Spezialisten bei? Schlusssatz: Die Klärung schützt beide Seiten.»
+«Grafik von CYSPA, Serie Resilienz konkret. Titel: Lesen Sie den IT-Vertrag, bevor Sie ihn im Ernstfall brauchen. Fünf Fragen vor der nächsten Verlängerung: Bereitschaft, Reaktion auch nachts und am Wochenende? Kosten, Vorfall im Vertrag oder nach Aufwand? Zugang, Ihr Zugang ohne den Dienstleister? Spuren, wer sichert die Spuren? Spezialisten, wer zieht Spezialisten bei? Schlusssatz: Die Klärung schützt beide Seiten.»
 
 ## Quellen und Kennzeichnung
 

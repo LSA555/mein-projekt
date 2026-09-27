@@ -106,11 +106,13 @@ Hinweis zu den Zeilen «CI v3 Copy-Regel» (27.09.2026): Die Spalte «Draft» ze
 
 **Alt-Text Plan B:**
 
-> Grafik von CYSPA, Serie Inside CYSPA: Was «Partner» für uns bedeutet. Vier Prinzipien, an denen wir uns messen lassen: Prioritäten statt Papier, Sicherheit im Massstab des Unternehmens, Befähigen statt abhängig machen, Klartext im Management-Report. Darunter: CYSPA – Cyber Security Partners.
+> Grafik von CYSPA, Serie Inside CYSPA. Titel: Was «Partner» für uns bedeutet. Vier Prinzipien, an denen wir uns messen lassen: 1. Prioritäten statt Papier: Jedes Ergebnis sagt, was zuerst kommt und warum. 2. Sicherheit im Massstab des Unternehmens: die Massnahmen mit der grössten Wirkung fürs Geld. 3. Befähigen statt abhängig machen: Ihr Team kann nach dem Mandat mehr als vorher. 4. Klartext im Management-Report: Risiken in Geschäftssprache, Entscheidungsvorlagen statt Techniklisten. Fusszeile: CYSPA, Cyber Security Partners.
+
+(Alt-Text Plan B am 27.09.2026 an das neue Visual im CYSPA CI v3.0 angepasst, Gedankenstrich entfernt. Neues Visual Plan B: `cyspa-marketing/linkedin/visuals-ci3/12-partner-planb/2026-10-15-p11-partner-planb.png`, Fakten-Karte 1200×1200, Variante «rows» mit Nummern. Es ersetzt die Plan-B-Grafik im alten Repo-CI (Deep Space Blue, Montserrat, Logo-Plakette). Grafiktext: je Prinzip eine Kurzzeile aus dem Post-Text ergänzt; Schlusszeile «CYSPA – Cyber Security Partners» als Fusszeile «CYSPA · Cyber Security Partners» ohne Gedankenstrich. Falls Legal «Jedes unserer Ergebnisse» abschwächt, Zeile 1 in der Grafik entsprechend auf «Unsere Ergebnisse sagen, was zuerst kommt und warum» ändern.)
 
 **Alt-Text Plan A (Vorlage, nach Fotoauswahl konkretisieren):**
 
-> [OFFEN – Bildinhalt konkret beschreiben: wer/wie viele Personen, Situation, Ort nur wenn unkritisch.] Der Beitrag beschreibt die vier Arbeitsprinzipien von CYSPA: Prioritäten statt Papier, Sicherheit im Massstab des Unternehmens, Befähigen statt abhängig machen, Klartext im Management-Report.
+> [OFFEN: Bildinhalt konkret beschreiben: wer/wie viele Personen, Situation, Ort nur wenn unkritisch.] Der Beitrag beschreibt die vier Arbeitsprinzipien von CYSPA: Prioritäten statt Papier, Sicherheit im Massstab des Unternehmens, Befähigen statt abhängig machen, Klartext im Management-Report.
 
 ## 5. Erster Kommentar
 

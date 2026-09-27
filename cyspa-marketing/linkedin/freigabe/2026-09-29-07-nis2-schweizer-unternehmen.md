@@ -108,9 +108,9 @@ Hinweis für den Fach-Owner: «melden Cyberangriffe» ist leicht verkürzt. Meld
 
 **Alt-Text (für das LinkedIn-Feld):**
 
-> Grafik von CYSPA, Serie Regulatorik im Klartext: NIS2 ist EU-Recht und erreicht die Schweiz trotzdem. Drei Pfeile führen von «EU» zu «CH», beschriftet mit EU-Tochtergesellschaften, Lieferkettenanforderungen und Marktzugang. Fussnote: Parallel gilt in der Schweiz die ISG-Meldepflicht, Cyberangriffe auf kritische Infrastrukturen sind seit 1. April 2025 innert 24 Stunden dem Bundesamt für Cybersicherheit zu melden. Prüffragen im Beitragstext.
+> Grafik von CYSPA, Serie Regulatorik im Klartext. Titel: NIS2 ist EU-Recht. Und erreicht die Schweiz trotzdem. Drei Wege in die Schweiz: EU-Tochter, Tochtergesellschaften in der EU sind direkt betroffen, inklusive Pflichten der Führungsebene. Lieferkette, Anforderungen Ihrer EU-Kunden kommen als Vertragsklausel, Fragebogen oder Audit-Recht. Marktzugang, Dienste für EU-Kunden werden an den Anforderungen der Kunden gemessen. Hinweis Schweiz: Parallel gilt die ISG-Meldepflicht. Betreiber kritischer Infrastrukturen melden Cyberangriffe seit 1. April 2025 innert 24 Stunden dem Bundesamt für Cybersicherheit (BACS). Quellen: Richtlinie (EU) 2022/2555, ISG Art. 74a ff. Prüffragen im Beitragstext.
 
-(Gegenüber dem Repo-Alt-Text wurden die Headline der Grafik ergänzt und die Pfeilbeschreibung angepasst, damit Bild und Alt-Text übereinstimmen.)
+(Alt-Text am 27.09.2026 an das neue Visual im CYSPA CI v3.0 angepasst. Neues Visual: `cyspa-marketing/linkedin/visuals-ci3/07-nis2/2026-09-29-p06-nis2.png`, Fakten-Karte 1200×1200, Variante «rows». Es ersetzt das Asset im alten Repo-CI. Grafiktext gegenüber dem alten Visual: Pfeile EU→CH durch drei Zeilen mit Kurzbeschreibung ersetzt; der Gedankenstrich in der Fussnote entfernt; «24 h ans BACS» ausgeschrieben; Quellenzeile ergänzt. Die Art.-26-Direktanwendung steht bewusst nicht in der Grafik, solange der Fach-Owner sie nicht bestätigt hat.)
 
 ## 5. Erster Kommentar
 

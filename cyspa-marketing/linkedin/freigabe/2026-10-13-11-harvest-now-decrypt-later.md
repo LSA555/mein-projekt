@@ -107,7 +107,9 @@ Hinweis für den Fach-Owner: Die Mosca-Logik («Vertraulichkeitsdauer + Umstellu
 
 **Alt-Text (Static):**
 
-> Grafik von CYSPA, Serie Future Security: «Harvest now, decrypt later». Drei Stationen, durch Pfeile verbunden: heute abfangen (geschlossenes Schloss), jahrelang speichern (Archivbox), morgen entschlüsseln (offenes Schloss). Darunter die Frage: Wie lange müssen Ihre Daten vertraulich bleiben? Der Beitragstext erklärt den Relevanz-Test und das Krypto-Inventar als ersten Schritt.
+> Grafik von CYSPA, Serie Future Security: «Harvest now, decrypt later». Titel: Heute abgefangen. Morgen entschlüsselt. Eine Zeitachse mit drei Stationen: Heute, abfangen: Verschlüsselter Datenverkehr wird aufgezeichnet. Jahrelang, speichern: Aufzeichnen und Lagern ist günstig. Morgen, entschlüsseln: sobald Quantencomputer heutige Public-Key-Verfahren brechen. Darunter die Frage: Wie lange müssen Ihre Daten vertraulich bleiben? Fusszeile: Erster Schritt im Beitrag, das Krypto-Inventar.
+
+(Alt-Text am 27.09.2026 an das neue Visual im CYSPA CI v3.0 angepasst. Neues Visual: `cyspa-marketing/linkedin/visuals-ci3/11-harvest/2026-10-13-p10-harvest.png`, Fakten-Karte 1200×1200, Variante «timeline», Static. Grafiktext gegenüber dem alten Visual: Headline «Heute abgefangen. Morgen entschlüsselt.» nach dem ersten Satz des Post-Texts, der Begriff steht als Kicker darüber; Schloss- und Archiv-Icons durch eine Zeitachse mit Kurzbeschreibungen aus dem Post-Text ersetzt. Keine Jahreszahl, keine Zahl in der Grafik.)
 
 ## 5. Erster Kommentar
 

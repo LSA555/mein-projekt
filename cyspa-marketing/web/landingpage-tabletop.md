@@ -1,14 +1,14 @@
 ---
 tags: [cyspa, marketing, webseite, landingpage, tabletop, linkedin, p12]
-status: Entwurf – Freigabe LWE ausstehend
+status: Entwurf, Freigabe LWE ausstehend
 date: 2026-09-27
 source: claude
 chat_url: "https://claude.ai/code/session_01JsQoSQbozeyt2EYitpEXuf"
-grundlage: "linkedin/posts/2026-10-08-p12-tabletop-exercise.md, 02-content-pfeiler.md P12, 03-styleguide.md, 04-prozess-qualitaet.md, 06-kpi-reporting.md (UTM) – Branch claude/cyspa-linkedin-strategy-vte419"
+grundlage: "linkedin/posts/2026-10-08-p12-tabletop-exercise.md, 02-content-pfeiler.md P12, 03-styleguide.md, 04-prozess-qualitaet.md, 06-kpi-reporting.md (UTM); Branch claude/cyspa-linkedin-strategy-vte419"
 kampagne: "LinkedIn-Beitrag #10, Do 08.10.2026, 08:15 Uhr (P12 Executive Briefing)"
 ---
 
-# Landingpage «Tabletop-Übung» – `/tabletop`
+# Landingpage «Tabletop-Übung»: `/tabletop`
 
 **Einsatz:** Ziel des Links im ersten Kommentar zum LinkedIn-Beitrag #10 vom 08.10.2026 («Tabletop: Aus Plan wird Fähigkeit»). Die Seite löst den CTA des Beitrags ein: «Details und Terminanfrage».
 
@@ -24,12 +24,12 @@ kampagne: "LinkedIn-Beitrag #10, Do 08.10.2026, 08:15 Uhr (P12 Executive Briefin
 
 | Feld | Text | Länge |
 |---|---|---|
-| URL | `https://www.cyspa.ch/tabletop` | – |
+| URL | `https://www.cyspa.ch/tabletop` | n/a |
 | Title | Tabletop-Übung für die Geschäftsleitung \| CYSPA | 47 |
 | Meta-Description | Ein halber Tag mit Ihrer Führungsrunde: realistisches Szenario, moderierte Entscheidungen, dokumentierte Erkenntnisliste. Jetzt Gespräch vereinbaren. | 149 |
-| H1 | Wer entscheidet, wenn es ernst wird? | – |
-| Indexierung | `index, follow` (Seite ist auch ohne Kampagne nützlich) | – |
-| Open Graph | og:title = Title, og:description = Meta-Description, og:image = [PLATZHALTER: 1200×627-Bild, z. B. Slide 1 des Carousels] | – |
+| H1 | Wer entscheidet, wenn es ernst wird? | n/a |
+| Indexierung | `index, follow` (Seite ist auch ohne Kampagne nützlich) | n/a |
+| Open Graph | og:title = Title, og:description = Meta-Description, og:image = [PLATZHALTER: 1200×627-Bild, z. B. Slide 1 des Carousels] | n/a |
 
 **UTM-Schema** (gemäss `06-kpi-reporting.md`):
 
@@ -47,14 +47,16 @@ https://www.cyspa.ch/tabletop?utm_source=linkedin&utm_medium=organic&utm_campaig
 **Kommentar-Text für den Beitrag** (massgeblich ist das Freigabepaket `cyspa-marketing/linkedin/freigabe/2026-10-08-10-tabletop-uebung.md`, Abschnitt 5; hier nur gespiegelt):
 
 ```text
-Hier geht es zum Executive-Tabletop-Format von CYSPA — Ablauf, Aufwand und Terminanfrage: https://www.cyspa.ch/tabletop?utm_source=linkedin&utm_medium=organic&utm_campaign=p12-tabletop
+Hier geht es zum Executive-Tabletop-Format von CYSPA. Ablauf, Aufwand und Terminanfrage: https://www.cyspa.ch/tabletop?utm_source=linkedin&utm_medium=organic&utm_campaign=p12-tabletop
 
 Passend zum European Cybersecurity Month im Oktober: Ein guter Anlass, den Notfallplan einmal gemeinsam durchzuspielen.
 ```
 
+> Redaktion: Der Kommentar-Text ist hier nach den CI-v3-Copy-Regeln ohne Gedankenstrich gesetzt. Das Freigabepaket (Abschnitt 5) muss gleich lauten; dort vor der Publikation angleichen.
+
 Der Kommentar verspricht «Ablauf, Aufwand und Terminanfrage». Die Landingpage löst Ablauf und Terminanfrage ein; «Aufwand» nur, wenn die Platzhalter zu Dauer/Preis (FAQ) gefüllt sind. Sonst den Kommentar im Freigabepaket anpassen, nicht hier.
 
-**Messung:** Die UTM-Werte werden im Formular als versteckte Felder mitgesendet (siehe HTML). So landet die Quelle «LinkedIn / P12» mit der Anfrage im CRM (Feld Quelle gemäss `06-kpi-reporting.md`). Welches Analytics-Werkzeug die Seitenaufrufe erfasst: [PLATZHALTER: Analytics-Tool auf cyspa.ch – im Cookie-Banner und in der Datenschutzerklärung berücksichtigen].
+**Messung:** Die UTM-Werte werden im Formular als versteckte Felder mitgesendet (siehe HTML). So landet die Quelle «LinkedIn / P12» mit der Anfrage im CRM (Feld Quelle gemäss `06-kpi-reporting.md`). Welches Analytics-Werkzeug die Seitenaufrufe erfasst: [PLATZHALTER: Analytics-Tool auf cyspa.ch, im Cookie-Banner und in der Datenschutzerklärung berücksichtigen].
 
 ---
 
@@ -81,9 +83,9 @@ Wenn die ehrliche Antwort auf «Wer entscheidet jetzt?» lautet: «Kommt darauf 
 
 Die wertvollsten Erkenntnisse aus Übungen sind fast immer organisatorisch, nicht technisch. Typischerweise werden vier Dinge sichtbar:
 
-1. **Unklare Befugnisse.** Wer darf Systeme vom Netz nehmen, auch wenn damit das Geschäft steht? Wer gibt Externen den Auftrag – und bis zu welchem Betrag?
+1. **Unklare Befugnisse.** Wer darf Systeme vom Netz nehmen, auch wenn damit das Geschäft steht? Wer gibt Externen den Auftrag, und bis zu welchem Betrag?
 2. **Kommunikation ohne die üblichen Kanäle.** Wie erreichen Sie Mitarbeitende und Kunden, wenn E-Mail und Chat selbst betroffen sind? Wo liegen die Notfallkontakte?
-3. **Meldefristen unter Zeitdruck.** Datenschutzbehörde, Vertragspartner, allenfalls Aufsicht oder das Bundesamt für Cybersicherheit (BACS): Wer meldet was bis wann – und wer formuliert es?
+3. **Meldefristen unter Zeitdruck.** Datenschutzbehörde, Vertragspartner, allenfalls Aufsicht oder das Bundesamt für Cybersicherheit (BACS): Wer meldet was bis wann, und wer formuliert es?
 4. **Die Dienstleisterfrage.** Wer ist der erste Anruf? Gilt der Support-Vertrag auch am Wochenende? Steht die Nummer des Versicherers im Plan?
 
 ### Ablauf der Übung
@@ -174,8 +176,8 @@ Minimal gehalten (Datensparsamkeit, revDSG). Kein Pflicht-Opt-in für Marketing.
 | E-Mail (geschäftlich) | E-Mail | ja | `autocomplete="email"` |
 | Telefon | Tel. | nein | für Rückruf |
 | Nachricht | Textfeld | nein | Platzhaltertext: «Worum geht es Ihnen? Bitte keine vertraulichen Details zu Vorfällen.» |
-| `utm_source`, `utm_medium`, `utm_campaign`, `utm_content` | versteckt | – | aus der URL übernommen |
-| Honeypot `website` | versteckt | – | Spam-Schutz ohne Tracking (für Menschen unsichtbar, muss leer bleiben) |
+| `utm_source`, `utm_medium`, `utm_campaign`, `utm_content` | versteckt | n/a | aus der URL übernommen |
+| Honeypot `website` | versteckt | n/a | Spam-Schutz ohne Tracking (für Menschen unsichtbar, muss leer bleiben) |
 
 **Datenschutzhinweis (unter dem Formular):**
 «Wir verwenden Ihre Angaben ausschliesslich, um Ihre Anfrage zu beantworten. [PLATZHALTER: «Die Übermittlung erfolgt verschlüsselt.» erst nach Sicherheits-Check bestätigen] Weitere Informationen finden Sie in unserer [PLATZHALTER Datenschutzerklärung-Link].»
@@ -188,8 +190,8 @@ Minimal gehalten (Datensparsamkeit, revDSG). Kein Pflicht-Opt-in für Marketing.
 
 - `landingpage-tabletop.html` ist eine vollständige Vorlage: semantisches HTML, inline CSS, keine externen Abhängigkeiten, keine Tracker, Schriftarten lokal (`assets/fonts/`, Fallback Systemschrift).
 - Das Formular hat `action="[PLATZHALTER-FORMULAR-ENDPUNKT]"`. Es sendet erst, wenn ein Endpunkt eingetragen ist. Ein kleines Inline-Skript überträgt nur die UTM-Parameter in versteckte Felder.
-- Farben: Deep Space Blue `#0A1F44`, Counter Navy `#103157`, Cyber Cyan `#00AEEF` nur als Akzent (Linien, Rahmen, Fokusrahmen), Text auf Dunkel weiss. Kontrast geprüft nach `03-styleguide.md` §6.
-- Das Logo liegt nur als PNG mit 288×122 px vor. Für Retina-Displays: [PLATZHALTER: Logo als SVG anfordern].
+- Gestaltung nach CYSPA CI v3.0 (`ci-referenz/CI-v3-kurzreferenz.md`, Stil wie Flyer «CISO as a Service» von LWE): Schrift Raleway (lokal, `assets/fonts/`, OFL); Navy `#103157` und Navy Deep `#071828` für dunkle Abschnitte; Gold `#ffc000` nur als Akzent (Striche, Häkchen, Gold-Seitenbalken links) und als CTA-Button mit Navy-Text; Hover Blue `#2062af` nur für Button-Hover; Section-Labels Primary Blue `#425b76`; Fliesstext `#5a5a5a`. Kopfzeile mit Wortmarke «CYSPA.ch» («.ch» in Gold) und «Cyber Security Partners». Das frühere Cyan-Design ist ungültig.
+- Die Vorlage verwendet die Wortmarke als Text. Die Bildmarke liegt nur als PNG mit 288×122 px vor (`assets/img/cyspa-logo-transparent.png`, helle Variante für dunklen Grund `cyspa-logo-hell.png`, abgeleitet). Für Retina und Druck: [PLATZHALTER: Logo als SVG anfordern].
 - In WordPress o. Ä.: Abschnitte als Blöcke nachbauen oder die Vorlage als eigenes Seiten-Template verwenden. Kopf- und Fussbereich der bestehenden Seite übernehmen, Impressum und Datenschutz verlinken.
 
 ## 5. Prüfliste vor Livegang

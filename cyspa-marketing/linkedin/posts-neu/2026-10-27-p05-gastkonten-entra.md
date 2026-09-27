@@ -58,14 +58,15 @@ Geprüft am 27.09.2026 (Post-Text, erster Kommentar, Titel): kein Gedankenstrich
 Keiner nötig.
 
 ## Visual-Briefing
-- **Format:** 6 Slides, 1080×1350 px, als PDF-Dokument-Post, Deep Space Blue, Serien-Badge `MICROSOFT SECURITY PRAXIS`, Pager oben rechts.
-- **Slide 1 (Hook):** «Wer darf in Ihrem Tenant Gäste einladen?» — Unterzeile: «Standard in Entra ID: alle Benutzer, auch Gäste. Fünf Prüfpunkte für Ihre Gastkonten.»
-- **Slides 2–5:** je ein Prüfpunkt mit Nummern-Chip, Einstellungsname in JetBrains Mono: `Last interactive sign-in time`, `Guest invite settings`, `Guest user access restrictions`, `Sponsors`.
-- **Slide 6 (CTA):** Prüfpunkt 5 + Selbstcheck-Frage als Merksatz, Logo + www.cyspa.ch.
-- **Dateien:** `cyspa-marketing/linkedin/assets-neu/2026-10-27-p05-gastkonten/` (slide-01…06.png, 2026-10-27-p05-gastkonten.pdf mit echtem Textlayer; alle Slides visuell geprüft).
+- **Format (CI v3.0):** Tipp-Carousel, 6 Slides 1080×1350 px, als PDF-Dokument-Post (810×1012,5 pt, Raleway eingebettet, Textlayer). Das CI sieht 4 Slides vor; hier 6, weil fünf Prüfpunkte je eine Einstellung brauchen (Begründung im README `visuals-ci3/README.md`).
+- **Eyebrow auf allen Slides:** `SECURITY4KMU` / `MICROSOFT SECURITY PRAXIS`. Pager «n / 6» unten links, `www.cyspa.ch` unten rechts.
+- **Slide 1 (Cover, Navy-Verlauf mit Raster, Wortmarke CYSPA.ch):** Headline-Block «Wer darf in Ihrem Tenant» / «Gäste einladen?» mit Gold-Balken; darüber «Standard in Entra ID: alle Benutzer, auch Gäste. Fünf Prüfpunkte für Ihre Gastkonten.»
+- **Slides 2–5 (weiss, Bildmarke):** Label «Prüfpunkt 1–4», Lead-Titel, Body, Kasten «Einstellung in Entra ID» mit `Last interactive sign-in time`, `Guest invite settings`, `Guest user access restrictions`, `Sponsors`. Texte wie bisher.
+- **Slide 6 (CTA, Navy):** «Prüfpunkt 5: Regelmässig bestätigen» mit Body und Merksatz «Selbstcheck: Wie viele Gäste haben sich seit 90 Tagen nicht angemeldet?»
+- **Dateien:** `cyspa-marketing/linkedin/visuals-ci3/15-gastkonten/` (2026-10-27-p05-gastkonten.pdf, slide-01…06.png; ersetzt die Dateien im alten Repo-CI unter `assets-neu/`; alle Slides visuell geprüft am 27.09.2026). PDF-Titel: «Gastkonten in Entra ID: 5 Prüfpunkte».
 
 ## Alt-Text
-«Carousel von CYSPA, Serie Microsoft Security Praxis, über Gastkonten in Microsoft Entra ID. Standardmässig dürfen alle Benutzer, auch Gäste, Gäste einladen. Fünf Prüfpunkte: 1. Gäste sichtbar machen mit der Spalte Last interactive sign-in time. 2. Einladen eingrenzen über die Guest invite settings und die Rolle Guest Inviter. 3. Sicht der Gäste begrenzen über Guest user access restrictions. 4. Jeder Gast hat einen Sponsor. 5. Regelmässig bestätigen mit Access Reviews oder einer Quartalsliste. Selbstcheck: Wie viele Gäste haben sich seit 90 Tagen nicht angemeldet? Alle Inhalte stehen auch im Beitragstext.»
+«Carousel von CYSPA, Serie Microsoft Security Praxis, über Gastkonten in Microsoft Entra ID, sechs Slides. Titel: Wer darf in Ihrem Tenant Gäste einladen? Standardmässig dürfen alle Benutzer, auch Gäste, Gäste einladen. Fünf Prüfpunkte: 1. Gäste sichtbar machen, Einstellung Last interactive sign-in time. 2. Einladen eingrenzen, Einstellung Guest invite settings und die Rolle Guest Inviter. 3. Sicht der Gäste begrenzen, Einstellung Guest user access restrictions. 4. Jeder Gast hat einen Sponsor, Einstellung Sponsors. 5. Regelmässig bestätigen mit Access Reviews oder einer Quartalsliste. Selbstcheck: Wie viele Gäste haben sich seit 90 Tagen nicht angemeldet? Alle Inhalte stehen auch im Beitragstext.»
 
 ## Quellen und Kennzeichnung
 

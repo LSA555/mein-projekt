@@ -62,16 +62,17 @@ Geprüft am 27.09.2026 (Post-Text, erster Kommentar, Titel): kein Gedankenstrich
 Keiner nötig (Dialog-CTA, kein Link). Für Gesprächsanfragen aus Kommentaren gilt der Tracking-Link aus dem Entwurf: `https://www.cyspa.ch/?utm_source=linkedin&utm_medium=organic&utm_campaign=passwordless-2026-10` (Kampagnenmonat von 09 auf 10 angepasst, da der Slot im Oktober liegt).
 
 ## Visual-Briefing
-- **Format:** Single Graphic 1200×1500 px, Deep Space Blue, Serien-Badge `QUICK TIP`, Cyan nur als Akzentlinie und Nummernrahmen.
-- **Headline (Montserrat Bold):** «Was man nicht eintippen kann, kann auch keine gefälschte Seite abgreifen.» (identisch mit dem Merksatz im Post)
-- **Unterzeile:** «Der Weg zu Passkeys in vier Schritten»
-- **Liste 1–4** mit Nummern-Chips, Inhalt identisch mit den vier Schritten im Post (gekürzt).
-- **Merksatz-Zeile:** «Schritt 1 und 2 lassen sich ohne grosses Projekt starten.»
-- Logo auf weisser Plakette unten rechts, www.cyspa.ch unten links.
-- **Datei:** `cyspa-marketing/linkedin/assets-neu/2026-10-20-p01-passwordless/2026-10-20-p01-passwordless.png` (visuell geprüft: Text lesbar, kein Überlauf, Cyan nur Akzent).
+- **Format (CI v3.0):** Fakten-Karte 1200×1200 px, Variante «timeline» (vier Schritte als Zeitachse, Gold-Punkte; Schritt 1 und 2 gefüllt = ohne grosses Projekt startbar). Navy-Verlauf mit Raster, Gold-Kante links, Raleway.
+- **Eyebrow:** `SECURITY4KMU` / `QUICK TIP`
+- **Kicker:** «Der Weg zu Passkeys in vier Schritten»
+- **Headline (zweizeilig):** «Was man nicht eintippen kann,» / «kann auch keine gefälschte Seite abgreifen.» (identisch mit dem Merksatz im Post)
+- **Zeitachse:** Schritt 1 «Ein eigenes Passwort pro Konto, ohne Ausnahme» · Schritt 2 «Passwort-Manager für alle Mitarbeitenden» · Schritt 3 «Phishing-resistente MFA, zuerst für Admin-Konten» · Schritt 4 «Passkeys für alle, Passwort-Logins schrittweise abschalten»
+- **Legende:** «Schritt 1 und 2 lassen sich ohne grosses Projekt starten.»
+- **Fusszeile:** Wortmarke `CYSPA.ch` (.ch in Gold) · «Quellen: W3C WebAuthn Level 3 · NIST SP 800-63B-4»
+- **Datei:** `cyspa-marketing/linkedin/visuals-ci3/13-passwordless/2026-10-20-p01-passwordless.png` (ersetzt das Asset im alten Repo-CI unter `assets-neu/`; visuell und per Pixelprüfung geprüft am 27.09.2026). Grafiktext inhaltlich unverändert, neu ist die Quellenzeile.
 
 ## Alt-Text
-«Grafik von CYSPA, Serie Quick Tip. Titel: Was man nicht eintippen kann, kann auch keine gefälschte Seite abgreifen. Der Weg zu Passkeys in vier Schritten: 1. Ein eigenes Passwort pro Konto, ohne Ausnahme. 2. Passwort-Manager für alle Mitarbeitenden. 3. Phishing-resistente MFA, zuerst für Admin-Konten. 4. Passkeys für alle, Passwort-Logins schrittweise abschalten. Hinweis: Schritt 1 und 2 lassen sich ohne grosses Projekt starten.»
+«Grafik von CYSPA, Serie Quick Tip. Der Weg zu Passkeys in vier Schritten. Titel: Was man nicht eintippen kann, kann auch keine gefälschte Seite abgreifen. Zeitachse: Schritt 1, ein eigenes Passwort pro Konto, ohne Ausnahme. Schritt 2, Passwort-Manager für alle Mitarbeitenden. Schritt 3, phishing-resistente Multi-Faktor-Authentifizierung, zuerst für Admin-Konten. Schritt 4, Passkeys für alle, Passwort-Logins schrittweise abschalten. Schritt 1 und 2 sind hervorgehoben: Sie lassen sich ohne grosses Projekt starten. Quellen: W3C WebAuthn Level 3, NIST SP 800-63B-4.»
 
 ## Quellen und Kennzeichnung
 

@@ -1,13 +1,13 @@
 ---
 tags: [cyspa, marketing, webseite, texte, seo]
-status: Entwurf – Freigabe LWE ausstehend
+status: Entwurf, Freigabe LWE ausstehend
 date: 2026-09-27
 source: claude
 chat_url: "https://claude.ai/code/session_01JsQoSQbozeyt2EYitpEXuf"
 grundlage: "linkedin/01-strategie.md, 02-content-pfeiler.md, 03-styleguide.md, 04-prozess-qualitaet.md, posts/2026-10-01-p08, posts/2026-10-08-p12, posts/2026-10-15-p11 (Branch claude/cyspa-linkedin-strategy-vte419)"
 ---
 
-# Webseite cyspa.ch – Seitentexte (Entwurf)
+# Webseite cyspa.ch: Seitentexte (Entwurf)
 
 **Zweck:** Texte zum Einpflegen ins CMS durch die Webseiten-Verantwortlichen. Die bestehende Webseite war aus dieser Umgebung nicht erreichbar. Die Texte sind deshalb **nicht** mit dem heutigen Stand von cyspa.ch abgeglichen.
 
@@ -17,7 +17,7 @@ grundlage: "linkedin/01-strategie.md, 02-content-pfeiler.md, 03-styleguide.md, 0
 - `> Redaktion:` = interner Hinweis. **Nicht** auf die Webseite übernehmen.
 - Jede Leistung stammt aus einem Content-Pfeiler oder Beitrag im Repo. Die Quelle steht jeweils im Redaktionshinweis.
 - Keine Superlative, keine Kundennamen, keine Zahlen ohne Beleg (Legal-Gate, `04-prozess-qualitaet.md` §2).
-- Kontaktangaben nur aus dem Repo: www.cyspa.ch · info@cyspa.ch · +41 41 521 61 61 · Rotkreuz · LinkedIn-Unternehmensseite.
+- Kontaktangaben nur aus dem Repo: www.cyspa.ch · info@cyspa.ch · +41 41 521 61 61 · Rotkreuz · LinkedIn-Unternehmensseite. Adresse Erlenstrasse 4B, CH-6343 Rotkreuz aus dem Flyer «CISO as a Service» von LWE (`ci-referenz/beispiel-flyer-ciso-as-a-service.jpg`).
 
 **Seitenstruktur (Vorschlag)**
 
@@ -37,18 +37,18 @@ grundlage: "linkedin/01-strategie.md, 02-content-pfeiler.md, 03-styleguide.md, 0
 
 | Feld | Text | Länge |
 |---|---|---|
-| Title | CYSPA – Cybersecurity-Partner für Schweizer KMU | 47 |
+| Title | CYSPA \| Cybersecurity-Partner für Schweizer KMU | 47 |
 | Meta-Description | CISO-as-a-Service, Tabletop-Übungen und Security-Assessments für Schweizer KMU und Mid-Market. Wir übersetzen Cyberrisiken in Entscheide. | 137 |
-| H1 | Cyberrisiken in Geschäftsentscheide übersetzen | – |
+| H1 | Cyberrisiken in Geschäftsentscheide übersetzen | n/a |
 
 ### Hero
 
-**Kicker:** CYSPA – Cyber Security Partners · Rotkreuz
+**Kicker:** CYSPA · Cyber Security Partners · Rotkreuz
 
 **H1:** Cyberrisiken in Geschäftsentscheide übersetzen
 
 **Subline:**
-Wir übersetzen Cyberrisiken in Geschäftsentscheide – und Geschäftsentscheide in umsetzbare Sicherheit. Im Massstab von Schweizer KMU und Mid-Market-Unternehmen.
+Wir übersetzen Cyberrisiken in Geschäftsentscheide. Und Geschäftsentscheide in umsetzbare Sicherheit. Im Massstab von Schweizer KMU und Mid-Market-Unternehmen.
 
 **Buttons:**
 - Primär: «Erstgespräch vereinbaren» → `/kontakt`
@@ -82,10 +82,10 @@ Wir übersetzen Cyberrisiken in Geschäftsentscheide – und Geschäftsentscheid
 |---|---|---|
 | **CISO-as-a-Service** | Security-Führung, ohne eine eigene CISO-Stelle zu schaffen: Standortbestimmung, Roadmap, Management-Reporting. | `/leistungen#ciso-as-a-service` |
 | **Tabletop-Übung** | Ein halber Tag mit Ihrer Führungsrunde: realistisches Szenario, moderierte Entscheidungen, dokumentierte Erkenntnisliste. | `/tabletop` |
-| **Security-Baseline für KMU** | Die ersten Massnahmen in der richtigen Reihenfolge – mit ehrlicher Aufwandsangabe. | `/leistungen#baseline` |
+| **Security-Baseline für KMU** | Die ersten Massnahmen in der richtigen Reihenfolge, mit ehrlicher Aufwandsangabe. | `/leistungen#baseline` |
 | **Microsoft-365-Security-Assessment** | Ihre Microsoft-Umgebung auf Konfigurationsebene geprüft: Identitäten, Zugriffe, Datenfreigaben. | `/leistungen#m365` |
-| **Pentest und Attack Simulation** | Angriffspfade sichtbar machen, bevor es jemand anderes tut – mit sauberem Scope und priorisierter Behebung. | `/leistungen#pentest` |
-| **Regulatorik und Compliance** | Betrifft uns das? NIS2, ISG, revDSG, ISO 27001, DORA – eingeordnet für Ihr Unternehmen. | `/leistungen#regulatorik` |
+| **Pentest und Attack Simulation** | Angriffspfade sichtbar machen, bevor es jemand anderes tut. Mit sauberem Scope und priorisierter Behebung. | `/leistungen#pentest` |
+| **Regulatorik und Compliance** | Betrifft uns das? NIS2, ISG, revDSG, ISO 27001, DORA: eingeordnet für Ihr Unternehmen. | `/leistungen#regulatorik` |
 | **AI Security und Governance** | KI kontrolliert nutzen statt verbieten: Richtlinie, Datenklassen, Berechtigungen. | `/leistungen#ai-security` |
 
 ### Vertrauenselemente
@@ -93,16 +93,16 @@ Wir übersetzen Cyberrisiken in Geschäftsentscheide – und Geschäftsentscheid
 **Zwischentitel (H2):** Woran Sie uns messen können
 
 **Vier Arbeitsprinzipien**
-1. **Prioritäten statt Papier.** Jedes Ergebnis beantwortet: Was tun wir zuerst – und warum?
+1. **Prioritäten statt Papier.** Jedes Ergebnis beantwortet: Was tun wir zuerst, und warum?
 2. **Sicherheit im Massstab des Unternehmens.** Die Massnahmen mit der grössten Wirkung fürs Geld, und die Ehrlichkeit, den Rest wegzulassen.
 3. **Befähigen statt abhängig machen.** Ihr Team kann nach dem Mandat mehr als vorher.
 4. **Klartext im Management-Report.** Risiken in Geschäftssprache, Entscheidungsvorlagen statt Techniklisten.
 
 **Belege (nur mit Nachweis einsetzen)**
-- [PLATZHALTER: Zertifizierungen der Mitarbeitenden bzw. des Unternehmens – nur mit Nachweis, z. B. Zertifikatsnummer]
-- [PLATZHALTER: Mitgliedschaften und Partnerschaften – nur bestehende, mit Logo-Nutzungsrecht]
-- [PLATZHALTER: Kundenstimme oder Referenz – nur mit schriftlicher Freigabe des Kunden, sonst Block weglassen]
-- [PLATZHALTER: Gründungsjahr / seit wann tätig – nur wenn belegt]
+- [PLATZHALTER: Zertifizierungen der Mitarbeitenden bzw. des Unternehmens, nur mit Nachweis, z. B. Zertifikatsnummer]
+- [PLATZHALTER: Mitgliedschaften und Partnerschaften, nur bestehende, mit Logo-Nutzungsrecht]
+- [PLATZHALTER: Kundenstimme oder Referenz, nur mit schriftlicher Freigabe des Kunden, sonst Block weglassen]
+- [PLATZHALTER: Gründungsjahr / seit wann tätig, nur wenn belegt]
 
 **LinkedIn-Hinweis:**
 Was wir in der Praxis sehen, teilen wir regelmässig auf LinkedIn: von Microsoft-Security-Handwerk über Regulatorik im Klartext bis zu Übungen mit Führungsteams. → «CYSPA auf LinkedIn folgen» (https://www.linkedin.com/company/56471500/)
@@ -111,7 +111,7 @@ Was wir in der Praxis sehen, teilen wir regelmässig auf LinkedIn: von Microsoft
 
 ### Abschluss-CTA
 
-**H2:** Wo stehen Sie – und was ist der nächste sinnvolle Schritt?
+**H2:** Wo stehen Sie, und was ist der nächste sinnvolle Schritt?
 
 **Text:**
 Ein erstes Gespräch klärt, wo Sie stehen und ob wir der richtige Partner sind. Sachlich, ohne Verkaufsdruck.
@@ -133,14 +133,14 @@ Bei einem akuten Vorfall bitte telefonisch melden und keine Details per Formular
 
 | Feld | Text | Länge |
 |---|---|---|
-| Title | Leistungen – CISO-as-a-Service und Tabletop \| CYSPA | 51 |
+| Title | Leistungen: CISO-as-a-Service und Tabletop \| CYSPA | 51 |
 | Meta-Description | CISO-as-a-Service, Tabletop-Übungen, Microsoft-365-Assessment, Pentest, Regulatorik und AI Security für Schweizer KMU und Mid-Market. | 133 |
-| H1 | Leistungen für Geschäftsleitung, IT und Security | – |
+| H1 | Leistungen für Geschäftsleitung, IT und Security | n/a |
 
 **Intro:**
 Wir beginnen dort, wo der nächste Franken das grösste Risiko reduziert. Jede Leistung endet mit einem Ergebnis, das Sie umsetzen oder entscheiden können: eine priorisierte Liste, eine Roadmap, eine Entscheidungsvorlage.
 
-**Preise und Pensum:** [PLATZHALTER: Preismodell bzw. Hinweis «Angebot nach Erstgespräch» – von LWE festzulegen]
+**Preise und Pensum:** [PLATZHALTER: Preismodell bzw. Hinweis «Angebot nach Erstgespräch», von LWE festzulegen]
 
 ---
 
@@ -249,7 +249,7 @@ Security- und IT-Verantwortliche, die Wirksamkeit nachweisen oder Prioritäten s
 NIS2 ist EU-Recht und betrifft Schweizer Unternehmen trotzdem, etwa über EU-Tochtergesellschaften, Lieferketten oder Marktzugang. Dazu kommen die Meldepflicht nach ISG für Betreiberinnen kritischer Infrastrukturen, das revDSG, im Finanzsektor FINMA und DORA-Ausstrahlung sowie Sicherheitsfragebogen von Grosskunden.
 
 **Vorgehen**
-Betroffenheits-Check («Betrifft uns das – und über welchen Weg?»), danach Gap-Assessment gegen die relevanten Anforderungen (z. B. ISO 27001) und Unterstützung beim Beantworten von Kundenfragebogen.
+Betroffenheits-Check («Betrifft uns das, und über welchen Weg?»), danach Gap-Assessment gegen die relevanten Anforderungen (z. B. ISO 27001) und Unterstützung beim Beantworten von Kundenfragebogen.
 
 **Ergebnis**
 Klarheit über die Betroffenheit, eine Lückenliste mit Prioritäten und nachvollziehbare Nachweise.
@@ -284,7 +284,7 @@ Geschäftsleitungen, Governance- und Datenschutzverantwortliche, IT-Leitungen vo
 ### Abschluss-CTA Leistungen
 
 **H2:** Nicht sicher, wo Sie anfangen sollen?
-**Text:** Genau dafür ist das Erstgespräch da. Wir klären, welche Leistung jetzt sinnvoll ist – und welche noch warten kann.
+**Text:** Genau dafür ist das Erstgespräch da. Wir klären, welche Leistung jetzt sinnvoll ist. Und welche noch warten kann.
 **Button:** «Erstgespräch vereinbaren» → `/kontakt`
 
 > Redaktion: Bewusst nicht aufgenommen, weil im Repo nur als Gesprächsthema, nicht als Leistung belegt: Krypto-Inventar / Post-Quantum (P10), Whitepaper und Decision Guide (P12, noch nicht erstellt). Aufnahme nur nach Entscheid LWE.
@@ -297,15 +297,15 @@ Geschäftsleitungen, Governance- und Datenschutzverantwortliche, IT-Leitungen vo
 
 | Feld | Text | Länge |
 |---|---|---|
-| Title | Über uns – CYSPA Cyber Security Partners, Rotkreuz | 50 |
+| Title | Über uns \| CYSPA Cyber Security Partners, Rotkreuz | 50 |
 | Meta-Description | CYSPA GmbH aus Rotkreuz: pragmatische Cybersecurity für Schweizer KMU und Mid-Market. Unsere Arbeitsprinzipien und wie wir arbeiten. | 132 |
-| H1 | Cyber Security Partners – mit Betonung auf Partner | – |
+| H1 | Cyber Security Partners. Mit Betonung auf Partner | n/a |
 
 ### Einstieg
 
 CYSPA steht für Cyber Security Partners. Das Wort «Partner» steht dort nicht, weil es gut klingt, sondern weil wir eine klare Vorstellung davon haben, wie Security-Arbeit für Schweizer Unternehmen funktionieren muss: konkret, ehrlich im Aufwand und verständlich für die Geschäftsleitung.
 
-Wir arbeiten für Schweizer KMU und Mid-Market-Unternehmen, für Geschäftsleitungen und Verwaltungsräte ebenso wie für IT- und Security-Teams. Unser Sitz ist in Rotkreuz. [PLATZHALTER: Gründungsjahr und Kurzgeschichte – nur wenn belegt]
+Wir arbeiten für Schweizer KMU und Mid-Market-Unternehmen, für Geschäftsleitungen und Verwaltungsräte ebenso wie für IT- und Security-Teams. Unser Sitz ist in Rotkreuz. [PLATZHALTER: Gründungsjahr und Kurzgeschichte, nur wenn belegt]
 
 ### Wofür wir stehen
 
@@ -315,7 +315,7 @@ Wir arbeiten für Schweizer KMU und Mid-Market-Unternehmen, für Geschäftsleitu
 
 ### Vier Arbeitsprinzipien
 
-1. **Prioritäten statt Papier.** Ein Assessment, das nicht in einer umsetzbaren Roadmap endet, ist Dekoration. Jedes unserer Ergebnisse beantwortet die Frage: Was tun wir zuerst – und warum?
+1. **Prioritäten statt Papier.** Ein Assessment, das nicht in einer umsetzbaren Roadmap endet, ist Dekoration. Jedes unserer Ergebnisse beantwortet die Frage: Was tun wir zuerst, und warum?
 2. **Sicherheit im Massstab des Unternehmens.** Ein Betrieb mit 50 Mitarbeitenden braucht keine Konzern-Governance. Er braucht die Massnahmen mit der grössten Wirkung fürs Geld und die Ehrlichkeit, den Rest wegzulassen.
 3. **Befähigen statt abhängig machen.** Unser Erfolg zeigt sich daran, dass Ihr Team nach dem Mandat mehr kann und mehr versteht als vorher.
 4. **Klartext im Management-Report.** Risiken in Geschäftssprache, Entscheidungsvorlagen statt Techniklisten. Wenn der Verwaltungsrat nach 15 Minuten die Lage versteht, haben wir unseren Job gemacht.
@@ -324,17 +324,17 @@ Wir arbeiten für Schweizer KMU und Mid-Market-Unternehmen, für Geschäftsleitu
 
 ### Team
 
-[PLATZHALTER: Team-Vorstellung – Namen, Rollen, Fachgebiete. Fotos nur echte Aufnahmen und nur mit dokumentierter Einwilligung der abgebildeten Personen (revDSG, Recht am eigenen Bild). Keine KI-generierten Personenbilder.]
+[PLATZHALTER: Team-Vorstellung: Namen, Rollen, Fachgebiete. Fotos nur echte Aufnahmen und nur mit dokumentierter Einwilligung der abgebildeten Personen (revDSG, Recht am eigenen Bild). Keine KI-generierten Personenbilder.]
 
-[PLATZHALTER: Teamgrösse – nur wenn gewünscht und belegt]
+[PLATZHALTER: Teamgrösse, nur wenn gewünscht und belegt]
 
-[PLATZHALTER: Zertifizierungen und Qualifikationen – nur mit Nachweis]
+[PLATZHALTER: Zertifizierungen und Qualifikationen, nur mit Nachweis]
 
 ### Unternehmensangaben
 
-- CYSPA GmbH, Rotkreuz
-- [PLATZHALTER: Strasse, Hausnummer, PLZ]
-- [PLATZHALTER: UID / Handelsregistereintrag – gehört ins Impressum]
+- CYSPA GmbH
+- Erlenstrasse 4B, CH-6343 Rotkreuz
+- [PLATZHALTER: UID / Handelsregistereintrag, gehört ins Impressum]
 - info@cyspa.ch · +41 41 521 61 61 · www.cyspa.ch
 - LinkedIn: https://www.linkedin.com/company/56471500/
 
