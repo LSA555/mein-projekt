@@ -89,7 +89,7 @@ Leistungsportfolio auf der Rückseite entspricht `webseite-texte.md`. Änderunge
 - **Sicherheitsabstand:** Alle Texte und das Logo liegen mindestens 12 mm innerhalb des Endformats.
 - **Schneidemarken:** nicht im PDF enthalten. Bei Bedarf in der Druckerei ergänzen lassen bzw. Druckerei-Vorgabe beachten.
 - **Farbraum:** Das PDF ist RGB (Browser-Rendering). CI-Werte: Deep Space Blue `#0A1F44`, Counter Navy `#103157`, Cyber Cyan `#00AEEF`, Security Grey `#F2F2F2`. Die Druckerei konvertiert nach CMYK (z. B. PSO Coated v3). [PLATZHALTER: offizielle CMYK- bzw. Pantone-Werte aus dem CI-Manual, falls vorhanden.] Grosse Navy-Fläche: Proof anfordern, damit das Blau nicht ins Violett kippt.
-- **Logo:** Nur als PNG 288 × 122 px vorhanden. Bei 44 mm Druckbreite sind das rund 165 dpi, für Offsetdruck zu wenig. **Vor dem Druck Vektorlogo (SVG/PDF/EPS) einsetzen.** [PLATZHALTER: Vektorlogo]
+- **Logo:** Nur als PNG 288 × 122 px vorhanden. Bei rund 31 mm Druckbreite sind das etwa 240 dpi, unter den für Offsetdruck üblichen 300 dpi. **Vor dem Druck Vektorlogo (SVG/PDF/EPS) einsetzen.** [PLATZHALTER: Vektorlogo]
 - **Schriften:** Montserrat Bold und Inter Regular (OFL), im PDF eingebettet.
 - **Papier (Vorschlag):** 250–300 g/m², matt gestrichen. Auflage: [PLATZHALTER].
 - **Kein Personenfoto** verwendet.

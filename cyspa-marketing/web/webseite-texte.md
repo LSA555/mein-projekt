@@ -38,7 +38,7 @@ grundlage: "linkedin/01-strategie.md, 02-content-pfeiler.md, 03-styleguide.md, 0
 | Feld | Text | Länge |
 |---|---|---|
 | Title | CYSPA – Cybersecurity-Partner für Schweizer KMU | 47 |
-| Meta-Description | CISO-as-a-Service, Tabletop-Übungen und Security-Assessments für Schweizer KMU und Mid-Market. Wir übersetzen Cyberrisiken in Entscheide. | 139 |
+| Meta-Description | CISO-as-a-Service, Tabletop-Übungen und Security-Assessments für Schweizer KMU und Mid-Market. Wir übersetzen Cyberrisiken in Entscheide. | 137 |
 | H1 | Cyberrisiken in Geschäftsentscheide übersetzen | – |
 
 ### Hero
@@ -133,8 +133,8 @@ Bei einem akuten Vorfall bitte telefonisch melden und keine Details per Formular
 
 | Feld | Text | Länge |
 |---|---|---|
-| Title | Leistungen – CISO-as-a-Service, Tabletop, Assessments \| CYSPA | 60 |
-| Meta-Description | CISO-as-a-Service, Tabletop-Übungen, Microsoft-365-Assessment, Pentest, Regulatorik und AI Security für Schweizer KMU und Mid-Market. | 134 |
+| Title | Leistungen – CISO-as-a-Service und Tabletop \| CYSPA | 51 |
+| Meta-Description | CISO-as-a-Service, Tabletop-Übungen, Microsoft-365-Assessment, Pentest, Regulatorik und AI Security für Schweizer KMU und Mid-Market. | 133 |
 | H1 | Leistungen für Geschäftsleitung, IT und Security | – |
 
 **Intro:**

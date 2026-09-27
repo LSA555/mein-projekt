@@ -26,7 +26,7 @@ kampagne: "LinkedIn-Beitrag #10, Do 08.10.2026, 08:15 Uhr (P12 Executive Briefin
 |---|---|---|
 | URL | `https://www.cyspa.ch/tabletop` | – |
 | Title | Tabletop-Übung für die Geschäftsleitung \| CYSPA | 47 |
-| Meta-Description | Ein halber Tag mit Ihrer Führungsrunde: realistisches Szenario, moderierte Entscheidungen, dokumentierte Erkenntnisliste. Jetzt Gespräch vereinbaren. | 151 |
+| Meta-Description | Ein halber Tag mit Ihrer Führungsrunde: realistisches Szenario, moderierte Entscheidungen, dokumentierte Erkenntnisliste. Jetzt Gespräch vereinbaren. | 149 |
 | H1 | Wer entscheidet, wenn es ernst wird? | – |
 | Indexierung | `index, follow` (Seite ist auch ohne Kampagne nützlich) | – |
 | Open Graph | og:title = Title, og:description = Meta-Description, og:image = [PLATZHALTER: 1200×627-Bild, z. B. Slide 1 des Carousels] | – |
