@@ -24,7 +24,7 @@ Freigabepaket für LWE. Grundlage: Repo-Draft `linkedin/posts/2026-10-08-p12-tab
 | Format | Carousel / Dokument-Post, 6 Slides 1080×1350 px, PDF |
 | CTA-Typ | **Hart**: Tabletop-Angebot, Link im ersten Kommentar |
 | Asset im Repo | `linkedin/assets/export/2026-10-08-p12-tabletop/2026-10-08-p12-tabletop.pdf` (PDF, Seitenformat 810×1013 pt ≙ 1080×1350 px. Der PNG-Renderfehler betrifft laut Druckpfad nur die PNGs, nicht das PDF.) |
-| Asset zur Publikation | `cyspa-marketing/linkedin/freigabe/assets/10-tabletop/2026-10-08-p12-tabletop.pdf` (neu gerendert, Inhalt identisch). Dazu Slide-PNGs `slide-01…06.png` ohne weissen Balken, nur zur Vorschau. |
+| Asset zur Publikation | `cyspa-marketing/linkedin/visuals-ci3/10-tabletop/2026-10-08-p12-tabletop.pdf` (CI v3, neu gestaltet 27.09.2026). Dazu Slide-PNGs `slide-01…06.png` ohne weissen Balken, nur zur Vorschau. |
 | Dokumenttitel (LinkedIn-Pflichtfeld) | Tabletop-Übung: Aus Plan wird Fähigkeit |
 | Fach-Owner | Incident Response Specialist + GRC Expert |
 | Freigabeweg | Fachreview IR+GRC · Legal · Accessibility · Redline (IR-Bezug) · Head of Content |
@@ -129,7 +129,7 @@ Passend zum European Cybersecurity Month im Oktober: Ein guter Anlass, den Notfa
 **Publikationsanleitung**
 
 1. Bis **Mi 30.09.2026** für **Do 08.10.2026, 08:15 Uhr** einplanen, als Dokument-Post mit PDF und dem Titel «Tabletop-Übung: Aus Plan wird Fähigkeit». **ZU PRÜFEN:** ob LinkedIn Dokument-Posts auf der Unternehmensseite vorplanen lässt. Falls nicht, veröffentlicht die Stellvertretung manuell um 08:15 Uhr.
-2. PDF: `cyspa-marketing/linkedin/freigabe/assets/10-tabletop/2026-10-08-p12-tabletop.pdf`
+2. PDF: `cyspa-marketing/linkedin/visuals-ci3/10-tabletop/2026-10-08-p12-tabletop.pdf`
 3. Post-Text aus Abschnitt 2.
 4. **Ersten Kommentar sofort nach der Publikation** manuell durch die Stellvertretung setzen. Nach unserem Kenntnisstand lässt sich ein erster Kommentar nicht vorplanen (ZU PRÜFEN). Wenn niemand verfügbar ist, bleibt als Notlösung der Link im Post-Text (Reichweitennachteil, Styleguide §3).
 5. Engagement 08:15–09:15 Uhr: **Social Selling Specialist** (Terminanfragen per DM oder Telefon übernehmen, Lead-Übergabe an **B2B Demand Generation**) und **Incident Response Specialist** für Fachfragen. Vertrauliches nie in DMs (§4.3), sondern an info@cyspa.ch / Telefon.

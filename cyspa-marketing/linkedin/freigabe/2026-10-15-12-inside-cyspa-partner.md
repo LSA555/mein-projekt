@@ -24,7 +24,7 @@ Freigabepaket für LWE. Grundlage: Repo-Draft `linkedin/posts/2026-10-15-p11-ins
 | Format | Plan A: Textpost + Teamfoto · Plan B: Textpost + Single Graphic 1200×1500 px |
 | CTA-Typ | Follow (Serien-Ausblick) |
 | Asset im Repo | **keines**. Das Teamfoto fehlt, bewusst nicht generiert (CI- und Legal-Regel §4.5: keine KI-Personenfotos). |
-| Asset Plan B | `cyspa-marketing/linkedin/freigabe/assets/12-partner-planb/2026-10-15-p11-partner-planb.png` (neu erstellt mit der Repo-Pipeline, CI v3: Deep Space Blue, Montserrat/Inter, Cyan nur als Akzent, Logo-Plakette) |
+| Asset Plan B | `cyspa-marketing/linkedin/visuals-ci3/12-partner-planb/2026-10-15-p11-partner-planb.png` (neu erstellt mit der Repo-Pipeline, CI v3: Deep Space Blue, Montserrat/Inter, Cyan nur als Akzent, Logo-Plakette) |
 | Owner | Head of Content + Creative Director (kein Fachreview nötig) |
 | Freigabeweg | Legal (Einwilligungen) · Accessibility · Redline (OPSEC) · Head of Content |
 
@@ -137,7 +137,7 @@ Zum Abschluss unserer ersten Beitragsserie im European Cybersecurity Month: Welc
 **Publikationsanleitung**
 
 1. Bis **Mi 30.09.2026** für **Do 15.10.2026, 08:15 Uhr** einplanen.
-2. Asset: Plan B `cyspa-marketing/linkedin/freigabe/assets/12-partner-planb/2026-10-15-p11-partner-planb.png` · Plan A: freigegebenes Teamfoto.
+2. Asset: Plan B `cyspa-marketing/linkedin/visuals-ci3/12-partner-planb/2026-10-15-p11-partner-planb.png` · Plan A: freigegebenes Teamfoto.
 3. Den passenden Alt-Text aus Abschnitt 4 einfügen.
 4. Post-Text: Plan B unverändert. Plan A mit dem vom Team geschriebenen Absatz, ohne eckige Klammern.
 5. Engagement 08:15–09:15 Uhr: **Social Selling Specialist** und ein Mitglied der Geschäftsleitung oder des Teams als Stellvertretung von LWE (Kommentare zu Team und Kultur persönlich beantworten).

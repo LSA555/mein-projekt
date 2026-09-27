@@ -22,7 +22,7 @@ Freigabepaket für LWE. Grundlage: Repo-Draft `linkedin/posts/2026-09-29-p06-nis
 | Format | Textpost + Single Graphic 1200×1500 px |
 | CTA-Typ | Selbstcheck (3 Prüffragen), weich |
 | Asset im Repo | `linkedin/assets/export/2026-09-29-p06-nis2/2026-09-29-p06-nis2.png` (**nicht verwenden, Renderfehler, siehe Gate 3**) |
-| Asset zur Publikation | `cyspa-marketing/linkedin/freigabe/assets/07-nis2/2026-09-29-p06-nis2.png` (neu gerendert, Inhalt identisch) |
+| Asset zur Publikation | `cyspa-marketing/linkedin/visuals-ci3/07-nis2/2026-09-29-p06-nis2.png` (CI v3, neu gestaltet 27.09.2026) |
 | Fach-Owner | NIS2 / Regulatory Expert |
 | Freigabeweg (Matrix §3) | Fachreview (Regulatory) · Legal verstärkt · Accessibility · Redline entfällt · Head of Content |
 
@@ -103,7 +103,7 @@ Hinweis für den Fach-Owner: «melden Cyberangriffe» ist leicht verkürzt. Meld
 |------|--------|--------|
 | **1 Fach** (Regulatory Expert) | Kernaussagen decken sich mit den Suchergebnissen (F1–F5). Befund Art. 26 ist eingearbeitet (siehe Änderungen). Keine Zahlen ohne Quelle. Die Primärquellen konnten aus der KI-Umgebung nicht gelesen werden. **Nach §4.5 nicht durch KI ersetzbar.** | Vorprüfung bestanden · **menschlich offen** |
 | **2 Legal** (verstärkt, P6) | Disclaimer «Allgemeine Einordnung, keine Rechtsberatung» ist enthalten ✔. Keine Superlative, keine Bussgeld-Dramatisierung ✔. Keine Kundennamen ✔. Keine Platzhalter ✔. Keine EU-Embleme in der Grafik (nur Text «EU»/«CH» und ein schematisches Kreuz) ✔. | Vorprüfung bestanden |
-| **3 Accessibility** | Repo-PNG hat einen **weissen Balken von 87 px am unteren Rand** (Renderfehler: Headless-Chromium-Fenster, Zeile 1413–1499). Deshalb wurde neu gerendert. Die Datei in `freigabe/assets/07-nis2/` ist fehlerfrei, geprüft mit einer Pixelanalyse. Alle Grafikinhalte stehen auch im Text ✔. Weiss auf #0A1F44 ✔. Hashtags in korrekter Schreibweise (Einzelwörter) ✔. Keine Unicode-Formatierung, keine Emojis ✔. «→» als Listenmarker ist laut Styleguide erlaubt. BACS ist ausgeschrieben ✔. Alt-Text siehe unten (ca. 440 Zeichen) ✔. | **Korrektur nötig → erledigt** (neues Asset verwenden) |
+| **3 Accessibility** | Repo-PNG hat einen **weissen Balken von 87 px am unteren Rand** (Renderfehler: Headless-Chromium-Fenster, Zeile 1413–1499). Deshalb wurde neu gerendert. Die Datei in `visuals-ci3/ (alt: _alt-ci-assets/) 07-nis2/` ist fehlerfrei, geprüft mit einer Pixelanalyse. Alle Grafikinhalte stehen auch im Text ✔. Weiss auf #0A1F44 ✔. Hashtags in korrekter Schreibweise (Einzelwörter) ✔. Keine Unicode-Formatierung, keine Emojis ✔. «→» als Listenmarker ist laut Styleguide erlaubt. BACS ist ausgeschrieben ✔. Alt-Text siehe unten (ca. 440 Zeichen) ✔. | **Korrektur nötig → erledigt** (neues Asset verwenden) |
 | **4 Security-Redline** | Laut Matrix nicht obligatorisch. Kein Angriffswissen, keine Infrastrukturdetails. | n/a |
 
 **Alt-Text (für das LinkedIn-Feld):**
@@ -128,7 +128,7 @@ Der ECSM-Hinweis entfällt, weil der Post im September erscheint.
 **Publikationsanleitung**
 
 1. Di 29.09.2026, 08:15 Uhr: selbst posten oder vorab in LinkedIn einplanen.
-2. Bild hochladen: `cyspa-marketing/linkedin/freigabe/assets/07-nis2/2026-09-29-p06-nis2.png` (nicht das Repo-PNG).
+2. Bild hochladen: `cyspa-marketing/linkedin/visuals-ci3/07-nis2/2026-09-29-p06-nis2.png` (nicht das Repo-PNG).
 3. Alt-Text aus Abschnitt 4 in das Alt-Text-Feld kopieren.
 4. Post-Text aus Abschnitt 2 einfügen. Kein erster Kommentar.
 5. Engagement 08:15–09:15 Uhr: LWE als Head of Content, dazu NIS2/Regulatory Expert für Fachfragen. Kommentare der Art «Betrifft uns das?» nicht öffentlich beurteilen, sondern ins Gespräch überführen (keine Rechtsberatung in Kommentaren).

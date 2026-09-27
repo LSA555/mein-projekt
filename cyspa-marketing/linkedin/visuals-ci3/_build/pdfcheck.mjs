@@ -1,5 +1,9 @@
-import { PDFDocument, PDFName, PDFDict } from 'pdf-lib';
+// PDF-Prüfung: Seitenzahl, Seitenmasse, eingebettete Fonts. Aufruf: NODE_PATH=<arbeitsordner>/node_modules node pdfcheck.mjs ../*/*.pdf
 import { readFileSync } from 'fs';
+import { createRequire } from 'module';
+import { join } from 'path';
+const require = createRequire(join(process.env.NODE_PATH || process.cwd(), 'x.js'));
+const { PDFDocument, PDFName, PDFDict } = require('pdf-lib');
 for (const f of process.argv.slice(2)) {
   const d = await PDFDocument.load(readFileSync(f));
   const sizes = d.getPages().map(p => p.getSize()).map(s => `${s.width}x${s.height}`);

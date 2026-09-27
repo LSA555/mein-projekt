@@ -38,12 +38,12 @@ Die Pakete wurden mit KI-Unterstützung erstellt. Gate 1 (Fach) ist nur vorgepr�
 
 | Post | Datei |
 |------|-------|
-| #07 | `assets/07-nis2/2026-09-29-p06-nis2.png` |
+| #07 | `../visuals-ci3/07-nis2/2026-09-29-p06-nis2.png` |
 | #08 | – (bewusst Textpost) |
-| #09 | `assets/09-pentest/2026-10-06-p09-pentest.png` |
-| #10 | `assets/10-tabletop/2026-10-08-p12-tabletop.pdf` (+ `slide-01…06.png` Vorschau) |
-| #11 | `assets/11-harvest/2026-10-13-p10-harvest.png` |
-| #12 | Plan B: `assets/12-partner-planb/2026-10-15-p11-partner-planb.png` · Plan A: Teamfoto fehlt |
+| #09 | `../visuals-ci3/09-pentest/2026-10-06-p09-pentest.png` |
+| #10 | `../visuals-ci3/10-tabletop/2026-10-08-p12-tabletop.pdf` (+ `slide-01…06.png` Vorschau) |
+| #11 | `../visuals-ci3/11-harvest/2026-10-13-p10-harvest.png` |
+| #12 | Plan B: `../visuals-ci3/12-partner-planb/2026-10-15-p11-partner-planb.png` · Plan A: Teamfoto fehlt |
 
 ## Freigabe-Sammelblock
 

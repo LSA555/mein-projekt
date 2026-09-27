@@ -22,7 +22,7 @@ Freigabepaket für LWE. Grundlage: Repo-Draft `linkedin/posts/2026-10-13-p10-har
 | Format | **Empfehlung: Static** (Single Graphic 1200×1500 px) + Textpost |
 | CTA-Typ | Selbstcheck (Relevanz-Test + Krypto-Inventar) |
 | Asset im Repo | `linkedin/assets/export/2026-10-13-p10-harvest/2026-10-13-p10-harvest.png` (Static-Fallback, **nicht verwenden, Renderfehler**) |
-| Asset zur Publikation | `cyspa-marketing/linkedin/freigabe/assets/11-harvest/2026-10-13-p10-harvest.png` (neu gerendert, Inhalt identisch) |
+| Asset zur Publikation | `cyspa-marketing/linkedin/visuals-ci3/11-harvest/2026-10-13-p10-harvest.png` (CI v3, neu gestaltet 27.09.2026) |
 | Fach-Owner | CISO / Security Advisor |
 
 ### Motion oder Static – Empfehlung: **Static**
@@ -102,7 +102,7 @@ Hinweis für den Fach-Owner: Die Mosca-Logik («Vertraulichkeitsdauer + Umstellu
 |------|--------|--------|
 | **1 Fach** (CISO) | NIST-Aussage stimmt mit F1 überein. Unbelegte Zahlenspanne entfernt. Keine Panik-Jahreszahlen. **Nicht durch KI ersetzbar.** | Vorprüfung bestanden · **menschlich offen** |
 | **2 Legal** | Keine Superlative, keine Herstellerbewertung ✔. Keine Platzhalter ✔. | Vorprüfung bestanden |
-| **3 Accessibility** | Repo-PNG mit **weissem 87-px-Balken** (Renderfehler). Neues Asset in `freigabe/assets/11-harvest/`. Der **Alt-Text im Draft beschreibt eine Animation**. Für Static ist das falsch. Neuer Alt-Text siehe unten. Kosmetik: Im Dreiteiler ist die erste Box niedriger als die beiden anderen (einzeiliges Label). Das ist kein Barrierefreiheitsmangel. Grafikinhalte stehen auch im Text ✔. Hashtags in korrekter Schreibweise ✔. Keine Emojis ✔. | **Korrektur nötig → erledigt** |
+| **3 Accessibility** | Repo-PNG mit **weissem 87-px-Balken** (Renderfehler). Neues Asset in `visuals-ci3/ (alt: _alt-ci-assets/) 11-harvest/`. Der **Alt-Text im Draft beschreibt eine Animation**. Für Static ist das falsch. Neuer Alt-Text siehe unten. Kosmetik: Im Dreiteiler ist die erste Box niedriger als die beiden anderen (einzeiliges Label). Das ist kein Barrierefreiheitsmangel. Grafikinhalte stehen auch im Text ✔. Hashtags in korrekter Schreibweise ✔. Keine Emojis ✔. | **Korrektur nötig → erledigt** |
 | **4 Security-Redline** | Laut Matrix §3 Standard-Post: Redline als Stichprobe. Keine Angriffsdetails. | Stichprobe CISO |
 
 **Alt-Text (Static):**
@@ -133,7 +133,7 @@ Zum European Cybersecurity Month ein Lesetipp für Ihr Krypto-Inventar: Die Stan
 **Publikationsanleitung**
 
 1. Bis **Mi 30.09.2026** für **Di 13.10.2026, 08:15 Uhr** einplanen.
-2. Bild: `cyspa-marketing/linkedin/freigabe/assets/11-harvest/2026-10-13-p10-harvest.png`
+2. Bild: `cyspa-marketing/linkedin/visuals-ci3/11-harvest/2026-10-13-p10-harvest.png`
 3. Alt-Text (Static) aus Abschnitt 4.
 4. Post-Text aus Abschnitt 2. Kein Pflichtkommentar.
 5. Engagement 08:15–09:15 Uhr: **Social Selling Specialist** und **CISO / Security Advisor** (Fachfragen zu PQC. Keine Aussagen zu konkreten Jahreszahlen. Keine Produktempfehlungen in Kommentaren).
