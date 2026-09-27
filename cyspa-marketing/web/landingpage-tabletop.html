@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tabletop-Übung für die Geschäftsleitung | CYSPA</title>
+<meta name="description" content="Ein halber Tag mit Ihrer Führungsrunde: realistisches Szenario, moderierte Entscheidungen, dokumentierte Erkenntnisliste. Jetzt Gespräch vereinbaren.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.cyspa.ch/tabletop">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.cyspa.ch/tabletop">
+<meta property="og:title" content="Tabletop-Übung für die Geschäftsleitung | CYSPA">
+<meta property="og:description" content="Ein halber Tag mit Ihrer Führungsrunde: realistisches Szenario, moderierte Entscheidungen, dokumentierte Erkenntnisliste.">
+<!-- [PLATZHALTER: og:image 1200x627, z. B. Slide 1 des Carousels] -->
+<!--
+  CYSPA Landingpage /tabletop – Vorlage für die Webentwicklung
+  Stand 27.09.2026 · Entwurf, Freigabe LWE ausstehend · Texte: landingpage-tabletop.md
+  - Keine externen Abhängigkeiten, keine Tracker, keine Cookies.
+  - Fonts lokal (assets/fonts, OFL), Fallback Systemschrift.
+  - Cyber Cyan #00AEEF nur als Akzent (Linien, Rahmen, Fokus), nie als Textfarbe.
+  - Vor Livegang alle [PLATZHALTER …] ersetzen (siehe Prüfliste in der .md).
+-->
+<style>
+@font-face{font-family:"Montserrat";font-weight:700;font-style:normal;font-display:swap;
+  src:url("assets/fonts/Montserrat-Bold.ttf") format("truetype")}
+@font-face{font-family:"Inter";font-weight:400;font-style:normal;font-display:swap;
+  src:url("assets/fonts/Inter-Regular.ttf") format("truetype")}
+
+:root{
+  --navy:#0A1F44;      /* Deep Space Blue */
+  --navy2:#103157;     /* Counter Navy */
+  --cyan:#00AEEF;      /* Cyber Cyan – nur Akzent */
+  --white:#FFFFFF;     /* Signal White */
+  --grey:#F2F2F2;      /* Security Grey */
+  --charcoal:#58595B;  /* Charcoal Grey */
+  --ink-dark:rgba(255,255,255,.86);
+  --meta-dark:rgba(255,255,255,.72);
+  --head:"Montserrat","Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+  --body:"Inter","Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+  --wrap:1120px;
+  --gutter:clamp(16px,4vw,40px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--white);color:var(--navy);font-family:var(--body);
+  font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.btn,.badge,.brandword{font-family:var(--head);font-weight:700}
+h1,h2,h3{margin:0;line-height:1.15;letter-spacing:-.01em}
+h1{font-size:clamp(2.1rem,5.4vw,3.6rem)}
+h2{font-size:clamp(1.6rem,3.4vw,2.3rem)}
+h3{font-size:1.15rem;line-height:1.3}
+p{margin:0 0 1em}
+strong{font-family:var(--head);font-weight:700}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+.skip{position:absolute;left:-999px;top:0;background:var(--white);color:var(--navy);padding:.6rem 1rem;z-index:10}
+.skip:focus{left:var(--gutter)}
+:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+.dark :focus-visible{outline-color:var(--cyan)}
+
+/* Kopf */
+.top{background:var(--navy);border-bottom:1px solid rgba(255,255,255,.12)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:72px}
+.plate{display:inline-block;background:var(--white);border-radius:4px;padding:6px 10px;line-height:0}
+.plate img{height:34px;width:auto;display:block}
+.top a.tel{color:var(--meta-dark);text-decoration:none;font-size:.95rem}
+.top a.tel:hover{color:var(--white);text-decoration:underline}
+
+/* Hero */
+.hero{background:var(--navy);color:var(--white);padding:clamp(48px,9vw,112px) 0 clamp(56px,9vw,104px);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:0;top:0;bottom:0;width:6px;background:var(--cyan)}
+.badge{display:inline-block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+  border:1.5px solid var(--cyan);border-radius:3px;padding:.45rem .8rem;margin-bottom:1.6rem}
+.bar{width:64px;height:4px;background:var(--cyan);border-radius:2px;margin:1.4rem 0}
+.hero .lead{font-size:clamp(1.1rem,2vw,1.3rem);color:var(--ink-dark);max-width:40rem;margin-bottom:1.6rem}
+.facts{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;padding:0;margin:0 0 2rem}
+.facts li{border:1px solid rgba(255,255,255,.28);border-radius:3px;padding:.4rem .75rem;font-size:.95rem;color:var(--white)}
+.btn{display:inline-block;font-size:1rem;text-decoration:none;border-radius:4px;padding:.95rem 1.5rem;
+  border:2px solid transparent;cursor:pointer;line-height:1.2}
+.btn-light{background:var(--white);color:var(--navy);border-color:var(--cyan)}
+.btn-light:hover{background:var(--grey)}
+.btn-dark{background:var(--navy);color:var(--white)}
+.btn-dark:hover{background:var(--navy2)}
+
+/* Abschnitte */
+section{padding:clamp(56px,8vw,96px) 0}
+.alt{background:var(--grey)}
+.dark{background:var(--navy);color:var(--white)}
+.dark p,.dark li{color:var(--ink-dark)}
+.intro{max-width:44rem;font-size:1.1rem}
+.kicker{font-family:var(--head);font-weight:700;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--charcoal);margin-bottom:.8rem}
+.dark .kicker{color:var(--meta-dark)}
+
+.grid{display:grid;gap:1.25rem;margin-top:2.2rem}
+@media (min-width:720px){.grid.two{grid-template-columns:1fr 1fr}}
+.card{background:var(--white);border-left:4px solid var(--cyan);border-radius:4px;padding:1.4rem 1.5rem}
+.alt .card{background:var(--white)}
+.card .num{font-family:var(--head);font-weight:700;display:inline-flex;align-items:center;justify-content:center;
+  width:2.2rem;height:2.2rem;border:2px solid var(--cyan);border-radius:4px;margin-bottom:.9rem}
+.card h3{margin-bottom:.5rem}
+.card p{margin:0;color:#1d2b45}
+
+.quote{border-left:4px solid var(--cyan);padding-left:1.2rem;font-family:var(--head);font-weight:700;
+  font-size:clamp(1.25rem,2.4vw,1.6rem);line-height:1.3;margin:2.4rem 0 0;max-width:40rem}
+
+/* Ablauf */
+.steps{list-style:none;padding:0;margin:2.4rem 0 0;display:grid;gap:0}
+.steps li{display:grid;grid-template-columns:3rem 1fr;gap:1rem;padding:1.2rem 0;border-top:1px solid rgba(255,255,255,.16)}
+.steps li:last-child{border-bottom:1px solid rgba(255,255,255,.16)}
+.steps .n{font-family:var(--head);font-weight:700;width:2.4rem;height:2.4rem;border:2px solid var(--cyan);border-radius:4px;
+  display:flex;align-items:center;justify-content:center;color:var(--white)}
+.steps h3{color:var(--white);margin-bottom:.3rem}
+.steps p{margin:0}
+.note{margin-top:2rem;padding:1rem 1.2rem;background:var(--navy2);border-radius:4px;color:var(--white)}
+
+/* Ergebnis */
+.checks{list-style:none;padding:0;margin:2.2rem 0 0;display:grid;gap:1rem}
+@media (min-width:720px){.checks{grid-template-columns:1fr 1fr}}
+.checks li{position:relative;padding:1.2rem 1.3rem 1.2rem 3.2rem;background:var(--grey);border-radius:4px}
+.checks li::before{content:"";position:absolute;left:1.2rem;top:1.45rem;width:.9rem;height:.5rem;
+  border-left:3px solid var(--cyan);border-bottom:3px solid var(--cyan);transform:rotate(-45deg)}
+
+/* FAQ */
+.faq{margin-top:2rem;max-width:48rem}
+.faq details{background:var(--white);border-radius:4px;margin-bottom:.75rem;border-left:4px solid transparent}
+.faq details[open]{border-left-color:var(--cyan)}
+.faq summary{cursor:pointer;list-style:none;padding:1.1rem 3rem 1.1rem 1.3rem;font-family:var(--head);font-weight:700;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:1.2rem;top:50%;transform:translateY(-50%);font-size:1.4rem;line-height:1}
+.faq details[open] summary::after{content:"\2013"}
+.faq .a{padding:0 1.3rem 1.2rem}
+.faq .a p{margin:0}
+.ph{background:#FFF3CD;color:#5C4400;border:1px dashed #B58900;border-radius:3px;padding:0 .3rem;font-size:.95em}
+
+/* Formular */
+.contact{display:grid;gap:2.4rem}
+@media (min-width:900px){.contact{grid-template-columns:5fr 7fr;align-items:start}}
+.contact .alt-ways a{color:var(--white)}
+form{background:var(--white);color:var(--navy);border-radius:6px;padding:clamp(20px,3vw,32px)}
+.field{margin-bottom:1.1rem}
+label{display:block;font-family:var(--head);font-weight:700;font-size:.92rem;margin-bottom:.35rem}
+label .opt{font-family:var(--body);font-weight:400;color:var(--charcoal)}
+input,textarea{width:100%;font:inherit;font-size:1rem;color:var(--navy);background:var(--white);
+  border:1.5px solid #8A93A3;border-radius:4px;padding:.75rem .85rem}
+input:focus,textarea:focus{border-color:var(--navy);outline:3px solid var(--cyan);outline-offset:0}
+textarea{min-height:7.5rem;resize:vertical}
+.row2{display:grid;gap:0 1rem}
+@media (min-width:560px){.row2{grid-template-columns:1fr 1fr}}
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.dark form p{color:var(--charcoal)}
+.privacy{font-size:.9rem;margin:1rem 0 0}
+.req{font-size:.85rem;margin:0 0 1rem}
+.dark form a{color:var(--navy)}
+
+/* Fuss */
+footer{background:var(--navy);color:var(--meta-dark);font-size:.92rem;padding:2.2rem 0;border-top:4px solid var(--cyan)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center}
+footer a{color:var(--white)}
+footer nav a{margin-right:1.2rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+<header class="top">
+  <div class="wrap">
+    <a href="https://www.cyspa.ch/" class="plate" aria-label="CYSPA Startseite">
+      <img src="assets/img/cyspa-logo-transparent.png" width="288" height="122" alt="CYSPA Cyber Security Partners">
+    </a>
+    <a class="tel" href="tel:+41415216161">+41 41 521 61 61</a>
+  </div>
+</header>
+
+<main id="inhalt">
+
+  <!-- HERO -->
+  <section class="hero dark" aria-labelledby="h1">
+    <div class="wrap">
+      <span class="badge">Executive Briefing · Tabletop-Übung</span>
+      <h1 id="h1">Wer entscheidet, wenn es&nbsp;ernst wird?</h1>
+      <div class="bar" aria-hidden="true"></div>
+      <p class="lead">Samstag, 06:40&nbsp;Uhr. Die Dateiserver sind verschlüsselt, die Produktion steht. Eine Tabletop-Übung zeigt Ihrer Führungsrunde, ob die Antwort auf diese Frage feststeht, bevor der Ernstfall sie stellt.</p>
+      <ul class="facts" aria-label="Eckdaten">
+        <li>Ein halber Tag</li>
+        <li>Ihre Führungsrunde</li>
+        <li>Dokumentierte Erkenntnisliste</li>
+      </ul>
+      <a class="btn btn-light" href="#anfrage">Gespräch vereinbaren</a>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="alt" aria-labelledby="h-problem">
+    <div class="wrap">
+      <p class="kicker">Das Problem</p>
+      <h2 id="h-problem">Ein Plan ist eine Hypothese. Die&nbsp;Übung ist ihr Test.</h2>
+      <p class="intro" style="margin-top:1.2rem">Wenn die ehrliche Antwort auf «Wer entscheidet jetzt?» lautet: «Kommt darauf an, wer erreichbar ist», dann fehlt Ihnen keine Technik. Dann fehlt eine Übung. Die wertvollsten Erkenntnisse sind fast immer organisatorisch, nicht technisch. Typischerweise werden vier Dinge sichtbar:</p>
+      <div class="grid two">
+        <article class="card">
+          <span class="num" aria-hidden="true">1</span>
+          <h3>Unklare Befugnisse</h3>
+          <p>Wer darf Systeme vom Netz nehmen, auch wenn damit das Geschäft steht? Wer gibt Externen den Auftrag – und bis zu welchem Betrag?</p>
+        </article>
+        <article class="card">
+          <span class="num" aria-hidden="true">2</span>
+          <h3>Kommunikation ohne die üblichen Kanäle</h3>
+          <p>Wie erreichen Sie Mitarbeitende und Kunden, wenn E-Mail und Chat selbst betroffen sind? Wo liegen die Notfallkontakte?</p>
+        </article>
+        <article class="card">
+          <span class="num" aria-hidden="true">3</span>
+          <h3>Meldefristen unter Zeitdruck</h3>
+          <p>Datenschutzbehörde, Vertragspartner, allenfalls Aufsicht oder BACS: Wer meldet was bis wann – und wer formuliert es?</p>
+        </article>
+        <article class="card">
+          <span class="num" aria-hidden="true">4</span>
+          <h3>Die Dienstleisterfrage</h3>
+          <p>Wer ist der erste Anruf? Gilt der Support-Vertrag auch am Wochenende? Steht die Nummer des Versicherers im Plan?</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABLAUF -->
+  <section class="dark" aria-labelledby="h-ablauf">
+    <div class="wrap">
+      <p class="kicker">Ablauf</p>
+      <h2 id="h-ablauf">So läuft die Übung ab</h2>
+      <p class="intro" style="margin-top:1.2rem">Eine moderierte Entscheidungsübung, keine Technik-Simulation. Getestet wird die Organisation, nicht die Firewall.</p>
+      <ol class="steps">
+        <li><span class="n" aria-hidden="true">1</span><div><h3>Vorgespräch</h3><p>Wir klären Teilnehmende, Rahmen und Schwerpunkt des Szenarios. <span class="ph">[PLATZHALTER: Dauer und Form]</span></p></div></li>
+        <li><span class="n" aria-hidden="true">2</span><div><h3>Szenario</h3><p>Ein realistisches, fiktives Szenario, das sich Schritt für Schritt entwickelt.</p></div></li>
+        <li><span class="n" aria-hidden="true">3</span><div><h3>Moderierte Entscheidungen</h3><p>Rund 90 Minuten Übung: Ihre Führungsrunde entscheidet, wir moderieren und halten fest.</p></div></li>
+        <li><span class="n" aria-hidden="true">4</span><div><h3>Auswertung</h3><p>Was lief gut, wo fehlten Befugnisse, Informationen oder Kontakte?</p></div></li>
+        <li><span class="n" aria-hidden="true">5</span><div><h3>Erkenntnisliste</h3><p>Dokumentierte Erkenntnisse mit klaren Verantwortlichkeiten. <span class="ph">[PLATZHALTER: Lieferfrist]</span></p></div></li>
+      </ol>
+      <p class="note">An Ihren Systemen wird nichts getestet oder verändert.</p>
+    </div>
+  </section>
+
+  <!-- ERGEBNIS -->
+  <section aria-labelledby="h-ergebnis">
+    <div class="wrap">
+      <p class="kicker">Ergebnis</p>
+      <h2 id="h-ergebnis">Was Ihre Geschäftsleitung danach in der Hand hat</h2>
+      <ul class="checks">
+        <li><strong>Eine Erkenntnisliste mit Verantwortlichen.</strong> Jede Lücke hat einen Namen und einen nächsten Schritt.</li>
+        <li><strong>Geklärte Befugnisse.</strong> Wer entscheidet was, auch am Wochenende und ohne die üblichen Kanäle.</li>
+        <li><strong>Einen getesteten Plan.</strong> Aus einer Annahme wird eine geübte Fähigkeit. Oder Sie wissen genau, was im Plan fehlt.</li>
+        <li><strong>Eine Grundlage für Verwaltungsrat und Versicherer.</strong> Nachvollziehbar dokumentiert, dass die Führung den Ernstfall geübt hat.</li>
+      </ul>
+      <p class="quote">Ein halber Tag. Eine dokumentierte Erkenntnisliste.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="alt" aria-labelledby="h-faq">
+    <div class="wrap">
+      <p class="kicker">FAQ</p>
+      <h2 id="h-faq">Häufige Fragen</h2>
+      <div class="faq">
+        <details><summary>Ist das ein technischer Test unserer IT?</summary>
+          <div class="a"><p>Nein. Es wird nichts an Ihren Systemen getestet oder verändert. Die Übung prüft Entscheidungswege, Zuständigkeiten und Kommunikation.</p></div></details>
+        <details><summary>Wer sollte teilnehmen?</summary>
+          <div class="a"><p>Die Personen, die im Ernstfall entscheiden: Geschäftsleitung, dazu je nach Organisation IT-Verantwortliche und Kommunikation. <span class="ph">[PLATZHALTER: empfohlene Gruppengrösse]</span></p></div></details>
+        <details><summary>Wie lange dauert die Übung?</summary>
+          <div class="a"><p>Ein halber Tag, davon rund 90 Minuten Übung im Szenario.</p></div></details>
+        <details><summary>Brauchen wir dafür einen fertigen Notfallplan?</summary>
+          <div class="a"><p>Nein. Gibt es einen Plan, wird er getestet. Gibt es keinen, zeigt die Übung, welche Entscheide ein Plan regeln muss.</p></div></details>
+        <details><summary>Welches Szenario wird geübt?</summary>
+          <div class="a"><p>Ein realistisches, fiktives Szenario, zum Beispiel ein Ransomware-Angriff (Schadsoftware, die Daten verschlüsselt und Lösegeld fordert). <span class="ph">[PLATZHALTER: Zuschnitt auf Branche und Organisation?]</span></p></div></details>
+        <details><summary>Wo findet die Übung statt?</summary>
+          <div class="a"><p><span class="ph">[PLATZHALTER: vor Ort, in Rotkreuz und/oder online]</span></p></div></details>
+        <details><summary>Was kostet die Übung?</summary>
+          <div class="a"><p><span class="ph">[PLATZHALTER: Pauschalpreis in CHF oder «Offerte nach Vorgespräch»]</span></p></div></details>
+        <details><summary>Wie vertraulich ist das?</summary>
+          <div class="a"><p>Was in der Übung besprochen wird, bleibt vertraulich. <span class="ph">[PLATZHALTER: Vertraulichkeitsvereinbarung?]</span></p></div></details>
+        <details><summary>Beraten Sie uns auch rechtlich zu Meldepflichten?</summary>
+          <div class="a"><p>Nein. Wir ordnen Meldepflichten im Szenario allgemein ein. Für die rechtliche Beurteilung Ihres Einzelfalls ziehen Sie Ihre Rechtsberatung bei.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA + FORMULAR -->
+  <section class="dark" id="anfrage" aria-labelledby="h-anfrage">
+    <div class="wrap contact">
+      <div>
+        <p class="kicker">Kontakt</p>
+        <h2 id="h-anfrage">Gespräch vereinbaren</h2>
+        <div class="bar" aria-hidden="true"></div>
+        <p>In einem kurzen Gespräch klären wir, ob eine Tabletop-Übung für Sie jetzt der richtige Schritt ist und wie sie bei Ihnen aussehen würde. Unverbindlich.</p>
+        <p class="alt-ways">Lieber direkt?<br>
+          <a href="mailto:info@cyspa.ch">info@cyspa.ch</a><br>
+          <a href="tel:+41415216161">+41 41 521 61 61</a></p>
+        <p style="font-size:.95rem">Bei einem akuten Vorfall bitte telefonisch melden und keine Details über das Formular senden.</p>
+      </div>
+
+      <!-- action: Formular-Endpunkt des CMS/CRM eintragen. Ohne Endpunkt wird nichts versendet. -->
+      <form action="[PLATZHALTER-FORMULAR-ENDPUNKT]" method="post" accept-charset="UTF-8" novalidate>
+        <p class="req">Felder mit * sind Pflichtfelder.</p>
+        <div class="field">
+          <label for="f-name">Vorname und Name *</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="120">
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="f-firma">Unternehmen *</label>
+            <input id="f-firma" name="unternehmen" type="text" autocomplete="organization" required maxlength="160">
+          </div>
+          <div class="field">
+            <label for="f-funktion">Funktion <span class="opt">(optional)</span></label>
+            <input id="f-funktion" name="funktion" type="text" autocomplete="organization-title" maxlength="120">
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="f-mail">E-Mail (geschäftlich) *</label>
+            <input id="f-mail" name="email" type="email" autocomplete="email" required maxlength="254">
+          </div>
+          <div class="field">
+            <label for="f-tel">Telefon <span class="opt">(optional)</span></label>
+            <input id="f-tel" name="telefon" type="tel" autocomplete="tel" maxlength="40">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-msg">Nachricht <span class="opt">(optional)</span></label>
+          <textarea id="f-msg" name="nachricht" maxlength="2000" placeholder="Worum geht es Ihnen? Bitte keine vertraulichen Details zu Vorfällen."></textarea>
+        </div>
+        <!-- Spam-Schutz (Honeypot): muss leer bleiben -->
+        <div class="hp" aria-hidden="true">
+          <label for="f-website">Website</label>
+          <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <!-- Kampagnen-Zuordnung (aus der URL) -->
+        <input type="hidden" name="utm_source" value="">
+        <input type="hidden" name="utm_medium" value="">
+        <input type="hidden" name="utm_campaign" value="">
+        <input type="hidden" name="utm_content" value="">
+        <input type="hidden" name="seite" value="tabletop">
+        <button class="btn btn-dark" type="submit">Gespräch anfragen</button>
+        <p class="privacy">Wir verwenden Ihre Angaben ausschliesslich, um Ihre Anfrage zu beantworten. Die Übermittlung erfolgt verschlüsselt. Weitere Informationen finden Sie in unserer <a href="#" class="ph">[PLATZHALTER Datenschutzerklärung-Link]</a>.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><span class="brandword" style="color:#fff">CYSPA</span> GmbH · Cyber Security Partners · Rotkreuz</div>
+    <nav aria-label="Rechtliches">
+      <a href="#" class="ph">[PLATZHALTER Impressum-Link]</a>
+      <a href="#" class="ph">[PLATZHALTER Datenschutz-Link]</a>
+      <a href="https://www.linkedin.com/company/56471500/">LinkedIn</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+/* Überträgt nur UTM-Parameter aus der URL in die versteckten Formularfelder. Keine Cookies, kein Tracking. */
+(function(){
+  try{
+    var p=new URLSearchParams(window.location.search);
+    ["utm_source","utm_medium","utm_campaign","utm_content"].forEach(function(k){
+      var v=p.get(k), el=document.querySelector('input[name="'+k+'"]');
+      if(v&&el){el.value=v.slice(0,100);}
+    });
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

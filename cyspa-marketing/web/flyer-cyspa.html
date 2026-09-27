@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<title>CYSPA im Überblick – Flyer A4</title>
+<!--
+  Quelle für flyer-cyspa.pdf · A4 hoch, 2 Seiten, mit 3 mm Beschnitt (Dokumentformat 216 × 303 mm).
+  Rendern: headless Chromium (siehe flyer-cyspa.md). Stand 27.09.2026, Entwurf.
+  Sicherheitsabstand: Inhalte mind. 12 mm innerhalb des Endformats (= 15 mm vom Dokumentrand).
+-->
+<style>
+@font-face{font-family:"Montserrat";font-weight:700;src:url("assets/fonts/Montserrat-Bold.ttf") format("truetype")}
+@font-face{font-family:"Inter";font-weight:400;src:url("assets/fonts/Inter-Regular.ttf") format("truetype")}
+@page{size:216mm 303mm;margin:0}
+:root{--navy:#0A1F44;--navy2:#103157;--cyan:#00AEEF;--white:#FFFFFF;--grey:#F2F2F2;--charcoal:#58595B}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#FFFFFF}
+body{font-family:"Inter",Arial,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact;-webkit-font-smoothing:antialiased}
+.page{width:216mm;height:303mm;position:relative;overflow:hidden;page-break-after:always;break-after:page}
+.page:last-child{page-break-after:auto;break-after:auto}
+.safe{position:absolute;inset:15mm 15mm 15mm 15mm;display:flex;flex-direction:column}
+h1,h2,h3,.badge,.cy{font-family:"Montserrat",Arial,sans-serif;font-weight:700}
+.ph{background:#FFE08A;color:#3A2A00;border:0.3mm dashed #9A6B00;border-radius:0.6mm;padding:0 1mm;font-family:"Inter",Arial,sans-serif;font-weight:400}
+
+/* ---------- Vorderseite ---------- */
+.front{background:var(--navy);color:var(--white)}
+.front .edge{position:absolute;top:0;bottom:0;right:0;width:9mm;background:var(--navy2)}
+.front .edge::before{content:"";position:absolute;left:0;top:0;bottom:0;width:1.2mm;background:var(--cyan)}
+.front .safe{right:24mm}
+.hd{display:flex;justify-content:space-between;align-items:center}
+.plate{background:var(--white);border-radius:1.2mm;padding:2.2mm 3.2mm;line-height:0}
+.plate img{height:13mm;width:auto}
+.badge{font-size:7.5pt;letter-spacing:.2em;border:0.45mm solid var(--cyan);border-radius:0.8mm;padding:1.8mm 3mm 1.6mm;text-transform:uppercase}
+.front h1{font-size:31pt;line-height:1.1;letter-spacing:-.01em;margin-top:26mm}
+.bar{width:22mm;height:1.3mm;background:var(--cyan);border-radius:.6mm;margin:7mm 0}
+.lead{font-size:12.5pt;line-height:1.45;color:rgba(255,255,255,.88);max-width:150mm}
+.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;margin-top:12mm}
+.proof div{border-top:0.5mm solid rgba(255,255,255,.3);padding-top:3.5mm}
+.proof h3{font-size:10.5pt;margin-bottom:1.5mm}
+.proof p{font-size:8.8pt;line-height:1.45;color:rgba(255,255,255,.84)}
+.princ{margin-top:12mm}
+.k2{font-family:"Montserrat";font-weight:700;font-size:7pt;letter-spacing:.18em;color:rgba(255,255,255,.72);text-transform:uppercase;margin-bottom:3.5mm}
+.princ ol{list-style:none;counter-reset:p;display:grid;grid-template-columns:1fr 1fr;gap:4mm 7mm}
+.princ li{counter-increment:p;position:relative;padding-left:10mm;font-size:9pt;line-height:1.45;color:rgba(255,255,255,.86)}
+.princ li::before{content:counter(p);position:absolute;left:0;top:0;width:6.5mm;height:6.5mm;border:0.45mm solid var(--cyan);border-radius:.8mm;
+  display:flex;align-items:center;justify-content:center;font-family:"Montserrat";font-weight:700;font-size:9pt;color:var(--white)}
+.princ b{font-family:"Montserrat";font-weight:700;color:var(--white);display:block;margin-bottom:.6mm}
+.focus{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+.fcard{background:var(--navy2);border-left:1.2mm solid var(--cyan);border-radius:1mm;padding:5.5mm 6mm}
+.fcard .k{font-family:"Montserrat";font-weight:700;font-size:7pt;letter-spacing:.18em;color:rgba(255,255,255,.72);text-transform:uppercase;margin-bottom:2mm}
+.fcard h2{font-size:15pt;line-height:1.15;margin-bottom:2.5mm}
+.fcard p{font-size:9pt;line-height:1.45;color:rgba(255,255,255,.88)}
+.ffoot{display:flex;justify-content:space-between;align-items:flex-end;margin-top:8mm;font-size:9pt;color:rgba(255,255,255,.78)}
+.ffoot .cy{color:var(--white)}
+
+/* ---------- Rückseite ---------- */
+.back{background:var(--white);color:var(--navy)}
+.back .topband{position:absolute;left:0;right:0;top:0;height:3mm;background:var(--cyan)}
+.back h2{font-size:17pt;line-height:1.15}
+.sec{margin-bottom:6.5mm}
+.kick{font-family:"Montserrat";font-weight:700;font-size:7pt;letter-spacing:.18em;color:var(--charcoal);text-transform:uppercase;margin-bottom:1.8mm}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:4mm}
+.box{background:var(--grey);border-radius:1mm;padding:4.5mm 5mm;border-left:1mm solid var(--cyan)}
+.box h3{font-size:9.5pt;margin-bottom:1.6mm}
+.box p,.box li{font-size:8.6pt;line-height:1.45;color:#1d2b45}
+.box ol,.box ul{padding-left:4.2mm}
+.box li{margin-bottom:.8mm}
+.pq{font-size:9.2pt;line-height:1.5;margin-top:2.5mm;color:#1d2b45;max-width:176mm}
+.quote{font-family:"Montserrat";font-weight:700;font-size:10.5pt;border-left:1mm solid var(--cyan);padding-left:3.5mm;margin-top:4mm}
+.more{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3mm;margin-top:3.5mm}
+.more div{border-top:0.45mm solid var(--navy);padding-top:2.2mm}
+.more h3{font-size:8.8pt;margin-bottom:1mm}
+.more p{font-size:7.9pt;line-height:1.4;color:#33415c}
+.contact{margin-top:auto;background:var(--navy);color:var(--white);border-radius:1.2mm;padding:6mm 7mm;display:grid;grid-template-columns:1fr auto;gap:6mm;align-items:center}
+.contact h2{font-size:14pt;margin-bottom:2mm;color:var(--white)}
+.contact p{font-size:9.2pt;line-height:1.55;color:rgba(255,255,255,.9)}
+.contact .qr{width:26mm;height:26mm;border:0.4mm dashed rgba(255,255,255,.6);border-radius:1mm;display:flex;align-items:center;justify-content:center;text-align:center;font-size:6.5pt;line-height:1.3;padding:2mm}
+.contact .qr .ph{font-size:6pt;border:none;padding:0;background:#FFE08A;display:block}
+.contact .qr{width:30mm;height:30mm;background:#FFE08A;border-color:#9A6B00}
+.legal{font-size:6.8pt;color:var(--charcoal);margin-top:3mm}
+</style>
+</head>
+<body>
+
+<!-- ================= SEITE 1: VORDERSEITE ================= -->
+<section class="page front">
+  <div class="edge"></div>
+  <div class="safe">
+    <div class="hd">
+      <div class="plate"><img src="assets/img/cyspa-logo-transparent.png" alt="CYSPA Cyber Security Partners"></div>
+      <span class="badge">CYSPA im Überblick</span>
+    </div>
+
+    <h1>Cyberrisiken in Geschäfts&shy;entscheide übersetzen.</h1>
+    <div class="bar"></div>
+    <p class="lead">Und Geschäftsentscheide in umsetzbare Sicherheit. Im Massstab von Schweizer KMU und Mid-Market-Unternehmen.</p>
+
+    <div class="proof">
+      <div><h3>Kompetenz</h3><p>Microsoft Security, Offensive Security, Regulatorik und AI Security, erklärt auf Augenhöhe.</p></div>
+      <div><h3>Pragmatismus</h3><p>Der nächste sinnvolle Schritt statt der perfekten Endausbaustufe.</p></div>
+      <div><h3>Schweizer Kontext</h3><p>Recht, Aufsicht und KMU-Realität der Schweiz. Sachlich, ohne Angstmache.</p></div>
+    </div>
+
+    <div class="princ">
+      <div class="k2">Vier Arbeitsprinzipien</div>
+      <ol>
+        <li><b>Prioritäten statt Papier.</b> Jedes Ergebnis beantwortet: Was tun wir zuerst – und warum?</li>
+        <li><b>Sicherheit im Massstab des Unternehmens.</b> Die grösste Wirkung fürs Geld, den Rest ehrlich weglassen.</li>
+        <li><b>Befähigen statt abhängig machen.</b> Ihr Team kann nach dem Mandat mehr als vorher.</li>
+        <li><b>Klartext im Management-Report.</b> Entscheidungsvorlagen statt Techniklisten.</li>
+      </ol>
+    </div>
+
+    <div class="focus">
+      <div class="fcard">
+        <div class="k">Schwerpunkt 1</div>
+        <h2>CISO-as-a-Service</h2>
+        <p>Security-Führung, ohne eine eigene CISO-Stelle zu schaffen: Standortbestimmung, Roadmap, Management-Reporting.</p>
+      </div>
+      <div class="fcard">
+        <div class="k">Schwerpunkt 2</div>
+        <h2>Tabletop-Übung</h2>
+        <p>Ein halber Tag mit Ihrer Führungsrunde: realistisches Szenario, moderierte Entscheidungen, dokumentierte Erkenntnisliste.</p>
+      </div>
+    </div>
+
+    <div class="ffoot">
+      <span><span class="cy">CYSPA</span> GmbH · Cyber Security Partners · Rotkreuz</span>
+      <span>www.cyspa.ch</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SEITE 2: RÜCKSEITE ================= -->
+<section class="page back">
+  <div class="topband"></div>
+  <div class="safe">
+
+    <div class="sec">
+      <div class="kick">Schwerpunkt 1</div>
+      <h2>CISO-as-a-Service: Reihenfolge schlägt Budgethöhe</h2>
+      <p class="pq">Die IT-Leitung ist da, die Sicherheitsorganisation im Aufbau, eine eigene CISO-Stelle ist zu gross. Die entscheidende Frage lautet nicht «Wie viel?», sondern: Welches Risiko reduziert der nächste Franken am stärksten?</p>
+      <div class="two">
+        <div class="box">
+          <h3>Vorgehen</h3>
+          <ol>
+            <li>Standortbestimmung: Was trägt das Geschäft?</li>
+            <li>Priorisierung: Grundhygiene vor Spezialwerkzeug</li>
+            <li>Roadmap auf einer Seite: 3, 6 und 12 Monate</li>
+            <li>Management-Reporting und laufende Begleitung</li>
+          </ol>
+        </div>
+        <div class="box">
+          <h3>Ergebnis</h3>
+          <ul>
+            <li>Priorisierte Roadmap, die die Geschäftsleitung versteht</li>
+            <li>Entscheidungsvorlagen statt Alarmlisten</li>
+            <li>Eine verantwortliche Security-Rolle, geteilt statt voll finanziert</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="kick">Schwerpunkt 2</div>
+      <h2>Tabletop-Übung: Wer entscheidet, wenn es ernst wird?</h2>
+      <p class="pq">Eine moderierte Entscheidungsübung für die Führungsrunde, keine Technik-Simulation. Ein halber Tag, rund 90 Minuten Übung im Szenario. Getestet wird die Organisation, nicht die Firewall.</p>
+      <div class="two">
+        <div class="box">
+          <h3>Typischerweise wird sichtbar</h3>
+          <ul>
+            <li>Unklare Befugnisse</li>
+            <li>Kommunikation ohne E-Mail und Chat</li>
+            <li>Meldefristen unter Zeitdruck</li>
+            <li>Offene Fragen zu Dienstleistern im Notfall</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>Ergebnis</h3>
+          <p>Eine dokumentierte Erkenntnisliste mit klaren Verantwortlichkeiten. Aus einem Plan wird eine geübte Fähigkeit.</p>
+        </div>
+      </div>
+      <p class="quote">Ein Incident-Response-Plan ist eine Hypothese. Die Übung ist ihr Test.</p>
+    </div>
+
+    <div class="sec">
+      <div class="kick">Weitere Leistungen</div>
+      <div class="more">
+        <div><h3>Security-Baseline KMU</h3><p>Die ersten Massnahmen in der richtigen Reihenfolge.</p></div>
+        <div><h3>Microsoft-365-Assessment</h3><p>Identitäten, Zugriffe und Freigaben auf Konfigurationsebene.</p></div>
+        <div><h3>Pentest und Attack Simulation</h3><p>Sauberer Scope, priorisierte Behebung.</p></div>
+        <div><h3>Regulatorik und Compliance</h3><p>NIS2, ISG, revDSG, ISO 27001, DORA: Betrifft uns das?</p></div>
+        <div><h3>AI Security und Governance</h3><p>KI kontrolliert nutzen statt verbieten.</p></div>
+        <div><h3>Erstgespräch</h3><p>Wo stehen Sie, und was ist der nächste sinnvolle Schritt?</p></div>
+      </div>
+    </div>
+
+    <div class="contact">
+      <div>
+        <h2>Sprechen wir darüber.</h2>
+        <p><span class="cy">CYSPA</span> GmbH · Cyber Security Partners<br>
+        <span class="ph">[PLATZHALTER: Strasse Nr.]</span> · <span class="ph">[PLATZHALTER: PLZ]</span> Rotkreuz<br>
+        info@cyspa.ch · +41 41 521 61 61 · www.cyspa.ch<br>
+        LinkedIn: linkedin.com/company/56471500</p>
+      </div>
+      <div class="qr"><span class="ph">[PLATZHALTER: QR-Code auf www.cyspa.ch/tabletop mit UTM]</span></div>
+    </div>
+    <p class="legal">Stand <span class="ph">[PLATZHALTER: Monat/Jahr Druck]</span>. Allgemeine Informationen, keine Rechtsberatung.</p>
+  </div>
+</section>
+
+</body>
+</html>
