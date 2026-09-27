@@ -53,15 +53,15 @@ Wie lange müssen Ihre Daten vertraulich bleiben?
 → Gesundheits- und Personendaten: teils ein Leben lang.
 → Verträge, M&A-Unterlagen, Behördendaten: viele Jahre.
 
-Wenn die nötige Vertraulichkeitsdauer plus die Zeit für Ihre eigene Umstellung länger ist als die Zeit bis zum relevanten Quantencomputer — dann ist «später» bereits zu spät. Genau diese Überlegung treibt derzeit Regulatoren und Grosskunden um.
+Wenn die nötige Vertraulichkeitsdauer plus die Zeit für Ihre eigene Umstellung länger ist als die Zeit bis zum relevanten Quantencomputer, dann ist «später» bereits zu spät. Genau diese Überlegung treibt derzeit Regulatoren und Grosskunden um.
 
 Die Standards sind übrigens da: Das US-Standardisierungsinstitut NIST hat 2024 die ersten Post-Quantum-Verfahren finalisiert, Hersteller bauen sie schrittweise in Produkte und Protokolle ein.
 
 Und der erste Schritt für Sie kostet keine neue Technologie, sondern Übersicht: ein Krypto-Inventar.
 
-1. Wo setzen wir welche Verschlüsselung ein — Übertragung, Speicherung, Signaturen, Archive?
+1. Wo setzen wir welche Verschlüsselung ein: Übertragung, Speicherung, Signaturen, Archive?
 2. Welche dieser Stellen schützen langlebige Daten?
-3. Welche Systeme könnten wir überhaupt umstellen — und welche Hersteller haben eine Roadmap? (Stichwort Crypto Agility)
+3. Welche Systeme könnten wir überhaupt umstellen, und welche Hersteller haben eine Roadmap? (Stichwort Crypto Agility)
 
 Wer dieses Inventar hat, kann gelassen priorisieren. Wer es nicht hat, diskutiert über Schlagzeilen.
 
@@ -74,7 +74,12 @@ Wer dieses Inventar hat, kann gelassen priorisieren. Wer es nicht hat, diskutier
 |--------|-------|-------|------------|
 | Liste Vertraulichkeitsdauer, Zeile 1 | «oft 10–20 Jahre und mehr» | «oft viele Jahre, teils Jahrzehnte» | Gate 1 (Zahlen-Regel: «nur mit verifizierbarer Quelle; sonst streichen oder als Grössenordnung kennzeichnen»): Die Spanne 10–20 Jahre hat keine Quelle. Neu steht dort eine Grössenordnung ohne Scheinpräzision. Die Aussage bleibt gleich. |
 | NIST-Satz | «Das US-Institut NIST» | «Das US-Standardisierungsinstitut NIST» | Gate 3: Die Abkürzung wird halbsatzweise erklärt (sekundäre Zielgruppe Enterprise/Executive) |
+| Absatz Mosca-Logik | «relevanten Quantencomputer — dann ist «später» bereits zu spät» | «relevanten Quantencomputer, dann ist «später» bereits zu spät» | CI v3 Copy-Regel (kein Gedankenstrich im Satzfluss) |
+| Inventar-Frage 1 | «Verschlüsselung ein — Übertragung, Speicherung» | «Verschlüsselung ein: Übertragung, Speicherung» | CI v3 Copy-Regel (kein Gedankenstrich im Satzfluss) |
+| Inventar-Frage 3 | «umstellen — und welche Hersteller» | «umstellen, und welche Hersteller» | CI v3 Copy-Regel (kein Gedankenstrich im Satzfluss) |
 | Rest | – | unverändert | – |
+
+Hinweis zu den Zeilen «CI v3 Copy-Regel» (27.09.2026): Die Spalte «Draft» zeigt dort die bisherige Freigabefassung, nicht den Repo-Draft. Nur Zeichensetzung geändert, Aussagen unverändert.
 
 ## 3. Faktencheck
 

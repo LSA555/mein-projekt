@@ -42,15 +42,15 @@ Freigabepaket für LWE. Grundlage: Repo-Draft `linkedin/posts/2026-10-15-p11-ins
 ### Plan B – ohne Foto, ohne persönlichen Absatz (publikationsreif nach Freigabe)
 
 ```text
-CYSPA steht für Cyber Security Partners. Das Wort «Partner» steht dort nicht, weil es gut klingt — sondern weil wir eine klare Vorstellung davon haben, wie Security-Arbeit für Schweizer Unternehmen funktionieren muss.
+CYSPA steht für Cyber Security Partners. Das Wort «Partner» steht dort nicht, weil es gut klingt, sondern weil wir eine klare Vorstellung davon haben, wie Security-Arbeit für Schweizer Unternehmen funktionieren muss.
 
 Vier Prinzipien, an denen wir uns messen lassen:
 
 1. Prioritäten statt Papier.
-Ein Assessment, das nicht in einer umsetzbaren Roadmap endet, ist Dekoration. Jedes unserer Ergebnisse beantwortet die Frage: Was tun wir zuerst — und warum?
+Ein Assessment, das nicht in einer umsetzbaren Roadmap endet, ist Dekoration. Jedes unserer Ergebnisse beantwortet die Frage: Was tun wir zuerst, und warum?
 
 2. Sicherheit im Massstab des Unternehmens.
-Ein Betrieb mit 50 Mitarbeitenden braucht keine Konzern-Governance. Er braucht die Massnahmen mit der grössten Wirkung fürs Geld — und die Ehrlichkeit, den Rest wegzulassen.
+Ein Betrieb mit 50 Mitarbeitenden braucht keine Konzern-Governance. Er braucht die Massnahmen mit der grössten Wirkung fürs Geld. Und die Ehrlichkeit, den Rest wegzulassen.
 
 3. Befähigen statt abhängig machen.
 Unser Erfolg zeigt sich daran, dass Ihr Team nach dem Mandat mehr kann und mehr versteht als vorher. Abhängigkeit ist kein Geschäftsmodell, das zu «Partner» passt.
@@ -79,7 +79,12 @@ Dieser Platzhalter darf **nicht** publiziert werden (Gate 2). Liegt der Absatz n
 |--------|-------|-------|------------|
 | Persönlicher Absatz | `[PLATZHALTER — persönlicher Absatz …]` | Plan B: entfernt · Plan A: offen, durch das Team zu füllen | Gate 2 (Platzhalter-Kontrolle). KI erfindet keine persönlichen Einblicke. |
 | Schlussabsatz | «teilen wir jede Woche» | «teilen wir regelmässig» | Gate 2 (keine unrichtige Angabe): Batch 1 endet am 15.10. Batch 2 startet laut Redaktionsplan §4 erst in KW 44. KW 43 war als Review-Woche ohne Posts vorgesehen. Nachtrag 27.09.2026: LWE hat Posts für 20./22.10. beauftragt (cyspa-marketing/linkedin/posts-neu/), damit wäre «jede Woche» bis Ende Oktober belegbar. «Regelmässig» bleibt trotzdem die sichere Formulierung, weil die Oktober-Posts noch nicht freigegeben sind. |
+| Einstieg | «gut klingt — sondern weil wir» | «gut klingt, sondern weil wir» | CI v3 Copy-Regel (kein Gedankenstrich im Satzfluss) |
+| Prinzip 1 | «Was tun wir zuerst — und warum?» | «Was tun wir zuerst, und warum?» | CI v3 Copy-Regel (kein Gedankenstrich im Satzfluss) |
+| Prinzip 2 | «Wirkung fürs Geld — und die Ehrlichkeit» | «Wirkung fürs Geld. Und die Ehrlichkeit» | CI v3 Copy-Regel (kein Gedankenstrich im Satzfluss) |
 | Rest | – | unverändert | – |
+
+Hinweis zu den Zeilen «CI v3 Copy-Regel» (27.09.2026): Die Spalte «Draft» zeigt dort die bisherige Freigabefassung, nicht den Repo-Draft. Nur Zeichensetzung geändert, Aussagen unverändert.
 
 ## 3. Faktencheck
 

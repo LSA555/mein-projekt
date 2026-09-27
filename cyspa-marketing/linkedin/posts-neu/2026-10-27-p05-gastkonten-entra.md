@@ -46,6 +46,14 @@ Selbstcheck für diese Woche: Wie viele Gäste haben sich seit 90 Tagen nicht an
 
 Länge: 1'822 Zeichen (Technical-Post, Überschreitung des Korridors um 22 Zeichen vertretbar laut Styleguide §3 «Technical-Posts dürfen länger sein»). Hook 86 Zeichen ✔.
 
+### Copy-Anpassungen CI v3
+
+Geprüft am 27.09.2026 (Post-Text, erster Kommentar, Titel): kein Gedankenstrich im Satzfluss, «ss» statt «ß», keine Ausrufezeichen, Sie-Form, Zahlen nur mit Quelle.
+
+| Stelle | alt | neu | Begründung |
+|--------|-----|-----|------------|
+| Post-Text und erster Kommentar | – | keine Änderung nötig | CI v3 Copy-Regel: keine Verstösse gefunden |
+
 ## Erster Kommentar
 Keiner nötig.
 

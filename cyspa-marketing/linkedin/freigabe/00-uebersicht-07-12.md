@@ -12,6 +12,8 @@ slot: "2026-09-29 bis 2026-10-15"
 Stand So 27.09.2026. LWE ist ab **Do 01.10.2026** in den Ferien. **Letzter Arbeitstag für Freigaben und Einplanung: Mi 30.09.2026.**
 Die Pakete wurden mit KI-Unterstützung erstellt. Gate 1 (Fach) ist nur vorgeprüft und bleibt nach §4.5 beim menschlichen Fach-Owner. Die Primärquellen (admin.ch, nist.gov) waren aus der Arbeitsumgebung gesperrt. Deshalb sind alle Faktenprüfungen **REPORTED**, keine ist VERIFIED.
 
+> **Hinweis:** Copy-Regeln CI v3 angewendet am 27.09.2026; Visuals werden im CI v3 neu gebaut (visuals-ci3/).
+
 ## Tabelle
 
 | Post | Slot | Status Paket | Was LWE vor Mi 30.09. tun muss | Risiko |

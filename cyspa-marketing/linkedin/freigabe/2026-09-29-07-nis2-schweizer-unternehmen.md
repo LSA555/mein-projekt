@@ -7,7 +7,7 @@ post_nr: "07"
 slot: "2026-09-29 08:15"
 ---
 
-# #07 – NIS2 trifft Schweizer Unternehmen – über Verträge
+# #07 – NIS2 trifft Schweizer Unternehmen, über Verträge
 
 Freigabepaket für LWE. Grundlage: Repo-Draft `linkedin/posts/2026-09-29-p06-nis2-schweizer-unternehmen.md` (Branch `claude/cyspa-linkedin-strategy-vte419`). Erstellt mit KI-Unterstützung. Die Faktenverantwortung liegt nach §4.5 beim menschlichen Fach-Owner.
 
@@ -29,32 +29,32 @@ Freigabepaket für LWE. Grundlage: Repo-Draft `linkedin/posts/2026-09-29-p06-nis
 ## 2. Finaler Post-Text (copy-paste-fertig)
 
 ```text
-NIS2 ist EU-Recht. Die Schweiz kennt kein NIS2. Und trotzdem landet es gerade auf den Tischen von Schweizer Geschäftsleitungen — in Form von Kundenverträgen und Fragebögen.
+NIS2 ist EU-Recht. Die Schweiz kennt kein NIS2. Und trotzdem landet es gerade auf den Tischen von Schweizer Geschäftsleitungen: in Form von Kundenverträgen und Fragebögen.
 
 Drei Wege, über die NIS2 Schweizer Unternehmen erreicht:
 
-1. Tochtergesellschaften und Niederlassungen in der EU: Wer dort als wesentliche oder wichtige Einrichtung gilt, ist direkt betroffen — inklusive Pflichten für die Führungsebene.
+1. Tochtergesellschaften und Niederlassungen in der EU: Wer dort als wesentliche oder wichtige Einrichtung gilt, ist direkt betroffen, inklusive Pflichten für die Führungsebene.
 
-2. Die Lieferkette: NIS2 verpflichtet betroffene Unternehmen, die Sicherheit ihrer Lieferanten und Dienstleister zu managen. Diese Pflicht wird weitergereicht — als Vertragsklausel, Sicherheitsfragebogen oder Audit-Recht. Wer Schweizer Zulieferer eines EU-regulierten Kunden ist, spürt NIS2 zuerst im Vertragsanhang.
+2. Die Lieferkette: NIS2 verpflichtet betroffene Unternehmen, die Sicherheit ihrer Lieferanten und Dienstleister zu managen. Diese Pflicht wird weitergereicht: als Vertragsklausel, Sicherheitsfragebogen oder Audit-Recht. Wer Schweizer Zulieferer eines EU-regulierten Kunden ist, spürt NIS2 zuerst im Vertragsanhang.
 
-3. Der Marktzugang: Wer kritische Dienste für EU-Kunden erbringt, wird faktisch an deren Anforderungen gemessen — unabhängig vom eigenen Firmensitz. Für bestimmte digitale Dienste, etwa Cloud, Rechenzentren oder ausgelagerten IT-Betrieb, kann NIS2 sogar direkt gelten, wenn sie in der EU angeboten werden und das Unternehmen die Grössenschwellen erreicht. Dann ist eine Vertretung in der EU zu benennen.
+3. Der Marktzugang: Wer kritische Dienste für EU-Kunden erbringt, wird faktisch an deren Anforderungen gemessen, unabhängig vom eigenen Firmensitz. Für bestimmte digitale Dienste, etwa Cloud, Rechenzentren oder ausgelagerten IT-Betrieb, kann NIS2 sogar direkt gelten, wenn sie in der EU angeboten werden und das Unternehmen die Grössenschwellen erreicht. Dann ist eine Vertretung in der EU zu benennen.
 
-Und parallel dazu die Schweiz selbst: Betreiber kritischer Infrastrukturen melden Cyberangriffe seit dem 1. April 2025 innert 24 Stunden dem Bundesamt für Cybersicherheit (BACS) — so verlangt es das Informationssicherheitsgesetz.
+Und parallel dazu die Schweiz selbst: Betreiber kritischer Infrastrukturen melden Cyberangriffe seit dem 1. April 2025 innert 24 Stunden dem Bundesamt für Cybersicherheit (BACS). So verlangt es das Informationssicherheitsgesetz.
 
 Drei Prüffragen für Ihre nächste Sitzung:
 
 → Haben wir Kunden in der EU, die in regulierte Sektoren fallen (Energie, Transport, Gesundheit, digitale Dienste, verarbeitendes Gewerbe u.a.)?
 → Sind in den letzten Monaten Sicherheitsfragebögen oder neue Vertragsklauseln zur Informationssicherheit eingetroffen?
-→ Können wir unsere Sicherheitsmassnahmen nachweisbar belegen — zum Beispiel entlang einer anerkannten Struktur wie ISO 27001?
+→ Können wir unsere Sicherheitsmassnahmen nachweisbar belegen, zum Beispiel entlang einer anerkannten Struktur wie ISO 27001?
 
-Die Erfahrung zeigt: Regulatorik erreicht Schweizer Unternehmen selten als Gesetz — meist als Vertragsklausel. Gut vorbereitet ist, wer Nachweise liefern kann, bevor der Fragebogen kommt.
+Die Erfahrung zeigt: Regulatorik erreicht Schweizer Unternehmen selten als Gesetz, meist als Vertragsklausel. Gut vorbereitet ist, wer Nachweise liefern kann, bevor der Fragebogen kommt.
 
 (Allgemeine Einordnung, keine Rechtsberatung.)
 
 #NIS2 #Compliance #ISO27001 #Lieferkette #CYSPA
 ```
 
-Länge: rund 2'030 Zeichen. Das liegt über dem Styleguide-Korridor von 900–1'800 Zeichen. Der Repo-Draft lag bei rund 1'810. Für einen Governance-Post ist das vertretbar. Wenn gekürzt werden soll, zuerst den Satz «Wer Schweizer Zulieferer … Vertragsanhang.» streichen.
+Länge: 2'079 Zeichen inkl. Zeilenumbrüche (nach der Copy-Anpassung CI v3 am 27.09.2026 nachgezählt; zuvor als «rund 2'030» angegeben). Das liegt über dem Styleguide-Korridor von 900–1'800 Zeichen. Der Repo-Draft lag bei rund 1'810. Für einen Governance-Post ist das vertretbar. Wenn gekürzt werden soll, zuerst den Satz «Wer Schweizer Zulieferer … Vertragsanhang.» streichen.
 
 **Optionaler Aktualitätsvorschlag, nicht eingebaut. Entscheid Fach-Owner/LWE.** Einfügen nach Punkt 3, vor «Und parallel dazu die Schweiz selbst»:
 
@@ -67,7 +67,17 @@ Beide Angaben sind nur REPORTED (siehe Faktencheck F6, F7). Vor dem Einbau müss
 | Stelle | Draft | Final | Begründung |
 |--------|-------|-------|------------|
 | Punkt 3 «Marktzugang» | Nur «faktisch an deren Anforderungen gemessen» | Ergänzt um einen Satz: Direktanwendung für bestimmte digitale Dienste und Pflicht zur EU-Vertretung | Gate-1-Befund: Übervereinfachung. Nach Art. 26 NIS2 fallen bestimmte Anbieter ohne EU-Niederlassung direkt unter NIS2, wenn sie Dienste in der EU anbieten. Dazu gehören Cloud-, Rechenzentrums-, DNS- und Managed-Service-Anbieter. Sie müssen eine Vertretung in der EU benennen (F4, REPORTED). Für Schweizer IT-Dienstleister ist das die relevanteste Aussage. «Faktisch» allein untertreibt sie. **Der Fach-Owner muss die Formulierung bestätigen oder streichen.** |
+| Titel (H1) | «Schweizer Unternehmen – über Verträge» | «Schweizer Unternehmen, über Verträge» | CI v3 Copy-Regel (kein Gedankenstrich im Satzfluss) |
+| Einstieg, 3. Satz | «Geschäftsleitungen — in Form von Kundenverträgen» | «Geschäftsleitungen: in Form von Kundenverträgen» | CI v3 Copy-Regel (kein Gedankenstrich im Satzfluss) |
+| Punkt 1 | «direkt betroffen — inklusive Pflichten» | «direkt betroffen, inklusive Pflichten» | CI v3 Copy-Regel (kein Gedankenstrich im Satzfluss) |
+| Punkt 2 | «weitergereicht — als Vertragsklausel» | «weitergereicht: als Vertragsklausel» | CI v3 Copy-Regel (kein Gedankenstrich im Satzfluss) |
+| Punkt 3 | «gemessen — unabhängig vom eigenen Firmensitz» | «gemessen, unabhängig vom eigenen Firmensitz» | CI v3 Copy-Regel (kein Gedankenstrich im Satzfluss) |
+| Absatz Schweiz | «(BACS) — so verlangt es» | «(BACS). So verlangt es» | CI v3 Copy-Regel (kein Gedankenstrich im Satzfluss) |
+| Prüffrage 3 | «nachweisbar belegen — zum Beispiel» | «nachweisbar belegen, zum Beispiel» | CI v3 Copy-Regel (kein Gedankenstrich im Satzfluss) |
+| Schlussabsatz | «selten als Gesetz — meist als Vertragsklausel» | «selten als Gesetz, meist als Vertragsklausel» | CI v3 Copy-Regel (kein Gedankenstrich im Satzfluss) |
 | Rest | – | unverändert | – |
+
+Hinweis zu den Zeilen «CI v3 Copy-Regel» (27.09.2026): Die Spalte «Draft» zeigt dort die bisherige Freigabefassung, nicht den Repo-Draft. Nur Zeichensetzung geändert, Aussagen unverändert.
 
 ## 3. Faktencheck
 

@@ -4,6 +4,8 @@ Stand: So 27.09.2026 · erstellt von Oliver (Content/Marketing) mit KI-Vorprüfu
 
 Grundlagen (Branch `origin/claude/cyspa-linkedin-strategy-vte419`): `linkedin/01-strategie.md`, `02-content-pfeiler.md`, `03-styleguide.md`, `04-prozess-qualitaet.md`, `05-redaktionsplan.md`, `posts/README.md`.
 
+> **Hinweis:** Copy-Regeln CI v3 angewendet am 27.09.2026; Visuals werden im CI v3 neu gebaut (visuals-ci3/).
+
 **Termindruck:** Die Inhaberin (LWE) ist ab Do 01.10.2026 in den Ferien. Alle vier Posts müssen bis **Mi 30.09.2026** fachlich geprüft, durch die Gates und freigegeben sein. Vorlauf laut 04 §1: Carousel/Graphic 5 Arbeitstage — mit Freigabe am 30.09. erfüllt.
 
 ## 0. Abweichung vom Redaktionsplan (05 §4)

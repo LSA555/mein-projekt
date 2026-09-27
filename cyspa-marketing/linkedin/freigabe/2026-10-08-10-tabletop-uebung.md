@@ -38,21 +38,21 @@ Wer entscheidet jetzt was?
 
 Wenn die ehrliche Antwort «kommt darauf an, wer erreichbar ist» lautet, fehlt Ihnen keine Technik. Ihnen fehlt eine Übung.
 
-Eine Tabletop-Übung ist eine moderierte Entscheidungsübung: ein realistisches Szenario, die richtigen Personen am Tisch, 90 Minuten. Keine Technik-Simulation, kein Test der Firewall — ein Test der Organisation.
+Eine Tabletop-Übung ist eine moderierte Entscheidungsübung: ein realistisches Szenario, die richtigen Personen am Tisch, 90 Minuten. Keine Technik-Simulation, kein Test der Firewall. Ein Test der Organisation.
 
 Was dabei typischerweise sichtbar wird:
 
-1. Unklare Befugnisse. Wer darf Systeme vom Netz nehmen, auch wenn damit das Geschäft steht? Wer gibt Externen den Auftrag — und bis zu welchem Betrag?
+1. Unklare Befugnisse. Wer darf Systeme vom Netz nehmen, auch wenn damit das Geschäft steht? Wer gibt Externen den Auftrag, und bis zu welchem Betrag?
 
-2. Kommunikation ohne die üblichen Kanäle. Wie erreichen Sie Mitarbeitende und Kunden, wenn E-Mail und Chat selbst betroffen sind? Wo liegen die Notfallkontakte — hoffentlich nicht nur auf dem verschlüsselten Server?
+2. Kommunikation ohne die üblichen Kanäle. Wie erreichen Sie Mitarbeitende und Kunden, wenn E-Mail und Chat selbst betroffen sind? Wo liegen die Notfallkontakte, hoffentlich nicht nur auf dem verschlüsselten Server?
 
-3. Meldefristen unter Zeitdruck. Datenschutzbehörden, Vertragspartner, allenfalls Aufsicht oder das Bundesamt für Cybersicherheit (BACS): Wer meldet was bis wann — und wer formuliert es?
+3. Meldefristen unter Zeitdruck. Datenschutzbehörden, Vertragspartner, allenfalls Aufsicht oder das Bundesamt für Cybersicherheit (BACS): Wer meldet was bis wann, und wer formuliert es?
 
 4. Die Dienstleisterfrage. Wer ist der erste Anruf? Gilt der Support-Vertrag auch am Wochenende? Steht die Nummer des Versicherers im Plan?
 
 Der eigentliche Wert: Ein Incident-Response-Plan ist eine Hypothese. Die Übung ist ihr Test. Und die wertvollsten Erkenntnisse sind fast immer organisatorisch, nicht technisch.
 
-Unser Format dafür: ein halber Tag mit Ihrer Führungsrunde — Szenario, moderierte Entscheidung, dokumentierte Erkenntnisliste mit klaren Verantwortlichkeiten. Details und Terminanfrage: Link im ersten Kommentar.
+Unser Format dafür: ein halber Tag mit Ihrer Führungsrunde. Szenario, moderierte Entscheidung, dokumentierte Erkenntnisliste mit klaren Verantwortlichkeiten. Details und Terminanfrage: Link im ersten Kommentar.
 
 #IncidentResponse #TabletopExercise #Krisenmanagement #Führung #CYSPA
 ```
@@ -63,11 +63,20 @@ Unser Format dafür: ein halber Tag mit Ihrer Führungsrunde — Szenario, moder
 |--------|-------|-------|------------|
 | Punkt 3 | «allenfalls Aufsicht oder BACS» | «allenfalls Aufsicht oder das Bundesamt für Cybersicherheit (BACS)» | Gate 3 und Styleguide §2: Abkürzung im Executive-Post beim ersten Auftreten ausschreiben |
 | Alt-Text | Repo-Fassung | Slide für Slide neu gefasst (siehe Abschnitt Alt-Text) | Gate 3: Alt-Text beschreibt jede der 6 Slides einzeln |
+| Definition Tabletop | «kein Test der Firewall — ein Test der Organisation» | «kein Test der Firewall. Ein Test der Organisation» | CI v3 Copy-Regel (kein Gedankenstrich im Satzfluss) |
+| Punkt 1 | «den Auftrag — und bis zu welchem Betrag?» | «den Auftrag, und bis zu welchem Betrag?» | CI v3 Copy-Regel (kein Gedankenstrich im Satzfluss) |
+| Punkt 2 | «Notfallkontakte — hoffentlich nicht nur» | «Notfallkontakte, hoffentlich nicht nur» | CI v3 Copy-Regel (kein Gedankenstrich im Satzfluss) |
+| Punkt 3 | «bis wann — und wer formuliert es?» | «bis wann, und wer formuliert es?» | CI v3 Copy-Regel (kein Gedankenstrich im Satzfluss) |
+| Angebotsabsatz | «Führungsrunde — Szenario, moderierte Entscheidung» | «Führungsrunde. Szenario, moderierte Entscheidung» | CI v3 Copy-Regel (kein Gedankenstrich im Satzfluss) |
+| Präzisierungsvorschlag (offener Punkt, Blockzitat) | «Führungsrunde — Einführung, Szenario» | «Führungsrunde. Einführung, Szenario» | CI v3 Copy-Regel (kein Gedankenstrich im Satzfluss) |
+| Erster Kommentar | «Tabletop-Format von CYSPA — Ablauf, Aufwand» | «Tabletop-Format von CYSPA. Ablauf, Aufwand» | CI v3 Copy-Regel (kein Gedankenstrich im Satzfluss) |
 | Rest | – | unverändert | – |
+
+Hinweis zu den Zeilen «CI v3 Copy-Regel» (27.09.2026): Die Spalte «Draft» zeigt dort die bisherige Freigabefassung, nicht den Repo-Draft. Nur Zeichensetzung geändert, Aussagen unverändert.
 
 **Offener Punkt für den IR-Owner, nicht geändert:** Text und Slide 1 sprechen von «90 Minuten», der Angebotsteil und Slide 6 von «ein halber Tag». Beides ist vereinbar, wenn der halbe Tag Einführung und Auswertung einschliesst. Leserinnen könnten es aber als Widerspruch lesen, und für die Angebotsbeschreibung gilt die UWG-Genauigkeit. Die Angaben müssen mit der Landingpage übereinstimmen. Mögliche Präzisierung, **nur wenn sie dem tatsächlichen Format entspricht**:
 
-> Unser Format dafür: ein halber Tag mit Ihrer Führungsrunde — Einführung, Szenario mit moderierter Entscheidung, Auswertung und eine dokumentierte Erkenntnisliste mit klaren Verantwortlichkeiten.
+> Unser Format dafür: ein halber Tag mit Ihrer Führungsrunde. Einführung, Szenario mit moderierter Entscheidung, Auswertung und eine dokumentierte Erkenntnisliste mit klaren Verantwortlichkeiten.
 
 ## 3. Faktencheck
 
@@ -97,7 +106,7 @@ Primärquellen (fedlex.admin.ch, bacs.admin.ch, edoeb.admin.ch) waren aus dieser
 ## 5. Erster Kommentar (sofort nach Publikation setzen)
 
 ```text
-Hier geht es zum Executive-Tabletop-Format von CYSPA — Ablauf, Aufwand und Terminanfrage: https://www.cyspa.ch/tabletop?utm_source=linkedin&utm_medium=organic&utm_campaign=p12-tabletop
+Hier geht es zum Executive-Tabletop-Format von CYSPA. Ablauf, Aufwand und Terminanfrage: https://www.cyspa.ch/tabletop?utm_source=linkedin&utm_medium=organic&utm_campaign=p12-tabletop
 
 Passend zum European Cybersecurity Month im Oktober: Ein guter Anlass, den Notfallplan einmal gemeinsam durchzuspielen.
 ```

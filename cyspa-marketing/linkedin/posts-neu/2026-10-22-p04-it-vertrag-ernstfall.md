@@ -50,6 +50,14 @@ Welche der fünf Fragen ist bei Ihnen noch offen?
 
 Länge: 1'619 Zeichen (Korridor ✔, Executive eher kurz: Kürzungsoption siehe Gate-Vermerk). Hook (erste zwei Zeilen) 134 Zeichen ✔.
 
+### Copy-Anpassungen CI v3
+
+Geprüft am 27.09.2026 (Post-Text, erster Kommentar, Titel): kein Gedankenstrich im Satzfluss, «ss» statt «ß», keine Ausrufezeichen, Sie-Form, Zahlen nur mit Quelle.
+
+| Stelle | alt | neu | Begründung |
+|--------|-----|-----|------------|
+| Post-Text und erster Kommentar | – | keine Änderung nötig | CI v3 Copy-Regel: keine Verstösse gefunden |
+
 ## Erster Kommentar
 ```text
 Oktober ist European Cybersecurity Month. Unser Beitrag dazu: die Fragen, die man vor dem Ernstfall klärt, nicht währenddessen. Die fünf Fragen sind allgemeine Hinweise, keine Rechtsberatung zu Ihrem Vertrag.

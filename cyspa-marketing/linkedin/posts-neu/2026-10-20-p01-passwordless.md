@@ -50,6 +50,14 @@ Welcher der vier Schritte ist bei Ihnen der schwierigste?
 
 Länge: 1'645 Zeichen (Korridor 900–1'800 ✔). Hook (erste zwei Zeilen) 112 Zeichen ✔.
 
+### Copy-Anpassungen CI v3
+
+Geprüft am 27.09.2026 (Post-Text, erster Kommentar, Titel): kein Gedankenstrich im Satzfluss, «ss» statt «ß», keine Ausrufezeichen, Sie-Form, Zahlen nur mit Quelle.
+
+| Stelle | alt | neu | Begründung |
+|--------|-----|-----|------------|
+| Post-Text und erster Kommentar | – | keine Änderung nötig | CI v3 Copy-Regel: keine Verstösse gefunden |
+
 ## Erster Kommentar
 Keiner nötig (Dialog-CTA, kein Link). Für Gesprächsanfragen aus Kommentaren gilt der Tracking-Link aus dem Entwurf: `https://www.cyspa.ch/?utm_source=linkedin&utm_medium=organic&utm_campaign=passwordless-2026-10` (Kampagnenmonat von 09 auf 10 angepasst, da der Slot im Oktober liegt).
 

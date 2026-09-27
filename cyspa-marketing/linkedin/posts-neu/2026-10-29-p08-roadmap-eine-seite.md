@@ -51,6 +51,15 @@ Die Roadmap auf einer Seite ist Teil unserer Arbeit als CISO-as-a-Service. Sie m
 
 Länge: 1'625 Zeichen (Korridor ✔). Hook (erste zwei Zeilen) 158 Zeichen ✔.
 
+### Copy-Anpassungen CI v3
+
+Geprüft am 27.09.2026 (Post-Text, erster Kommentar, Titel): kein Gedankenstrich im Satzfluss, «ss» statt «ß», keine Ausrufezeichen, Sie-Form, Zahlen nur mit Quelle.
+
+| Stelle | alt | neu | Begründung |
+|--------|-----|-----|------------|
+| Post-Text und erster Kommentar | – | keine Änderung nötig | CI v3 Copy-Regel: keine Verstösse gefunden |
+| Titel (H1) | «3–6–12 Monate» | unverändert | Zahlenfolge der Planungshorizonte, kein Gedankenstrich im Satzfluss (Ausnahme laut CI v3) |
+
 ## Erster Kommentar
 ```text
 CISO-as-a-Service und Erstgespräch: https://www.cyspa.ch/leistungen?utm_source=linkedin&utm_medium=organic&utm_campaign=roadmap-2026-10#ciso-as-a-service
