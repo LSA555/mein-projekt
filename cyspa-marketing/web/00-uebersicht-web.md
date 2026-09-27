@@ -23,7 +23,7 @@ chat_url: "https://claude.ai/code/session_01JsQoSQbozeyt2EYitpEXuf"
 | 3 | `flyer-cyspa.md` | Flyertext, Druckhinweise (3 mm Beschnitt), offene Punkte | Entwurf fertig |
 | 3 | `flyer-cyspa.pdf` | A4 hoch, 2 Seiten, 215,9 × 303 mm inkl. Beschnitt, TrimBox 210 × 297 mm und BleedBox gesetzt, Fonts eingebettet, kein Personenfoto | Entwurf mit markierten Platzhaltern |
 | 3 | `flyer-cyspa-vorschau-s1.png`, `-s2.png`, `flyer-cyspa.html` | Vorschau und Quelle | – |
-| 4 | `sicherheits-check/Check-Invoke-CyspaWebCheck.ps1` | Passiver Web-Check (PowerShell 7), Markdown-Bericht | Syntax geprüft, Selbsttest 40/40, Ende-zu-Ende-Test gegen lokalen Nachbau |
+| 4 | `sicherheits-check/Check-Invoke-CyspaWebCheck.ps1` | Passiver Web-Check (PowerShell 7), Markdown-Bericht mit Management-Summary (Top-3, Entscheidungsbedarf), Zuordnung ISO/IEC 27001:2022 Anhang A, Verteiler und Abnahme (Michael, LWE) | Syntax geprüft, Selbsttest 43/43, Ende-zu-Ende-Test gegen lokalen Nachbau |
 | 4 | `sicherheits-check/README.md` | Anleitung, Grenzen, Interpretation, Massnahmenkatalog, Bezug E2 | fertig |
 | 4 | `sicherheits-check/beispiel-bericht-testumgebung.md` | Beispielbericht (Testumgebung, nicht cyspa.ch) | – |
 
@@ -68,6 +68,8 @@ Sicherheits-Check → Massnahmen «Handlungsbedarf» (insbesondere M-CVE) → Te
 | Kommentar-Link Beitrag #10 | `linkedin/posts/2026-10-08-p12-tabletop-exercise.md` | Oliver, Text liegt in `landingpage-tabletop.md` Kap. 1 |
 
 ## 4. Hinweise und Risiken
+
+- **Gestaltung nicht CI-konform:** Flyer und Landingpage-HTML verwenden die Farben aus dem LinkedIn-Repo (Cyan-Akzent). Das ist laut LWE **nicht** das echte CYSPA-CI (Navy-Verlauf, Gold/Gelb als Akzent, Logo CYS blau / PA grau, Serifen-Headlines im Flyer). Das Redesign übernimmt die Koordination; Texte und Druckhinweise (Beschnitt, TrimBox/BleedBox) bleiben gültig.
 
 - **Konsistenz mit LinkedIn:** Die Arbeitsprinzipien (Webseite, Flyer) stammen aus dem Beitrag vom 15.10. (Draft). Beitrag und Webseite sollten gleich lauten. Wird der Beitrag geändert, Webseite und Flyer nachziehen.
 - **Legal-Gate:** Kein `[PLATZHALTER …]` und keine `> Redaktion:`-Zeile darf live gehen.
