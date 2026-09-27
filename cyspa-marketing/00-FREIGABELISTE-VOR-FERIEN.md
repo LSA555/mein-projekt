@@ -47,7 +47,7 @@ Für alle Posts: ☐ Legal ☐ Accessibility ☐ Freigabe. Die Posts #13 und #14
 ☐ Entscheid E2 bestätigen und den Sicherheits-Check ausführen lassen: `web/sicherheits-check/README.md`. Er ist passiv, prüft nur öffentliche Seiten und dauert wenige Sekunden. Dazu die WordPress-Version gegen CVE-2026-87902 prüfen.
 ☐ Texte für Startseite, Leistungen und Über uns freigeben: `web/webseite-texte.md`. Offen ist das Leistungsportfolio 2.3 (Security-Baseline), 2.5 (Nachtest) und 2.7 (AI Security).
 ☐ Landingpage Tabletop (`web/landingpage-tabletop.html`) einpflegen lassen, bis spätestens 07.10. Offene Platzhalter: Formular-Endpunkt, Datenschutz, Impressum, Preis, Ort, Gruppengrösse.
-☐ Flyer Tabletop (`web/flyer-tabletop.pdf`): **nicht vor den Ferien drucken.** Vorher Preflight bei der Druckerei, Logo freigeben, CMYK klären.
+☐ Flyer Tabletop (`web/flyer-tabletop.pdf`): Farbanomalie behoben (PDF ohne Transparenz, am 27.09. mit pdf.js geprüft). **Trotzdem nicht vor den Ferien drucken:** Preflight bei der Druckerei, Logo freigeben, CMYK klären.
 
 ## 4. Vertretung während der Ferien
 

@@ -52,39 +52,37 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 .label{font-family:var(--serif);font-weight:700;font-size:7.6pt;letter-spacing:.34em;text-transform:uppercase;color:var(--blue)}
 .ph{display:inline;font-family:var(--sans);font-weight:700;font-size:.92em;color:var(--navy);background:#fff;
   border:.3mm dashed var(--muted);border-radius:.8mm;padding:0 1mm;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.dk .ph{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.55)}
 
 /* HERO */
-.hero{background:linear-gradient(100deg,var(--deep) 0%,var(--deep) 46%,#0b2340 70%,var(--navy) 100%);color:#fff;
+.hero{background:linear-gradient(100deg,var(--deep) 0%,var(--deep) 40%,#0c2645 56%,#0c2645 100%);color:#fff;
   padding-top:calc(var(--b) + 14mm);padding-bottom:26mm;display:flex;gap:8mm;min-height:calc(var(--b) + 104mm)}
 .hero .txt{flex:0 0 96mm}
 .hero h1{font-family:var(--serif);font-weight:700;font-size:25pt;line-height:1.14;margin:6mm 0 0;letter-spacing:-.005em}
 .rule{width:17mm;height:1mm;background:var(--gold);margin:6mm 0 5mm}
 .hero .sub{font-family:var(--serif);font-weight:700;font-size:11.4pt;line-height:1.35;margin-bottom:3.2mm}
-.hero .lead{color:rgba(255,255,255,.84);font-size:8.6pt;line-height:1.5}
+.hero .lead{color:#d7dadd;font-size:8.6pt;line-height:1.5}
 
 /* Grafik statt Foto: Raster + Icon-Komposition */
 .visual{flex:1;position:relative;margin-right:calc(-1 * var(--x));margin-top:calc(-1 * (var(--b) + 14mm));margin-bottom:-26mm;
-  background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);
-  background-size:6mm 6mm;background-position:0 0}
-.visual::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--deep) 0%,rgba(7,24,40,0) 28%)}
+  background:#0c2645}
+/* Raster volldeckend als Vektorlinien (keine Transparenz, keine Soft-Mask) */
+.gridsvg{position:absolute;inset:0;width:100%;height:100%;display:block}
 .panel{position:absolute;left:10mm;right:calc(var(--x) - 2mm);top:calc(var(--b) + 9mm);
-  border:.3mm solid rgba(255,255,255,.18);background:rgba(16,49,87,.72);border-radius:1.5mm;padding:5mm 5mm 4mm;
-  box-shadow:0 2mm 6mm rgba(0,0,0,.35)}
+  border:.3mm solid #384d66;background:#0f2e52;border-radius:1.5mm;padding:5mm 5mm 4mm}
 .panel .t{font-family:var(--sans);font-weight:800;font-size:9pt;letter-spacing:.14em;text-transform:uppercase;color:#fff;text-align:center}
-.panel .t2{font-weight:600;font-size:6.6pt;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.62);text-align:center;margin-top:1.4mm}
+.panel .t2{font-weight:600;font-size:6.6pt;letter-spacing:.2em;text-transform:uppercase;color:#a4b0bd;text-align:center;margin-top:1.4mm}
 .tiles{display:grid;grid-template-columns:1fr 1fr;gap:2.2mm;margin-top:4mm}
-.tile{background:rgba(7,24,40,.55);border:.3mm solid rgba(255,255,255,.12);border-radius:1mm;padding:3mm 2mm 2.6mm;text-align:center}
+.tile{background:#0b223b;border:.3mm solid #283c53;border-radius:1mm;padding:3mm 2mm 2.6mm;text-align:center}
 .tile svg.i{width:7.5mm;height:7.5mm;stroke-width:1.5;color:#fff}
-.tile span{display:block;margin-top:2.2mm;font-weight:700;font-size:6.4pt;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.88)}
-.tile.on{border-color:rgba(255,192,0,.7)}
+.tile span{display:block;margin-top:2.2mm;font-weight:700;font-size:6.4pt;letter-spacing:.14em;text-transform:uppercase;color:#e2e6ea}
+.tile.on{border-color:var(--gold)}
 .tile.on svg.i{color:var(--gold)}
-.panel .foot{margin-top:3.4mm;text-align:center;font-weight:700;font-size:6.6pt;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.panel .foot{margin-top:3.4mm;text-align:center;font-weight:700;font-size:6.6pt;letter-spacing:.22em;text-transform:uppercase;color:#b7c0cb}
 
 /* Nutzenkarten */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:4.5mm;margin-top:-17mm;position:relative;z-index:2}
 .card{background:#fff;border:.3mm solid var(--border);border-radius:1.2mm;padding:6.5mm 4.2mm 5.5mm;position:relative;
-  box-shadow:0 1.2mm 0 #dfe3e8,0 1.5mm 4mm rgba(0,0,0,.08)}
+  box-shadow:0 1.2mm 0 #dfe3e8}
 .card::before{content:"";position:absolute;left:5mm;top:-.3mm;width:13mm;height:1mm;background:var(--gold)}
 .card .hd{display:flex;align-items:center;gap:2.6mm;min-height:11mm}
 .ico{width:11mm;height:11mm;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;flex:none}
@@ -110,11 +108,11 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 .trust{background:var(--deep);color:#fff;padding-top:8mm;padding-bottom:8mm;display:grid;grid-template-columns:1fr 54mm;gap:10mm;flex:1}
 .trust h2{font-family:var(--serif);font-weight:700;font-size:13pt;color:var(--gold);margin-bottom:4mm}
 .checks{list-style:none}
-.checks li{display:flex;gap:3mm;font-size:8.6pt;line-height:1.4;color:rgba(255,255,255,.92);margin-bottom:2.6mm}
+.checks li{display:flex;gap:3mm;font-size:8.6pt;line-height:1.4;color:#ebedee;margin-bottom:2.6mm}
 .checks svg.i{width:3.8mm;height:3.8mm;color:var(--gold);stroke-width:2.6;margin-top:.3mm}
 .big{font-family:var(--serif);font-weight:700;font-size:34pt;line-height:1;color:#fff;margin-top:1mm}
 .big small{font-size:15pt;font-weight:600}
-.bigtxt{margin-top:3mm;font-size:8pt;line-height:1.5;color:rgba(255,255,255,.8)}
+.bigtxt{margin-top:3mm;font-size:8pt;line-height:1.5;color:#cdd1d4}
 
 /* Kontaktleiste */
 .contact{background:var(--deep);border-top:.9mm solid var(--gold);color:#fff;
@@ -128,14 +126,13 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 .word{font-family:var(--serif);font-weight:700;font-size:19pt;letter-spacing:.3em;color:var(--navy)}
 .word .gold{letter-spacing:.3em}
 .claim{font-family:var(--serif);font-weight:700;font-size:7.4pt;letter-spacing:.36em;color:var(--blue)}
-.hero2{background:linear-gradient(100deg,var(--deep) 0%,var(--deep) 55%,#0d2a4a 100%);color:#fff;padding-top:7mm;padding-bottom:7mm;
+.hero2{background:linear-gradient(100deg,var(--deep) 0%,var(--deep) 45%,#0c2645 63%,#0c2645 100%);color:#fff;padding-top:7mm;padding-bottom:7mm;
   display:grid;grid-template-columns:1fr 64mm;gap:9mm;align-items:center;position:relative;overflow:hidden}
-.hero2::after{content:"";position:absolute;right:0;top:0;bottom:0;width:78mm;
-  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:6mm 6mm;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 40%);mask-image:linear-gradient(90deg,transparent,#000 40%)}
+.hero2 .gridwrap{position:absolute;right:0;top:.6mm;bottom:0;width:78mm;overflow:hidden}
+.hero2>div{position:relative;z-index:1}
 .hero2 h2{font-family:var(--serif);font-weight:700;font-size:19pt;line-height:1.16;margin:4mm 0 3mm}
-.hero2 p{color:rgba(255,255,255,.84);font-size:8.6pt;line-height:1.5}
-.box{position:relative;z-index:1;background:var(--navy);border:.3mm solid rgba(255,255,255,.22);border-radius:1.5mm;padding:5mm 5mm 3mm}
+.hero2 p{color:#d7dadd;font-size:8.6pt;line-height:1.5}
+.box{position:relative;z-index:1;background:var(--navy);border:.3mm solid #455e7c;border-radius:1.5mm;padding:5mm 5mm 3mm}
 .box .checks li{font-family:var(--serif);font-weight:600;font-size:8.8pt;margin-bottom:2mm}
 
 .fmt{display:grid;grid-template-columns:repeat(3,1fr);gap:4.5mm;margin-top:6mm}
@@ -151,14 +148,14 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 .more{margin-top:3.4mm;font-size:7.8pt;display:flex;gap:6mm;flex-wrap:wrap}
 .more b{color:var(--navy);font-weight:700}
 
-.sec{margin-top:5.5mm}
+.sec{margin-top:4.5mm}
 .finds{display:grid;grid-template-columns:repeat(4,1fr);gap:3.2mm;margin-top:4mm}
 .find{background:var(--gray);border-left:.9mm solid var(--navy);padding:3mm 3.2mm 3.2mm}
 .find:first-child{border-left-color:var(--gold)}
 .find h4{font-family:var(--serif);font-weight:700;font-size:9pt;line-height:1.25;color:var(--navy);margin-bottom:1.6mm}
 .find p{font-size:7.2pt;line-height:1.45}
 
-.faq{display:grid;grid-template-columns:1fr 1fr;gap:2.6mm 8mm;margin-top:3.5mm}
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:2.2mm 8mm;margin-top:3mm}
 .q h4{font-family:var(--serif);font-weight:700;font-size:8.8pt;color:var(--navy);line-height:1.3;margin-bottom:.9mm;display:flex;gap:2mm}
 .q h4::before{content:"";flex:none;width:1.2mm;height:1.2mm;background:var(--gold);border-radius:50%;margin-top:1.5mm}
 .q p{font-size:7.6pt;line-height:1.45;padding-left:3.2mm}
@@ -166,15 +163,15 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 .cta{margin-top:auto;background:var(--deep);color:#fff;padding-top:6mm;padding-bottom:calc(var(--b) + 6mm);
   display:grid;grid-template-columns:1fr 60mm;gap:10mm;align-items:center}
 .cta h2{font-family:var(--serif);font-weight:700;font-size:17pt;line-height:1.15}
-.cta p{margin-top:3mm;color:rgba(255,255,255,.84);font-size:8.4pt;line-height:1.5}
+.cta p{margin-top:3mm;color:#d7dadd;font-size:8.4pt;line-height:1.5}
 .cta ul{list-style:none;margin-top:4mm;display:flex;flex-wrap:wrap;gap:2mm 7mm}
 .cta li{display:flex;align-items:center;gap:2.4mm;font-family:var(--serif);font-weight:700;font-size:9pt}
 .cta li svg.i{width:4.2mm;height:4.2mm;color:var(--gold);stroke-width:1.8}
 .btnlike{display:inline-block;margin-top:5mm;background:var(--gold);color:var(--navy);font-weight:800;font-size:8.6pt;letter-spacing:.06em;
   padding:2.6mm 5mm;border-radius:1mm}
-.qr{border:.3mm dashed rgba(255,255,255,.55);border-radius:1.2mm;height:30mm;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;gap:2mm;padding:3mm;font-size:7.4pt;color:rgba(255,255,255,.85);font-weight:700}
-.qr svg.i{width:9mm;height:9mm;color:rgba(255,255,255,.6);stroke-width:1.4}
+.qr{border:.3mm dashed #8f979e;border-radius:1.2mm;height:30mm;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;gap:2mm;padding:3mm;font-size:7.4pt;color:#d9dcdf;font-weight:700}
+.qr svg.i{width:9mm;height:9mm;color:#9ca3a9;stroke-width:1.4}
 .logo2{height:12.5mm;width:auto;display:block}
 </style>
 </head>
@@ -208,8 +205,9 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
       <p class="lead">Samstag, 06:40 Uhr. Die Dateiserver sind verschlüsselt, die Produktion steht. Eine Tabletop-Übung zeigt Ihrer Führungsrunde, ob die Antwort auf diese Frage feststeht, bevor der Ernstfall sie stellt.</p>
     </div>
     <div class="visual" aria-hidden="true">
+      <svg class="gridsvg" viewBox="0 0 96 126" preserveAspectRatio="xMinYMin slice" aria-hidden="true"><g stroke="#19324f" stroke-width=".25"><line x1="0" y1="0" x2="0" y2="126"/><line x1="6" y1="0" x2="6" y2="126"/><line x1="12" y1="0" x2="12" y2="126"/><line x1="18" y1="0" x2="18" y2="126"/><line x1="24" y1="0" x2="24" y2="126"/><line x1="30" y1="0" x2="30" y2="126"/><line x1="36" y1="0" x2="36" y2="126"/><line x1="42" y1="0" x2="42" y2="126"/><line x1="48" y1="0" x2="48" y2="126"/><line x1="54" y1="0" x2="54" y2="126"/><line x1="60" y1="0" x2="60" y2="126"/><line x1="66" y1="0" x2="66" y2="126"/><line x1="72" y1="0" x2="72" y2="126"/><line x1="78" y1="0" x2="78" y2="126"/><line x1="84" y1="0" x2="84" y2="126"/><line x1="90" y1="0" x2="90" y2="126"/><line x1="96" y1="0" x2="96" y2="126"/><line x1="0" y1="0" x2="96" y2="0"/><line x1="0" y1="6" x2="96" y2="6"/><line x1="0" y1="12" x2="96" y2="12"/><line x1="0" y1="18" x2="96" y2="18"/><line x1="0" y1="24" x2="96" y2="24"/><line x1="0" y1="30" x2="96" y2="30"/><line x1="0" y1="36" x2="96" y2="36"/><line x1="0" y1="42" x2="96" y2="42"/><line x1="0" y1="48" x2="96" y2="48"/><line x1="0" y1="54" x2="96" y2="54"/><line x1="0" y1="60" x2="96" y2="60"/><line x1="0" y1="66" x2="96" y2="66"/><line x1="0" y1="72" x2="96" y2="72"/><line x1="0" y1="78" x2="96" y2="78"/><line x1="0" y1="84" x2="96" y2="84"/><line x1="0" y1="90" x2="96" y2="90"/><line x1="0" y1="96" x2="96" y2="96"/><line x1="0" y1="102" x2="96" y2="102"/><line x1="0" y1="108" x2="96" y2="108"/><line x1="0" y1="114" x2="96" y2="114"/><line x1="0" y1="120" x2="96" y2="120"/><line x1="0" y1="126" x2="96" y2="126"/></g></svg>
       <div class="panel">
-        <img class="logo2" src="assets/img/cyspa-logo-hell.png" alt="" style="margin:0 auto 4mm;height:9mm">
+        <img class="logo2" src="assets/img/cyspa-logo-hell-flyer.png" alt="" style="margin:0 auto 4mm;height:9mm">
         <div class="t">Wer entscheidet jetzt was?</div>
         <div class="t2">Samstag, 06:40 Uhr</div>
         <div class="tiles">
@@ -281,6 +279,7 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
   </div>
 
   <div class="hero2 side pad">
+    <div class="gridwrap" aria-hidden="true"><svg class="gridsvg" viewBox="0 0 78 72" preserveAspectRatio="xMinYMin slice" aria-hidden="true"><g stroke="#19324f" stroke-width=".25"><line x1="0" y1="0" x2="0" y2="72"/><line x1="6" y1="0" x2="6" y2="72"/><line x1="12" y1="0" x2="12" y2="72"/><line x1="18" y1="0" x2="18" y2="72"/><line x1="24" y1="0" x2="24" y2="72"/><line x1="30" y1="0" x2="30" y2="72"/><line x1="36" y1="0" x2="36" y2="72"/><line x1="42" y1="0" x2="42" y2="72"/><line x1="48" y1="0" x2="48" y2="72"/><line x1="54" y1="0" x2="54" y2="72"/><line x1="60" y1="0" x2="60" y2="72"/><line x1="66" y1="0" x2="66" y2="72"/><line x1="72" y1="0" x2="72" y2="72"/><line x1="78" y1="0" x2="78" y2="72"/><line x1="0" y1="0" x2="78" y2="0"/><line x1="0" y1="6" x2="78" y2="6"/><line x1="0" y1="12" x2="78" y2="12"/><line x1="0" y1="18" x2="78" y2="18"/><line x1="0" y1="24" x2="78" y2="24"/><line x1="0" y1="30" x2="78" y2="30"/><line x1="0" y1="36" x2="78" y2="36"/><line x1="0" y1="42" x2="78" y2="42"/><line x1="0" y1="48" x2="78" y2="48"/><line x1="0" y1="54" x2="78" y2="54"/><line x1="0" y1="60" x2="78" y2="60"/><line x1="0" y1="66" x2="78" y2="66"/><line x1="0" y1="72" x2="78" y2="72"/></g></svg></div>
     <div>
       <div class="eyebrow">Das Format</div>
       <h2>Ein halber Tag.<br>Eine dokumentierte <span class="gold">Erkenntnisliste.</span></h2>
@@ -311,7 +310,7 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
       <div class="finds">
         <div class="find"><h4>Unklare Befugnisse</h4><p>Wer darf Systeme vom Netz nehmen, auch wenn damit das Geschäft steht?</p></div>
         <div class="find"><h4>Kommunikation ohne die üblichen Kanäle</h4><p>Wie erreichen Sie Mitarbeitende und Kunden, wenn E-Mail und Chat betroffen sind?</p></div>
-        <div class="find"><h4>Meldefristen unter Zeitdruck</h4><p>Datenschutzbehörde, Vertragspartner, allenfalls Aufsicht oder BACS: Wer meldet was bis wann?</p></div>
+        <div class="find"><h4>Meldefristen unter Zeitdruck</h4><p>Datenschutzbehörde, Vertragspartner, allenfalls Aufsicht oder das Bundesamt für Cybersicherheit (BACS): Wer meldet was bis wann?</p></div>
         <div class="find"><h4>Die Dienstleisterfrage</h4><p>Wer ist der erste Anruf? Gilt der Support-Vertrag auch am Wochenende?</p></div>
       </div>
     </div>

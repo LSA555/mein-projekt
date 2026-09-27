@@ -83,10 +83,10 @@ Zeile darunter: **Eine moderierte Entscheidungsübung, keine Technik-Simulation.
 **Was typischerweise sichtbar wird** (gekürzt aus Beitrag #10)
 - **Unklare Befugnisse.** Wer darf Systeme vom Netz nehmen, auch wenn damit das Geschäft steht?
 - **Kommunikation ohne die üblichen Kanäle.** Wie erreichen Sie Mitarbeitende und Kunden, wenn E-Mail und Chat betroffen sind?
-- **Meldefristen unter Zeitdruck.** Datenschutzbehörde, Vertragspartner, allenfalls Aufsicht oder BACS: Wer meldet was bis wann?
+- **Meldefristen unter Zeitdruck.** Datenschutzbehörde, Vertragspartner, allenfalls Aufsicht oder das Bundesamt für Cybersicherheit (BACS): Wer meldet was bis wann?
 - **Die Dienstleisterfrage.** Wer ist der erste Anruf? Gilt der Support-Vertrag auch am Wochenende?
 
-> Redaktion: «BACS» steht auf dem Flyer ohne Ausschreibung (Platz). Auf Seite 2 ist es im Kontext von Aufsicht und Meldestellen eindeutig; wer die Ausschreibung wünscht: «Bundesamt für Cybersicherheit (BACS)», dann Karte um eine Zeile länger.
+> Redaktion: «BACS» ist beim ersten Auftreten ausgeschrieben, wie in Beitrag #10 (Gate 3).
 
 **Häufige Fragen**
 - **Ist das ein technischer Test unserer IT?** Nein. Es wird nichts an Ihren Systemen getestet oder verändert. Die Übung prüft Entscheidungswege, Zuständigkeiten und Kommunikation.
@@ -106,10 +106,11 @@ Copy-Regeln CI v3 geprüft: kein Gedankenstrich im Satzfluss, «ss» statt «ß�
 - **Format:** A4 hoch, 2 Seiten (Vorder- und Rückseite). Datei 215,9 × 303 mm inkl. 3 mm Beschnitt je Seite. TrimBox 210 × 297 mm und BleedBox gesetzt. Hinweis: Chromium rundet die Seitenbreite auf 816 px, deshalb misst der Beschnitt rechts 2,9 mm statt 3,0 mm. Alle randabfallenden Flächen (Hero, Seitenbalken, Kontaktleiste) laufen vollständig in den Beschnitt; die Druckerei nach Toleranz fragen.
 - **Sicherheitsabstand:** Text mindestens 16 mm vom Endformatrand links/rechts; kein Text im Beschnitt.
 - **Farben:** Die PDF ist RGB (aus HTML gerendert). Für den Offsetdruck die Druckerei um Konvertierung bitten oder CMYK-Werte für Navy, Navy Deep und Gold bei LWE anfordern. [PLATZHALTER: CMYK-/Pantone-Werte CI v3]
+- **Keine Transparenz:** Alle Flächen sind volldeckend aufgebaut: Verläufe nur mit deckenden Farbstopps, Raster als deckende Vektorlinien, Textfarben auf dunklem Grund als deckende Mischfarben statt rgba, keine weichen Schatten, keine Masken, kein backdrop-filter. Das Logo in der Grafik ist ohne Alphakanal auf den Panel-Hintergrund gerechnet (`assets/img/cyspa-logo-hell-flyer.png`). Geprüft am 27.09.: PDF ohne `/SMask`, alle Alphawerte 1, mit pdf.js gerastert und beide Seiten angesehen (vorher magentafarbener Streifen am Übergang Hero/Grafik auf Seite 1, Ursache: Verlauf mit Transparenz).
 - **Schriften:** Source Serif 4 und Raleway, beide SIL Open Font License, eingebettet. Lizenztexte: `assets/fonts/OFL-*.txt`.
-- **Logo:** Die Bildmarke liegt nur als PNG 288 × 122 px vor und ist im Flyer auf ca. 21 mm Breite gesetzt (ca. 350 dpi, knapp ausreichend). Die helle Variante `assets/img/cyspa-logo-hell.png` ist aus dem PNG abgeleitet (Grau zu Weiss, Blau leicht aufgehellt) und nicht von LWE freigegeben. Für den Druck Vektorlogo (SVG/PDF) anfordern. Der Logo-Widerspruch (dreifarbiger Unterstrich, siehe CI-Kurzreferenz) ist offen, Entscheid LWE.
+- **Logo:** Die Bildmarke liegt nur als PNG 288 × 122 px vor und ist im Flyer auf ca. 21 mm Breite gesetzt (ca. 350 dpi, knapp ausreichend). Die helle Variante `assets/img/cyspa-logo-hell.png` (im Flyer als deckende Fassung `cyspa-logo-hell-flyer.png`) ist aus dem PNG abgeleitet (Grau zu Weiss, Blau leicht aufgehellt) und nicht von LWE freigegeben. Für den Druck Vektorlogo (SVG/PDF) anfordern. Der Logo-Widerspruch (dreifarbiger Unterstrich, siehe CI-Kurzreferenz) ist offen, Entscheid LWE.
 - **Papier/Auflage:** [PLATZHALTER: Papier, Auflage, Druckerei]
-- **Neu rendern:** Skript im Scratchpad (`ci3-web/flyer.cjs`, Chromium Headless Shell, danach TrimBox/BleedBox mit pdf-lib).
+- **Neu rendern:** Skript im Scratchpad (`ci3-web/flyer.cjs`, Chromium Headless Shell, danach TrimBox/BleedBox mit pdf-lib). Prüfung mit pdf.js: `ci3-web/pdfjs.cjs`.
 
 ## Abweichungen vom Beispiel-Flyer
 
