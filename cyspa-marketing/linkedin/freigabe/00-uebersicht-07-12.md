@@ -51,5 +51,5 @@ Die Pakete wurden mit KI-Unterstützung erstellt. Gate 1 (Fach) ist nur vorgepr�
 | #08 | ☐ | ☐ | ☐ | Stichprobe | ☐ |
 | #09 | ☐ | ☐ | ☐ | ☐ **obligatorisch** | ☐ + CISO ☐ |
 | #10 | ☐ IR ☐ GRC | ☐ (URL) | ☐ | ☐ | ☐ |
-| #11 | ☐ | ☐ | ☐ | n/a | ☐ (Static) |
+| #11 | ☐ | ☐ | ☐ | Stichprobe | ☐ (Static) |
 | #12 | n/a | ☐ (Plan A: Einwilligungen) | ☐ | ☐ OPSEC | ☐ (Plan A/B) |

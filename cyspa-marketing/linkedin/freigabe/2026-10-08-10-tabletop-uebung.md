@@ -62,6 +62,7 @@ Unser Format dafür: ein halber Tag mit Ihrer Führungsrunde — Szenario, moder
 | Stelle | Draft | Final | Begründung |
 |--------|-------|-------|------------|
 | Punkt 3 | «allenfalls Aufsicht oder BACS» | «allenfalls Aufsicht oder das Bundesamt für Cybersicherheit (BACS)» | Gate 3 und Styleguide §2: Abkürzung im Executive-Post beim ersten Auftreten ausschreiben |
+| Alt-Text | Repo-Fassung | Slide für Slide neu gefasst (siehe Abschnitt Alt-Text) | Gate 3: Alt-Text beschreibt jede der 6 Slides einzeln |
 | Rest | – | unverändert | – |
 
 **Offener Punkt für den IR-Owner, nicht geändert:** Text und Slide 1 sprechen von «90 Minuten», der Angebotsteil und Slide 6 von «ein halber Tag». Beides ist vereinbar, wenn der halbe Tag Einführung und Auswertung einschliesst. Leserinnen könnten es aber als Widerspruch lesen, und für die Angebotsbeschreibung gilt die UWG-Genauigkeit. Die Angaben müssen mit der Landingpage übereinstimmen. Mögliche Präzisierung, **nur wenn sie dem tatsächlichen Format entspricht**:

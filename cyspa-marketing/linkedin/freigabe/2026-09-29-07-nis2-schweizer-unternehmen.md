@@ -37,7 +37,7 @@ Drei Wege, über die NIS2 Schweizer Unternehmen erreicht:
 
 2. Die Lieferkette: NIS2 verpflichtet betroffene Unternehmen, die Sicherheit ihrer Lieferanten und Dienstleister zu managen. Diese Pflicht wird weitergereicht — als Vertragsklausel, Sicherheitsfragebogen oder Audit-Recht. Wer Schweizer Zulieferer eines EU-regulierten Kunden ist, spürt NIS2 zuerst im Vertragsanhang.
 
-3. Der Marktzugang: Wer kritische Dienste für EU-Kunden erbringt, wird faktisch an deren Anforderungen gemessen — unabhängig vom eigenen Firmensitz. Für bestimmte digitale Dienste, etwa Cloud, Rechenzentren oder ausgelagerten IT-Betrieb, gilt NIS2 sogar direkt, wenn sie in der EU angeboten werden. Dann ist eine Vertretung in der EU zu benennen.
+3. Der Marktzugang: Wer kritische Dienste für EU-Kunden erbringt, wird faktisch an deren Anforderungen gemessen — unabhängig vom eigenen Firmensitz. Für bestimmte digitale Dienste, etwa Cloud, Rechenzentren oder ausgelagerten IT-Betrieb, kann NIS2 sogar direkt gelten, wenn sie in der EU angeboten werden und das Unternehmen die Grössenschwellen erreicht. Dann ist eine Vertretung in der EU zu benennen.
 
 Und parallel dazu die Schweiz selbst: Betreiber kritischer Infrastrukturen melden Cyberangriffe seit dem 1. April 2025 innert 24 Stunden dem Bundesamt für Cybersicherheit (BACS) — so verlangt es das Informationssicherheitsgesetz.
 
@@ -100,7 +100,7 @@ Hinweis für den Fach-Owner: «melden Cyberangriffe» ist leicht verkürzt. Meld
 
 > Grafik von CYSPA, Serie Regulatorik im Klartext: NIS2 ist EU-Recht und erreicht die Schweiz trotzdem. Drei Pfeile führen von «EU» zu «CH», beschriftet mit EU-Tochtergesellschaften, Lieferkettenanforderungen und Marktzugang. Fussnote: Parallel gilt in der Schweiz die ISG-Meldepflicht, Cyberangriffe auf kritische Infrastrukturen sind seit 1. April 2025 innert 24 Stunden dem Bundesamt für Cybersicherheit zu melden. Prüffragen im Beitragstext.
 
-(Gegenüber dem Repo-Alt-Text wurde nur die Headline der Grafik ergänzt, damit Bild und Alt-Text übereinstimmen.)
+(Gegenüber dem Repo-Alt-Text wurden die Headline der Grafik ergänzt und die Pfeilbeschreibung angepasst, damit Bild und Alt-Text übereinstimmen.)
 
 ## 5. Erster Kommentar
 

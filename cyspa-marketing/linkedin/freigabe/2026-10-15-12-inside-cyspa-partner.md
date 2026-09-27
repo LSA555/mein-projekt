@@ -116,7 +116,7 @@ Laut Draft keiner nötig.
 Zum Abschluss unserer ersten Beitragsserie im European Cybersecurity Month: Welches Thema sollen wir als Nächstes vertiefen? Wir lesen jede Antwort.
 ```
 
-(Dialog-CTA. Nur setzen, wenn in der ersten Stunde jemand antwortet, weil sonst das Versprechen «wir lesen jede Antwort» leer bleibt.)
+(Dialog-CTA. Nur setzen, wenn jemand in der ersten Stunde die Antworten betreuen kann, weil sonst das Versprechen «wir lesen jede Antwort» leer bleibt.)
 
 ## 6. Freigabe durch LWE
 

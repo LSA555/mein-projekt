@@ -48,7 +48,7 @@ Welcher der vier Schritte ist bei Ihnen der schwierigste?
 #CYSPA #Passkeys #CyberSecurity #KMU
 ```
 
-Länge: rund 1'650 Zeichen (Korridor 900–1'800 ✔). Hook (erste zwei Zeilen) 111 Zeichen ✔.
+Länge: 1'645 Zeichen (Korridor 900–1'800 ✔). Hook (erste zwei Zeilen) 112 Zeichen ✔.
 
 ## Erster Kommentar
 Keiner nötig (Dialog-CTA, kein Link). Für Gesprächsanfragen aus Kommentaren gilt der Tracking-Link aus dem Entwurf: `https://www.cyspa.ch/?utm_source=linkedin&utm_medium=organic&utm_campaign=passwordless-2026-10` (Kampagnenmonat von 09 auf 10 angepasst, da der Slot im Oktober liegt).
