@@ -1,8 +1,8 @@
 ---
 tags: [meeting, check-out, serie, moc, cyspa]
-status: NEEDS INPUT
+status: aktiv
 date: 2026-09-27
-zeit: NEEDS INPUT
+zeit: "Mittwoch 16:00"
 mandant: cyspa
 owner: LWE
 source: claude
@@ -11,7 +11,7 @@ chat_url: "https://claude.ai/code/session_01JsQoSQbozeyt2EYitpEXuf"
 
 # Check-out Meeting (Serie)
 
-Wöchentlicher Abschluss. **Tag/Uhrzeit: `NEEDS INPUT`** (Vorschlag: Freitag). Teil des [[Wochenrhythmus Meetings]].
+Wöchentlicher Abschluss, **Mittwoch 16:00** (laut LWE). Teil des [[Wochenrhythmus Meetings]].
 
 ## Standard-Agenda (30 Minuten)
 
@@ -27,4 +27,4 @@ Ava erstellt vor dem Termin eine Wochenbilanz: Check-in-Entscheide, Nigel-Aufgab
 
 ## Termine
 
-- [[2026-09-28 Check-in Meeting]] → erstes Check-out folgt (Datum `NEEDS INPUT`)
+- [[2026-09-30 Check-out Meeting]] (prüft [[2026-09-28 Check-in Meeting]])

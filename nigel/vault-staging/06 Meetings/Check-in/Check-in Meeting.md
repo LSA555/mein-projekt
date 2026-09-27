@@ -12,7 +12,7 @@ chat_url: "https://claude.ai/code/session_01JsQoSQbozeyt2EYitpEXuf"
 
 Wöchentliches Check-in, **Montag 08:00**. Schwerpunkt: Marketing-Fortschritt (LinkedIn-Kampagne und Posts der Woche, Webseite, Flyer, weitere Kanäle), dazu das Cyber Security Briefing für die Geschäftsleitung.
 
-Teil des [[Wochenrhythmus Meetings]], zusammen mit [[Check-out Meeting]] und [[One-to-One Meeting]]. Verwandt: [[Abstimmungsmeeting]] (übergreifend: Kunden, Sales, Services, Marketing, Partnerschaften, Organisation).
+Teil des [[Wochenrhythmus Meetings]], zusammen mit [[One-to-One Meeting]] (Dienstag 08:00) und [[Check-out Meeting]] (Mittwoch 16:00). Verwandt: [[Abstimmungsmeeting]] (übergreifend: Kunden, Sales, Services, Marketing, Partnerschaften, Organisation).
 
 Pendenzen aus dem letzten Check-out werden im Check-in unter Punkt 1 aufgerufen.
 

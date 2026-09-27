@@ -2,7 +2,7 @@
 tags: [meeting, one-to-one, serie, moc, cyspa]
 status: NEEDS INPUT
 date: 2026-09-27
-zeit: NEEDS INPUT
+zeit: "Dienstag 08:00"
 teilnehmende: []
 mandant: cyspa
 owner: LWE
@@ -13,7 +13,7 @@ chat_url: "https://claude.ai/code/session_01JsQoSQbozeyt2EYitpEXuf"
 
 # One-to-One Meeting (Serie)
 
-Persönliche Abstimmung. **Tag/Uhrzeit und Gesprächspartner: `NEEDS INPUT`**. Teil des [[Wochenrhythmus Meetings]].
+Persönliche Abstimmung, **Dienstag 08:00** (laut LWE). **Gesprächspartner: `NEEDS INPUT`**. Teil des [[Wochenrhythmus Meetings]].
 
 **Vertraulich:** Persönliche Inhalte (Feedback, Entwicklung, HR-Themen) wertet kein Agent aus. Ava bereitet nur sachliche Punkte vor.
 
@@ -27,3 +27,7 @@ Persönliche Abstimmung. **Tag/Uhrzeit und Gesprächspartner: `NEEDS INPUT`**. T
 ## Vorbereitung
 
 Ava erstellt einen Kurzbrief mit den offenen sachlichen Punkten und Zusagen seit dem letzten Termin. Persönliches kommt nicht hinein.
+
+## Termine
+
+- [[2026-09-29 One-to-One Meeting]]
