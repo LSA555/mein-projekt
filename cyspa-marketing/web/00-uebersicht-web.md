@@ -21,7 +21,7 @@ chat_url: "https://claude.ai/code/session_01JsQoSQbozeyt2EYitpEXuf"
 | 2 | `landingpage-tabletop.md` | Landingpage `/tabletop` für LinkedIn-Beitrag #10 (08.10.): Hero, Problem, Ablauf, Ergebnis für GL, FAQ, CTA, Formularfelder, revDSG-Hinweis, UTM-Schema | Entwurf fertig |
 | 2 | `landingpage-tabletop.html` + `assets/` | Eigenständige, responsive HTML-Vorlage im CI (inline CSS, lokale Fonts, keine Tracker). Geprüft bei 320, 375 und 1280 px ohne horizontales Scrollen; UTM-Übernahme ins Formular getestet | Vorlage fertig |
 | 3 | `flyer-cyspa.md` | Flyertext, Druckhinweise (3 mm Beschnitt), offene Punkte | Entwurf fertig |
-| 3 | `flyer-cyspa.pdf` | A4 hoch, 2 Seiten, 216 × 303 mm inkl. Beschnitt, Fonts eingebettet, kein Personenfoto | Entwurf mit markierten Platzhaltern |
+| 3 | `flyer-cyspa.pdf` | A4 hoch, 2 Seiten, 215,9 × 303 mm inkl. Beschnitt, TrimBox 210 × 297 mm und BleedBox gesetzt, Fonts eingebettet, kein Personenfoto | Entwurf mit markierten Platzhaltern |
 | 3 | `flyer-cyspa-vorschau-s1.png`, `-s2.png`, `flyer-cyspa.html` | Vorschau und Quelle | – |
 | 4 | `sicherheits-check/Check-Invoke-CyspaWebCheck.ps1` | Passiver Web-Check (PowerShell 7), Markdown-Bericht | Syntax geprüft, Selbsttest 40/40, Ende-zu-Ende-Test gegen lokalen Nachbau |
 | 4 | `sicherheits-check/README.md` | Anleitung, Grenzen, Interpretation, Massnahmenkatalog, Bezug E2 | fertig |

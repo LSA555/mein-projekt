@@ -2,41 +2,62 @@
 tags: [cyspa, sicherheits-check, webseite, e2]
 status: Beispiel (Testumgebung)
 date: 2026-09-27
-source: Check-Invoke-CyspaWebCheck.ps1 v1.0 (passiv, lokal ausgefuehrt)
+source: Check-Invoke-CyspaWebCheck.ps1 v1.0 (passiv, lokal ausgeführt)
 klassifizierung: internal
 ---
 
 # Web-Sicherheits-Check localhost:8443
 
-> **BEISPIEL aus der Testumgebung, nicht cyspa.ch.** Erzeugt am 27.09.2026 gegen einen lokalen Nachbau eines WordPress-Servers (selbstsigniertes Zertifikat, absichtlich fehlerhafte Header). Zeigt nur Aufbau und Lesart des Berichts.
+> **BEISPIEL aus der Testumgebung, nicht cyspa.ch.** Erzeugt am 27.09.2026 gegen einen lokalen Nachbau eines WordPress-Servers (selbstsigniertes Zertifikat, absichtlich fehlerhafte Header). Zeigt nur Aufbau und Lesart des Berichts. Befunde, Entscheide und Abnahme-Tabelle sind nicht auf CYSPA übertragbar.
 
-**Zeitpunkt:** 27.09.2026 20:56 · **Methode:** nur passive GET-Abrufe öffentlicher Seiten, keine Scans, keine Logins, keine Benutzerabfragen · **Bezug:** Entscheid E2, Cyber Security Briefing KW 40
+**Zeitpunkt:** 27.09.2026 21:06 · **Methode:** nur passive GET-Abrufe öffentlicher Seiten, keine Scans, keine Logins, keine Benutzerabfragen · **Bezug:** Entscheid E2, Cyber Security Briefing KW 40
 
 > Achtung: Lauf mit -SkipCertificateCheck (Testmodus).
 
-**Übersicht:** Handlungsbedarf: 4 · Info: 3 · OK: 2 · Prüfen: 10
+## Management-Summary
 
-| Bereich | Prüfpunkt | Bewertung | Befund | Massnahme (README) |
-|---|---|---|---|---|
-| CMS | CVE-2026-87902 (WordPress Core, CISA KEV) | **Handlungsbedarf** | WordPress erkannt. Version im WP-Backend pruefen und mit dem Hersteller-Advisory abgleichen. | M-CVE |
-| Header | Content-Security-Policy | **Handlungsbedarf** | Header fehlt | M-CSP |
-| Header | X-Content-Type-Options | **Handlungsbedarf** | Header fehlt | M-XCTO |
-| Transport | Zertifikat | **Handlungsbedarf** | gueltig bis 17.10.2026 (19 Tage), Aussteller: CN=localhost; Pruefung: RemoteCertificateChainErrors | M-TLS |
-| CMS | /xmlrpc.php | **Prüfen** | XML-RPC aktiv (HTTP 405) | M-XMLRPC |
-| CMS | /readme.html | **Prüfen** | HTTP 200, WordPress-Readme oeffentlich | M-README |
-| CMS | Versionsanzeige (Generator-Meta) | **Prüfen** | Version 6.8.1 oeffentlich sichtbar | M-CMS-VERSION |
-| Cookies | Cookie-Flags (Startseite) | **Prüfen** | pll_language: fehlt Secure, HttpOnly, SameSite | M-COOKIE |
-| Header | Permissions-Policy | **Prüfen** | Header fehlt | M-PERM |
-| Header | Strict-Transport-Security (HSTS) | **Prüfen** | max-age 300 s ist kuerzer als 6 Monate (empfohlen: 31536000) | M-HSTS |
-| Header | Referrer-Policy | **Prüfen** | Header fehlt (Browser-Standard strict-origin-when-cross-origin greift) | M-REF |
-| Header | Server / X-Powered-By | **Prüfen** | X-Powered-By: PHP/8.1.2; Server mit Version: Apache/2.4.57 (Debian) | M-BANNER |
-| Kontakt | /.well-known/security.txt | **Prüfen** | nicht vorhanden (HTTP 404) | M-SECTXT |
-| Transport | HTTP -> HTTPS | **Prüfen** | HTTP 302 (temporaer) nach https://localhost:8443/ | M-REDIR |
-| Header | X-Frame-Options / frame-ancestors | **OK** | X-Frame-Options: SAMEORIGIN | M-FRAME |
-| Transport | TLS-Protokoll (ausgehandelt) | **OK** | Tls13, TLS_AES_256_GCM_SHA384 | M-TLS |
-| CMS | /wp-json/ (REST-API-Index) | **Info** | HTTP 200, erreichbar (Normalbetrieb; Benutzer-Endpunkte bewusst nicht abgefragt) | M-WPJSON |
-| CMS | System-Erkennung | **Info** | WordPress erkannt (Generator-Meta, Pfad /wp-content/, Pfad /wp-includes/, Link-Header api.w.org, /wp-json/ antwortet mit WP-REST-Index, /readme.html (WordPress)); Generator: WordPress 6.8.1 | – |
-| Erreichbarkeit | Startseite HTTPS | **Info** | Kette: 200 https://localhost:8443/ | – |
+**Gesamtlage:** Rot – Handlungsbedarf · **Befunde:** Handlungsbedarf: 4 · Info: 3 · OK: 2 · Prüfen: 10
+
+**Top-3-Befunde**
+
+1. **CVE-2026-87902 (WordPress Core, CISA KEV)** (Handlungsbedarf): WordPress erkannt. Version im WP-Backend prüfen und mit dem Hersteller-Advisory abgleichen. → Massnahme M-CVE, Kontrolle A.8.8 Handhabung technischer Schwachstellen
+2. **Zertifikat** (Handlungsbedarf): gültig bis 17.10.2026 (19 Tage), Aussteller: CN=localhost; Prüfung: RemoteCertificateChainErrors → Massnahme M-TLS, Kontrolle A.8.24 Verwendung von Kryptographie
+3. **Content-Security-Policy** (Handlungsbedarf): Header fehlt → Massnahme M-CSP, Kontrolle A.8.26 Anforderungen an die Anwendungssicherheit; A.8.9 Konfigurationsmanagement
+
+**Entscheidungsbedarf der Geschäftsleitung**
+
+| # | Frage (Ja/Nein) | Empfehlung |
+|---|---|---|
+| D1 | Wird die WordPress-Version sofort im Backend gegen CVE-2026-87902 geprüft und bei Bedarf aktualisiert (Owner: Webseiten-Verantwortliche, Fallback LWE)? | **Ja**, vor jeder weiteren Änderung an der Webseite. |
+| D2 | Werden die 4 Befunde mit Handlungsbedarf durch Webseiten-Verantwortliche bzw. Hoster behoben, mit Termin und erneutem Check? | **Ja**, Termin: [durch GL festzulegen]. |
+| D3 | Werden die 10 Befunde «Prüfen» vom Webseiten-Owner mit Security (Michael) bewertet und begründet umgesetzt oder akzeptiert? | **Ja**, im nächsten Änderungsfenster. |
+| D4 | Werden neue Inhalte (z. B. /tabletop) erst nach Umsetzung der obigen Entscheide eingepflegt (Entscheid E2: Check vor der nächsten Änderung)? | **Ja.** |
+
+## Befunde im Detail
+
+| Bereich | Prüfpunkt | Bewertung | Befund | Massnahme (README) | Kontrolle ISO/IEC 27001:2022 Anhang A |
+|---|---|---|---|---|---|
+| CMS | CVE-2026-87902 (WordPress Core, CISA KEV) | **Handlungsbedarf** | WordPress erkannt. Version im WP-Backend prüfen und mit dem Hersteller-Advisory abgleichen. | M-CVE | A.8.8 Handhabung technischer Schwachstellen |
+| Transport | Zertifikat | **Handlungsbedarf** | gültig bis 17.10.2026 (19 Tage), Aussteller: CN=localhost; Prüfung: RemoteCertificateChainErrors | M-TLS | A.8.24 Verwendung von Kryptographie |
+| Header | Content-Security-Policy | **Handlungsbedarf** | Header fehlt | M-CSP | A.8.26 Anforderungen an die Anwendungssicherheit; A.8.9 Konfigurationsmanagement |
+| Header | X-Content-Type-Options | **Handlungsbedarf** | Header fehlt | M-XCTO | A.8.9 Konfigurationsmanagement |
+| Transport | HTTP -> HTTPS | **Prüfen** | HTTP 302 (temporär) nach https://localhost:8443/ | M-REDIR | A.8.24 Verwendung von Kryptographie |
+| Header | Strict-Transport-Security (HSTS) | **Prüfen** | max-age 300 s ist kürzer als 6 Monate (empfohlen: 31536000) | M-HSTS | A.8.24 Verwendung von Kryptographie |
+| CMS | /xmlrpc.php | **Prüfen** | XML-RPC aktiv (HTTP 405) | M-XMLRPC | A.8.9 Konfigurationsmanagement |
+| Cookies | Cookie-Flags (Startseite) | **Prüfen** | pll_language: fehlt Secure, HttpOnly, SameSite | M-COOKIE | A.8.9 Konfigurationsmanagement; A.5.34 Privatsphäre und Schutz personenbezogener Daten |
+| CMS | /readme.html | **Prüfen** | HTTP 200, WordPress-Readme öffentlich | M-README | A.8.9 Konfigurationsmanagement |
+| Header | Server / X-Powered-By | **Prüfen** | X-Powered-By: PHP/8.1.2; Server mit Version: Apache/2.4.57 (Debian) | M-BANNER | A.8.9 Konfigurationsmanagement |
+| CMS | Versionsanzeige (Generator-Meta) | **Prüfen** | Version 6.8.1 öffentlich sichtbar | M-CMS-VERSION | A.8.9 Konfigurationsmanagement |
+| Kontakt | /.well-known/security.txt | **Prüfen** | nicht vorhanden (HTTP 404) | M-SECTXT | A.8.8 Handhabung technischer Schwachstellen (Meldeweg für Schwachstellen) |
+| Header | Referrer-Policy | **Prüfen** | Header fehlt (Browser-Standard strict-origin-when-cross-origin greift) | M-REF | A.8.9 Konfigurationsmanagement |
+| Header | Permissions-Policy | **Prüfen** | Header fehlt | M-PERM | A.8.9 Konfigurationsmanagement |
+| Transport | TLS-Protokoll (ausgehandelt) | **OK** | Tls13, TLS_AES_256_GCM_SHA384 | M-TLS | A.8.24 Verwendung von Kryptographie |
+| Header | X-Frame-Options / frame-ancestors | **OK** | X-Frame-Options: SAMEORIGIN | M-FRAME | A.8.26 Anforderungen an die Anwendungssicherheit; A.8.9 Konfigurationsmanagement |
+| CMS | /wp-json/ (REST-API-Index) | **Info** | HTTP 200, erreichbar (Normalbetrieb; Benutzer-Endpunkte bewusst nicht abgefragt) | M-WPJSON | A.8.9 Konfigurationsmanagement |
+| CMS | System-Erkennung | **Info** | WordPress erkannt (Generator-Meta, Pfad /wp-content/, Pfad /wp-includes/, Link-Header api.w.org, /wp-json/ antwortet mit WP-REST-Index, /readme.html (WordPress)); Generator: WordPress 6.8.1 | – | – |
+| Erreichbarkeit | Startseite HTTPS | **Info** | Kette: 200 https://localhost:8443/ | – | – |
+
+*Kontroll-Zuordnung zur Orientierung (ISO/IEC 27001:2022 Anhang A, Umsetzungshinweise in ISO/IEC 27002:2022). Keine Audit- oder Konformitätsaussage.*
 
 ## CVE-2026-87902 – WordPress Core
 
@@ -51,7 +72,7 @@ klassifizierung: internal
 |---|---|
 | Connection | keep-alive |
 | Content-Type | text/html |
-| Date | Sun, 27 Sep 2026 20:56:18 GMT |
+| Date | Sun, 27 Sep 2026 21:06:10 GMT |
 | Keep-Alive | timeout=5 |
 | Link | <https://localhost:8443/wp-json/>; rel="https://api.w.org/" |
 | Server | Apache/2.4.57, (Debian) |
@@ -71,6 +92,18 @@ klassifizierung: internal
 - GET https://localhost:8443/xmlrpc.php → HTTP 405
 - GET https://localhost:8443/.well-known/security.txt → HTTP 404
 - TLS-Handshake localhost:8443 → Tls13
+
+## Verteiler und Abnahme
+
+**Klassifizierung:** intern. Der Bericht kann Schwachstellen benennen und wird nicht öffentlich geteilt. Externe (Hoster, Agentur) erhalten nach Freigabe nur den Massnahmen-Auszug.
+
+**Verteiler:** LWE (Inhaberin, Geschäftsleitung) · Michael (Security) · Webseiten-Verantwortliche/r [NEEDS INPUT] · Hoster/Agentur nur Auszug nach Freigabe
+
+| Rolle | Name | Datum | Visum / Bemerkung |
+|---|---|---|---|
+| Check ausgeführt | [Name] | 27.09.2026 | |
+| Fachliche Prüfung und Bewertung | Michael (Security) | | |
+| Freigabe Massnahmen | LWE (Inhaberin) | | |
 
 ## Grenzen
 

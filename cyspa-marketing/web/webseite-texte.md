@@ -67,7 +67,7 @@ Wir übersetzen Cyberrisiken in Geschäftsentscheide – und Geschäftsentscheid
    Nicht die perfekte Endausbaustufe, sondern der nächste sinnvolle Schritt. Wir fragen: Welches Risiko reduziert der nächste Franken am stärksten?
 
 3. **Schweizer Kontext**
-   Obligationenrecht, revidiertes Datenschutzgesetz (revDSG), Informationssicherheitsgesetz (ISG) mit Meldepflicht ans BACS, FINMA-Vorgaben: Wir ordnen Anforderungen im Schweizer Rahmen ein.
+   Obligationenrecht, revidiertes Datenschutzgesetz (revDSG), Informationssicherheitsgesetz (ISG) mit Meldepflicht ans Bundesamt für Cybersicherheit (BACS), FINMA-Vorgaben: Wir ordnen Anforderungen im Schweizer Rahmen ein.
 
 4. **Befähigen statt abhängig machen**
    Ihr Team soll nach dem Mandat mehr können und mehr verstehen als vorher.

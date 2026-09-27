@@ -78,6 +78,7 @@ Alle Microsoft-Learn-Artikel wurden am 27.09.2026 im offiziellen Quelltext-Repos
 **Bewusst weggelassen:** SharePoint-/OneDrive-Freigabelinks («Anyone links») — die Microsoft-Dokumentation dazu war nicht erreichbar (Repository nicht öffentlich, learn.microsoft.com gesperrt); Kandidat für einen Folgepost. Keine Aussagen über Häufigkeiten verwaister Gastkonten.
 
 ## Quality-Gate-Vermerke
+- **Nachbesserung nach Prüfrunde 1 (27.09.2026):** Slide 2 auf die Portal-Bezeichnung vereinheitlicht («Benutzertyp «Guest»», wie im Post), mit chromium_headless_shell neu gerendert (PNG + PDF), visuell und auf weissen Rand geprüft.
 - **Vorprüfung KI (27.09.2026):** Alle technischen Kernaussagen gegen Microsoft-Dokumentation belegt ✔. Lizenzrealität benannt (P5-Qualitätsmassstab) ✔. Keine Herstellerkritik ✔.
 - **Fachreview (Owner P5: Microsoft Security Specialist):** offen. Prüfen: aktueller Portal-Pfad und Spaltenname im Entra Admin Center; ob die strengste Gast-Stufe bekannte Einschränkungen in Teams/SharePoint hat, die im Post konkreter benannt werden sollten; Lizenzformulierung Access Reviews.
 - **Legal:** offen. Produktnamen beschreibend, keine Herabsetzung ✔.

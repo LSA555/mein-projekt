@@ -4,8 +4,8 @@
     Passiver Sicherheits-Check der eigenen Webseite (CYSPA, Entscheid E2 Cyber Security Briefing KW 40).
 
 .DESCRIPTION
-    Fuehrt ausschliesslich normale HTTPS-/HTTP-Aufrufe (GET/HEAD) auf oeffentliche Seiten der
-    angegebenen Domain aus und erstellt einen Markdown-Bericht. Geprueft werden:
+    Führt ausschliesslich normale HTTPS-/HTTP-Aufrufe (GET/HEAD) auf öffentliche Seiten der
+    angegebenen Domain aus und erstellt einen Markdown-Bericht. Geprüft werden:
       - TLS-Verbindung (Protokoll, Zertifikat, Ablaufdatum) und Weiterleitung HTTP -> HTTPS
       - Sicherheits-Header: HSTS, CSP, X-Content-Type-Options, X-Frame-Options/frame-ancestors,
         Referrer-Policy, Permissions-Policy
@@ -19,11 +19,11 @@
     Login-Versuche, Benutzer-Enumeration (z. B. /wp-json/wp/v2/users, ?author=1), POST-Anfragen.
     Insgesamt ca. 8 Anfragen mit Pause dazwischen.
 
-    Nur gegen die EIGENE Domain bzw. mit schriftlicher Erlaubnis der Inhaberin ausfuehren.
+    Nur gegen die EIGENE Domain bzw. mit schriftlicher Erlaubnis der Inhaberin ausführen.
 
 .PARAMETER Domain
     Hostname der eigenen Webseite, ohne Schema und Pfad. Standard: www.cyspa.ch
-    Ein Port ist erlaubt (host:port), z. B. fuer Tests.
+    Ein Port ist erlaubt (host:port), z. B. für Tests.
 
 .PARAMETER OutFile
     Pfad des Markdown-Berichts. Standard: .\cyspa-webcheck_<domain>_<zeitstempel>.md
@@ -32,13 +32,13 @@
     Zeitlimit je Anfrage in Sekunden. Standard: 15
 
 .PARAMETER HttpPort
-    Port fuer die HTTP->HTTPS-Pruefung. Standard: 80 (nur fuer Tests aendern).
+    Port für die HTTP->HTTPS-Prüfung. Standard: 80 (nur für Tests ändern).
 
 .PARAMETER SkipCertificateCheck
-    Nur fuer Tests mit selbstsignierten Zertifikaten. Zertifikatsfehler werden trotzdem im Bericht gemeldet.
+    Nur für Tests mit selbstsignierten Zertifikaten. Zertifikatsfehler werden trotzdem im Bericht gemeldet.
 
 .PARAMETER SelfTest
-    Prueft nur die Parser-Funktionen offline (keine Netzwerkzugriffe). Exit-Code 0 = alle Tests bestanden.
+    Prüft nur die Parser-Funktionen offline (keine Netzwerkzugriffe). Exit-Code 0 = alle Tests bestanden.
 
 .EXAMPLE
     pwsh -NoProfile -File .\Check-Invoke-CyspaWebCheck.ps1
@@ -71,18 +71,18 @@ $script:PauseMs     = 500
 $script:MaxBodyBytes = 1MB
 
 # ============================================================================
-#  Parser-Funktionen (ohne Netzwerk, im Selbsttest geprueft)
+#  Parser-Funktionen (ohne Netzwerk, im Selbsttest geprüft)
 # ============================================================================
 
 function ConvertTo-NormalizedDomain {
-    <# Entfernt Schema, Pfad und Leerzeichen; prueft auf gueltigen Hostnamen (optional mit Port). #>
+    <# Entfernt Schema, Pfad und Leerzeichen; prüft auf gültigen Hostnamen (optional mit Port). #>
     param([Parameter(Mandatory)][string]$Value)
     $v = $Value.Trim()
     $v = $v -replace '^[a-zA-Z][a-zA-Z0-9+.-]*://', ''
     $v = ($v -split '[/?#]', 2)[0]
     $v = $v.TrimEnd('.').ToLowerInvariant()
     if ($v -notmatch '^(?=.{1,253}(:|$))([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?)(\.[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?)*(:\d{1,5})?$') {
-        throw "Ungueltiger Domainname: '$Value'"
+        throw "Ungültiger Domainname: '$Value'"
     }
     return $v
 }
@@ -96,7 +96,7 @@ function Split-HostPort {
 }
 
 function Get-BaseDomain {
-    <# www.cyspa.ch -> cyspa.ch (einfache Heuristik: fuehrendes www. entfernen). #>
+    <# www.cyspa.ch -> cyspa.ch (einfache Heuristik: führendes www. entfernen). #>
     param([Parameter(Mandatory)][string]$HostName)
     return ($HostName -replace '^www\.', '')
 }
@@ -116,11 +116,11 @@ function Get-HstsAssessment {
     $r.IncludeSubDomains = [bool]($Value -match '(?i)includeSubDomains')
     $r.Preload = [bool]($Value -match '(?i)\bpreload\b')
     if ($null -eq $r.MaxAge) {
-        $r.Rating = 'Handlungsbedarf'; $r.Note = 'max-age fehlt oder ungueltig'
+        $r.Rating = 'Handlungsbedarf'; $r.Note = 'max-age fehlt oder ungültig'
     } elseif ($r.MaxAge -eq 0) {
         $r.Rating = 'Handlungsbedarf'; $r.Note = 'max-age=0 deaktiviert HSTS'
     } elseif ($r.MaxAge -lt 15552000) {
-        $r.Rating = 'Pruefen'; $r.Note = "max-age $($r.MaxAge) s ist kuerzer als 6 Monate (empfohlen: 31536000)"
+        $r.Rating = 'Pruefen'; $r.Note = "max-age $($r.MaxAge) s ist kürzer als 6 Monate (empfohlen: 31536000)"
     } else {
         $r.Rating = 'OK'; $r.Note = "max-age $($r.MaxAge) s"
     }
@@ -163,7 +163,7 @@ function Get-FramingAssessment {
     if (-not [string]::IsNullOrWhiteSpace($XFrameOptions)) {
         $v = $XFrameOptions.Trim().ToUpperInvariant()
         if ($v -in @('DENY', 'SAMEORIGIN')) { return [pscustomobject]@{ Rating = 'OK'; Note = "X-Frame-Options: $v" } }
-        return [pscustomobject]@{ Rating = 'Pruefen'; Note = "X-Frame-Options mit unueblichem Wert: $XFrameOptions" }
+        return [pscustomobject]@{ Rating = 'Pruefen'; Note = "X-Frame-Options mit unüblichem Wert: $XFrameOptions" }
     }
     return [pscustomobject]@{ Rating = 'Handlungsbedarf'; Note = 'Weder X-Frame-Options noch CSP frame-ancestors (Clickjacking-Schutz fehlt)' }
 }
@@ -191,7 +191,7 @@ function Get-PermissionsPolicyAssessment {
 }
 
 function Get-BannerAssessment {
-    <# Bewertet Server- und X-Powered-By-Header. Versionsnummern gelten als unnoetige Preisgabe. #>
+    <# Bewertet Server- und X-Powered-By-Header. Versionsnummern gelten als unnötige Preisgabe. #>
     param([AllowNull()][string]$Server, [AllowNull()][string]$PoweredBy)
     $notes = @(); $rating = 'OK'
     if (-not [string]::IsNullOrWhiteSpace($PoweredBy)) {
@@ -239,7 +239,7 @@ function Get-CookieAssessment {
 }
 
 function Test-HeaderKey {
-    <# Prueft case-insensitiv, ob ein Header vorhanden ist (Hashtable oder Dictionary). #>
+    <# Prüft case-insensitiv, ob ein Header vorhanden ist (Hashtable oder Dictionary). #>
     param([AllowNull()][System.Collections.IDictionary]$Headers, [string]$Name)
     if (-not $Headers) { return $false }
     foreach ($k in $Headers.Keys) { if ([string]$k -ieq $Name) { return $true } }
@@ -309,7 +309,7 @@ function Get-SecurityTxtAssessment {
     if ($contact.Count -eq 0) { $rating = 'Pruefen'; $notes += 'Contact fehlt (Pflichtfeld)' } else { $notes += "Contact: $($contact -join ', ')" }
     if (-not $expires) { $rating = 'Pruefen'; $notes += 'Expires fehlt (Pflichtfeld)' }
     elseif ($expires.UtcDateTime -lt $Now.ToUniversalTime()) { $rating = 'Pruefen'; $notes += "abgelaufen seit $($expires.ToString('dd.MM.yyyy'))" }
-    else { $notes += "gueltig bis $($expires.ToString('dd.MM.yyyy'))" }
+    else { $notes += "gültig bis $($expires.ToString('dd.MM.yyyy'))" }
     return [pscustomobject]@{ Rating = $rating; Note = ($notes -join '; '); Contact = $contact; Expires = $expires }
 }
 
@@ -439,6 +439,31 @@ function Get-TlsInfo {
     return [pscustomobject]$r
 }
 
+function Get-ControlRef {
+    <# Zuordnung Massnahme -> ISO/IEC 27001:2022 Anhang A (Orientierung, keine Audit-Aussage). #>
+    param([AllowNull()][string]$Measure)
+    $map = @{
+        'M-CVE'         = 'A.8.8 Handhabung technischer Schwachstellen'
+        'M-TLS'         = 'A.8.24 Verwendung von Kryptographie'
+        'M-REDIR'       = 'A.8.24 Verwendung von Kryptographie'
+        'M-HSTS'        = 'A.8.24 Verwendung von Kryptographie'
+        'M-CSP'         = 'A.8.26 Anforderungen an die Anwendungssicherheit; A.8.9 Konfigurationsmanagement'
+        'M-FRAME'       = 'A.8.26 Anforderungen an die Anwendungssicherheit; A.8.9 Konfigurationsmanagement'
+        'M-XCTO'        = 'A.8.9 Konfigurationsmanagement'
+        'M-REF'         = 'A.8.9 Konfigurationsmanagement'
+        'M-PERM'        = 'A.8.9 Konfigurationsmanagement'
+        'M-BANNER'      = 'A.8.9 Konfigurationsmanagement'
+        'M-CMS-VERSION' = 'A.8.9 Konfigurationsmanagement'
+        'M-README'      = 'A.8.9 Konfigurationsmanagement'
+        'M-WPJSON'      = 'A.8.9 Konfigurationsmanagement'
+        'M-XMLRPC'      = 'A.8.9 Konfigurationsmanagement'
+        'M-SECTXT'      = 'A.8.8 Handhabung technischer Schwachstellen (Meldeweg für Schwachstellen)'
+        'M-COOKIE'      = 'A.8.9 Konfigurationsmanagement; A.5.34 Privatsphäre und Schutz personenbezogener Daten'
+    }
+    if ($Measure -and $map.ContainsKey($Measure)) { return $map[$Measure] }
+    return '–'
+}
+
 function Get-HeaderValue {
     param([AllowNull()][System.Collections.IDictionary]$Headers, [string]$Name)
     if (-not $Headers -or -not (Test-HeaderKey $Headers $Name)) { return $null }
@@ -460,7 +485,7 @@ function Invoke-SelfTest {
     Assert 'Domain: Schema/Pfad entfernt' ((ConvertTo-NormalizedDomain 'https://WWW.cyspa.ch/pfad?x=1') -eq 'www.cyspa.ch')
     Assert 'Domain: Port erlaubt' ((ConvertTo-NormalizedDomain 'localhost:8443') -eq 'localhost:8443')
     $bad = $false; try { ConvertTo-NormalizedDomain 'cyspa.ch; rm -rf /' | Out-Null } catch { $bad = $true }
-    Assert 'Domain: ungueltige Eingabe abgelehnt' $bad
+    Assert 'Domain: ungültige Eingabe abgelehnt' $bad
     Assert 'Host/Port getrennt' ((Split-HostPort 'a.ch:8443').Port -eq 8443 -and (Split-HostPort 'a.ch').Port -eq 443)
     Assert 'Same-Site: www -> Basisdomain' (Test-SameSiteHost 'cyspa.ch' (Get-BaseDomain 'www.cyspa.ch'))
     Assert 'Same-Site: fremde Domain' (-not (Test-SameSiteHost 'evilcyspa.ch' 'cyspa.ch'))
@@ -482,7 +507,7 @@ function Invoke-SelfTest {
     Assert 'Framing: nichts -> Handlungsbedarf' ((Get-FramingAssessment $null $false).Rating -eq 'Handlungsbedarf')
     Assert 'Framing: CSP frame-ancestors -> OK' ((Get-FramingAssessment $null $true).Rating -eq 'OK')
     Assert 'XCTO nosniff -> OK' ((Get-XctoAssessment 'nosniff').Rating -eq 'OK')
-    Assert 'Referrer: letzter Wert zaehlt' ((Get-ReferrerPolicyAssessment 'unsafe-url, strict-origin-when-cross-origin').Rating -eq 'OK')
+    Assert 'Referrer: letzter Wert zählt' ((Get-ReferrerPolicyAssessment 'unsafe-url, strict-origin-when-cross-origin').Rating -eq 'OK')
     Assert 'Referrer: unsafe-url -> Pruefen' ((Get-ReferrerPolicyAssessment 'unsafe-url').Rating -eq 'Pruefen')
     Assert 'Banner: Version -> Pruefen' ((Get-BannerAssessment 'Apache/2.4.57 (Debian)' $null).Rating -eq 'Pruefen')
     Assert 'Banner: ohne Version -> OK' ((Get-BannerAssessment 'nginx' $null).Rating -eq 'OK')
@@ -505,13 +530,16 @@ function Invoke-SelfTest {
     Assert 'CMS: kein Hinweis' ((@((Get-CmsIndicators '<html></html>' $null).WordPressHints)).Count -eq 0)
 
     $now = [datetime]'2026-09-27'
-    Assert 'security.txt gueltig -> OK' ((Get-SecurityTxtAssessment 200 'text/plain; charset=utf-8' "Contact: mailto:security@example.ch`nExpires: 2027-09-01T00:00:00Z" $now).Rating -eq 'OK')
+    Assert 'security.txt gültig -> OK' ((Get-SecurityTxtAssessment 200 'text/plain; charset=utf-8' "Contact: mailto:security@example.ch`nExpires: 2027-09-01T00:00:00Z" $now).Rating -eq 'OK')
     Assert 'security.txt abgelaufen -> Pruefen' ((Get-SecurityTxtAssessment 200 'text/plain' "Contact: mailto:a@b.ch`nExpires: 2026-01-01T00:00:00Z" $now).Note -match 'abgelaufen')
     Assert 'security.txt HTML-Fehlerseite -> Pruefen' ((Get-SecurityTxtAssessment 200 'text/html' '<html>' $now).Note -match 'text/plain')
     Assert 'security.txt 404 -> Pruefen' ((Get-SecurityTxtAssessment 404 $null $null $now).Rating -eq 'Pruefen')
     Assert 'XML-RPC aktiv erkannt' ((Get-XmlRpcAssessment 405 'XML-RPC server accepts POST requests only.').Rating -eq 'Pruefen')
     Assert 'XML-RPC gesperrt -> OK' ((Get-XmlRpcAssessment 403 'Forbidden').Rating -eq 'OK')
     Assert 'Markdown: Pipe escaped' ((ConvertTo-MdCell 'a|b') -eq 'a\|b')
+    Assert 'Kontrolle: M-CVE -> A.8.8' ((Get-ControlRef 'M-CVE') -like 'A.8.8*')
+    Assert 'Kontrolle: M-TLS -> A.8.24' ((Get-ControlRef 'M-TLS') -like 'A.8.24*')
+    Assert 'Kontrolle: unbekannt -> Strich' ((Get-ControlRef 'X') -eq '–')
 
     Write-Host ("Ergebnis: {0} bestanden, {1} fehlgeschlagen" -f $script:pass, $script:fail)
     return ($script:fail -eq 0)
@@ -531,8 +559,8 @@ $baseDomain = Get-BaseDomain $hp.Host
 $stamp = Get-Date
 if (-not $OutFile) { $OutFile = Join-Path (Get-Location) ("cyspa-webcheck_{0}_{1}.md" -f ($authority -replace '[^a-z0-9.-]', '_'), $stamp.ToString('yyyyMMdd-HHmm')) }
 
-Write-Host "CYSPA Web-Check (passiv) fuer $authority"
-Write-Host 'Hinweis: Nur gegen die eigene Domain ausfuehren. Es werden ca. 8 normale Seitenabrufe gemacht.'
+Write-Host "CYSPA Web-Check (passiv) für $authority"
+Write-Host 'Hinweis: Nur gegen die eigene Domain ausführen. Es werden ca. 8 normale Seitenabrufe gemacht.'
 
 $client = New-PassiveHttpClient -TimeoutSec $TimeoutSec -SkipCertificateCheck:$SkipCertificateCheck
 $findings = [System.Collections.Generic.List[object]]::new()
@@ -548,7 +576,7 @@ $firstHttp = $httpChain[0]
 if ($firstHttp.Error) {
     Add-Finding 'Transport' 'HTTP -> HTTPS' 'Info' "HTTP (Port $HttpPort) nicht erreichbar: $($firstHttp.Error)" 'M-REDIR'
 } elseif ($firstHttp.StatusCode -in 301, 302, 303, 307, 308 -and $firstHttp.Location -and $firstHttp.Location.Scheme -eq 'https') {
-    $perm = if ($firstHttp.StatusCode -in 301, 308) { 'dauerhaft' } else { 'temporaer' }
+    $perm = if ($firstHttp.StatusCode -in 301, 308) { 'dauerhaft' } else { 'temporär' }
     $rt = if ($perm -eq 'dauerhaft') { 'OK' } else { 'Pruefen' }
     Add-Finding 'Transport' 'HTTP -> HTTPS' $rt "HTTP $($firstHttp.StatusCode) ($perm) nach $($firstHttp.Location)" 'M-REDIR'
 } else {
@@ -564,7 +592,7 @@ if (-not $tls.Ok) {
     $protoRating = if ($tls.Protocol -match 'Tls13|Tls12') { 'OK' } else { 'Handlungsbedarf' }
     Add-Finding 'Transport' 'TLS-Protokoll (ausgehandelt)' $protoRating "$($tls.Protocol)$(if($tls.CipherSuite){", $($tls.CipherSuite)"})" 'M-TLS'
     $certRating = if ($tls.PolicyErrors -ne 'None') { 'Handlungsbedarf' } elseif ($tls.DaysLeft -lt 14) { 'Handlungsbedarf' } elseif ($tls.DaysLeft -lt 30) { 'Pruefen' } else { 'OK' }
-    Add-Finding 'Transport' 'Zertifikat' $certRating ("gueltig bis {0:dd.MM.yyyy} ({1} Tage), Aussteller: {2}; Pruefung: {3}" -f $tls.NotAfter, $tls.DaysLeft, $tls.Issuer, $tls.PolicyErrors) 'M-TLS'
+    Add-Finding 'Transport' 'Zertifikat' $certRating ("gültig bis {0:dd.MM.yyyy} ({1} Tage), Aussteller: {2}; Prüfung: {3}" -f $tls.NotAfter, $tls.DaysLeft, $tls.Issuer, $tls.PolicyErrors) 'M-TLS'
 }
 
 # 3) Startseite
@@ -624,17 +652,17 @@ $cmsText = if ($isWp) { "WordPress erkannt ($(@($cms.WordPressHints) -join ', ')
 if ($cms.Generator) { $cmsText += "; Generator: $($cms.Generator)" }
 Add-Finding 'CMS' 'System-Erkennung' 'Info' $cmsText '–'
 if ($isWp) {
-    if ($cms.WordPressVersion) { Add-Finding 'CMS' 'Versionsanzeige (Generator-Meta)' 'Pruefen' "Version $($cms.WordPressVersion) oeffentlich sichtbar" 'M-CMS-VERSION' }
+    if ($cms.WordPressVersion) { Add-Finding 'CMS' 'Versionsanzeige (Generator-Meta)' 'Pruefen' "Version $($cms.WordPressVersion) öffentlich sichtbar" 'M-CMS-VERSION' }
     $wjRating = if ($wpJsonIsWp) { 'Info' } else { 'OK' }
     Add-Finding 'CMS' '/wp-json/ (REST-API-Index)' $wjRating "HTTP $($wpJson.StatusCode)$(if($wpJsonIsWp){', erreichbar (Normalbetrieb; Benutzer-Endpunkte bewusst nicht abgefragt)'})" 'M-WPJSON'
     $rmRating = if ($readmeIsWp) { 'Pruefen' } else { 'OK' }
-    Add-Finding 'CMS' '/readme.html' $rmRating "HTTP $($readme.StatusCode)$(if($readmeIsWp){', WordPress-Readme oeffentlich'})" 'M-README'
+    Add-Finding 'CMS' '/readme.html' $rmRating "HTTP $($readme.StatusCode)$(if($readmeIsWp){', WordPress-Readme öffentlich'})" 'M-README'
     $xa = Get-XmlRpcAssessment $xmlrpc.StatusCode $xmlrpc.Body
     Add-Finding 'CMS' '/xmlrpc.php' $xa.Rating $xa.Note 'M-XMLRPC'
 }
 $cveNeeded = $isWp -or (-not $cms.OtherCms)
 if ($cveNeeded) {
-    $cveDetail = if ($isWp) { 'WordPress erkannt. Version im WP-Backend pruefen und mit dem Hersteller-Advisory abgleichen.' } else { 'System unklar. Falls WordPress im Einsatz ist: Version im WP-Backend pruefen.' }
+    $cveDetail = if ($isWp) { 'WordPress erkannt. Version im WP-Backend prüfen und mit dem Hersteller-Advisory abgleichen.' } else { 'System unklar. Falls WordPress im Einsatz ist: Version im WP-Backend prüfen.' }
     Add-Finding 'CMS' 'CVE-2026-87902 (WordPress Core, CISA KEV)' 'Handlungsbedarf' $cveDetail 'M-CVE'
 }
 
@@ -651,6 +679,13 @@ if (-not $unreachable) {
 Write-Host '  [6/6] Bericht schreiben'
 $order = @{ 'Handlungsbedarf' = 0; 'Pruefen' = 1; 'OK' = 2; 'Info' = 3 }
 $label = @{ 'Handlungsbedarf' = 'Handlungsbedarf'; 'Pruefen' = 'Prüfen'; 'OK' = 'OK'; 'Info' = 'Info' }
+# Priorität innerhalb gleicher Bewertung (für Management-Summary)
+$measurePrio = @{ 'M-CVE' = 0; 'M-TLS' = 1; 'M-REDIR' = 2; 'M-HSTS' = 3; 'M-CSP' = 4; 'M-FRAME' = 5; 'M-XCTO' = 6; 'M-XMLRPC' = 7; 'M-COOKIE' = 8; 'M-README' = 9; 'M-BANNER' = 10; 'M-CMS-VERSION' = 11; 'M-SECTXT' = 12; 'M-REF' = 13; 'M-PERM' = 14; 'M-WPJSON' = 15 }
+$sorted = @($findings | Sort-Object @{ Expression = { $order[$_.Rating] } }, @{ Expression = { if ($measurePrio.ContainsKey($_.Measure)) { $measurePrio[$_.Measure] } else { 99 } } }, Area)
+$top = @($sorted | Where-Object { $_.Rating -in 'Handlungsbedarf', 'Pruefen' } | Select-Object -First 3)
+$nHigh = @($findings | Where-Object Rating -eq 'Handlungsbedarf').Count
+$nMid = @($findings | Where-Object Rating -eq 'Pruefen').Count
+$overall = if ($nHigh -gt 0) { 'Rot – Handlungsbedarf' } elseif ($nMid -gt 0) { 'Gelb – Verbesserungen prüfen' } else { 'Grün – keine auffälligen Befunde (im Rahmen dieses Checks)' }
 $cnt = $findings | Group-Object Rating | ForEach-Object { "$($label[$_.Name]): $($_.Count)" }
 
 $sb = [System.Text.StringBuilder]::new()
@@ -658,7 +693,7 @@ $sb = [System.Text.StringBuilder]::new()
 [void]$sb.AppendLine('tags: [cyspa, sicherheits-check, webseite, e2]')
 [void]$sb.AppendLine('status: Bericht – Auswertung durch Security (Michael) und Freigabe LWE')
 [void]$sb.AppendLine("date: $($stamp.ToString('yyyy-MM-dd'))")
-[void]$sb.AppendLine("source: Check-Invoke-CyspaWebCheck.ps1 v$($script:ToolVersion) (passiv, lokal ausgefuehrt)")
+[void]$sb.AppendLine("source: Check-Invoke-CyspaWebCheck.ps1 v$($script:ToolVersion) (passiv, lokal ausgeführt)")
 [void]$sb.AppendLine('klassifizierung: internal')
 [void]$sb.AppendLine('---')
 [void]$sb.AppendLine()
@@ -667,13 +702,35 @@ $sb = [System.Text.StringBuilder]::new()
 [void]$sb.AppendLine("**Zeitpunkt:** $($stamp.ToString('dd.MM.yyyy HH:mm')) · **Methode:** nur passive GET-Abrufe öffentlicher Seiten, keine Scans, keine Logins, keine Benutzerabfragen · **Bezug:** Entscheid E2, Cyber Security Briefing KW 40")
 [void]$sb.AppendLine()
 if ($SkipCertificateCheck) { [void]$sb.AppendLine('> Achtung: Lauf mit -SkipCertificateCheck (Testmodus).'); [void]$sb.AppendLine() }
-[void]$sb.AppendLine("**Übersicht:** $($cnt -join ' · ')")
+[void]$sb.AppendLine('## Management-Summary')
 [void]$sb.AppendLine()
-[void]$sb.AppendLine('| Bereich | Prüfpunkt | Bewertung | Befund | Massnahme (README) |')
-[void]$sb.AppendLine('|---|---|---|---|---|')
-foreach ($f in ($findings | Sort-Object @{ Expression = { $order[$_.Rating] } }, Area)) {
-    [void]$sb.AppendLine("| $(ConvertTo-MdCell $f.Area) | $(ConvertTo-MdCell $f.Check) | **$($label[$f.Rating])** | $(ConvertTo-MdCell $f.Detail 260) | $(ConvertTo-MdCell $f.Measure) |")
+[void]$sb.AppendLine("**Gesamtlage:** $overall · **Befunde:** $($cnt -join ' · ')")
+[void]$sb.AppendLine()
+[void]$sb.AppendLine('**Top-3-Befunde**')
+[void]$sb.AppendLine()
+if ($top.Count -eq 0) { [void]$sb.AppendLine('Keine Befunde mit Handlungsbedarf oder Prüfbedarf.') }
+$i = 0
+foreach ($t in $top) { $i++; [void]$sb.AppendLine("$i. **$($t.Check)** ($($label[$t.Rating])): $(ConvertTo-MdCell $t.Detail 200) → Massnahme $($t.Measure), Kontrolle $(Get-ControlRef $t.Measure)") }
+[void]$sb.AppendLine()
+[void]$sb.AppendLine('**Entscheidungsbedarf der Geschäftsleitung**')
+[void]$sb.AppendLine()
+[void]$sb.AppendLine('| # | Frage (Ja/Nein) | Empfehlung |')
+[void]$sb.AppendLine('|---|---|---|')
+$d = 0
+if ($cveNeeded) { $d++; [void]$sb.AppendLine("| D$d | Wird die WordPress-Version sofort im Backend gegen CVE-2026-87902 geprüft und bei Bedarf aktualisiert (Owner: Webseiten-Verantwortliche, Fallback LWE)? | **Ja**, vor jeder weiteren Änderung an der Webseite. |") }
+if ($nHigh -gt 0) { $d++; [void]$sb.AppendLine("| D$d | Werden die $nHigh Befunde mit Handlungsbedarf durch Webseiten-Verantwortliche bzw. Hoster behoben, mit Termin und erneutem Check? | **Ja**, Termin: [durch GL festzulegen]. |") }
+if ($nMid -gt 0) { $d++; [void]$sb.AppendLine("| D$d | Werden die $nMid Befunde «Prüfen» vom Webseiten-Owner mit Security (Michael) bewertet und begründet umgesetzt oder akzeptiert? | **Ja**, im nächsten Änderungsfenster. |") }
+$d++; [void]$sb.AppendLine("| D$d | Werden neue Inhalte (z. B. /tabletop) erst nach Umsetzung der obigen Entscheide eingepflegt (Entscheid E2: Check vor der nächsten Änderung)? | **Ja.** |")
+[void]$sb.AppendLine()
+[void]$sb.AppendLine('## Befunde im Detail')
+[void]$sb.AppendLine()
+[void]$sb.AppendLine('| Bereich | Prüfpunkt | Bewertung | Befund | Massnahme (README) | Kontrolle ISO/IEC 27001:2022 Anhang A |')
+[void]$sb.AppendLine('|---|---|---|---|---|---|')
+foreach ($f in $sorted) {
+    [void]$sb.AppendLine("| $(ConvertTo-MdCell $f.Area) | $(ConvertTo-MdCell $f.Check) | **$($label[$f.Rating])** | $(ConvertTo-MdCell $f.Detail 260) | $(ConvertTo-MdCell $f.Measure) | $(Get-ControlRef $f.Measure) |")
 }
+[void]$sb.AppendLine()
+[void]$sb.AppendLine('*Kontroll-Zuordnung zur Orientierung (ISO/IEC 27001:2022 Anhang A, Umsetzungshinweise in ISO/IEC 27002:2022). Keine Audit- oder Konformitätsaussage.*')
 [void]$sb.AppendLine()
 if ($cveNeeded) {
     [void]$sb.AppendLine('## CVE-2026-87902 – WordPress Core')
@@ -699,6 +756,18 @@ if ($H) {
 $all = @(@($httpChain) + @($chain) + @($wpJson, $readme, $xmlrpc, $sec) | Where-Object { $null -ne $_.Uri })
 foreach ($r in $all) { [void]$sb.AppendLine("- $($r.Method) $($r.Uri) → $(if($r.Error){"Fehler: $(ConvertTo-MdCell $r.Error 120)"}else{"HTTP $($r.StatusCode)"})") }
 [void]$sb.AppendLine("- TLS-Handshake $($hp.Host):$($hp.Port) → $(if($tls.Ok){$tls.Protocol}else{"Fehler: $($tls.Error)"})")
+[void]$sb.AppendLine()
+[void]$sb.AppendLine('## Verteiler und Abnahme')
+[void]$sb.AppendLine()
+[void]$sb.AppendLine('**Klassifizierung:** intern. Der Bericht kann Schwachstellen benennen und wird nicht öffentlich geteilt. Externe (Hoster, Agentur) erhalten nach Freigabe nur den Massnahmen-Auszug.')
+[void]$sb.AppendLine()
+[void]$sb.AppendLine('**Verteiler:** LWE (Inhaberin, Geschäftsleitung) · Michael (Security) · Webseiten-Verantwortliche/r [NEEDS INPUT] · Hoster/Agentur nur Auszug nach Freigabe')
+[void]$sb.AppendLine()
+[void]$sb.AppendLine('| Rolle | Name | Datum | Visum / Bemerkung |')
+[void]$sb.AppendLine('|---|---|---|---|')
+[void]$sb.AppendLine('| Check ausgeführt | [Name] | ' + $stamp.ToString('dd.MM.yyyy') + ' | |')
+[void]$sb.AppendLine('| Fachliche Prüfung und Bewertung | Michael (Security) | | |')
+[void]$sb.AppendLine('| Freigabe Massnahmen | LWE (Inhaberin) | | |')
 [void]$sb.AppendLine()
 [void]$sb.AppendLine('## Grenzen')
 [void]$sb.AppendLine()

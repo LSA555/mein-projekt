@@ -7,6 +7,7 @@
   Quelle für flyer-cyspa.pdf · A4 hoch, 2 Seiten, mit 3 mm Beschnitt (Dokumentformat 216 × 303 mm).
   Rendern: headless Chromium (siehe flyer-cyspa.md). Stand 27.09.2026, Entwurf.
   Sicherheitsabstand: Inhalte mind. 12 mm innerhalb des Endformats (= 15 mm vom Dokumentrand).
+  Nach dem Rendern TrimBox (210 x 297 mm, 3 mm Versatz) und BleedBox setzen, siehe flyer-cyspa.md.
 -->
 <style>
 @font-face{font-family:"Montserrat";font-weight:700;src:url("assets/fonts/Montserrat-Bold.ttf") format("truetype")}
@@ -24,9 +25,10 @@ h1,h2,h3,.badge,.cy{font-family:"Montserrat",Arial,sans-serif;font-weight:700}
 
 /* ---------- Vorderseite ---------- */
 .front{background:var(--navy);color:var(--white)}
-.front .edge{position:absolute;top:0;bottom:0;right:0;width:9mm;background:var(--navy2)}
+/* Seitenstreifen: 3 mm Beschnitt + 12 mm sichtbar; Cyan-Linie 12 mm vor dem Endformatrand (>= 10 mm) */
+.front .edge{position:absolute;top:0;bottom:0;right:0;width:15mm;background:var(--navy2)}
 .front .edge::before{content:"";position:absolute;left:0;top:0;bottom:0;width:1.2mm;background:var(--cyan)}
-.front .safe{right:24mm}
+.front .safe{right:27mm}
 .hd{display:flex;justify-content:space-between;align-items:center}
 .plate{background:var(--white);border-radius:1.2mm;padding:2.2mm 3.2mm;line-height:0}
 .plate img{height:13mm;width:auto}
@@ -55,7 +57,9 @@ h1,h2,h3,.badge,.cy{font-family:"Montserrat",Arial,sans-serif;font-weight:700}
 
 /* ---------- Rückseite ---------- */
 .back{background:var(--white);color:var(--navy)}
-.back .topband{position:absolute;left:0;right:0;top:0;height:3mm;background:var(--cyan)}
+/* Cyan-Band: 3 mm Beschnitt + 6.5 mm sichtbar */
+.back .topband{position:absolute;left:0;right:0;top:0;height:9.5mm;background:var(--cyan)}
+.back .safe{top:22mm}
 .back h2{font-size:17pt;line-height:1.15}
 .sec{margin-bottom:6.5mm}
 .kick{font-family:"Montserrat";font-weight:700;font-size:7pt;letter-spacing:.18em;color:var(--charcoal);text-transform:uppercase;margin-bottom:1.8mm}

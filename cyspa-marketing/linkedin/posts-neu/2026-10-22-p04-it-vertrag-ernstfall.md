@@ -11,7 +11,7 @@
 | Erkenntnisgewinn | Die Geschäftsleitung kennt fünf Fragen, mit denen sie vor der Vertragsverlängerung klärt, ob ihr IT-Dienstleister-Vertrag auch einen Cybervorfall am Wochenende abdeckt. |
 | Backlog-Thema | P4: «Der IT-Dienstleister-Vertrag im Ernstfall: Reaktionszeiten, Zuständigkeiten, Wochenende» |
 | Saison-Anker | Q4 Budget- und Vertragsrunde |
-| CTA-Typ | Selbstcheck / Traktanden-Empfehlung (weich, kein Verkauf) |
+| CTA-Typ | Selbstcheck (weich, kein Verkauf) |
 | Status | Draft — Vorprüfung durch KI, bereit für Fachreview |
 
 ## Post-Text (copy-paste-fertig)
@@ -43,12 +43,12 @@ Das ist kein Misstrauensvotum gegenüber Ihrem IT-Partner. Die Klärung schützt
 
 Lesen Sie den IT-Vertrag, bevor Sie ihn im Ernstfall brauchen.
 
-Nehmen Sie die fünf Fragen als Traktandum ins nächste Gespräch mit Ihrem IT-Dienstleister, am besten vor der Verlängerung.
+Welche der fünf Fragen ist bei Ihnen noch offen?
 
 #CYSPA #CyberResilienz #KMU #Geschäftsleitung #Schweiz
 ```
 
-Länge: 1'693 Zeichen (Korridor ✔, Executive eher kurz: Kürzungsoption siehe Gate-Vermerk). Hook (erste zwei Zeilen) 134 Zeichen ✔.
+Länge: 1'619 Zeichen (Korridor ✔, Executive eher kurz: Kürzungsoption siehe Gate-Vermerk). Hook (erste zwei Zeilen) 134 Zeichen ✔.
 
 ## Erster Kommentar
 ```text
@@ -77,6 +77,7 @@ Oktober ist European Cybersecurity Month. Unser Beitrag dazu: die Fragen, die ma
 **Bewusst weggelassen:** Mengenaussagen wie «viele KMU» oder «oft ungeregelt» (keine Quelle), konkrete Reaktionszeiten oder Beträge (wären erfunden), Aussagen zu Inhalten von Versicherungspolicen (nur als Frage an die Leserin formuliert), Meldepflichten (P6-Thema, eigener Fachreview nötig).
 
 ## Quality-Gate-Vermerke
+- **Nachbesserung nach Prüfrunde 1 (27.09.2026):** Doppelte Handlungsaufforderung aufgelöst: «Lesen Sie den IT-Vertrag, bevor Sie ihn im Ernstfall brauchen.» bleibt als Merksatz, der Schluss ist jetzt eine kurze Selbstcheck-Frage.
 - **Vorprüfung KI (27.09.2026):** Keine Zahlen, keine Kundennamen, keine Fallschilderung, keine Superlative ✔. Respektvoller Ton gegenüber IT-Dienstleistern (Styleguide §1) ✔. Fachbegriff Forensik erklärt ✔. Themennähe zu #10 Tabletop (08.10., Folie «Der erste Anruf»): dort als Übungsfrage, hier als Vertragsprüfung vertieft; die Befugnisfrage «Wer darf Systeme vom Netz nehmen» wurde deshalb bewusst weggelassen.
 - **Fachreview (Owner P4: Cyber Resilience Specialist; Mitprüfung Incident Response Specialist für Frage 4 und 5):** offen. Prüfen: Sind die fünf Fragen vollständig und in der richtigen Gewichtung? Kürzungsoption für Executive-Länge: Absatz «Das ist kein Misstrauensvotum …» auf den ersten Satz kürzen.
 - **Legal:** offen. Vertragsbezug als allgemeine Hinweise; Hinweis «keine Rechtsberatung» steht im ersten Kommentar — Legal entscheidet, ob er in den Post-Text gehört. Keine Herabsetzung von Dienstleistern ✔.

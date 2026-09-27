@@ -6,14 +6,23 @@ Grundlagen (Branch `origin/claude/cyspa-linkedin-strategy-vte419`): `linkedin/01
 
 **Termindruck:** Die Inhaberin (LWE) ist ab Do 01.10.2026 in den Ferien. Alle vier Posts müssen bis **Mi 30.09.2026** fachlich geprüft, durch die Gates und freigegeben sein. Vorlauf laut 04 §1: Carousel/Graphic 5 Arbeitstage — mit Freigabe am 30.09. erfüllt.
 
+## 0. Abweichung vom Redaktionsplan (05 §4)
+
+Laut `05-redaktionsplan.md` §4 ist KW 43 (19.–23.10.2026) als Review-Woche für Batch 1 gedacht, ohne neue Batch-2-Themen; die Gewichtung nach Performance beginnt mit Batch 2 ab KW 44. Diese Planung weicht davon ab: **LWE hat am 27.09.2026 wegen ihrer Ferien ab 01.10. ausdrücklich beauftragt, neue Posts für die freien Slots zu schreiben**, darunter 20.10. und 22.10. in KW 43.
+
+Folgen und Abgrenzung:
+- Der **Batch-1-Review in KW 43 findet trotzdem statt** (Data & Performance Analyst, 06-kpi-reporting §4). Die vier Posts ersetzen ihn nicht.
+- Die vier Posts sind **keine Batch-2-Gewichtung**. Sie wählen Pfeiler nur nach Mix-Regeln und Saison, nicht nach Performance. Die Batch-2-Gewichtung ab KW 44/45 bleibt davon unberührt.
+- Die Posts vom 27. und 29.10. (KW 44) liegen im Batch-2-Zeitraum. Ergibt der Review in KW 43 eine andere Gewichtung, können sie verschoben werden (Flex-Regel 05 §3); eine Verschiebung von #16 ändert den Abstand des harten CTA zum nächsten, nicht die Regel.
+
 ## 1. Slot-Tabelle
 
 | # | Datum | Tag | Pfeiler / Serie | Arbeitstitel | Zielgruppe primär (sekundär) | Ziel | Format | CTA | Datei | Visual |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 13 | 20.10.2026, 08:15 | Di | P1 — QUICK TIP | Ein starkes Passwort schützt nicht auf der falschen Seite (Passkeys) | Technology Leadership (Technical) | A | Textpost + Single Graphic | **Dialog** | [2026-10-20-p01-passwordless.md](2026-10-20-p01-passwordless.md) | [PNG](../assets-neu/2026-10-20-p01-passwordless/) |
-| 14 | 22.10.2026, 08:15 | Do | P4 — RESILIENZ KONKRET | Der IT-Dienstleister-Vertrag im Ernstfall: 5 Fragen | Executive KMU (Technology Leadership) | B, E | Textpost + Single Graphic | Selbstcheck / Traktandum | [2026-10-22-p04-it-vertrag-ernstfall.md](2026-10-22-p04-it-vertrag-ernstfall.md) | [PNG](../assets-neu/2026-10-22-p04-it-vertrag/) |
+| 14 | 22.10.2026, 08:15 | Do | P4 — RESILIENZ KONKRET | Der IT-Dienstleister-Vertrag im Ernstfall: 5 Fragen | Executive KMU (Technology Leadership) | B, E | Textpost + Single Graphic | Selbstcheck | [2026-10-22-p04-it-vertrag-ernstfall.md](2026-10-22-p04-it-vertrag-ernstfall.md) | [PNG](../assets-neu/2026-10-22-p04-it-vertrag/) |
 | 15 | 27.10.2026, 08:15 | Di | P5 — MICROSOFT SECURITY PRAXIS | Gastkonten in Entra ID: 5 Prüfpunkte | Technical (Technology Leadership) | A, C | Carousel 6 Slides (PDF) | Selbstcheck | [2026-10-27-p05-gastkonten-entra.md](2026-10-27-p05-gastkonten-entra.md) | [6 PNG + PDF](../assets-neu/2026-10-27-p05-gastkonten/) |
-| 16 | 29.10.2026, 08:15 | Do | P8 — AUS DEM CISO-ALLTAG | Die Security-Roadmap auf einer Seite: 3–6–12 Monate | Technology Leadership Mid-Market (Executive) | B, D, E | Carousel 6 Slides (PDF) | **hart: Roadmap-Workshop** | [2026-10-29-p08-roadmap-eine-seite.md](2026-10-29-p08-roadmap-eine-seite.md) | [6 PNG + PDF](../assets-neu/2026-10-29-p08-roadmap/) |
+| 16 | 29.10.2026, 08:15 | Do | P8 — AUS DEM CISO-ALLTAG | Die Security-Roadmap auf einer Seite: 3–6–12 Monate | Technology Leadership Mid-Market (Executive) | B, D, E | Carousel 6 Slides (PDF) | **hart: Erstgespräch CISO-as-a-Service** | [2026-10-29-p08-roadmap-eine-seite.md](2026-10-29-p08-roadmap-eine-seite.md) | [6 PNG + PDF](../assets-neu/2026-10-29-p08-roadmap/) |
 
 Die Nummern #13–#16 setzen die Batch-1-Zählung fort (Vorschlag, nicht verbindlich).
 
@@ -70,11 +79,13 @@ Letzter Einsatz der gewählten Pfeiler in Batch 1 und Abstand zum neuen Slot:
 | 13 | P1 (Backlog-Nähe: «MFA ist nicht gleich MFA: Stufen von Push bis Passkey»; Vorgabe: vorhandener geprüfter Entwurf «Passwordless») | Geprüfter Entwurf liegt vor (Runde 3, 83/90); passt in P1 und Segmentfolge. Offene Quellenpunkte in dieser Runde weitgehend geschlossen. | Die Leserin weiss, dass Passkeys vor Echtzeit-Phishing schützen, weil der Schlüssel an die echte Webadresse gebunden ist und nie an die Website geht, und kennt die vier Schritte dorthin. |
 | 14 | P4: «Der IT-Dienstleister-Vertrag im Ernstfall: Reaktionszeiten, Zuständigkeiten, Wochenende» | Q4: Budget und Vertragsverlängerungen stehen an; KMU mit externer IT sind Primärsegment. Vertieft die Frage «gilt der Support-Vertrag auch am Wochenende?» aus #10 praktisch. | Die Geschäftsleitung kennt fünf Fragen, mit denen sie vor der Vertragsverlängerung klärt, ob ihr IT-Vertrag auch einen Cybervorfall am Wochenende abdeckt. |
 | 15 | P5: «M365-Datenfreigaben: anonyme Links, Gast-Zugriffe, Teams-Wildwuchs im Griff» (Teil Gast-Zugriffe) | Hoher Nutzwert für Technical, heute im eigenen Tenant prüfbar; alle Kernaussagen gegen Microsoft-Dokumentation belegbar. Anonyme Links bewusst ausgespart (Quelle nicht erreichbar) → Folgepost. | Die Leserin weiss, dass in Entra ID standardmässig alle Benutzer (auch Gäste) Gäste einladen dürfen, und kennt fünf Prüfpunkte, um Gastkonten sichtbar, begrenzt und verantwortet zu machen. |
-| 16 | P8: «Die Security-Roadmap auf einer Seite: Horizont 3-6-12 Monate» | Budget-Saison, Sales-Pfeiler für den einzigen harten CTA; liefert nach #08 («Reihenfolge schlägt Höhe») das Format für die Vorlage an die GL. | Die IT-Leitung kann ihre Security-Vorhaben für die Budgetrunde auf einer Seite in drei Horizonten darstellen, mit drei Angaben pro Zeile, die die Geschäftsleitung entscheiden lässt. |
+| 16 | P8: «Die Security-Roadmap auf einer Seite: Horizont 3-6-12 Monate» | Budget-Saison, Sales-Pfeiler für den einzigen harten CTA (Erstgespräch, Leistung CISO-as-a-Service laut `web/webseite-texte.md`); liefert nach #08 («Reihenfolge schlägt Höhe») das Format für die Vorlage an die GL. | Die IT-Leitung kann ihre Security-Vorhaben für die Budgetrunde auf einer Seite in drei Horizonten darstellen, mit drei Angaben pro Zeile, die die Geschäftsleitung entscheiden lässt. |
 
 **Bewusst nicht gewählt:** P2 «Reicht unsere IT-Firma nicht als Security?» (zu nah an #14), P3 Board-Reporting (Executive-Themen sind mit #14 abgedeckt), P7 Datenklassen für KI (würde Governance/Executive-Segment doppeln), P6 (Review-Kapazität vor den Ferien).
 
 ## 4. Visuals
+
+> **Hinweis (27.09.2026, nach Mitteilung LWE über den Koordinator):** Die Repo-Pipeline bildet NICHT das echte CYSPA-CI ab. Echtes CI: Navy-Verlauf, Gold/Gelb als Akzent, Logo «CYS» blau / «PA» grau, Serie «SECURITY4KMU · TIPP DER WOCHE». Die PNG/PDF in `assets-neu/` sind deshalb nur Inhaltsentwürfe und nicht publikationsfähig. Das Redesign übernimmt der Koordinator. Verbindlich für den Inhalt bleiben die Visual-Briefings und Slide-Texte in den Beitragsdateien; Farb- und Badge-Angaben dort (Deep Space Blue, Cyan, Serien-Badges) gelten nicht.
 
 - Pipeline: `linkedin/assets/` aus dem Branch nach Scratchpad extrahiert; `content.mjs` um die vier Visuals ergänzt (plus Filter `ONLY=` zum Rendern nur der neuen Slugs), `build.mjs` um den Slide-Typ `numlist` ergänzt. Batch-1-Visuals wurden nicht neu gerendert und nicht verändert.
 - **Renderer-Befund:** Mit dem Standard-Chromium (`/opt/pw-browsers/chromium`, Chromium 141, neuer Headless-Modus) rendert `build.mjs` unten einen weissen Balken von rund 87 px, weil das Fenster die Fensterleiste einrechnet und der Viewport kleiner als `--window-size` ist. Die neuen Visuals sind deshalb mit `chromium_headless_shell` (`/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell`, Viewport = Fenstergrösse) gerendert. Alle 14 neuen PNGs wurden visuell und per Pixelprüfung kontrolliert: exakt 1200×1500 bzw. 1080×1350, unterste Zeile Deep Space Blue, kein weisser Rand.
@@ -90,7 +101,7 @@ Letzter Einsatz der gewählten Pfeiler in Batch 1 und Abstand zum neuen Slot:
 | 13 | Optional: Schweizer Quelle NCSC «Technologiebetrachtung Passkeys» (09.01.2025) öffnen und im Kommentar ergänzen (aktuell REPORTED) | Fachreview P1 | 29.09. |
 | 14 | Fachreview der fünf Fragen; Legal: «keine Rechtsberatung» im Kommentar reicht oder in den Post? | **Cyber Resilience Specialist** (Owner P4), Mitprüfung Incident Response Specialist; Legal Reviewer | 29.09. |
 | 15 | Fachreview: Portal-Pfade und Spaltennamen im aktuellen Entra Admin Center, Lizenzformulierung Access Reviews, Auswirkungen der strengsten Gast-Stufe | **Microsoft Security Specialist** (Owner P5) | 29.09. |
-| 16 | Fachreview Horizonte; Bestätigung, dass «Roadmap-Workshop» als Angebot existiert, und Zielseite für den Link im ersten Kommentar (cyspa.ch war nicht erreichbar) | **CISO / Security Advisor** (Owner P8); Legal (UWG) | 29.09. |
+| 16 | Fachreview Horizonte; Bestätigung der Leistungsbeschreibung CISO-as-a-Service (inkl. «Roadmap auf einer Seite», Quelle `web/webseite-texte.md` §2.1) und der Live-URL für den Link im ersten Kommentar (Arbeits-URL `/leistungen#ciso-as-a-service`, ZU BESTÄTIGEN; cyspa.ch war nicht erreichbar) | **CISO / Security Advisor** (Owner P8); Legal (UWG) | 29.09. |
 | alle | Gates Legal und Accessibility; finale Freigabe | Legal Reviewer, Accessibility Reviewer; **Freigabe: LWE** (Head of Content) | 30.09. |
 | alle | Publikation und Engagement-Fenster (60 Min.) während LWE-Ferien: Wer plant die Posts im LinkedIn-Planer ein, wer betreut Kommentare am 20./22./27./29.10.? | LWE benennt Vertretung | 30.09. |
 | alle | Posting-Stopp-Regel (04 §4.2) während der Ferien: Wer darf verschieben? | LWE benennt Vertretung (IR Specialist / CISO laut 04) | 30.09. |
@@ -98,5 +109,7 @@ Letzter Einsatz der gewählten Pfeiler in Batch 1 und Abstand zum neuen Slot:
 Die Rollen sind Rollen aus `01-strategie.md` §5.2. Welche Person die Rolle am 28.–30.09. wahrnimmt, legt LWE fest.
 
 ## 6. Nicht getan (bewusst)
+
+Nachbesserung nach unabhängiger Prüfung Runde 1 (27.09.2026): #13 Commit-Stände der Quellen ergänzt; #14 doppelte Handlungsaufforderung gestrafft; #15 Slide 2 Portal-Bezeichnung «Guest» vereinheitlicht und neu gerendert; #16 Angebotsbehauptung «Roadmap-Workshop» durch Erstgespräch zu CISO-as-a-Service ersetzt, Link auf Arbeits-URL, MFA und Restore-Test für Executives erklärt, Redline «Stichprobe», Slides 3 und 6 neu gerendert; Abschnitt 0 (Abweichung vom Plan) ergänzt.
 
 Nichts publiziert, nichts eingeplant, nichts versendet, keine Commits, keine Pushes, keine Änderung an anderen Branches oder an den Batch-1-Dateien.

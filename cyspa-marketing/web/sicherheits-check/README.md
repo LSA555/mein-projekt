@@ -54,7 +54,7 @@ Anlass ist unter anderem **CVE-2026-87902** in WordPress Core, seit 25.09.2026 i
    ```powershell
    pwsh -NoProfile -File .\Check-Invoke-CyspaWebCheck.ps1 -SelfTest
    ```
-   Erwartet: «40 bestanden, 0 fehlgeschlagen».
+   Erwartet: «43 bestanden, 0 fehlgeschlagen».
 4. Check ausführen:
    ```powershell
    pwsh -NoProfile -File .\Check-Invoke-CyspaWebCheck.ps1
@@ -76,6 +76,41 @@ Anlass ist unter anderem **CVE-2026-87902** in WordPress Core, seit 25.09.2026 i
 | `-HttpPort`, `-SkipCertificateCheck` | – | nur für Tests in einer Laborumgebung, nicht für den echten Check |
 
 **Exit-Codes:** 0 = Bericht erstellt · 1 = Eingabe- oder Schreibfehler · 2 = Webseite nicht erreichbar (Bericht trotzdem erstellt)
+
+## Aufbau des Berichts
+
+| Abschnitt | Inhalt | Für wen |
+|---|---|---|
+| **Management-Summary** | Gesamtlage (Rot/Gelb/Grün), Top-3-Befunde nach Bewertung und Priorität, Entscheidungsbedarf der Geschäftsleitung als Ja/Nein-Fragen mit Empfehlung | LWE / Geschäftsleitung |
+| **Befunde im Detail** | Alle Prüfpunkte mit Bewertung, Befund, Massnahmen-Kürzel und Kontroll-Zuordnung ISO/IEC 27001:2022 Anhang A | Security, Webseiten-Verantwortliche |
+| **CVE-2026-87902** | Einordnung und Vorgehen (nur wenn WordPress erkannt oder System unklar) | Webseiten-Verantwortliche |
+| **Rohdaten, abgerufene Adressen** | Antwort-Header der Startseite (ohne Cookie-Werte), Liste aller Abrufe | Security (Nachvollziehbarkeit) |
+| **Verteiler und Abnahme** | Klassifizierung, Verteiler, Abnahmetabelle | alle |
+| **Grenzen** | Was der Check nicht abdeckt | alle |
+
+**Priorität der Top-3:** zuerst Bewertung (Handlungsbedarf vor Prüfen), innerhalb gleicher Bewertung M-CVE → M-TLS → M-REDIR → M-HSTS → M-CSP → M-FRAME → M-XCTO → M-XMLRPC → M-COOKIE → übrige.
+
+**Kontroll-Zuordnung (Orientierung, keine Audit-Aussage)**
+
+| Massnahme | ISO/IEC 27001:2022 Anhang A |
+|---|---|
+| M-CVE, M-SECTXT | A.8.8 Handhabung technischer Schwachstellen |
+| M-TLS, M-REDIR, M-HSTS | A.8.24 Verwendung von Kryptographie |
+| M-CSP, M-FRAME | A.8.26 Anforderungen an die Anwendungssicherheit; A.8.9 Konfigurationsmanagement |
+| M-XCTO, M-REF, M-PERM, M-BANNER, M-CMS-VERSION, M-README, M-WPJSON, M-XMLRPC | A.8.9 Konfigurationsmanagement |
+| M-COOKIE | A.8.9 Konfigurationsmanagement; A.5.34 Privatsphäre und Schutz personenbezogener Daten |
+
+Umsetzungshinweise zu diesen Kontrollen stehen in ISO/IEC 27002:2022 (gleiche Nummerierung). Die Zuordnung zeigt, in welches Thema eines ISMS ein Befund gehört. Sie ist keine Aussage über Konformität oder Zertifizierbarkeit.
+
+## Verteiler und Abnahme
+
+- **Klassifizierung:** intern. Der Bericht kann Schwachstellen benennen. Nicht öffentlich teilen, nicht per LinkedIn oder Chat versenden.
+- **Verteiler:** LWE (Inhaberin, Geschäftsleitung), Michael (Security), Webseiten-Verantwortliche/r `NEEDS INPUT`. Hoster oder Agentur erhalten nach Freigabe nur den Massnahmen-Auszug.
+- **Abnahme (im Bericht auszufüllen):**
+  1. Check ausgeführt: Name, Datum
+  2. Fachliche Prüfung und Bewertung: **Michael (Security)**, Datum, Visum
+  3. Freigabe der Massnahmen: **LWE (Inhaberin)**, Datum, Visum
+- Erst nach Schritt 3 gehen Massnahmen an Hoster/Agentur.
 
 ## Interpretation
 
@@ -171,15 +206,16 @@ Die Kürzel stehen im Bericht in der Spalte «Massnahme». Umsetzung durch Webse
 
 ## Nach dem Check
 
-1. Bericht an Michael (Security) zur Auswertung.
-2. Massnahmen mit Owner und Termin im Vault erfassen (Massnahme E2, Termin 02.10.2026 laut Briefing).
-3. Umsetzung durch Webseiten-Verantwortliche bzw. Hoster. Änderungen an der Live-Webseite nur nach Freigabe durch LWE.
-4. Check nach Umsetzung erneut ausführen und beide Berichte ablegen.
-5. **Erst danach** die neuen Seiten (`/tabletop`, überarbeitete Texte) einpflegen – gemäss E2 «vor der nächsten Änderung».
+1. Bericht an Michael (Security): fachliche Prüfung, Bewertung, Visum in der Abnahmetabelle.
+2. LWE entscheidet die Fragen D1–Dn aus der Management-Summary und gibt die Massnahmen frei (Visum).
+3. Massnahmen mit Owner und Termin im Vault erfassen (Massnahme E2, Termin 02.10.2026 laut Briefing).
+4. Umsetzung durch Webseiten-Verantwortliche bzw. Hoster. Änderungen an der Live-Webseite nur nach Freigabe durch LWE.
+5. Check nach Umsetzung erneut ausführen und beide Berichte ablegen.
+6. **Erst danach** die neuen Seiten (`/tabletop`, überarbeitete Texte) einpflegen – gemäss E2 «vor der nächsten Änderung».
 
-## Prüfung des Skripts (27.09.2026)
+## Prüfung des Skripts (27.09.2026, Runde 2)
 
 - Syntaxprüfung mit `[scriptblock]::Create(...)` unter PowerShell 7.4.6: bestanden.
-- Selbsttest `-SelfTest`: 40 von 40 Prüfungen bestanden.
-- Ende-zu-Ende-Test gegen einen lokalen Nachbau (WordPress-Merkmale, selbstsigniertes Zertifikat, fehlende Header): alle Befunde wie erwartet erkannt, genau 7 Abrufe plus TLS-Handshake, keine weiteren Pfade abgefragt. Ergebnis siehe `beispiel-bericht-testumgebung.md`.
+- Selbsttest `-SelfTest`: 43 von 43 Prüfungen bestanden (Runde 2, inkl. Kontroll-Zuordnung).
+- Ende-zu-Ende-Test gegen einen lokalen Nachbau (WordPress-Merkmale, selbstsigniertes Zertifikat, fehlende Header): alle Befunde wie erwartet erkannt, genau 7 Abrufe plus TLS-Handshake, keine weiteren Pfade abgefragt. Ergebnis mit Management-Summary, Kontroll-Zuordnung und Abnahmetabelle siehe `beispiel-bericht-testumgebung.md`.
 - **Nicht getestet:** gegen cyspa.ch selbst (aus der Erstellungsumgebung nicht erreichbar) und unter Windows. Der erste echte Lauf erfolgt durch LWE bzw. die IT.
