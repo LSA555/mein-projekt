@@ -78,7 +78,7 @@ Dieser Platzhalter darf **nicht** publiziert werden (Gate 2). Liegt der Absatz n
 | Stelle | Draft | Final | Begründung |
 |--------|-------|-------|------------|
 | Persönlicher Absatz | `[PLATZHALTER — persönlicher Absatz …]` | Plan B: entfernt · Plan A: offen, durch das Team zu füllen | Gate 2 (Platzhalter-Kontrolle). KI erfindet keine persönlichen Einblicke. |
-| Schlussabsatz | «teilen wir jede Woche» | «teilen wir regelmässig» | Gate 2 (keine unrichtige Angabe): Batch 1 endet am 15.10. Batch 2 startet laut Redaktionsplan §4 erst in KW 44. KW 43 ist als Review-Woche vorgesehen, ohne dort geplante Posts. «Jede Woche» wäre direkt nach dem Post möglicherweise falsch. Wenn LWE KW 43 bespielt, kann «jede Woche» bleiben. |
+| Schlussabsatz | «teilen wir jede Woche» | «teilen wir regelmässig» | Gate 2 (keine unrichtige Angabe): Batch 1 endet am 15.10. Batch 2 startet laut Redaktionsplan §4 erst in KW 44. KW 43 war als Review-Woche ohne Posts vorgesehen. Nachtrag 27.09.2026: LWE hat Posts für 20./22.10. beauftragt (cyspa-marketing/linkedin/posts-neu/), damit wäre «jede Woche» bis Ende Oktober belegbar. «Regelmässig» bleibt trotzdem die sichere Formulierung, weil die Oktober-Posts noch nicht freigegeben sind. |
 | Rest | – | unverändert | – |
 
 ## 3. Faktencheck

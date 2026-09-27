@@ -208,7 +208,9 @@ Geschäftsleitungen und IT-Verantwortliche von Schweizer KMU.
 ### 2.4 Microsoft-365-Security-Assessment {#m365}
 
 **Problem**
-Viele Unternehmen arbeiten vollständig in Microsoft 365. Die Plattform bringt starke Schutzfunktionen mit, doch Konfiguration und Berechtigungen liegen in der Verantwortung des Unternehmens. Häufig offen: Ausnahmen bei der Multi-Faktor-Authentifizierung, veraltete Anmeldeverfahren, gewachsene Datenfreigaben.
+Microsoft 365 bringt starke Schutzfunktionen mit, doch Konfiguration und Berechtigungen liegen in der Verantwortung des Unternehmens. In unseren Mandaten sehen wir oft: Ausnahmen bei der Multi-Faktor-Authentifizierung, die niemand mehr begründen kann, veraltete Anmeldeverfahren und historisch gewachsene Datenfreigaben.
+
+> Redaktion: Erfahrungsaussage, keine Statistik. Vom Microsoft Security Specialist bestätigen lassen (Gate 1).
 
 **Vorgehen**
 Prüfung auf Konfigurationsebene, unter Berücksichtigung Ihrer Lizenzen: Conditional Access, Blockierung veralteter Anmeldeverfahren (Legacy Authentication), Microsoft Defender, Entra ID, Freigaben in SharePoint, OneDrive und Teams.

@@ -44,8 +44,15 @@ https://www.cyspa.ch/tabletop?utm_source=linkedin&utm_medium=organic&utm_campaig
 | `utm_campaign` | `p12-tabletop` | Pfeiler P12, Thema Tabletop |
 | `utm_content` (optional) | `erster-kommentar` bzw. `profil-<kuerzel>` | unterscheidet Page-Kommentar und Reshares persönlicher Profile |
 
-**Kommentar-Text für den Beitrag (ersetzt den Platzhalter in der Beitragsdatei):**
-«Hier geht es zum Executive-Tabletop-Format von CYSPA: https://www.cyspa.ch/tabletop?utm_source=linkedin&utm_medium=organic&utm_campaign=p12-tabletop»
+**Kommentar-Text für den Beitrag** (massgeblich ist das Freigabepaket `cyspa-marketing/linkedin/freigabe/2026-10-08-10-tabletop-uebung.md`, Abschnitt 5; hier nur gespiegelt):
+
+```text
+Hier geht es zum Executive-Tabletop-Format von CYSPA — Ablauf, Aufwand und Terminanfrage: https://www.cyspa.ch/tabletop?utm_source=linkedin&utm_medium=organic&utm_campaign=p12-tabletop
+
+Passend zum European Cybersecurity Month im Oktober: Ein guter Anlass, den Notfallplan einmal gemeinsam durchzuspielen.
+```
+
+Der Kommentar verspricht «Ablauf, Aufwand und Terminanfrage». Die Landingpage löst Ablauf und Terminanfrage ein; «Aufwand» nur, wenn die Platzhalter zu Dauer/Preis (FAQ) gefüllt sind. Sonst den Kommentar im Freigabepaket anpassen, nicht hier.
 
 **Messung:** Die UTM-Werte werden im Formular als versteckte Felder mitgesendet (siehe HTML). So landet die Quelle «LinkedIn / P12» mit der Anfrage im CRM (Feld Quelle gemäss `06-kpi-reporting.md`). Welches Analytics-Werkzeug die Seitenaufrufe erfasst: [PLATZHALTER: Analytics-Tool auf cyspa.ch – im Cookie-Banner und in der Datenschutzerklärung berücksichtigen].
 
@@ -76,7 +83,7 @@ Die wertvollsten Erkenntnisse aus Übungen sind fast immer organisatorisch, nich
 
 1. **Unklare Befugnisse.** Wer darf Systeme vom Netz nehmen, auch wenn damit das Geschäft steht? Wer gibt Externen den Auftrag – und bis zu welchem Betrag?
 2. **Kommunikation ohne die üblichen Kanäle.** Wie erreichen Sie Mitarbeitende und Kunden, wenn E-Mail und Chat selbst betroffen sind? Wo liegen die Notfallkontakte?
-3. **Meldefristen unter Zeitdruck.** Datenschutzbehörde, Vertragspartner, allenfalls Aufsicht oder BACS: Wer meldet was bis wann – und wer formuliert es?
+3. **Meldefristen unter Zeitdruck.** Datenschutzbehörde, Vertragspartner, allenfalls Aufsicht oder das Bundesamt für Cybersicherheit (BACS): Wer meldet was bis wann – und wer formuliert es?
 4. **Die Dienstleisterfrage.** Wer ist der erste Anruf? Gilt der Support-Vertrag auch am Wochenende? Steht die Nummer des Versicherers im Plan?
 
 ### Ablauf der Übung
@@ -171,7 +178,7 @@ Minimal gehalten (Datensparsamkeit, revDSG). Kein Pflicht-Opt-in für Marketing.
 | Honeypot `website` | versteckt | – | Spam-Schutz ohne Tracking (für Menschen unsichtbar, muss leer bleiben) |
 
 **Datenschutzhinweis (unter dem Formular):**
-«Wir verwenden Ihre Angaben ausschliesslich, um Ihre Anfrage zu beantworten. Die Übermittlung erfolgt verschlüsselt. Weitere Informationen finden Sie in unserer [PLATZHALTER Datenschutzerklärung-Link].»
+«Wir verwenden Ihre Angaben ausschliesslich, um Ihre Anfrage zu beantworten. [PLATZHALTER: «Die Übermittlung erfolgt verschlüsselt.» erst nach Sicherheits-Check bestätigen] Weitere Informationen finden Sie in unserer [PLATZHALTER Datenschutzerklärung-Link].»
 
 > Redaktion revDSG: Ein Informationshinweis mit Link zur Datenschutzerklärung genügt für die Bearbeitung einer Anfrage; eine Einwilligungs-Checkbox ist dafür nicht nötig. Soll zusätzlich ein Newsletter angeboten werden, braucht es eine separate, nicht vorausgewählte Checkbox. Allgemeine Einordnung, durch Legal zu bestätigen. Zu klären: Wohin gehen die Formulardaten (CMS-Formular, CRM, Mail)? Wo werden sie gespeichert (Land)? Das gehört in die Datenschutzerklärung. [PLATZHALTER: Formular-Backend]
 
