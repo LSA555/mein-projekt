@@ -125,7 +125,7 @@ class TestAgentInvocation(Sandbox):
         tid = self.new()
         code, out, _ = self.n("route", tid, "sofia")
         self.assertEqual(code, 6)
-        self.assertIn("proposed", out["error"])
+        self.assertIn("backup", out["error"])
 
     def test_unknown_agent_is_refused(self):
         code, out, _ = self.n("route", self.new(), "ghost-agent")
@@ -217,6 +217,68 @@ class TestSpecialistAgents(Sandbox):
                                     actor="nigel-orchestrator")[0], 0)
         self.assertEqual(self.n("checkpoint", tid, "close", "--evidence", "x", "--confirm")[0], 0)
         self.assertEqual(self.task(tid)["status"], "done")
+
+    def test_core_team_and_backup(self):
+        reg = jread(os.path.join(REPO, "nigel", "registry", "agents.json"))
+        core = [a for a in reg["agents"] if a.get("core_team")]
+        self.assertEqual({a["agent_id"] for a in core}, {"nigel-orchestrator", "ava", "alex", "oliver", "michael", "vera"})
+        self.assertEqual(set(reg["core_team"]), {a["agent_id"] for a in core})
+        backup = [a for a in reg["agents"] if not a.get("core_team")]
+        self.assertEqual(len(backup), 30)
+        targets = {a["agent_id"] for a in core} | {"claude-code (Hauptsession)"}
+        for a in backup:
+            self.assertEqual(a["status"], "backup", a["agent_id"])
+            self.assertIn(a["merged_into"], targets, a["agent_id"])
+            self.assertEqual(a["company_scope"], [], a["agent_id"])
+        absorbed = [x for a in core for x in a.get("absorbs", [])]
+        self.assertEqual(len(absorbed), len(set(absorbed)), "each backup agent belongs to exactly one core agent")
+
+    def test_only_vera_and_nigel_review(self):
+        reg = jread(os.path.join(REPO, "nigel", "registry", "agents.json"))
+        reviewers = {a["agent_id"] for a in reg["agents"] if a.get("core_team") and "reviewer" in a.get("roles", [])}
+        self.assertEqual(reviewers, {"nigel-orchestrator", "vera"}, "creators must not review")
+
+    def test_backup_agent_not_routable_even_in_sandbox(self):
+        self.assertEqual(self.n("route", self.new(sandbox=True), "grace")[0], 6)
+
+    def test_rubrics_complete(self):
+        folder = os.path.join(REPO, "nigel", "quality", "rubrics")
+        names = {f[:-3] for f in os.listdir(folder) if f.endswith(".md")}
+        self.assertEqual(names, {"angebot", "linkedin-post", "praesentation", "security-bericht", "dokument", "meeting-brief",
+                                 "cyber-briefing"})
+        for n in names:
+            text = read(os.path.join(folder, n + ".md"))
+            self.assertRegex(text, r"threshold: \d+")
+            points = [int(x) for x in re.findall(r"^\| \d+ \| [^|]+ \| (\d+) \|", text, re.M)]
+            self.assertEqual(sum(points), 100, n)
+            self.assertIn("Muss-Kriterien", text, n)
+
+    def test_meeting_intelligence_is_read_only_for_connectors(self):
+        reg = jread(os.path.join(REPO, "nigel", "registry", "agents.json"))
+        ava = next(a for a in reg["agents"] if a["agent_id"] == "ava")
+        self.assertIn("meeting-intelligence", ava.get("skills", []))
+        writing = [t for t in ava["tools_allowed"] if t.startswith("mcp__") and not re.search(
+            r"__(list|get|search)_|__create_draft$", t)]
+        self.assertEqual(writing, [], "Ava gets only reading connector tools plus Gmail drafts")
+        skill = read(os.path.join(REPO, ".claude", "skills", "meeting-intelligence", "SKILL.md"))
+        for label in ("VERIFIED", "REPORTED", "INFERRED", "UNKNOWN", "NOT CHECKED", "READY", "NEEDS INPUT", "BLOCKED"):
+            self.assertIn(label, skill)
+
+    def test_cyber_briefing_skill_and_limits(self):
+        reg = jread(os.path.join(REPO, "nigel", "registry", "agents.json"))
+        michael = next(a for a in reg["agents"] if a["agent_id"] == "michael")
+        self.assertIn("cyber-briefing", michael.get("skills", []))
+        skill = read(os.path.join(REPO, ".claude", "skills", "cyber-briefing", "SKILL.md"))
+        self.assertIn("REPORTED", skill)
+        self.assertIn("nie `VERIFIED`", skill)
+        tid = self.new(flow="cyber-briefing")
+        self.assertEqual(self.n("action", "request", tid, "--type", "send_email", "--target", "k", "--payload", "w")[0], 3)
+        self.assertEqual(self.n("action", "request", tid, "--type", "run_security_test", "--target", "k", "--payload", "w")[0], 6)
+
+    def test_weekly_briefs_stop_before_sending(self):
+        tid = self.new(flow="weekly-meeting-briefs")
+        self.assertEqual(self.n("action", "request", tid, "--type", "calendar_invite", "--target", "x", "--payload", "y")[0], 3)
+        self.assertEqual(self.n("action", "request", tid, "--type", "publish_post", "--target", "x", "--payload", "y")[0], 6)
 
     def test_general_task_stops_before_external_effect(self):
         tid = self.new(flow="general-task")
@@ -755,7 +817,7 @@ class TestFlows(unittest.TestCase):
         phase_ids = [p["id"] for p in pol["checkpoints"]]
         flows = {f[:-5]: jread(os.path.join(folder, f)) for f in os.listdir(folder)}
         self.assertEqual(set(flows), {"meeting-followup", "linkedin-lead", "lead-offer", "security-assessment", "night-run",
-                                      "general-task"})
+                                      "general-task", "weekly-meeting-briefs", "cyber-briefing"})
         for fid, fl in flows.items():
             self.assertTrue(fl["dod"], fid)
             for c in fl["dod"]:

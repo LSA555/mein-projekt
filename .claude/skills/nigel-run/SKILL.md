@@ -27,11 +27,17 @@ Abläufe (`--flow`): `meeting-followup`, `linkedin-lead`, `lead-offer`, `securit
 
 Fachagenten (Status laut `nigel/registry/agents.json`):
 
+**Core-Team.** Nur diese Agenten arbeiten. Alle übrigen Blueprint-Agenten stehen auf `backup` und sind nicht routbar.
+
 | Agent | Für | Mandanten |
 |---|---|---|
-| `ava` | Meetings, Briefings, Aufgaben, Mail-Entwürfe, Notizen | alle |
-| `oliver` | Angebote und Projektpläne (Skill `cyspa-angebot`) | cyspa |
-| `michael` | Security Assessment: Planung, Auswertung, Bericht, keine aktiven Tests | cyspa |
+| `ava` | Executive & Wissen: Meetings, Briefings, Aufgaben, Mail-Entwürfe, Übersichten, Notizen, Ablage | alle |
+| `alex` | Marketing & Content: LinkedIn, Texte, Visuals, Kampagnen, Tracking (Datei wird von LWE hochgeladen) | alle |
+| `oliver` | Revenue: Recherche, Qualifizierung, Angebote (`cyspa-angebot`), Kunden, Partner, CRM-Vorschläge | alle |
+| `michael` | Security & GRC: Assessment, ISO/NIS2/revDSG, KI-Sicherheit, Incident Readiness, keine aktiven Tests | cyspa |
+| `vera` | Qualität & Kontrolle: **unabhängige Prüfung** jedes Ergebnisses nach `nigel/quality/rubrics/` | alle |
+
+**Prüfung immer durch Vera** (nie durch den Ersteller): Nigel weist in der Phase `verify` zu mit `N route <ID> vera`. Vera bewertet nach dem passenden Raster und schreibt ein Prüfprotokoll. Liegt das Ergebnis unter der Schwelle oder ist ein Muss-Kriterium verfehlt, geht die Mängelliste zurück an den Ersteller, höchstens 2 Runden, dann entscheidet LWE.
 
 Solange ein Agent auf `sandbox` steht, ist er nur bei `--sandbox`-Aufgaben routbar. Bei echten Aufgaben erledigt die Hauptsession seinen Schritt selbst mit derselben Arbeitsanweisung (`.claude/agents/<agent>.md`).
 

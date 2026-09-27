@@ -1,0 +1,31 @@
+{
+  "flow_id": "weekly-meeting-briefs",
+  "name": "Wochenvorbereitung Meetings (Meeting Intelligence)",
+  "version": "1.0.0",
+  "source": "Spezifikation «CYSPA Executive Meeting Intelligence Agent», LWE 2026-09-27; Skill meeting-intelligence",
+  "roles": ["orchestrator", "executive-ops", "knowledge", "research", "reviewer"],
+  "steps": [
+    {"id": "access-check", "phase": "scope", "role": "executive-ops", "output": "Zugangsprüfung je System: geprüft oder NOT CHECKED"},
+    {"id": "inventory", "phase": "execute", "role": "executive-ops", "output": "Terminliste der Woche mit Mandant, Projekt, Kategorie, Status"},
+    {"id": "context", "phase": "execute", "role": "knowledge", "output": "Kontext je Termin aus Notizen, Mail, CRM, gekennzeichnet"},
+    {"id": "briefs", "phase": "execute", "role": "executive-ops", "output": "Meeting Brief je relevantem Termin"},
+    {"id": "weekly", "phase": "execute", "role": "executive-ops", "output": "Executive Weekly Meeting Brief"},
+    {"id": "qa", "phase": "execute", "role": "executive-ops", "output": "QA-Protokoll"},
+    {"id": "review", "phase": "verify", "role": "reviewer", "output": "Prüfprotokoll Vera nach meeting-brief.md"}
+  ],
+  "approval_gates": [
+    {"gate_id": "external-effect", "action_types": ["send_email", "calendar_invite", "crm_write", "crm_stage_change", "share_file"], "description": "Versand, Einladungen und CRM-Änderungen nur nach Freigabe durch LWE"}
+  ],
+  "forbidden_action_types": ["purchase", "delete_record", "run_security_test", "publish_post", "send_offer", "code_merge"],
+  "night_allowed_phases": ["scope", "execute"],
+  "dod": [
+    {"id": "inventory-complete", "description": "Anteil der zugänglichen Termine der Woche in der Inventur", "metric": "ratio", "op": ">=", "target": 1.0, "evidence": "Inventurliste", "requires_file": true},
+    {"id": "status-set", "description": "Anteil der Termine mit Status READY, NEEDS INPUT, BLOCKED oder NOT APPLICABLE", "metric": "ratio", "op": ">=", "target": 1.0, "evidence": "Wochenübersicht", "requires_file": true},
+    {"id": "briefs-for-relevant", "description": "Anteil relevanter Termine mit Brief", "metric": "ratio", "op": ">=", "target": 1.0, "evidence": "Briefs je Termin", "requires_file": true},
+    {"id": "claims-labelled", "description": "Anteil der Aussagen mit Kennzeichnung (VERIFIED, REPORTED, INFERRED, UNKNOWN, NOT CHECKED)", "metric": "ratio", "op": ">=", "target": 1.0, "evidence": "Stichprobe im Prüfprotokoll"},
+    {"id": "access-declared", "description": "Anteil der Systeme mit ausgewiesenem Zugangsstatus", "metric": "ratio", "op": ">=", "target": 1.0, "evidence": "Zugangsprüfung"},
+    {"id": "qa-protocol", "description": "QA-Protokoll erstellt", "metric": "bool", "op": "==", "target": true, "evidence": "QA-Protokoll", "requires_file": true},
+    {"id": "no-external-actions", "description": "Externe Aktionen ohne Freigabe", "metric": "count", "op": "==", "target": 0, "evidence": "Ledger-Auszug"}
+  ],
+  "budget": {"retry_limit": 2, "max_execution_minutes": 60}
+}
