@@ -47,7 +47,7 @@ Häufigkeit: Zählung über 55 Quelldateien (cyspa-marketing, vault-staging, QA-
 | Einsatz | Schrift | Quelle |
 |---|---|---|
 | Web, Social | **Raleway** 400 bis 900, OFL, lokal eingebettet (npm `@fontsource/raleway`) | CI v3, alle Visuals, Landingpage |
-| Flyer-Headlines, Eyebrows, Kontaktangaben (Druck) | **Source Serif 4** 700, OFL | abgeleitet aus Flyer «CISO as a Service» (Serifen-Headlines), Entscheid offen |
+| Flyer-Headlines, Eyebrows, Kontaktangaben (Druck) | **Source Serif 4** 600/700, OFL | abgeleitet aus Flyer «CISO as a Service» (Serifen-Headlines), Entscheid offen |
 | PPTX/DOCX | **Calibri** (CI v3). Flyer-PPTX zusätzlich **Cambria** für Headlines als Serif-Ersatz | CI v3; Cambria ist Abweichung, Entscheid offen |
 
 Zahlen: `font-feature-settings:"lnum" 1` bzw. `font-variant-numeric:lining-nums`.

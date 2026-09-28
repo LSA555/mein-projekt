@@ -10,7 +10,7 @@ chat_url: "https://claude.ai/code/session_01JsQoSQbozeyt2EYitpEXuf"
 
 Optimierte Standardtexte zum Kopieren. Jede Aussage mit Quelle und Status.
 
-**Status-Legende:** `bestätigt` = von LWE bestätigt oder in einer freigegebenen/geprüften Quelle belegt · `Entwurf` = in Entwürfen mehrfach verwendet, Freigabe LWE ausstehend · `zu bestätigen` = offen, nicht publizieren ohne Bestätigung · `nicht verwenden` = unbelegt.
+**Status-Legende:** `bestätigt` = von LWE bestätigt oder in einer freigegebenen/geprüften Quelle belegt · `Entwurf` = in Entwürfen mehrfach verwendet, Freigabe LWE ausstehend · `zu bestätigen` = offen, nicht publizieren ohne Bestätigung · `nicht verwenden` = unbelegt · `nicht prüfbar` = Beleg bei LWE anfordern.
 
 Copy-Regeln CI v3 angewendet: kein Gedankenstrich im Satzfluss, «ss», keine Ausrufezeichen, Sie-Form, Guillemets.
 
@@ -32,7 +32,7 @@ Copy-Regeln CI v3 angewendet: kein Gedankenstrich im Satzfluss, «ss», keine Au
 | Positionierungskern | 01-strategie.md §1 (wörtlich, ohne Gedankenstrich) | Entwurf |
 | Vier Arbeitsprinzipien | Post #12, webseite-texte.md | Entwurf (Post #12 nicht freigegeben) |
 
-**Nicht verwenden (unbelegt):** «100+ Kunden», «Erfahrene CISOs und Branchenwissen aus zahlreichen KMU-Mandaten», Studie «KMU Cybersicherheit 2025» (Flyer CISO, Quelle für uns nicht prüfbar) · Gründungsjahr, Teamgrösse, Zertifizierungen, Referenzen (Platzhalter, nur mit Nachweis).
+**Für uns nicht prüfbar, Beleg bei LWE anfordern (bis dahin nicht einsetzen):** «100+ Kunden», «Erfahrene CISOs und Branchenwissen aus zahlreichen KMU-Mandaten», Studie «KMU Cybersicherheit 2025» (alle aus dem Flyer CISO von LWE) · **Nur mit Nachweis:** Gründungsjahr, Teamgrösse, Zertifizierungen, Referenzen (Platzhalter, nur mit Nachweis).
 
 ### Vier Arbeitsprinzipien (6 Nennungen in 3 Dateien, Fassung Post #12 = Webseite)
 
@@ -98,12 +98,12 @@ Drei Quellen: **A** = Abstimmungsmeeting-Vorlage 31.08.2026 (Branch, Services un
 
 | Angabe | Standardtext | Quelle | Status |
 |---|---|---|---|
-| Gruppengrösse | Bis 10 Personen. | LWE 28.09.2026 | **bestätigt** |
-| Ort | Bei Ihnen vor Ort. | LWE 28.09.2026 | **bestätigt** |
-| Preis | Nach dem Vorgespräch erhalten Sie eine Offerte. | LWE 28.09.2026 | **bestätigt** |
-| Lieferfrist | Erkenntnisliste innert 5 Arbeitstagen nach der Übung. | LWE 28.09.2026 | **bestätigt** |
-| Vertraulichkeit | Eine Vertraulichkeitsvereinbarung ist bei jeder Übung Standard. | LWE 28.09.2026 | **bestätigt** |
-| Szenario-Zuschnitt | Das Szenario wird im Vorgespräch auf Ihre Organisation zugeschnitten. | LWE 28.09.2026 | **bestätigt** |
+| Gruppengrösse | Bis 10 Personen. | Daily Note 2026-09-28 (Bestätigung LWE über Koordinator) | **bestätigt** |
+| Ort | Bei Ihnen vor Ort. | Daily Note 2026-09-28 (Bestätigung LWE über Koordinator) | **bestätigt** |
+| Preis | Nach dem Vorgespräch erhalten Sie eine Offerte. | Daily Note 2026-09-28 (Bestätigung LWE über Koordinator) | **bestätigt** |
+| Lieferfrist | Erkenntnisliste innert 5 Arbeitstagen nach der Übung. | Daily Note 2026-09-28 (Bestätigung LWE über Koordinator) | **bestätigt** |
+| Vertraulichkeit | Eine Vertraulichkeitsvereinbarung ist bei jeder Übung Standard. | Daily Note 2026-09-28 (Bestätigung LWE über Koordinator) | **bestätigt** |
+| Szenario-Zuschnitt | Das Szenario wird im Vorgespräch auf Ihre Organisation zugeschnitten. | Daily Note 2026-09-28 (Bestätigung LWE über Koordinator) | **bestätigt** |
 | Dauer | Ein halber Tag, davon rund 90 Minuten Übung im Szenario. | Freigabepaket #10, Landingpage, Flyer | **zu bestätigen** (IR-Owner). 26 Nennungen «90 Min» und 35 «halber Tag» in 11 Dateien |
 | Ablauf | Vorgespräch · Szenario · moderierte Entscheidungen · Auswertung · Erkenntnisliste | Landingpage (5 Schritte), Flyer (4 Schritte) | **zu bestätigen**; belegt sind nur «Szenario, moderierte Entscheidung, dokumentierte Erkenntnisliste mit klaren Verantwortlichkeiten» |
 | Dauer/Form Vorgespräch | offen | Landingpage | zu bestätigen |
@@ -157,15 +157,17 @@ Quelle ENISA, REPORTED (27.09.2026).
 
 ## 7. UTM-Schema
 
-**Standard (06-kpi-reporting.md, bestätigt als Regel):** `utm_source=linkedin&utm_medium=organic&utm_campaign=<pfeiler>-<thema>`, optional `utm_content=erster-kommentar` bzw. `profil-<kuerzel>`.
+**Standard laut Quelle (06-kpi-reporting.md Z. 8):** `utm_source=linkedin&utm_medium=organic&utm_campaign=<pfeiler>`.
+
+**Erweiterung (Vorschlag, Entscheid LWE):** `utm_campaign=<pfeiler>-<thema>`, optional `utm_content=erster-kommentar` bzw. `profil-<kuerzel>` (so in landingpage-tabletop.md eingeführt).
 
 | Eingesetzt | Wert | Konform |
 |---|---|---|
-| #10 Tabletop | `utm_campaign=p12-tabletop` | ✔ |
-| #13 Passwordless | `utm_campaign=passwordless-2026-10` | ✖ (Monat statt Pfeiler) |
-| #16 Roadmap | `utm_campaign=roadmap-2026-10` | ✖ (Monat statt Pfeiler) |
+| #10 Tabletop | `utm_campaign=p12-tabletop` | Erweiterung `<pfeiler>-<thema>` |
+| #13 Passwordless | `utm_campaign=passwordless-2026-10` | ✖ (Thema und Monat statt Pfeiler) |
+| #16 Roadmap | `utm_campaign=roadmap-2026-10` | ✖ (Thema und Monat statt Pfeiler) |
 
-**Widerspruch, Vorschlag zur Vereinheitlichung (Entscheid LWE vor Publikation):** `p01-passwordless`, `p08-roadmap`. Datum steckt ohnehin im Publikationsdatum. UTM-Werte als versteckte Formularfelder ins CRM (Feld Quelle).
+**Widerspruch, Vorschlag zur Vereinheitlichung (Entscheid LWE vor Publikation):** entweder streng nach Quelle `p01`, `p08`, `p12` oder einheitlich erweitert `p01-passwordless`, `p08-roadmap`, `p12-tabletop`. Datum steckt ohnehin im Publikationsdatum. UTM-Werte als versteckte Formularfelder ins CRM (Feld Quelle).
 
 ## 8. Alt-Text-Muster
 
@@ -182,7 +184,7 @@ Regeln: beschreibt Inhalt und Aussage, max. ca. 500 Zeichen (NIS2 ca. 440) · Ab
 - 3 bis 5 am Postende, keine im Fliesstext.
 - Muster: 1× Marke `#CYSPA` + 2 bis 3× Thema + 1× Kontext (`#KMU`, `#Schweiz`).
 - CamelCase für Screenreader: `#CyberSecurity`, `#IdentitySecurity`, `#SecurityStrategy`.
-- `#CYSPA` in allen 10 Posts #07 bis #16 (11 Dateien). Position uneinheitlich (Anfang in #13 bis #16, Ende in #07 bis #11). Vorschlag: `#CYSPA` immer zuerst.
+- `#CYSPA` in allen 10 Posts #07 bis #16 (11 Dateien). Position uneinheitlich (Anfang in #12 bis #16, Ende in #07 bis #11). Vorschlag: `#CYSPA` immer zuerst.
 
 Eingesetzte Themen-Tags: #NIS2 #Compliance #ISO27001 #Lieferkette · #CISO #SecurityStrategy #Führung · #Pentest #OffensiveSecurity #IdentitySecurity · #IncidentResponse #TabletopExercise #Krisenmanagement · #PostQuantum #QuantumSecurity #CyberResilienz · #CyberSecurity #Team · #Passkeys · #Geschäftsleitung · #MicrosoftSecurity #EntraID #M365 · #Budget.
 
