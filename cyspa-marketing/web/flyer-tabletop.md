@@ -15,6 +15,7 @@ Ergänzt den bestehenden Flyer «CISO as a Service» von LWE und übernimmt dess
 | `flyer-tabletop.pdf` | Druck-PDF, 2 Seiten, Vektortext, Fonts eingebettet, TrimBox 210 × 297 mm und BleedBox gesetzt |
 | `flyer-tabletop-s1.png`, `-s2.png` | Vorschau Seite 1 und 2 (inkl. Beschnitt) |
 | `flyer-tabletop.html` | Quelle (HTML/CSS) für Textänderungen und Neu-Rendern |
+| `flyer-tabletop.pptx` | Bearbeitbare PowerPoint-Fassung (A4 hoch, 2 Folien), Cambria für Headlines, Calibri für Text (CI v3 für PPTX). Hintergründe mit Raster als Bild, alles andere als Textfelder und Formen. Quelle `_build-pptx/build.js`. Vorschau `flyer-tabletop-pptx-s1.png`, `-s2.png` (LibreOffice-Rendering mit metrisch gleichen Ersatzschriften). Für den Druck bleibt das PDF massgeblich. |
 
 ## Gestaltung (CI v3.0, nach Flyer «CISO as a Service»)
 
