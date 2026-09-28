@@ -100,7 +100,7 @@ Die wertvollsten Erkenntnisse aus Übungen sind fast immer organisatorisch, nich
 | **2. Szenario** | Ein realistisches, fiktives Szenario, das sich Schritt für Schritt entwickelt. |
 | **3. Moderierte Entscheidungen** | Rund 90 Minuten Übung: Ihre Führungsrunde entscheidet, wir moderieren und halten fest. |
 | **4. Auswertung** | Gemeinsame Besprechung: Was lief gut, wo fehlten Befugnisse, Informationen oder Kontakte? |
-| **5. Erkenntnisliste** | Dokumentierte Erkenntnisse mit klaren Verantwortlichkeiten. [PLATZHALTER: Lieferfrist nach der Übung] |
+| **5. Erkenntnisliste** | Dokumentierte Erkenntnisse mit klaren Verantwortlichkeiten, innert 5 Arbeitstagen nach der Übung. |
 
 > Redaktion: Belegt im Repo sind «halber Tag», «rund 90 Minuten Übung», «Szenario, moderierte Entscheidung, dokumentierte Erkenntnisliste mit klaren Verantwortlichkeiten». Vorgespräch und Auswertung als eigene Schritte sind eine Strukturierung; von LWE bzw. Incident Response Specialist zu bestätigen.
 
@@ -123,7 +123,7 @@ Die wertvollsten Erkenntnisse aus Übungen sind fast immer organisatorisch, nich
 Nein. Es wird nichts an Ihren Systemen getestet oder verändert. Die Übung prüft Entscheidungswege, Zuständigkeiten und Kommunikation.
 
 **Wer sollte teilnehmen?**
-Die Personen, die im Ernstfall entscheiden: Geschäftsleitung, dazu je nach Organisation IT-Verantwortliche und Kommunikation. [PLATZHALTER: empfohlene Gruppengrösse]
+Die Personen, die im Ernstfall entscheiden: Geschäftsleitung, dazu je nach Organisation IT-Verantwortliche und Kommunikation. Bis 10 Personen.
 
 **Wie lange dauert die Übung?**
 Ein halber Tag, davon rund 90 Minuten Übung im Szenario.
@@ -134,16 +134,16 @@ Nein. Gibt es einen Plan, wird er getestet. Gibt es keinen, zeigt die Übung, we
 > Redaktion: Antwort fachlich durch Incident Response Specialist bestätigen.
 
 **Welches Szenario wird geübt?**
-Ein realistisches, fiktives Szenario, zum Beispiel ein Ransomware-Angriff (Schadsoftware, die Daten verschlüsselt und Lösegeld fordert). [PLATZHALTER: Wird das Szenario auf Branche und Organisation zugeschnitten?]
+Ein realistisches, fiktives Szenario, zum Beispiel ein Ransomware-Angriff (Schadsoftware, die Daten verschlüsselt und Lösegeld fordert). Das Szenario wird im Vorgespräch auf Ihre Organisation zugeschnitten.
 
 **Wo findet die Übung statt?**
-[PLATZHALTER: bei Ihnen vor Ort, bei CYSPA in Rotkreuz und/oder online]
+Bei Ihnen vor Ort.
 
 **Was kostet die Übung?**
-[PLATZHALTER: Pauschalpreis in CHF oder «Offerte nach Vorgespräch»]
+Nach dem Vorgespräch erhalten Sie eine Offerte.
 
 **Wie vertraulich ist das?**
-Was in der Übung besprochen wird, bleibt vertraulich. [PLATZHALTER: Vertraulichkeitsvereinbarung auf Wunsch bzw. standardmässig?]
+Was in der Übung besprochen wird, bleibt vertraulich. Eine Vertraulichkeitsvereinbarung ist bei jeder Übung Standard.
 
 **Beraten Sie uns auch rechtlich zu Meldepflichten?**
 Nein. Wir ordnen Meldepflichten im Szenario allgemein ein. Für die rechtliche Beurteilung Ihres Einzelfalls ziehen Sie Ihre Rechtsberatung bei.
@@ -161,6 +161,8 @@ Nein. Wir ordnen Meldepflichten im Szenario allgemein ein. Für die rechtliche B
 **Bestätigung nach Absenden:** «Danke. Wir melden uns [PLATZHALTER: Antwortfrist, z. B. innert zwei Arbeitstagen] bei Ihnen.»
 
 > Redaktion: Antwortfrist nur einsetzen, wenn sie in der Ferienzeit von LWE (ab 01.10.) eingehalten werden kann. Wer bearbeitet Anfragen vom 08.10. an? [PLATZHALTER: Stellvertretung]
+
+> Quelle für Gruppengrösse, Ort, Preis, Lieferfrist, Vertraulichkeitsvereinbarung und Szenario-Zuschnitt: LWE, 28.09.2026.
 
 ---
 

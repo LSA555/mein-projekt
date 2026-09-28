@@ -55,7 +55,7 @@ Zeile darunter: **Eine moderierte Entscheidungsübung, keine Technik-Simulation.
 **Vertrauens-/Nutzenblock: Worauf Sie sich verlassen können**
 - Getestet wird die Organisation, nicht die Firewall
 - Realistisches, fiktives Szenario, zum Beispiel ein Ransomware-Angriff
-- Was in der Übung besprochen wird, bleibt vertraulich
+- Vertraulich: Eine Vertraulichkeitsvereinbarung ist bei jeder Übung Standard
 - Nachvollziehbar dokumentiert: eine Grundlage für Verwaltungsrat und Versicherer
 
 **Rechts:** ½ Tag · mit Ihrer Führungsrunde, davon rund 90 Minuten Übung im Szenario. Am Ende steht eine dokumentierte Erkenntnisliste.
@@ -72,14 +72,14 @@ Zeile darunter: **Eine moderierte Entscheidungsübung, keine Technik-Simulation.
 
 **Headline:** Ein halber Tag. / Eine dokumentierte **Erkenntnisliste.** (Gold)
 
-**Text:** Die wertvollsten Erkenntnisse aus Übungen sind fast immer organisatorisch, nicht technisch. Deshalb sitzen die Personen am Tisch, die im Ernstfall entscheiden. Einen fertigen Notfallplan brauchen Sie nicht: Gibt es keinen, zeigt die Übung, welche Entscheide ein Plan regeln muss.
+**Text:** Die wertvollsten Erkenntnisse aus Übungen sind fast immer organisatorisch, nicht technisch. Deshalb sitzen die Personen am Tisch, die im Ernstfall entscheiden. Einen fertigen Notfallplan brauchen Sie dafür nicht.
 
 **Kasten:** Moderierte Entscheidungsübung · Keine Technik-Simulation · Realistisches, fiktives Szenario · Klare Verantwortlichkeiten
 
 **Formatkarten**
 - **Dauer:** Ein halber Tag. Davon rund 90 Minuten Übung im Szenario.
-- **Teilnehmende:** Ihre Führungsrunde. Geschäftsleitung, dazu je nach Organisation IT-Verantwortliche und Kommunikation. [PLATZHALTER: Gruppengrösse]
-- **Ergebnis:** Dokumentierte Erkenntnisliste. Mit klaren Verantwortlichkeiten. [PLATZHALTER: Lieferfrist]
+- **Teilnehmende:** Ihre Führungsrunde. Geschäftsleitung, dazu je nach Organisation IT-Verantwortliche und Kommunikation. Bis 10 Personen.
+- **Ergebnis:** Dokumentierte Erkenntnisliste. Mit klaren Verantwortlichkeiten, innert 5 Arbeitstagen nach der Übung.
 
 **Was typischerweise sichtbar wird** (gekürzt aus Beitrag #10)
 - **Unklare Befugnisse.** Wer darf Systeme vom Netz nehmen, auch wenn damit das Geschäft steht?
@@ -91,14 +91,16 @@ Zeile darunter: **Eine moderierte Entscheidungsübung, keine Technik-Simulation.
 
 **Häufige Fragen**
 - **Ist das ein technischer Test unserer IT?** Nein. Es wird nichts an Ihren Systemen getestet oder verändert. Die Übung prüft Entscheidungswege, Zuständigkeiten und Kommunikation.
-- **Wo findet die Übung statt?** [PLATZHALTER: vor Ort, in Rotkreuz und/oder online]
-- **Welches Szenario wird geübt?** Ein realistisches, fiktives Szenario, zum Beispiel ein Ransomware-Angriff. [PLATZHALTER: Zuschnitt auf Branche?]
-- **Wie vertraulich ist das?** Was in der Übung besprochen wird, bleibt vertraulich. [PLATZHALTER: Vertraulichkeitsvereinbarung?]
+- **Wo findet die Übung statt?** Bei Ihnen vor Ort.
+- **Welches Szenario wird geübt?** Ein realistisches, fiktives Szenario, zum Beispiel ein Ransomware-Angriff. Das Szenario wird im Vorgespräch auf Ihre Organisation zugeschnitten.
+- **Wie vertraulich ist das?** Was in der Übung besprochen wird, bleibt vertraulich. Eine Vertraulichkeitsvereinbarung ist bei jeder Übung Standard.
 - **Beraten Sie uns rechtlich zu Meldepflichten?** Nein. Wir ordnen Meldepflichten im Szenario allgemein ein. Für Ihren Einzelfall ziehen Sie Ihre Rechtsberatung bei.
-- **Was kostet die Übung?** [PLATZHALTER: Preis oder «Offerte nach Vorgespräch»]
+- **Was kostet die Übung?** Nach dem Vorgespräch erhalten Sie eine Offerte.
 
 **CTA:** NÄCHSTER SCHRITT · Gespräch **vereinbaren.** In einem kurzen Gespräch klären wir, ob eine Tabletop-Übung für Sie jetzt der richtige Schritt ist und wie sie bei Ihnen aussehen würde. Unverbindlich.
 www.cyspa.ch/tabletop · info@cyspa.ch · +41 41 521 61 61 · Erlenstrasse 4B, CH-6343 Rotkreuz · [PLATZHALTER: QR-Code auf /tabletop, erst nach Livegang]
+
+Bestätigte Angaben (Gruppengrösse bis 10 Personen, Ort vor Ort beim Kunden, Offerte nach Vorgespräch, Lieferfrist innert 5 Arbeitstagen, Vertraulichkeitsvereinbarung als Standard, Szenario-Zuschnitt im Vorgespräch): Quelle LWE, 28.09.2026.
 
 Copy-Regeln CI v3 geprüft: kein Gedankenstrich im Satzfluss, «ss» statt «ß», keine Ausrufezeichen, keine Zahlen ohne Quelle.
 
@@ -123,14 +125,10 @@ Copy-Regeln CI v3 geprüft: kein Gedankenstrich im Satzfluss, «ss» statt «ß�
 
 ## Offene Platzhalter und Punkte (vor dem Druck)
 
+Gruppengrösse, Ort, Preis, Lieferfrist, Vertraulichkeit und Szenario-Zuschnitt sind seit 28.09.2026 durch LWE bestätigt und eingesetzt. Im Flyer steht kein Platzhalter ausser dem QR-Code.
+
 | Punkt | Wer |
 |---|---|
-| Gruppengrösse | LWE / Incident Response Specialist |
-| Lieferfrist der Erkenntnisliste | LWE / Incident Response Specialist |
-| Ort (vor Ort, Rotkreuz, online) | LWE |
-| Preis oder «Offerte nach Vorgespräch» | LWE |
-| Szenario-Zuschnitt auf Branche | Incident Response Specialist |
-| Vertraulichkeitsvereinbarung | LWE / Legal |
 | Ablauf in 4 Schritten und «½ Tag / 90 Minuten» bestätigen | Incident Response Specialist |
 | QR-Code und URL `www.cyspa.ch/tabletop` erst nach Livegang und Test der Seite | Oliver / Webentwicklung |
 | Vektorlogo, Freigabe helle Logovariante, Logo-Widerspruch | LWE |

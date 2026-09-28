@@ -1,7 +1,7 @@
 ---
 tags: [cyspa, marketing, linkedin, webseite, freigabe]
 status: NEEDS INPUT
-date: 2026-09-27
+date: 2026-09-28
 frist: 2026-09-30
 owner: LWE
 source: claude
@@ -46,17 +46,21 @@ Für alle Posts: ☐ Legal ☐ Accessibility ☐ Freigabe. Die Posts #13 und #14
 ☐ Webseiten-Owner benennen.
 ☐ Entscheid E2 bestätigen und den Sicherheits-Check ausführen lassen: `web/sicherheits-check/README.md`. Er ist passiv, prüft nur öffentliche Seiten und dauert wenige Sekunden. Dazu die WordPress-Version gegen CVE-2026-87902 prüfen.
 ☐ Texte für Startseite, Leistungen und Über uns freigeben: `web/webseite-texte.md`. Offen ist das Leistungsportfolio 2.3 (Security-Baseline), 2.5 (Nachtest) und 2.7 (AI Security).
-☐ Landingpage Tabletop (`web/landingpage-tabletop.html`) einpflegen lassen, bis spätestens 07.10. Offene Platzhalter: Formular-Endpunkt, Datenschutz, Impressum, Preis, Ort, Gruppengrösse.
-☐ Flyer Tabletop (`web/flyer-tabletop.pdf`): Farbanomalie behoben (PDF ohne Transparenz, am 27.09. mit pdf.js geprüft). **Trotzdem nicht vor den Ferien drucken:** Preflight bei der Druckerei, Logo freigeben, CMYK klären.
+☐ Landingpage Tabletop (`web/landingpage-tabletop.html`) einpflegen lassen, bis spätestens 07.10. Offene Platzhalter: Formular-Endpunkt, Datenschutz, Impressum. Preis (Offerte nach Vorgespräch), Ort (vor Ort beim Kunden), Gruppengrösse (bis 10 Personen), Lieferfrist (5 Arbeitstage) und Vertraulichkeitsvereinbarung (Standard) hast du am 28.09. bestätigt.
+☐ Flyer Tabletop (`web/flyer-tabletop.pdf`): Farbanomalie behoben (PDF ohne Transparenz, am 27.09. mit pdf.js geprüft). **Trotzdem nicht vor den Ferien drucken:** Preflight bei der Druckerei, Logo freigeben, CMYK klären. Bearbeitbare Fassung: `web/flyer-tabletop.pptx`.
 
-## 4. Vertretung während der Ferien
+## 4. Kalender
+
+☐ Wiederkehrende Termine im Google-Kalender freigeben (Nigel-Aufgabe NGL-20260928-bfc3ce, wartet auf deine Freigabe): Check-in Mo 08:00, One-to-One Di 08:00, Check-out Mi 16:00.
+
+## 5. Vertretung während der Ferien
 
 ☐ Wer veröffentlicht (oder prüft die Vorplanung)?
 ☐ Wer betreut die 60 Minuten nach jedem Post (Kommentare, Fragen)?
 ☐ Wer darf einen Posting-Stopp auslösen (Redaktionsprozess §4.2, z. B. bei einem Grossvorfall)?
 ☐ Wer beantwortet Anfragen aus #10 und #16?
 
-## 5. Bekannte Nebenbefunde
+## 6. Bekannte Nebenbefunde
 
 - Die bisherigen Repo-Grafiken #01–#06 haben unten einen weissen Balken von 87 px (Renderfehler). Falls sie so publiziert wurden, lohnt sich ein Blick.
 - cyspa.ch ist aus der Cloud-Umgebung gesperrt. Für direkte Prüfungen die Domain unter Environment, Edit, Network access freigeben.

@@ -170,7 +170,7 @@ function card(slide, x, y, w, h) {
   const trust = [
     "Getestet wird die Organisation, nicht die Firewall",
     "Realistisches, fiktives Szenario, zum Beispiel ein Ransomware-Angriff",
-    "Was in der Übung besprochen wird, bleibt vertraulich",
+    "Vertraulich: Eine Vertraulichkeitsvereinbarung ist bei jeder Übung Standard",
     "Nachvollziehbar dokumentiert: eine Grundlage für Verwaltungsrat und Versicherer",
   ];
   trust.forEach((t, i) => {
@@ -220,8 +220,8 @@ function card(slide, x, y, w, h) {
   // Formatkarten
   const fc = [
     [I.clockN, "DAUER", "Ein halber Tag", "Davon rund 90 Minuten Übung im Szenario.", null, false],
-    [I.users, "TEILNEHMENDE", "Ihre Führungsrunde", "Geschäftsleitung, dazu je nach Organisation IT-Verantwortliche und Kommunikation.", "[PLATZHALTER: Gruppengrösse]", true],
-    [I.fileN, "ERGEBNIS", "Dokumentierte Erkenntnisliste", "Mit klaren Verantwortlichkeiten.", "[PLATZHALTER: Lieferfrist]", false],
+    [I.users, "TEILNEHMENDE", "Ihre Führungsrunde", "Geschäftsleitung, dazu je nach Organisation IT-Verantwortliche und Kommunikation. Bis 10 Personen.", null, true],
+    [I.fileN, "ERGEBNIS", "Dokumentierte Erkenntnisliste", "Mit klaren Verantwortlichkeiten, innert 5 Arbeitstagen nach der Übung.", null, false],
   ];
   const fw = 2.17, fy = 3.65, fh = 1.78;
   fc.forEach(([ic, lab, title, body, ph, hi], i) => {
@@ -256,11 +256,11 @@ function card(slide, x, y, w, h) {
   sectionLabel(s2, 0.75, 7.4, "HÄUFIGE FRAGEN");
   const faq = [
     ["Ist das ein technischer Test unserer IT?", "Nein. Es wird nichts an Ihren Systemen getestet oder verändert. Die Übung prüft Entscheidungswege, Zuständigkeiten und Kommunikation.", null],
-    ["Welches Szenario wird geübt?", "Ein realistisches, fiktives Szenario, zum Beispiel ein Ransomware-Angriff.", "[PLATZHALTER: Zuschnitt auf Branche?]"],
+    ["Welches Szenario wird geübt?", "Ein realistisches, fiktives Szenario, zum Beispiel ein Ransomware-Angriff. Das Szenario wird im Vorgespräch auf Ihre Organisation zugeschnitten.", null],
     ["Beraten Sie uns rechtlich zu Meldepflichten?", "Nein. Wir ordnen Meldepflichten im Szenario allgemein ein. Für Ihren Einzelfall ziehen Sie Ihre Rechtsberatung bei.", null],
-    ["Wo findet die Übung statt?", null, "[PLATZHALTER: vor Ort, in Rotkreuz und/oder online]"],
-    ["Wie vertraulich ist das?", "Was in der Übung besprochen wird, bleibt vertraulich.", "[PLATZHALTER: Vertraulichkeitsvereinbarung?]"],
-    ["Was kostet die Übung?", null, "[PLATZHALTER: Preis oder «Offerte nach Vorgespräch»]"],
+    ["Wo findet die Übung statt?", "Bei Ihnen vor Ort.", null],
+    ["Wie vertraulich ist das?", "Was in der Übung besprochen wird, bleibt vertraulich. Eine Vertraulichkeitsvereinbarung ist bei jeder Übung Standard.", null],
+    ["Was kostet die Übung?", "Nach dem Vorgespräch erhalten Sie eine Offerte.", null],
   ];
   faq.forEach(([q, a, ph], i) => {
     const col = Math.floor(i / 3), row = i % 3;

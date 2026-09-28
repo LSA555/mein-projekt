@@ -54,9 +54,9 @@ Sicherheits-Check → Massnahmen «Handlungsbedarf» (insbesondere M-CVE) → Te
 | Teamvorstellung, Teamgrösse, Fotos mit Einwilligung | Webseite (Über uns) | LWE |
 | Zertifizierungen, Mitgliedschaften, Partnerschaften | Webseite (Vertrauen, Über uns) | LWE, nur mit Nachweis |
 | Referenzen/Kundenstimmen | Webseite | nur mit schriftlicher Kundenfreigabe, sonst Block streichen |
-| Preismodell (allgemein, Tabletop) | Webseite, Landingpage | LWE |
+| Preismodell (allgemein; Tabletop erledigt: Offerte nach Vorgespräch) | Webseite | LWE |
 | CISO-as-a-Service: Pensum, Vertragsdauer | Webseite 2.1 | LWE |
-| Tabletop: Vorgespräch, Ort, Gruppengrösse, Szenario-Zuschnitt, Lieferfrist, Vertraulichkeitsvereinbarung, Preis; Ablauf in 4 Schritten und «½ Tag / 90 Minuten» bestätigen | Landingpage, Flyer Tabletop | LWE / Incident Response Specialist |
+| Tabletop: Dauer und Form des Vorgesprächs; Ablauf in 4 Schritten (Flyer) und «½ Tag / 90 Minuten» bestätigen | Landingpage, Flyer Tabletop | LWE / Incident Response Specialist |
 | Antwortfrist nach Anfrage, Notfall-Erreichbarkeit | Landingpage, Webseite | LWE |
 | Datenschutzerklärung-Link, Impressum-Link | Landingpage (HTML) | Webentwicklung |
 | Formular-Endpunkt (CMS/CRM/Mail), Speicherort der Daten | Landingpage (HTML) | Webentwicklung, Datenschutzerklärung ergänzen |
@@ -88,3 +88,18 @@ Regeln: kein Gedankenstrich im Satzfluss, «ss» statt «ß», keine Ausrufezeic
 | `landingpage-tabletop.html` | Dieselben 2 Textstellen wie in der .md (Befugnisse, Meldefristen). FAQ-Symbol «–» durch Minuszeichen ersetzt. Fusszeile mit voller Adresse. |
 | `flyer-tabletop.*` | Neu im CI v3 gesetzt, regelkonform geprüft. |
 | `00-uebersicht-web.md` | Status und Titel ohne Gedankenstrich. |
+
+## 6. Von LWE bestätigte Angaben (28.09.2026)
+
+Eingesetzt in `flyer-tabletop.html/.md/.pdf`, `landingpage-tabletop.md/.html`. Quelle: LWE, 28.09.2026.
+
+| Angabe | Text |
+|---|---|
+| Gruppengrösse | Bis 10 Personen. |
+| Preis | Nach dem Vorgespräch erhalten Sie eine Offerte. |
+| Ort | Bei Ihnen vor Ort. |
+| Lieferfrist Erkenntnisliste | Innert 5 Arbeitstagen nach der Übung. |
+| Vertraulichkeit | Eine Vertraulichkeitsvereinbarung ist bei jeder Übung Standard. |
+| Szenario-Zuschnitt | Das Szenario wird im Vorgespräch auf Ihre Organisation zugeschnitten. |
+
+Weiterhin offen: QR-Code und URL `/tabletop` (erst nach Livegang), Formular-Endpunkt, Links Datenschutzerklärung und Impressum, Satz «Die Übermittlung erfolgt verschlüsselt.» (erst nach Sicherheits-Check), dazu Dauer/Form Vorgespräch, Antwortfrist, Stellvertretung, og:image, Analytics.
