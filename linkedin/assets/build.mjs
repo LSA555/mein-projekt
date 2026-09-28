@@ -1,5 +1,7 @@
-// CYSPA LinkedIn Asset-Renderer
-// HTML/CSS → headless Chromium → PNG (Feed) + PDF (Dokument-Posts).
+// CYSPA LinkedIn Asset-Renderer — CI v3.0 (Navy/Gold, Raleway)
+// Designsprache: Fakten-Karte gemäss Skill cyspa-designer §3.4 + Referenz
+// linkedin/assets/img/ci-v3-referenz.webp. HTML/CSS → headless Chromium →
+// PNG (Feed) + PDF (Dokument-Posts).
 // Aufruf: node build.mjs        (rendert alles nach export/)
 //         node build.mjs sheet  (zusätzlich Kontaktbogen contact-sheet.png)
 
@@ -14,118 +16,127 @@ const CHROME = process.env.CHROME || '/opt/pw-browsers/chromium';
 const BUILD = join(ROOT, '.build');
 const OUT = join(ROOT, 'export');
 
-const b64 = (p) => readFileSync(join(ROOT, p)).toString('base64');
-const FONTS = {
-  mont: b64('fonts/Montserrat-Bold.ttf'),
-  inter: b64('fonts/Inter-Regular.ttf'),
-  mono: b64('fonts/JetBrainsMono-Regular.ttf'),
-};
-const LOGO = 'data:image/png;base64,' + b64('img/cyspa-logo-transparent.png');
+const RALEWAY = readFileSync(join(ROOT, 'fonts/raleway-var.ttf')).toString('base64');
 
-// ---------------------------------------------------------------- Designsystem
-// Masse in rem; html font-size skaliert: 40px → 1080×1350 (Carousel-Slide),
-// 44.444px → 1200×1500 (Single Graphic). Gleiches Seitenverhältnis 4:5.
+// ------------------------------------------------------------- CI-v3.0-Tokens
+// Grössen in rem; html font-size = Seitenbreite/100 → 1rem entspricht dem
+// em-Raster des CI-Skills (Fakten-Karte 1200 → 12px, Carousel 1080 → 10.8px).
 const CSS = `
-@font-face{font-family:Montserrat;font-weight:700;src:url(data:font/ttf;base64,${FONTS.mont})}
-@font-face{font-family:Inter;font-weight:400;src:url(data:font/ttf;base64,${FONTS.inter})}
-@font-face{font-family:JBMono;font-weight:400;src:url(data:font/ttf;base64,${FONTS.mono})}
+@font-face{font-family:Raleway;font-weight:100 900;
+  src:url(data:font/ttf;base64,${RALEWAY}) format('truetype-variations')}
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --navy:#0A1F44; --navy2:#103157; --card:#1D2535; --cyan:#00AEEF;
-  --ink:#FFFFFF; --ink2:rgba(255,255,255,.84); --meta:rgba(255,255,255,.55);
-  --line:rgba(255,255,255,.14);
+  --gold:#ffc000; --navy:#103157; --deep:#071828;
+  --ink:#ffffff; --ink2:#c2d0e0; --soft:#b9cadd; --label:#93a9c0;
+  --meta:rgba(255,255,255,.5); --line:rgba(255,255,255,.14);
+  --tile:rgba(255,255,255,.04); --tileborder:rgba(255,255,255,.16);
 }
-.slide{width:100vw;height:100vh;background:var(--navy);color:var(--ink);
-  display:flex;flex-direction:column;padding:2.1rem;overflow:hidden;
-  font-family:Inter,sans-serif;-webkit-font-smoothing:antialiased}
-@media print{.slide{width:27rem;height:33.75rem}}
-.slide.light{--navy:#F2F2F2;--ink:#0A1F44;--ink2:#0A1F44;--meta:#58595B;
-  --card:#FFFFFF;--line:rgba(10,31,68,.15);background:#F2F2F2}
-.hd{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.4rem}
-.badge{font-family:Montserrat;font-weight:700;font-size:.56rem;letter-spacing:.18em;
-  padding:.27rem .6rem .24rem;border:.055rem solid var(--cyan);border-radius:.12rem;white-space:nowrap}
-.pager{font-size:.6rem;color:var(--meta);padding-top:.3rem}
+.slide{position:relative;width:100rem;color:var(--ink);
+  display:flex;flex-direction:column;padding:6rem 6rem 14rem 8.2rem;overflow:hidden;
+  font-family:Raleway,sans-serif;-webkit-font-smoothing:antialiased;
+  background:
+    radial-gradient(60rem 46rem at 74% 42%, rgba(52,109,178,.30), transparent 65%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0 1px, transparent 1px 7rem),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 7rem),
+    linear-gradient(155deg,#071828 0%,#103157 55%,#1a4576 100%)}
+.slide.sq{height:100vh}
+.slide.car{height:100vh}
+.slide::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1rem;
+  background:var(--gold)}
+/* Light-Variante (P3): weisse Fläche, Navy-Tinte, Gold-Akzente */
+.slide.light{background:#ffffff;color:#1a1a1a;
+  --ink:#1a1a1a;--ink2:#5a5a5a;--soft:#5a5a5a;--label:#425b76;
+  --meta:#8a8a8a;--line:#e6e6e6;--tile:#f8f8f8;--tileborder:#e6e6e6}
+/* Kopfzeile: Gold-Tick + Section-Label, Pager rechts */
+.hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem}
+.lab{display:flex;align-items:center;gap:1.1rem;
+  font-weight:800;font-size:1.5rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--label);white-space:nowrap}
+.lab::before{content:'';width:2.4rem;height:.36rem;background:var(--gold);
+  border-radius:.18rem;flex:none}
+.pager{font-size:1.9rem;font-weight:600;color:var(--meta)}
 main{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
-.bar{width:2.6rem;height:.15rem;background:var(--cyan);border-radius:.08rem;margin-bottom:.85rem}
-h1{font-family:Montserrat;font-weight:700;font-size:2.2rem;line-height:1.13;letter-spacing:-.01em}
-h2{font-family:Montserrat;font-weight:700;font-size:1.42rem;line-height:1.16;letter-spacing:-.005em}
-.sub{font-size:.9rem;line-height:1.42;color:var(--ink2);margin-top:.75rem;max-width:21rem}
-.body{font-size:.95rem;line-height:1.45;color:var(--ink2);max-width:21.5rem}
-.foot{display:flex;justify-content:space-between;align-items:flex-end;margin-top:1.4rem}
-.hint,.url{font-size:.6rem;color:var(--meta)}
-.plate{background:#FFFFFF;border-radius:.16rem;padding:.26rem .4rem;line-height:0}
-.slide.light .plate{background:none;padding:0}
-.plate img{height:1rem;display:block}
-.spacer{flex:1}
-/* Nummern-Chip */
-.chip{width:2.15rem;height:2.15rem;border:.075rem solid var(--cyan);border-radius:.2rem;
-  display:flex;align-items:center;justify-content:center;
-  font-family:Montserrat;font-weight:700;font-size:1.15rem;margin-bottom:1rem}
-/* Cards */
-.card{background:var(--card);border-left:.11rem solid var(--cyan);border-radius:.18rem;
-  padding:.85rem .95rem}
-.card.bad{border-left-color:#58595B}
-.card .chead{font-family:Montserrat;font-weight:700;font-size:.82rem;margin-bottom:.4rem;
-  display:flex;align-items:center;gap:.45rem}
-.card .cbody{font-size:.8rem;line-height:1.42;color:var(--ink2)}
-.glyph{font-family:Inter;font-size:.75rem;width:1.05rem;height:1.05rem;border-radius:.1rem;
-  display:inline-flex;align-items:center;justify-content:center;flex:none;
-  border:.05rem solid var(--cyan)}
-.card.bad .glyph{border-color:#58595B}
-.stack{display:flex;flex-direction:column;gap:.7rem;margin-top:1.1rem}
-/* Mono-Chips */
-.mono{display:inline-block;font-family:JBMono;font-size:.62rem;background:var(--navy2);
-  padding:.3rem .55rem;border-radius:.14rem;margin-top:1.1rem}
+h1{font-weight:800;font-size:5.2rem;line-height:1.08;letter-spacing:-.02em}
+h2{font-weight:800;font-size:4rem;line-height:1.12;letter-spacing:-.015em}
+.sub{font-size:2.5rem;font-weight:500;line-height:1.45;color:var(--soft);
+  margin-top:1.6rem;max-width:78rem}
+.body{font-size:2.7rem;font-weight:400;line-height:1.5;color:var(--ink2);max-width:80rem}
+.dash{width:3.2rem;height:.45rem;background:var(--gold);border-radius:.22rem}
+/* Fusszeile: Wortmarke CYSPA.ch links, Quelle/Hinweis rechts */
+.foot{position:absolute;left:8.2rem;right:6rem;bottom:6rem;
+  display:flex;justify-content:space-between;align-items:flex-end;gap:4rem}
+.wm{font-size:2.7rem;font-weight:800;letter-spacing:.04em;white-space:nowrap}
+.wm i{font-style:normal;color:var(--gold)}
+.slide.light .wm{color:var(--navy)}
+.src{font-size:1.9rem;font-weight:500;color:var(--meta);text-align:right;
+  line-height:1.35;max-width:52rem}
+/* Kacheln */
+.tile{background:var(--tile);border:.09rem solid var(--tileborder);
+  border-radius:.9rem;padding:2.1rem 2.4rem}
+.stack{display:flex;flex-direction:column;gap:1.6rem;margin-top:2.8rem}
+.thead{font-size:2.5rem;font-weight:800;margin-bottom:.8rem;
+  display:flex;align-items:baseline;gap:1.1rem}
+.tbody{font-size:2.2rem;font-weight:400;line-height:1.45;color:var(--soft)}
+.ok{color:var(--gold);font-weight:800}
+.bad{color:var(--label);font-weight:800}
+/* Nummern-Slides */
+.num{font-size:4.8rem;font-weight:800;color:var(--gold);line-height:1;
+  margin-bottom:1.6rem}
+.pill{display:inline-block;font-size:1.95rem;font-weight:600;color:#d3dde8;
+  border:.09rem solid rgba(255,255,255,.28);border-radius:99rem;
+  padding:.55em 1.3em;margin-top:2.6rem}
 /* Merksatz */
-.merk{border-left:.14rem solid var(--cyan);padding-left:.8rem;
-  font-family:Montserrat;font-weight:700;font-size:.95rem;line-height:1.35}
-.divider{height:.045rem;background:var(--line);margin:1.15rem 0}
-/* Listen */
-.li{display:flex;gap:.6rem;align-items:baseline;font-size:.9rem;line-height:1.4;color:var(--ink2)}
-.li+.li{margin-top:.7rem}
-.dash{flex:none;width:.75rem;height:.13rem;background:var(--cyan);border-radius:.07rem;
-  align-self:center}
-/* Formel-Boxen */
-.frow{display:flex;gap:.42rem;margin-top:1.5rem}
-.fbox{flex:1;border:.06rem solid var(--cyan);border-radius:.18rem;padding:.8rem .45rem .7rem;
-  text-align:center;display:flex;flex-direction:column;gap:.45rem;min-height:6.4rem}
-.fbox b{font-family:Montserrat;font-weight:700;font-size:1.7rem;line-height:1}
-.fbox span{font-size:.52rem;line-height:1.3;color:var(--ink2);hyphens:auto}
+.merk{border-left:.45rem solid var(--gold);padding-left:1.7rem;
+  font-size:2.7rem;font-weight:700;line-height:1.35;max-width:80rem}
+.divider{height:.09rem;background:var(--line);margin:2.8rem 0}
+/* Listen mit Gold-Häkchen bzw. Gold-Strich */
+.li{display:flex;gap:1.4rem;align-items:baseline;font-size:2.6rem;font-weight:500;
+  line-height:1.4;color:var(--ink2)}
+.li+.li{margin-top:1.7rem}
+.li .tick{color:var(--gold);font-weight:800;flex:none}
+/* Stat-/Formel-Kacheln in einer Reihe */
+.frow{display:flex;gap:1.5rem;margin-top:3rem}
+.fbox{flex:1;text-align:center;display:flex;flex-direction:column;gap:1rem;
+  justify-content:flex-start;padding:2.2rem 1.2rem;min-height:13rem}
+.fbox b{font-size:5rem;font-weight:800;line-height:1}
+.fbox span{font-size:1.95rem;font-weight:500;line-height:1.3;color:var(--soft);
+  hyphens:auto}
 /* Treppe */
-.stair{display:flex;gap:.4rem;align-items:flex-end;margin-top:1.6rem}
-.step{flex:1;background:var(--card);border-top:.14rem solid var(--cyan);
-  border-radius:.14rem .14rem 0 0;padding:.7rem .6rem}
-.step b{font-family:Montserrat;font-weight:700;font-size:.95rem;display:block;margin-bottom:.4rem}
-.step span{font-size:.6rem;line-height:1.3;color:var(--ink2);hyphens:auto}
+.stair{display:flex;gap:1.4rem;align-items:flex-end;margin-top:3.2rem}
+.step{flex:1;border-radius:.9rem .9rem 0 0}
+.step b{display:block;font-size:3rem;font-weight:800;color:var(--gold);
+  margin-bottom:.9rem}
+.step span{font-size:1.95rem;font-weight:600;line-height:1.3;hyphens:auto}
 /* Wege-Diagramm */
-.ways{display:flex;align-items:stretch;gap:.7rem;margin-top:1.6rem}
-.node{width:4.6rem;border-radius:.2rem;display:flex;flex-direction:column;gap:.3rem;
-  align-items:center;justify-content:center;font-family:Montserrat;font-weight:700;font-size:1.25rem}
-.node.eu{background:var(--navy2)}
-.node.ch{border:.06rem solid rgba(255,255,255,.45)}
-.wlist{flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:.2rem 0}
-.way{position:relative;padding-bottom:.55rem}
-.way span{font-size:.62rem;color:var(--ink2);display:block;margin-bottom:.35rem;hyphens:auto}
-.way i{display:block;height:.055rem;background:var(--cyan);position:relative}
-.way i:after{content:'';position:absolute;right:0;top:-.16rem;border:.19rem solid transparent;
-  border-left-color:var(--cyan);border-right:0}
+.ways{display:flex;align-items:stretch;gap:2rem;margin-top:3.2rem}
+.node{width:15rem;display:flex;flex-direction:column;gap:.8rem;align-items:center;
+  justify-content:center;font-size:3.4rem;font-weight:800}
+.wlist{flex:1;display:flex;flex-direction:column;justify-content:space-between;
+  padding:.6rem 0}
+.way span{font-size:2rem;font-weight:600;color:var(--ink2);display:block;
+  margin-bottom:.9rem}
+.way i{display:block;height:.28rem;background:var(--gold);position:relative;
+  border-radius:.14rem}
+.way i::after{content:'';position:absolute;right:0;top:-.62rem;
+  border:.75rem solid transparent;border-left-color:var(--gold);border-right:0}
 /* Sequenz */
-.seq{display:flex;align-items:center;gap:.5rem;margin-top:1.7rem}
-.stage{flex:1;background:var(--card);border-radius:.18rem;padding:.9rem .5rem;
-  display:flex;flex-direction:column;align-items:center;gap:.6rem;text-align:center}
-.stage svg{width:1.7rem;height:1.7rem;stroke:#FFF;fill:none;stroke-width:1.6;
+.seq{display:flex;align-items:center;gap:1.6rem;margin-top:3.4rem}
+.stage{flex:1;display:flex;flex-direction:column;align-items:center;gap:1.5rem;
+  text-align:center;padding:2.6rem 1.4rem}
+.stage svg{width:5.2rem;height:5.2rem;stroke:#fff;fill:none;stroke-width:1.6;
   stroke-linecap:round;stroke-linejoin:round}
-.stage span{font-size:.6rem;line-height:1.3;color:var(--ink2)}
-.sarr{flex:none;width:1rem;height:.055rem;background:var(--cyan);position:relative}
-.sarr:after{content:'';position:absolute;right:0;top:-.16rem;border:.19rem solid transparent;
-  border-left-color:var(--cyan);border-right:0}
-/* Zitat */
-.qblock{border-left:.16rem solid var(--cyan);padding-left:1.1rem}
-.qblock h1{font-size:1.85rem}
-.qmeta{font-size:.72rem;color:var(--meta);margin-top:1.1rem}
-.answer{font-size:1rem;line-height:1.45;color:var(--ink2);margin-top:1.3rem;max-width:19rem}
-.fnote{font-size:.62rem;line-height:1.45;color:var(--meta);
-  border-top:.045rem solid var(--line);padding-top:.8rem;margin-top:1.5rem}
+.stage span{font-size:1.95rem;font-weight:600;line-height:1.3;color:var(--ink2)}
+.sarr{flex:none;width:3.4rem;height:.28rem;background:var(--gold);position:relative;
+  border-radius:.14rem}
+.sarr::after{content:'';position:absolute;right:0;top:-.62rem;
+  border:.75rem solid transparent;border-left-color:var(--gold);border-right:0}
+/* Zitate */
+.quote h1{font-size:4.4rem}
+.qmeta{font-size:2.1rem;font-weight:500;color:var(--meta);margin-top:2.2rem}
+.answer{font-size:2.6rem;font-weight:500;line-height:1.5;color:var(--ink2);
+  margin-top:2.4rem;max-width:66rem}
+.note{font-size:2rem;font-weight:500;line-height:1.42;color:var(--soft);
+  margin-top:2.8rem;max-width:82rem}
 `;
 
 const ICONS = {
@@ -137,85 +148,83 @@ const ICONS = {
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;');
 
 // ------------------------------------------------------------------ Templates
-function footer({ hint, url, logo }) {
-  return `<div class="foot"><span class="${url ? 'url' : 'hint'}">${
-    url ? 'www.cyspa.ch' : esc(hint ?? '')
-  }</span>${logo ? `<span class="plate"><img src="${LOGO}"></span>` : '<span></span>'}</div>`;
+const wordmark = `<span class="wm">CYSPA<i>.ch</i></span>`;
+
+function footer(right) {
+  return `<div class="foot">${wordmark}<span class="src">${esc(right ?? '')}</span></div>`;
 }
 
 function cards(list) {
-  return `<div class="stack">${list.map((c) => `<div class="card${c.tone === 'bad' ? ' bad' : ''}">
-    <div class="chead">${c.tone ? `<span class="glyph">${c.tone === 'ok' ? '✓' : '✗'}</span>` : ''}${esc(c.head)}</div>
-    <div class="cbody">${esc(c.body)}</div></div>`).join('')}</div>`;
+  return `<div class="stack">${list.map((c) => `<div class="tile">
+    <div class="thead">${c.tone ? `<span class="${c.tone}">${c.tone === 'ok' ? '✓' : '✗'}</span>` : ''}<span>${esc(c.head)}</span></div>
+    <div class="tbody">${esc(c.body)}</div></div>`).join('')}</div>`;
 }
 
 function slideBody(s) {
   switch (s.t) {
     case 'cover':
-      return `<main><div class="bar"></div><h1>${esc(s.title)}</h1>
-        <p class="sub">${esc(s.sub)}</p></main>`;
+      return `<main><h1>${esc(s.title)}</h1><p class="sub">${esc(s.sub)}</p></main>`;
     case 'split':
       return `<main><h2>${esc(s.title)}</h2>${cards(s.cards)}</main>`;
     case 'point':
-      return `<main><div class="chip">${esc(s.num)}</div><h2>${esc(s.title)}</h2>
-        <p class="body" style="margin-top:.8rem">${esc(s.body)}</p>
-        ${s.mono ? `<div><span class="mono">${esc(s.mono)}</span></div>` : ''}</main>`;
+      return `<main><div class="num">${esc(s.num)}</div><h2>${esc(s.title)}</h2>
+        <p class="body" style="margin-top:1.6rem">${esc(s.body)}</p>
+        ${s.mono ? `<div><span class="pill">${esc(s.mono)}</span></div>` : ''}</main>`;
     case 'cta': {
       const head = s.num
-        ? `<div class="chip">${esc(s.num)}</div><h2>${esc(s.title)}</h2><p class="body" style="margin-top:.8rem">${esc(s.body)}</p>`
+        ? `<div class="num">${esc(s.num)}</div><h2>${esc(s.title)}</h2><p class="body" style="margin-top:1.6rem">${esc(s.body)}</p>`
         : `<h2>${esc(s.title)}</h2>`;
-      const list = s.list ? `<div style="margin-top:1rem">${s.list.map((i) => `<div class="li"><span class="dash"></span><span>${esc(i)}</span></div>`).join('')}</div>` : '';
+      const list = s.list ? `<div style="margin-top:2.4rem">${s.list.map((i) => `<div class="li"><span class="tick">✓</span><span>${esc(i)}</span></div>`).join('')}</div>` : '';
       const note = s.note ? `<p class="qmeta">${esc(s.note)}</p>` : '';
       return `<main>${head}${list}<div class="divider"></div><div class="merk">${esc(s.merk)}</div>${note}</main>`;
     }
     case 'quote':
       if (s.meta) // Light-Variante (P3)
-        return `<main><div class="qblock"><h1>${esc(s.quote)}</h1></div>
-          <p class="qmeta" style="padding-left:1.26rem">${esc(s.meta)}</p></main>`;
-      return `<main><h1>${esc(s.quote)}</h1><div class="bar" style="margin:1.2rem 0 0"></div>
+        return `<main class="quote"><h1 style="color:#103157">${esc(s.quote)}</h1>
+          <div class="dash" style="margin:2.6rem 0 0"></div>
+          <p class="qmeta">${esc(s.meta)}</p></main>`;
+      return `<main class="quote"><h1>${esc(s.quote)}</h1>
+        <div class="dash" style="margin:2.6rem 0 0"></div>
         <p class="answer">${esc(s.answer)}</p></main>`;
     case 'formula':
-      return `<main><div class="bar"></div><h1 style="font-size:1.62rem">${esc(s.title)}</h1>
+      return `<main><h1 style="font-size:4.4rem">${esc(s.title)}</h1>
         <p class="sub">${esc(s.sub)}</p>
-        <div class="frow">${s.boxes.map((b) => `<div class="fbox"><b>${esc(b.n)}</b><span lang="de">${esc(b.label)}</span></div>`).join('')}</div>
-        <p class="fnote">${esc(s.foot)}</p></main>`;
+        <div class="frow">${s.boxes.map((b) => `<div class="tile fbox"><b>${esc(b.n)}</b><span lang="de">${esc(b.label)}</span></div>`).join('')}</div></main>`;
     case 'steps':
-      return `<main><div class="bar"></div><h1 style="font-size:1.55rem">${esc(s.title)}</h1>
+      return `<main><h1 style="font-size:4.4rem">${esc(s.title)}</h1>
         <p class="sub">${esc(s.sub)}</p>
-        <div class="stair">${s.steps.map((t, i) => `<div class="step" style="padding-bottom:${0.7 + i * 1.05}rem"><b>${i + 1}</b><span lang="de">${esc(t)}</span></div>`).join('')}</div></main>`;
+        <div class="stair">${s.steps.map((t, i) => `<div class="tile step" style="padding-bottom:${2.1 + i * 2.6}rem"><b>${i + 1}</b><span lang="de">${esc(t)}</span></div>`).join('')}</div></main>`;
     case 'ways':
-      return `<main><div class="bar"></div><h1 style="font-size:1.42rem">${esc(s.title)}</h1>
+      return `<main><h1 style="font-size:4.2rem">${esc(s.title)}</h1>
         <div class="ways">
-          <div class="node eu">EU</div>
+          <div class="tile node">EU</div>
           <div class="wlist">${s.arrows.map((a) => `<div class="way"><span lang="de">${esc(a)}</span><i></i></div>`).join('')}</div>
-          <div class="node ch"><svg viewBox="0 0 24 24" style="width:1.2rem;height:1.2rem;fill:#FFF"><path d="M9.5 4h5v5.5H20v5h-5.5V20h-5v-5.5H4v-5h5.5z"/></svg>CH</div>
+          <div class="tile node"><svg viewBox="0 0 24 24" style="width:3.4rem;height:3.4rem;fill:#fff"><path d="M9.5 4h5v5.5H20v5h-5.5V20h-5v-5.5H4v-5h5.5z"/></svg>CH</div>
         </div>
-        <p class="fnote">${esc(s.foot)}</p></main>`;
+        ${s.note ? `<p class="note">${esc(s.note)}</p>` : ''}</main>`;
     case 'lines':
-      return `<main><div class="bar"></div><h1 style="font-size:1.7rem">${esc(s.title)}</h1>
-        <p class="sub" style="margin-bottom:1.3rem">${esc(s.sub)}</p>
-        ${s.items.map((i) => `<div class="li"><span class="dash"></span><span>${esc(i)}</span></div>`).join('')}
+      return `<main><h1 style="font-size:4.6rem">${esc(s.title)}</h1>
+        <p class="sub" style="margin-bottom:2.8rem">${esc(s.sub)}</p>
+        ${s.items.map((i) => `<div class="li"><span class="tick">–</span><span>${esc(i)}</span></div>`).join('')}
         <div class="divider"></div><div class="merk">${esc(s.foot)}</div></main>`;
     case 'seq':
-      return `<main><div class="bar"></div><h1 style="font-size:1.62rem">${esc(s.title)}</h1>
-        <div class="seq">${s.stages.map((st, i) => `${i ? '<span class="sarr"></span>' : ''}<div class="stage">${ICONS[st.icon]}<span>${esc(st.label)}</span></div>`).join('')}</div>
-        <div class="divider" style="margin-top:1.7rem"></div>
-        <div class="merk" style="font-size:1.05rem">${esc(s.question)}</div></main>`;
+      return `<main><h1 style="font-size:4.6rem">${esc(s.title)}</h1>
+        <div class="seq">${s.stages.map((st, i) => `${i ? '<span class="sarr"></span>' : ''}<div class="tile stage">${ICONS[st.icon]}<span>${esc(st.label)}</span></div>`).join('')}</div>
+        <div class="divider" style="margin-top:3.4rem"></div>
+        <div class="merk">${esc(s.question)}</div></main>`;
     default:
       throw new Error('Unbekannter Slide-Typ: ' + s.t);
   }
 }
 
 function slideHTML(v, s, i, n) {
-  const last = i === n - 1;
   const pager = n > 1 ? `<span class="pager">${i + 1}/${n}</span>` : '';
-  const logo = n === 1 || i === 0 || last;
-  const hint = n > 1 && i === 0 ? '→ weiterblättern' : '';
-  const url = s.url || (n === 1 && !v.noUrl);
-  return `<div class="slide${v.theme === 'light' ? ' light' : ''}">
-    <div class="hd"><span class="badge">${esc(v.badge)}</span>${pager}</div>
+  const right = s.src ?? (n > 1 && i === 0 ? '→ weiterblättern' : '');
+  const cls = (v.format === 'single' ? 'sq' : 'car') + (v.theme === 'light' ? ' light' : '');
+  return `<div class="slide ${cls}">
+    <div class="hd"><span class="lab">${esc(v.badge)}</span>${pager}</div>
     ${slideBody(s)}
-    ${footer({ hint, url: url && (last || n === 1), logo })}</div>`;
+    ${footer(right)}</div>`;
 }
 
 const page = (body, fs) => `<!doctype html><html lang="de"><head><meta charset="utf-8">
@@ -233,14 +242,15 @@ mkdirSync(BUILD, { recursive: true });
 const made = [];
 for (const v of VISUALS) {
   const single = v.format === 'single';
-  const fs = single ? 1200 / 27 : 40; // → 1200×1500 bzw. 1080×1350
-  const [W, H] = single ? [1200, 1500] : [1080, 1350];
+  const [W, H] = single ? [1200, 1200] : [1080, 1350]; // Fakten-Karte / Carousel
+  const fs = W / 100;
+  const hrem = (H / W) * 100;
   const dir = join(OUT, v.slug);
   mkdirSync(dir, { recursive: true });
   const n = v.slides.length;
 
   v.slides.forEach((s, i) => {
-    const html = page(slideHTML(v, s, i, n), fs);
+    const html = page(slideHTML(v, s, i, n), fs, hrem);
     const f = join(BUILD, `${v.slug}-${i + 1}.html`);
     writeFileSync(f, html);
     const png = join(dir, single ? `${v.slug}.png` : `slide-${String(i + 1).padStart(2, '0')}.png`);
@@ -251,8 +261,8 @@ for (const v of VISUALS) {
   if (!single) { // Dokument-Post-PDF (Vektor, Fonts eingebettet)
     const body = v.slides.map((s, i) => slideHTML(v, s, i, n)).join('');
     const f = join(BUILD, `${v.slug}-doc.html`);
-    writeFileSync(f, page(body, fs).replace('<style>',
-      `<style>@page{size:1080px 1350px;margin:0} .slide{page-break-after:always}`));
+    writeFileSync(f, page(body, fs, hrem).replace('<style>',
+      `<style>@page{size:${W}px ${H}px;margin:0} .slide.sq,.slide.car{height:${H}px} .slide{page-break-after:always}`));
     chrome([`--print-to-pdf=${join(dir, v.slug + '.pdf')}`, '--no-pdf-header-footer', 'file://' + f]);
   }
   console.log(`✔ ${v.slug} (${n} Slide${n > 1 ? 's' : ''}${single ? '' : ' + PDF'})`);
@@ -263,7 +273,7 @@ if (process.argv[2] === 'sheet') {
   const f = join(BUILD, 'sheet.html');
   writeFileSync(f, `<!doctype html><body style="margin:16px;background:#fff;display:grid;grid-template-columns:repeat(4,400px);gap:16px">${imgs}</body>`);
   const rows = Math.ceil(made.length / 4);
-  chrome([`--window-size=1700,${rows * 540 + 32}`, `--screenshot=${join(OUT, 'contact-sheet.png')}`, 'file://' + f]);
+  chrome([`--window-size=1700,${rows * 560 + 32}`, `--screenshot=${join(OUT, 'contact-sheet.png')}`, 'file://' + f]);
   console.log('✔ contact-sheet.png');
 }
 console.log(`Fertig: ${made.length} PNGs → ${OUT}`);

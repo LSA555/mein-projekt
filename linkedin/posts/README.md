@@ -2,6 +2,8 @@
 
 Ein Beitrag pro Content-Pfeiler. Publikationsplan und Mix-Kontrolle: [../05-redaktionsplan.md](../05-redaktionsplan.md). Visual-Entwürfe liegen in [../assets/export/](../assets/export/) (Pipeline: [../assets/README.md](../assets/README.md)); Gesamtübersicht: [contact-sheet.png](../assets/export/contact-sheet.png).
 
+**CI-Hinweis (28.09.2026):** Alle Visuals sind im **CI v3.0** (Navy/Gold, Raleway, Fakten-Karten-Layout; Skill `cyspa-designer`) gerendert. Wo einzelne Visual-Briefings unten noch Cyan, Montserrat/Inter oder das Logo-Bild nennen, gilt stattdessen [../03-styleguide.md](../03-styleguide.md) §5; Einzelgrafiken sind neu 1200×1200.
+
 ## Status-Übersicht
 
 | # | Slot | Pfeiler | Datei | Visual-Entwurf | Status |
