@@ -1,0 +1,32 @@
+{
+  "flow_id": "lead-offer",
+  "name": "Lead bis Angebot",
+  "version": "1.0.0",
+  "source": "Auftrag Punkt 4; Angebotserstellung über Skill cyspa-angebot",
+  "roles": ["orchestrator", "sales", "research", "proposal", "revops", "reviewer"],
+  "steps": [
+    {"id": "qualify", "phase": "scope", "role": "sales", "output": "Qualifizierung gegen ICP-Kriterien mit Begründung je Kriterium"},
+    {"id": "research", "phase": "execute", "role": "research", "output": "Account-Recherche, jede Quelle mit Abrufdatum"},
+    {"id": "scope-pricing", "phase": "execute", "role": "proposal", "output": "Leistungsumfang, Preisannahmen, Lieferbedingungen"},
+    {"id": "offer-draft", "phase": "execute", "role": "proposal", "output": "Angebot (Word) + Projektplan (Excel) via cyspa-angebot"},
+    {"id": "review", "phase": "verify", "role": "reviewer", "output": "Kaufmännische und vertragliche Prüfung"},
+    {"id": "send", "phase": "confirmed_change", "role": "sales", "output": "Versand nach Freigabe"},
+    {"id": "crm", "phase": "confirmed_change", "role": "revops", "output": "Deal-Stufe genau einmal aktualisiert"}
+  ],
+  "approval_gates": [
+    {"gate_id": "pricing", "before_phase": "verify", "description": "Preis und Rabatte durch Inhaberin bestätigt"},
+    {"gate_id": "offer-send", "action_types": ["send_offer", "send_email"], "description": "Versand nur nach Freigabe"},
+    {"gate_id": "crm-update", "action_types": ["crm_write", "crm_stage_change"], "description": "CRM-Änderung nach Freigabe"}
+  ],
+  "forbidden_action_types": ["purchase", "delete_record", "run_security_test", "publish_post"],
+  "night_allowed_phases": ["execute"],
+  "dod": [
+    {"id": "icp-criteria-scored", "description": "Anteil bewerteter ICP-Kriterien mit Begründung", "metric": "ratio", "op": ">=", "target": 1.0, "evidence": "Pfad Qualifizierung"},
+    {"id": "research-fresh", "description": "Alter der ältesten verwendeten Quelle in Tagen", "metric": "days", "op": "<=", "target": 90, "evidence": "Quellenliste mit Abrufdatum"},
+    {"id": "assumptions-listed", "description": "Preis- und Lieferannahmen dokumentiert", "metric": "bool", "op": "==", "target": true, "evidence": "Abschnitt im Angebot"},
+    {"id": "review-done", "description": "Unabhängige Prüfung ohne offene Punkte", "metric": "count", "op": "==", "target": 0, "evidence": "Prüfprotokoll: Anzahl offener Punkte"},
+    {"id": "sent-once", "description": "Anzahl Versände (genau einer, nach Freigabe)", "metric": "count", "op": "==", "target": 1, "evidence": "Aktionsschlüssel"},
+    {"id": "crm-updated-once", "description": "Anzahl CRM-Stufenwechsel durch diesen Lauf", "metric": "count", "op": "==", "target": 1, "evidence": "CRM-Referenz"}
+  ],
+  "budget": {"retry_limit": 2, "max_execution_minutes": 45}
+}

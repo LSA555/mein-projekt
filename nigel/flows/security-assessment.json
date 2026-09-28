@@ -1,0 +1,31 @@
+{
+  "flow_id": "security-assessment",
+  "name": "Security Assessment",
+  "version": "1.0.0",
+  "source": "Auftrag Punkt 4; Blueprint 2.0 Abschnitt 4 (Michael, Sentinel, Raven, Cora)",
+  "roles": ["orchestrator", "security", "grc", "reviewer"],
+  "steps": [
+    {"id": "authorization", "phase": "scope", "role": "security", "output": "Schriftliche Beauftragung, Scope, Ausschlüsse, Zeitfenster, Notfallkontakt"},
+    {"id": "roe", "phase": "plan", "role": "security", "output": "Rules of Engagement und Testplan, nur Ziele aus dem Scope"},
+    {"id": "assessment", "phase": "execute", "role": "security", "output": "Befunde mit Beleg, Schweregrad, betroffenem Asset"},
+    {"id": "control-mapping", "phase": "execute", "role": "grc", "output": "Zuordnung zu Kontrollen (z. B. ISO 27001 Annex A)"},
+    {"id": "expert-review", "phase": "verify", "role": "reviewer", "output": "Fachliche Abnahme durch Menschen"},
+    {"id": "report-delivery", "phase": "confirmed_change", "role": "security", "output": "Bericht nach Freigabe übergeben"}
+  ],
+  "approval_gates": [
+    {"gate_id": "written-authorization", "before_phase": "execute", "description": "Keine Testhandlung vor dokumentierter schriftlicher Beauftragung"},
+    {"gate_id": "active-testing", "action_types": ["run_security_test"], "description": "Jede aktive Testhandlung gegen Kundensysteme einzeln freigegeben"},
+    {"gate_id": "report-share", "action_types": ["share_file", "send_email"], "description": "Berichtsübergabe nach Freigabe"}
+  ],
+  "forbidden_action_types": ["purchase", "delete_record", "publish_post", "crm_write"],
+  "night_allowed_phases": ["plan"],
+  "dod": [
+    {"id": "authorization-on-file", "description": "Schriftliche Beauftragung liegt vor", "metric": "bool", "op": "==", "target": true, "evidence": "Ablageort (kein Inhalt)"},
+    {"id": "out-of-scope-actions", "description": "Testhandlungen ausserhalb des Scopes", "metric": "count", "op": "==", "target": 0, "evidence": "Abgleich Testlog gegen Scope"},
+    {"id": "findings-evidenced", "description": "Anteil Befunde mit Beleg und Schweregrad", "metric": "ratio", "op": ">=", "target": 1.0, "evidence": "Befundliste"},
+    {"id": "controls-mapped", "description": "Anteil Befunde mit Kontrollzuordnung", "metric": "ratio", "op": ">=", "target": 1.0, "evidence": "Mapping-Tabelle"},
+    {"id": "human-signoff", "description": "Fachliche Abnahme durch Menschen", "metric": "bool", "op": "==", "target": true, "evidence": "Name + Datum der Abnahme"},
+    {"id": "delivered-once", "description": "Anzahl Berichtsübergaben", "metric": "count", "op": "==", "target": 1, "evidence": "Aktionsschlüssel"}
+  ],
+  "budget": {"retry_limit": 1, "max_execution_minutes": 60}
+}

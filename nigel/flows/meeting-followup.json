@@ -1,0 +1,34 @@
+{
+  "flow_id": "meeting-followup",
+  "name": "Meeting bis Nachbearbeitung",
+  "version": "1.0.0",
+  "source": "Blueprint 2.0 Abschnitt 11 (Pilot) und Auftrag Punkt 4; Text von Abschnitt 13.5 (v2.1) lag nicht vor",
+  "roles": ["orchestrator", "executive-ops", "knowledge", "reviewer"],
+  "steps": [
+    {"id": "brief", "phase": "execute", "role": "executive-ops", "output": "Briefing mit Quellenliste und Datum jeder Quelle"},
+    {"id": "agenda", "phase": "execute", "role": "executive-ops", "output": "Agenda-Entwurf"},
+    {"id": "notes-ingest", "phase": "execute", "role": "knowledge", "output": "Meeting-Notiz aus Protokoll/Transkript"},
+    {"id": "extract", "phase": "execute", "role": "executive-ops", "output": "Entscheide und Aufgaben mit Verantwortlichem und Termin"},
+    {"id": "assign", "phase": "execute", "role": "orchestrator", "output": "Aufgaben den Projekten zugeordnet"},
+    {"id": "followup-draft", "phase": "execute", "role": "executive-ops", "output": "Follow-up-Mail als Entwurf"},
+    {"id": "review", "phase": "verify", "role": "reviewer", "output": "Prüfprotokoll gegen DoD"},
+    {"id": "followup-send", "phase": "confirmed_change", "role": "executive-ops", "output": "Follow-up nach Freigabe genau einmal versendet"},
+    {"id": "vault-update", "phase": "confirmed_change", "role": "knowledge", "output": "Projektnotiz aktualisiert"},
+    {"id": "status-review", "phase": "confirmed_change", "role": "orchestrator", "output": "Termin für Statusreview gesetzt"}
+  ],
+  "approval_gates": [
+    {"gate_id": "agenda-external", "action_types": ["calendar_invite", "send_email"], "description": "Agenda an Externe nur nach Freigabe"},
+    {"gate_id": "followup-external", "action_types": ["send_email"], "description": "Follow-up an Teilnehmende nur nach Freigabe"}
+  ],
+  "forbidden_action_types": ["purchase", "delete_record", "run_security_test", "publish_post"],
+  "night_allowed_phases": ["plan", "execute"],
+  "dod": [
+    {"id": "brief-sourced", "description": "Anteil der Aussagen im Briefing mit Quelle", "metric": "ratio", "op": ">=", "target": 1.0, "evidence": "Pfad Briefing + Quellenliste"},
+    {"id": "actions-complete", "description": "Anteil der Aufgaben mit Verantwortlichem und Termin", "metric": "ratio", "op": ">=", "target": 1.0, "evidence": "Pfad Meeting-Notiz"},
+    {"id": "decisions-logged", "description": "Entscheide im Entscheidungslog erfasst", "metric": "bool", "op": "==", "target": true, "evidence": "Pfad DECISION_LOG"},
+    {"id": "followup-sent-once", "description": "Anzahl versendeter Follow-ups (genau eins, nach Freigabe)", "metric": "count", "op": "==", "target": 1, "evidence": "Aktionsschlüssel aus action commit"},
+    {"id": "project-note-linked", "description": "Projektnotiz verlinkt Meeting-Notiz", "metric": "bool", "op": "==", "target": true, "evidence": "Pfad Projektnotiz"},
+    {"id": "review-scheduled", "description": "Statusreview terminiert", "metric": "bool", "op": "==", "target": true, "evidence": "Aufgaben-ID oder Kalenderreferenz"}
+  ],
+  "budget": {"retry_limit": 2, "max_execution_minutes": 20}
+}

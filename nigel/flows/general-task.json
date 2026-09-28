@@ -1,0 +1,26 @@
+{
+  "flow_id": "general-task",
+  "name": "Allgemeine Aufgabe",
+  "version": "1.0.0",
+  "source": "Auftrag LWE 2026-09-26: Nigel soll jede mehrstufige Aufgabe abarbeiten können, die in keinen Spezialablauf passt",
+  "roles": ["orchestrator", "executive-ops", "knowledge", "research", "marketing-content", "proposal", "sales", "security", "grc", "reviewer"],
+  "steps": [
+    {"id": "acceptance", "phase": "scope", "role": "orchestrator", "output": "2-5 prüfbare Abnahmekriterien, mit der Anfrage abgeglichen"},
+    {"id": "breakdown", "phase": "plan", "role": "orchestrator", "output": "Teilschritte mit Rolle bzw. Agent/Skill, Freigabepunkte, Budget"},
+    {"id": "work", "phase": "execute", "role": "executive-ops", "output": "Ergebnis(se) als Datei im Mandantenordner data/<mandant>/"},
+    {"id": "review", "phase": "verify", "role": "reviewer", "output": "Prüfprotokoll: jedes Abnahmekriterium mit Beleg"},
+    {"id": "deliver", "phase": "confirmed_change", "role": "executive-ops", "output": "Übergabe; externe Wirkung nur nach Freigabe"}
+  ],
+  "approval_gates": [
+    {"gate_id": "external-effect", "action_types": ["send_email", "send_message", "publish_post", "send_offer", "calendar_invite", "crm_write", "crm_stage_change", "share_file"], "description": "Jede Wirkung nach aussen nur nach Freigabe durch LWE"}
+  ],
+  "forbidden_action_types": ["purchase", "delete_record", "run_security_test"],
+  "night_allowed_phases": ["scope", "plan", "execute"],
+  "dod": [
+    {"id": "deliverable-exists", "description": "Ergebnis liegt als Datei im Mandantenordner vor", "metric": "bool", "op": "==", "target": true, "evidence": "Pfad der Ergebnisdatei"},
+    {"id": "acceptance-met", "description": "Anteil erfüllter Abnahmekriterien", "metric": "ratio", "op": ">=", "target": 1.0, "evidence": "Prüfprotokoll"},
+    {"id": "claims-sourced", "description": "Anteil der Tatsachenbehauptungen mit Quelle (1.0, wenn keine vorkommen)", "metric": "ratio", "op": ">=", "target": 1.0, "evidence": "Quellenliste oder Vermerk 'keine Tatsachenbehauptungen'"},
+    {"id": "open-issues", "description": "Offene Punkte aus der Prüfung", "metric": "count", "op": "==", "target": 0, "evidence": "Prüfprotokoll"}
+  ],
+  "budget": {"retry_limit": 2, "max_execution_minutes": 30}
+}
