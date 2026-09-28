@@ -102,7 +102,7 @@ Hinweis für den Fach-Owner: Die Mosca-Logik («Vertraulichkeitsdauer + Umstellu
 |------|--------|--------|
 | **1 Fach** (CISO) | NIST-Aussage stimmt mit F1 überein. Unbelegte Zahlenspanne entfernt. Keine Panik-Jahreszahlen. **Nicht durch KI ersetzbar.** | Vorprüfung bestanden · **menschlich offen** |
 | **2 Legal** | Keine Superlative, keine Herstellerbewertung ✔. Keine Platzhalter ✔. | Vorprüfung bestanden |
-| **3 Accessibility** | Repo-PNG mit **weissem 87-px-Balken** (Renderfehler). Neues Asset in `visuals-ci3/ (alt: _alt-ci-assets/) 11-harvest/`. Der **Alt-Text im Draft beschreibt eine Animation**. Für Static ist das falsch. Neuer Alt-Text siehe unten. Kosmetik: Im Dreiteiler ist die erste Box niedriger als die beiden anderen (einzeiliges Label). Das ist kein Barrierefreiheitsmangel. Grafikinhalte stehen auch im Text ✔. Hashtags in korrekter Schreibweise ✔. Keine Emojis ✔. | **Korrektur nötig → erledigt** |
+| **3 Accessibility** | Repo-PNG mit **weissem 87-px-Balken** (Renderfehler). Neues Asset in `visuals-ci3/11-harvest/`. Der **Alt-Text im Draft beschreibt eine Animation**. Für Static ist das falsch. Neuer Alt-Text siehe unten. Kosmetik: Im Dreiteiler ist die erste Box niedriger als die beiden anderen (einzeiliges Label). Das ist kein Barrierefreiheitsmangel. Grafikinhalte stehen auch im Text ✔. Hashtags in korrekter Schreibweise ✔. Keine Emojis ✔. | **Korrektur nötig → erledigt** |
 | **4 Security-Redline** | Laut Matrix §3 Standard-Post: Redline als Stichprobe. Keine Angriffsdetails. | Stichprobe CISO |
 
 **Alt-Text (Static):**
