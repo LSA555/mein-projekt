@@ -1,6 +1,6 @@
 {
   "proposal_id": "P-20261104-d9005c",
-  "status": "proposed",
+  "status": "applied",
   "task_id": "NGL-20261104-1bb085",
   "tenant": "intern",
   "kind": "file",
@@ -14,6 +14,24 @@
     "claude-main",
     "nigel-orchestrator"
   ],
-  "reviews": [],
-  "tests": []
+  "reviews": [
+    {
+      "by": "LWE",
+      "verdict": "approve",
+      "notes": null,
+      "at": "2026-11-04T07:54:22Z",
+      "change_sha": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3"
+    }
+  ],
+  "tests": [
+    {
+      "command": "echo 'd91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3  data/intern/skill-import-frontend-design/SKILL.md' | sha256sum -c - && head -2 data/intern/skill-import-frontend-design/SKILL.md | grep -q '^name: frontend-design' && ! grep -q '^allowed-tools' data/intern/skill-import-frontend-design/SKILL.md",
+      "exit_code": 0,
+      "output_sha": "15580db433c1b00fc8391c12b45c12b0f76febe41a2627f69141f666e2a49fe6",
+      "at": "2026-11-04T07:54:29Z"
+    }
+  ],
+  "applied_version": "1.0.0",
+  "applied_by": "claude-main",
+  "applied_at": "2026-11-04T07:54:29Z"
 }

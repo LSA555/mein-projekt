@@ -1,6 +1,6 @@
 {
   "proposal_id": "P-20261104-6a64a0",
-  "status": "proposed",
+  "status": "applied",
   "task_id": "NGL-20261104-1bb085",
   "tenant": "intern",
   "kind": "file",
@@ -14,6 +14,24 @@
     "claude-main",
     "nigel-orchestrator"
   ],
-  "reviews": [],
-  "tests": []
+  "reviews": [
+    {
+      "by": "LWE",
+      "verdict": "approve",
+      "notes": null,
+      "at": "2026-11-04T07:54:40Z",
+      "change_sha": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    }
+  ],
+  "tests": [
+    {
+      "command": "echo '0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594  data/intern/skill-import-frontend-design/LICENSE.txt' | sha256sum -c - && grep -q 'Apache License' data/intern/skill-import-frontend-design/LICENSE.txt",
+      "exit_code": 0,
+      "output_sha": "9f9f94b766bb8e0ebc80bafc07473595f216c52ce78d64fac8269c6d453bc242",
+      "at": "2026-11-04T07:54:40Z"
+    }
+  ],
+  "applied_version": "1.0.0",
+  "applied_by": "claude-main",
+  "applied_at": "2026-11-04T07:54:40Z"
 }
