@@ -61,6 +61,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:78px}
 .logo{font-weight:900;font-size:24px;letter-spacing:.08em;color:var(--navy)}
 .logo span{color:var(--yellow);font-size:.62em;letter-spacing:0;font-weight:800}
+.logo{display:block;line-height:0}
+.logo-svg{display:block;height:48px;width:auto}
+footer .logo-svg{height:56px}
 .nav-links{display:flex;align-items:center;gap:2px}
 .nav-item{position:relative}
 .nav-item>a{display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:var(--heading);padding:9px 13px;border-radius:5px;transition:var(--tr)}
@@ -416,6 +419,13 @@ const ABOUT=[["unternehmen","Unternehmen"],["porträt","Porträt: Zahlen und Fak
 const INSIGHTS=[["aktuelles","Aktuelles"],["blog","Blog"],["events","Events"],["whitepaper","Whitepaper und Unterlagen"]];
 ABOUT[1][0]="portraet";
 
+/* Logo: Nachbau als SVG nach der Vorlage von LWE (CYS blau, PA grau, Vierfarbenbalken, Claim) */
+function logoSVG(dark){
+  const cys=dark?"#6a9fd4":"#2168b7", pa=dark?"#ffffff":"#57595b", tag=dark?"rgba(255,255,255,.62)":"#6d6e70";
+  return `<svg class="logo-svg" viewBox="0 0 240 100" role="img" aria-label="CYSPA Cyber Security Partners"><text x="0" y="60" font-family="Raleway,system-ui,sans-serif" font-weight="300" font-size="74" textLength="146" lengthAdjust="spacingAndGlyphs" fill="${cys}">CYS</text><text x="150" y="60" font-family="Raleway,system-ui,sans-serif" font-weight="300" font-size="74" textLength="90" lengthAdjust="spacingAndGlyphs" fill="${pa}">PA</text><rect x="0" y="70" width="60" height="4" fill="#6a9fd4"/><rect x="60" y="70" width="60" height="4" fill="#9abde5"/><rect x="120" y="70" width="60" height="4" fill="#ffe49b"/><rect x="180" y="70" width="60" height="4" fill="#febe0d"/><text x="0" y="96" font-family="Raleway,system-ui,sans-serif" font-weight="500" font-size="15.5" textLength="240" lengthAdjust="spacing" fill="${tag}">CYBER SECURITY PARTNERS</text></svg>`;
+}
+document.querySelectorAll("#nav .logo").forEach(a=>a.innerHTML=logoSVG(false));
+
 /* Bausteine */
 const lbl=t=>`<span class="sec-lbl">${t}</span>`;
 const headSplit=(l,h,p)=>`<div class="head-split"><div>${lbl(l)}<h2>${h}</h2></div>${p?`<p class="lede">${p}</p>`:""}</div>`;
@@ -530,7 +540,7 @@ const GROUP=id=>SERVICES.some(s=>s.id===id)||id==="dienstleistungen"?"svc":ABOUT
 const NAV=[["dienstleistungen","Dienstleistungen","svc",SERVICES.map(s=>[s.id,s.title])],["ueber-uns","Über uns","about",ABOUT],["karriere","Karriere","karriere"],["insights","Insights","ins",INSIGHTS],["kontakt","Kontakt","kontakt"]];
 const navEl=document.getElementById("nav-links");
 navEl.innerHTML=NAV.map(n=>`<div class="nav-item"><a href="#${n[0]}" data-g="${n[2]}">${n[1]}${n[3]?' <span class="caret">▾</span>':""}</a>${n[3]?`<div class="drop">${n[3].map(([i,t])=>`<a href="#${i}">${t}</a>`).join("")}</div>`:""}</div>`).join("")+`<a href="#kontakt" class="btn nav-cta mob">Kostenloser Basic Check</a>`;
-document.getElementById("ft-grid").innerHTML=`<div><a href="#home" class="logo">CYSPA<span>.ch</span></a><p style="margin-top:16px;max-width:30ch">Cyber Security Partners GmbH. Ihr unabhängiger Schweizer Cybersecurity-Experte.</p><p style="margin-top:14px">info@cyspa.ch<br>+41 41 521 61 61</p></div>`+
+document.getElementById("ft-grid").innerHTML=`<div><a href="#home" class="logo" aria-label="CYSPA Startseite">${logoSVG(true)}</a><p style="margin-top:16px;max-width:30ch">Cyber Security Partners GmbH. Ihr unabhängiger Schweizer Cybersecurity-Experte.</p><p style="margin-top:14px">info@cyspa.ch<br>+41 41 521 61 61</p></div>`+
  [["Dienstleistungen",SERVICES.map(s=>[s.id,s.title])],["Über uns",ABOUT],["Insights und Kontakt",[...INSIGHTS,["karriere","Karriere"],["kontakt","Kontakt"]]]].map(c=>`<div><h4>${c[0]}</h4><ul>${c[1].map(([i,t])=>`<li><a href="#${i}">${t}</a></li>`).join("")}</ul></div>`).join("");
 document.getElementById("cta-trust").innerHTML=["Senior Only Experten","100 % unabhängig","Antwort in 48 Stunden"].map(t=>`<span>${CHK}${t}</span>`).join("");
 
