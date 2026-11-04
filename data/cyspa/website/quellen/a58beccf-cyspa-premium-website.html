@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CYSPA.ch – Cyber Security Partners | Schweizer Cybersicherheits Beratung</title>
+<meta name="description" content="CYSPA – Schweizer Cyber Security Beratung in Rotkreuz. 100% unabhängig. ISO 27001, CISO as a Service, Penetration Testing, Security Audits, AI Governance. Senior Only Experten Pool für KMU und Mittelstand.">
+<meta name="keywords" content="Cybersicherheit Schweiz, CISO Beratung, ISO 27001, Penetration Test, Security Audit Zug, nDSG, FINMA, Rotkreuz">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://cyspa.ch/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_CH">
+<meta property="og:site_name" content="CYSPA">
+<meta property="og:title" content="CYSPA – Cyber Security Partners | Schweizer Niveau">
+<meta property="og:description" content="100% unabhängige Cyber Security Beratung aus Rotkreuz. Senior Only Experten Pool für ISO 27001, CISO as a Service, Penetration Testing.">
+<meta property="og:url" content="https://cyspa.ch/">
+<meta property="og:image" content="https://cyspa.ch/hubfs/CYSPA-og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"CYSPA Cyber Security Partners GmbH","alternateName":"CYSPA","url":"https://cyspa.ch/","logo":"https://cyspa.ch/hubfs/CYSPA_Logo_300dpi.png","description":"100% unabhängige Cyber Security Beratung mit Sitz in Rotkreuz. Spezialisiert auf ISO 27001, CISO as a Service, Penetration Testing, Security Audits und AI Governance für Schweizer KMU und Mittelstand.","telephone":"+41-41-521-61-61","email":"info@cyspa.ch","priceRange":"$$$","address":{"@type":"PostalAddress","streetAddress":"Erlenstrasse 4B","postalCode":"6343","addressLocality":"Rotkreuz","addressRegion":"ZG","addressCountry":"CH"},"geo":{"@type":"GeoCoordinates","latitude":47.143,"longitude":8.428},"areaServed":{"@type":"Country","name":"Switzerland"},"sameAs":["https://www.linkedin.com/company/cyspa/"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"50"}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<style>
+:root{
+  --yellow:#ffc000;--hover-blue:#2062af;--primary-blue:#425b76;
+  --link-blue:#096bd8;--sand:#d2a98e;--navy:#103157;--navy-deep:#071828;
+  --white:#fff;--gray:#f8f8f8;--gray-2:#f0f2f5;
+  --heading:#1a1a1a;--body:#5a5a5a;--muted:#8a8a8a;
+  --border:#e6e6e6;--tr:all .4s cubic-bezier(.4,0,.2,1);--tr-q:all .25s ease;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.04),0 4px 12px rgba(0,0,0,.04);
+  --shadow-md:0 5px 15px rgba(0,0,0,.08);
+  --shadow-lg:0 15px 40px rgba(0,0,0,.12);
+  --shadow-glow:0 20px 60px -10px rgba(16,49,87,.25);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{font-family:'Raleway',sans-serif;font-size:15px;font-weight:500;line-height:1.7;color:var(--body);background:#fff;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+img{max-width:100%;display:block}
+
+.skip-link{position:absolute;top:-100px;left:24px;background:var(--navy);color:#fff;padding:14px 24px;border-radius:5px;font-weight:700;font-size:14px;z-index:9999;transition:top .25s}
+.skip-link:focus{top:24px;outline:3px solid var(--yellow);outline-offset:2px}
+.con{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* TYPE */
+h1,h2,h3,h4{font-weight:700;letter-spacing:-.025em;line-height:1.1;color:var(--heading)}
+.display{font-size:clamp(40px,5.8vw,72px);font-weight:800;letter-spacing:-.035em;line-height:1.02}
+h2{font-size:clamp(32px,4vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1.05}
+h3{font-size:24px;font-weight:700;line-height:1.2}
+h4{font-size:18px;line-height:1.3}
+p{font-size:15px;font-weight:500;line-height:1.7}
+.lede{font-size:clamp(16px,1.3vw,18px);line-height:1.65;color:var(--body);font-weight:400}
+.sec-lbl{font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--primary-blue);display:inline-flex;align-items:center;gap:10px;margin-bottom:18px}
+.sec-lbl::before{content:'';width:24px;height:1px;background:var(--yellow)}
+.sec-lbl.lt{color:rgba(255,255,255,.55)}
+.sec-lbl.lt::before{background:var(--yellow)}
+
+.hl-gold{position:relative;display:inline-block;white-space:nowrap}
+.hl-gold::after{content:'';position:absolute;left:-4px;right:-4px;bottom:6%;height:30%;background:var(--yellow);z-index:-1;transform:skewX(-6deg);opacity:.95}
+@media(max-width:640px){.hl-gold{white-space:normal}}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:11px;background:var(--yellow);color:var(--heading);border:1px solid var(--yellow);border-radius:5px;padding:16px 32px;font-family:'Raleway',sans-serif;font-weight:700;font-size:14px;letter-spacing:.02em;transition:var(--tr);cursor:pointer;position:relative;overflow:hidden}
+.btn:hover{background:var(--hover-blue);border-color:var(--hover-blue);color:#fff;transform:translateY(-4px);box-shadow:0 12px 28px rgba(32,98,175,.35)}
+.btn-lg{padding:20px 40px;font-size:15px}
+.btn-outline{background:transparent;border-color:var(--yellow);color:var(--yellow)}
+.btn-outline:hover{background:var(--hover-blue);border-color:var(--hover-blue);color:#fff}
+.btn-ghost{color:rgba(255,255,255,.9);border-bottom:1px solid rgba(255,255,255,.3);padding:6px 0;font-size:14px;font-weight:600;transition:var(--tr);background:none;border-left:none;border-right:none;border-top:none;border-radius:0}
+.btn-ghost:hover{color:var(--yellow);border-bottom-color:var(--yellow);transform:translateX(4px);box-shadow:none}
+.arr{display:inline-block;transition:transform .3s}
+.btn:hover .arr,.btn-ghost:hover .arr{transform:translateX(3px)}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:999;transition:var(--tr)}
+#nav.on{background:rgba(255,255,255,.94);backdrop-filter:saturate(1.8) blur(20px);box-shadow:0 1px 24px rgba(0,0,0,.06)}
+.nav-wrap{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:90px;transition:height .35s}
+#nav.on .nav-wrap{height:74px}
+.nav-logo{font-size:22px;font-weight:900;letter-spacing:.18em;color:#fff;transition:var(--tr);display:flex;align-items:baseline}
+.nav-logo .ch{font-size:13px;letter-spacing:.04em;color:var(--yellow);font-weight:700;margin-left:1px}
+#nav.on .nav-logo{color:var(--heading)}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font-size:13.5px;font-weight:600;color:rgba(255,255,255,.88);transition:var(--tr);position:relative;letter-spacing:.01em}
+#nav.on .nav-links a{color:var(--heading)}
+.nav-links a:not(.nav-cta)::after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--yellow);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.nav-links a:not(.nav-cta):hover::after{transform:scaleX(1)}
+.nav-cta{background:var(--yellow);color:var(--heading)!important;padding:11px 22px;border-radius:5px;font-weight:700!important;transition:var(--tr);position:relative;overflow:hidden}
+.nav-cta:hover{background:var(--hover-blue);color:#fff!important;transform:translateY(-2px);box-shadow:0 8px 20px rgba(32,98,175,.35)}
+.nav-cta-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#0f3157;margin-right:6px;animation:cta-pulse 1.8s infinite;vertical-align:middle}
+.nav-cta:hover .nav-cta-dot{background:var(--yellow)}
+@keyframes cta-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.5)}}
+.burger{display:none;width:44px;height:44px;position:relative;z-index:1000}
+.burger span{display:block;width:24px;height:2px;background:#fff;margin:5px auto;transition:var(--tr-q)}
+#nav.on .burger span{background:var(--heading)}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ═══ HERO (RECHTSBÜNDIG) ═══ */
+.hero{min-height:100vh;background:linear-gradient(155deg,var(--navy-deep) 0%,var(--navy) 55%,#1a4576 100%);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:160px 0 100px;position:relative;overflow:hidden;isolation:isolate}
+.hero-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 800px 400px at 75% 30%,rgba(255,192,0,.14) 0%,transparent 60%),radial-gradient(ellipse 700px 500px at 15% 70%,rgba(91,143,201,.22) 0%,transparent 65%),radial-gradient(circle 600px at 80% 20%,rgba(255,192,0,.08) 0%,transparent 55%),radial-gradient(circle 500px at 15% 85%,rgba(45,95,141,.3) 0%,transparent 60%);pointer-events:none;z-index:-1}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%);z-index:-1}
+.hero-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-end;text-align:right;max-width:1000px;margin-left:auto}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;color:var(--yellow);font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;border:1px solid rgba(255,192,0,.35);background:rgba(255,192,0,.05);border-radius:50px;padding:9px 18px;margin-bottom:36px;backdrop-filter:blur(8px)}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--yellow);animation:cta-pulse 2s infinite}
+.hero h1{margin-bottom:28px;color:#fff;max-width:860px}
+.hero-sub{font-size:clamp(17px,1.4vw,20px);line-height:1.6;color:rgba(255,255,255,.78);max-width:560px;margin-bottom:52px;font-weight:400}
+.hero-btns{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-bottom:88px;justify-content:flex-end}
+.hero-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(255,255,255,.12);padding-top:36px;max-width:780px;width:100%}
+.kpi{padding-right:28px;border-right:1px solid rgba(255,255,255,.12);text-align:left}
+.kpi:first-child{padding-left:0}
+.kpi:last-child{border-right:none;padding-left:28px;padding-right:0}
+.kpi-n{font-size:clamp(28px,2.6vw,40px);font-weight:800;color:#fff;letter-spacing:-.035em;display:block;line-height:1;margin-bottom:7px}
+.kpi-n em{color:var(--yellow);font-style:normal;font-weight:400}
+.kpi-l{font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.scroll-cue{position:absolute;left:32px;bottom:48px;z-index:2;writing-mode:vertical-rl;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.35);font-weight:700;display:flex;align-items:center;gap:14px}
+.scroll-line{width:1px;height:54px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.5),transparent);animation:sline 2.2s ease-in-out infinite}
+@keyframes sline{0%,100%{opacity:.3;transform:scaleY(.4);transform-origin:top}55%{opacity:1;transform:scaleY(1)}}
+
+/* TICKER */
+.ticker{background:var(--navy);padding:18px 0;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06)}
+.tick-wrap{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.tick-track{display:flex;animation:tick 50s linear infinite;white-space:nowrap;will-change:transform}
+.tick-item{font-size:12px;font-weight:700;color:rgba(255,255,255,.38);letter-spacing:.14em;text-transform:uppercase;padding:0 24px}
+.tick-sep{color:var(--yellow);opacity:.35;padding:0}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+section{padding:130px 0}
+.sec-2col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:72px}
+
+/* INTRO */
+.intro-stmt{font-size:clamp(22px,2.6vw,38px);line-height:1.25;font-weight:500;color:var(--heading);max-width:960px;margin-bottom:80px;letter-spacing:-.015em}
+.intro-stmt .ac{color:var(--primary-blue);font-weight:800}
+.intro-stmt strong{font-weight:800;color:var(--heading)}
+.intro-3{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--border);padding-top:8px}
+.ic{padding:48px 36px 0 0;border-right:1px solid var(--border)}
+.ic:nth-child(2){padding:48px 36px;border-right:1px solid var(--border)}
+.ic:last-child{border-right:none;padding:48px 0 0 36px}
+.ic h4{margin-bottom:10px;color:var(--heading)}
+.ic p{font-size:14px}
+
+/* COUNTER */
+.counter-sec{background:var(--navy);padding:120px 0;position:relative;overflow:hidden}
+.counter-sec::before{content:'';position:absolute;top:0;right:0;width:600px;height:100%;background:radial-gradient(ellipse at right,rgba(255,192,0,.07),transparent 65%);pointer-events:none}
+.cnt-grid{display:grid;grid-template-columns:repeat(4,1fr);position:relative;z-index:1}
+.cnt{padding:0 40px;border-right:1px solid rgba(255,255,255,.1);text-align:left}
+.cnt:first-child{padding-left:0}
+.cnt:last-child{border-right:none}
+.cnt-lbl{font-size:10px;color:rgba(255,255,255,.55);font-weight:800;letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:18px}
+.cnt-n{font-size:clamp(48px,5.5vw,72px);font-weight:800;color:#fff;letter-spacing:-.035em;line-height:1;display:block;margin-bottom:14px}
+.cnt-suf{font-weight:400;color:rgba(255,255,255,.55)}
+.cnt-desc{font-size:13px;color:rgba(255,255,255,.55);line-height:1.55}
+
+/* PHASES */
+.phases-sec{background:#fff;border-top:1px solid var(--border)}
+.phase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:24px;border:1px solid var(--border);border-radius:5px;overflow:hidden}
+.phase-card{padding:48px 36px;background:#fff;border-right:1px solid var(--border);transition:var(--tr);position:relative}
+.phase-card:last-child{border-right:none}
+.phase-card:hover{background:var(--navy);color:#fff;transform:scale(1.02);box-shadow:var(--shadow-lg);z-index:2}
+.phase-card:hover h3{color:#fff}
+.phase-card:hover>p{color:rgba(255,255,255,.75)}
+.phase-card:hover .ph-num{color:var(--yellow)}
+.phase-card:hover .ph-status{border-color:var(--yellow);background:rgba(255,192,0,.1);color:var(--yellow)}
+.phase-card:hover .ph-list{border-top-color:rgba(255,255,255,.15)}
+.phase-card:hover .ph-list li{color:rgba(255,255,255,.82);border-bottom-color:rgba(255,255,255,.08)}
+.ph-num{font-size:11px;font-weight:800;color:var(--primary-blue);letter-spacing:.22em;display:block;margin-bottom:14px;text-transform:uppercase;transition:var(--tr)}
+.ph-status{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow);margin-bottom:24px;display:inline-block;padding:6px 14px;border:1px solid var(--yellow);border-radius:50px;background:rgba(255,192,0,.06);transition:var(--tr)}
+.phase-card h3{margin-bottom:14px;transition:var(--tr)}
+.phase-card>p{font-size:14px;color:var(--body);line-height:1.65;margin-bottom:28px;transition:var(--tr)}
+.ph-list{list-style:none;border-top:1px solid var(--border);padding-top:22px;transition:var(--tr)}
+.ph-list li{font-size:13px;color:var(--body);padding:10px 0;border-bottom:1px solid var(--gray-2);display:flex;align-items:flex-start;gap:10px;transition:var(--tr)}
+.ph-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--yellow);flex-shrink:0;margin-top:7px}
+.ph-list li:last-child{border-bottom:none}
+
+/* ═══ NEUE SERVICES SEKTION (3x2 PREMIUM CARDS) ═══ */
+.svc-sec{background:var(--gray);position:relative;overflow:hidden}
+.svc-sec::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,192,0,.06),transparent 70%);pointer-events:none}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative;z-index:1}
+.svc-card{background:#fff;border:1px solid var(--border);border-radius:6px;padding:44px 36px;transition:var(--tr);position:relative;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;text-decoration:none;color:inherit}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--yellow);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.svc-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:transparent}
+.svc-card:hover::before{transform:scaleX(1)}
+.svc-card:hover .svc-card-icon{background:var(--yellow);color:var(--navy)}
+.svc-card:hover .svc-card-num{color:var(--yellow)}
+.svc-card:hover .svc-card-title{color:var(--navy)}
+.svc-card:hover .svc-card-arr{color:var(--yellow);transform:translateX(4px)}
+
+.svc-card-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:28px}
+.svc-card-num{font-size:13px;font-weight:800;color:var(--muted);letter-spacing:.22em;transition:var(--tr)}
+.svc-card-icon{width:56px;height:56px;background:#eef3f9;color:var(--primary-blue);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:var(--tr);flex-shrink:0}
+.svc-card-title{font-size:24px;font-weight:800;letter-spacing:-.025em;line-height:1.15;color:var(--heading);margin-bottom:12px;transition:var(--tr)}
+.svc-card-tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--primary-blue);background:rgba(66,91,118,.08);padding:5px 11px;border-radius:50px;margin-bottom:16px}
+.svc-card-desc{font-size:14.5px;color:var(--body);line-height:1.65;margin-bottom:24px}
+.svc-card-list{list-style:none;margin-bottom:28px;flex:1}
+.svc-card-list li{font-size:13px;color:var(--body);padding:10px 0;border-bottom:1px solid var(--gray-2);display:flex;align-items:center;gap:10px;font-weight:600}
+.svc-card-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--yellow);flex-shrink:0}
+.svc-card-list li:last-child{border-bottom:none}
+.svc-card-foot{display:flex;align-items:center;justify-content:space-between;padding-top:8px;border-top:1px solid var(--border)}
+.svc-card-link{font-size:13px;font-weight:800;color:var(--link-blue);letter-spacing:.02em}
+.svc-card-arr{font-size:20px;color:var(--muted);transition:var(--tr);font-weight:300}
+
+/* CASE STUDY */
+.case-sec{background:var(--gray-2);position:relative;overflow:hidden}
+.case-sec::before{content:'';position:absolute;top:-200px;left:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,192,0,.06),transparent 70%);pointer-events:none}
+.case-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
+.case-meta{display:flex;align-items:center;gap:14px;margin-bottom:24px;flex-wrap:wrap}
+.case-meta-pill{padding:6px 12px;border:1px solid var(--border);border-radius:50px;background:#fff;color:var(--primary-blue);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.case-title{font-size:clamp(28px,3.4vw,44px);font-weight:800;color:var(--heading);letter-spacing:-.028em;margin-bottom:24px;line-height:1.1}
+.case-quote{font-size:18px;font-style:italic;color:var(--body);line-height:1.6;padding-left:24px;border-left:3px solid var(--yellow);margin-bottom:32px}
+.case-author{display:flex;align-items:center;gap:14px;margin-bottom:32px}
+.case-avatar{width:48px;height:48px;border-radius:50%;background:var(--primary-blue);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;flex-shrink:0;font-size:14px}
+.case-author strong{display:block;font-size:14px;font-weight:700;color:var(--heading)}
+.case-author span{font-size:12px;color:var(--muted)}
+.case-stats{background:#fff;border-radius:6px;padding:48px 40px;box-shadow:var(--shadow-md);position:relative}
+.case-stats::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--yellow),var(--primary-blue));border-radius:6px 6px 0 0}
+.case-stat{padding:24px 0;border-bottom:1px solid var(--border)}
+.case-stat:last-child{border-bottom:none}
+.case-stat-n{font-size:48px;font-weight:800;color:var(--navy);letter-spacing:-.035em;line-height:1;margin-bottom:6px;display:block}
+.case-stat-n .suf{color:var(--yellow);font-weight:400}
+.case-stat-lbl{font-size:13px;color:var(--body);font-weight:600}
+
+/* INDUSTRIES */
+.ind-sec{background:#fff}
+.ind-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:5px;overflow:hidden}
+.ind-card{padding:40px 22px;background:#fff;text-align:center;transition:var(--tr);position:relative}
+.ind-card:hover{background:var(--navy);transform:scale(1.06);box-shadow:var(--shadow-glow);z-index:2}
+.ind-card:hover h4{color:#fff}
+.ind-card:hover p{color:rgba(255,255,255,.65)}
+.ind-card:hover .ind-icon{background:var(--yellow)}
+.ind-card:hover .ind-icon svg{color:var(--navy)}
+.ind-icon{width:56px;height:56px;background:#eef3f9;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;margin-bottom:20px;transition:var(--tr)}
+.ind-icon svg{color:var(--primary-blue);transition:var(--tr)}
+.ind-card h4{font-size:14px;font-weight:800;color:var(--heading);margin-bottom:6px;letter-spacing:.01em;transition:var(--tr)}
+.ind-card p{font-size:11.5px;color:var(--body);line-height:1.5;letter-spacing:.02em;font-weight:600;transition:var(--tr)}
+
+/* WHY */
+.why-sec{background:var(--gray)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.wcard{background:#fff;border:1px solid var(--border);border-radius:6px;padding:44px 32px;transition:var(--tr);border-top:3px solid transparent;box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
+.wcard:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-top-color:var(--yellow)}
+.wcard.feat{background:linear-gradient(135deg,var(--navy) 0%,#1a4576 100%);border-top-color:var(--yellow);color:#fff;position:relative}
+.wcard.feat::after{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(255,192,0,.15),transparent 70%);pointer-events:none}
+.wcard.feat h4{color:#fff}
+.wcard.feat p{color:rgba(255,255,255,.7)}
+.wcard.feat .wbig{color:rgba(255,255,255,.08)}
+.wcard.feat .wlink{color:var(--yellow)}
+.wicon{width:52px;height:52px;background:#eef3f9;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:24px}
+.wbig{font-size:60px;font-weight:800;color:rgba(0,0,0,.05);letter-spacing:-.04em;line-height:1;margin-bottom:10px}
+.wcard h4{margin-bottom:10px}
+.wcard p{font-size:14px;line-height:1.65}
+.wlink{font-size:13px;font-weight:800;color:var(--link-blue);display:inline-flex;align-items:center;gap:6px;margin-top:20px;transition:var(--tr-q);letter-spacing:.02em}
+.wlink:hover{color:var(--primary-blue);gap:10px}
+
+/* TESTIMONIALS */
+.test-sec{background:#fff}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tcard2{background:var(--gray);border-radius:6px;padding:40px 30px;transition:var(--tr);border-bottom:3px solid transparent;display:flex;flex-direction:column;gap:28px}
+.tcard2:hover{background:#fff;box-shadow:var(--shadow-md);border-bottom-color:var(--yellow);transform:translateY(-4px)}
+.tq{font-size:15px;color:var(--body);line-height:1.75;font-style:italic;position:relative;padding-top:24px}
+.tq::before{content:'\201C';position:absolute;top:-8px;left:0;font-size:64px;color:var(--yellow);line-height:.75;font-style:normal;font-weight:900;opacity:.5}
+.tau{display:flex;align-items:center;gap:14px;margin-top:auto}
+.tav{width:42px;height:42px;border-radius:50%;background:var(--primary-blue);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;flex-shrink:0;letter-spacing:.04em}
+.tau strong{display:block;font-size:14px;font-weight:700;color:var(--heading)}
+.tau span{font-size:12px;color:var(--muted)}
+
+/* ═══ CUSTOMERS LOGO SHOWCASE (NEU & STÄRKER) ═══ */
+.customers-sec{background:linear-gradient(180deg,#fff 0%,var(--gray) 100%);padding:120px 0;border-top:1px solid var(--border)}
+.cust-head{text-align:center;margin-bottom:64px}
+.cust-head .sec-lbl{justify-content:center}
+.cust-head h2{margin-bottom:18px}
+.cust-head p{max-width:600px;margin:0 auto;color:var(--body)}
+.cust-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;box-shadow:var(--shadow-md)}
+.cust-cell{background:#fff;padding:38px 24px;display:flex;align-items:center;justify-content:center;transition:var(--tr);min-height:120px;text-align:center}
+.cust-cell:hover{background:var(--navy);transform:scale(1.05);box-shadow:var(--shadow-glow);z-index:2}
+.cust-cell:hover .cust-name{color:#fff}
+.cust-cell:hover .cust-sub{color:var(--yellow)}
+.cust-name{font-family:Georgia,'Times New Roman',serif;font-size:17px;font-weight:700;font-style:italic;color:var(--navy);letter-spacing:-.01em;line-height:1.1;transition:var(--tr);display:block;margin-bottom:4px}
+.cust-sub{font-size:9.5px;color:var(--muted);font-weight:700;letter-spacing:.16em;text-transform:uppercase;transition:var(--tr)}
+.cust-stat{margin-top:48px;text-align:center;font-size:14px;color:var(--muted);font-weight:600}
+.cust-stat strong{color:var(--navy);font-weight:800}
+
+/* ═══ INSIGHTS HUB (EVENTS + WHITEPAPER + BLOG) ═══ */
+.insights-sec{background:var(--gray);border-top:1px solid var(--border)}
+.ins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.ins-card{background:#fff;border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:var(--tr);display:flex;flex-direction:column;cursor:pointer}
+.ins-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--yellow)}
+.ins-card:hover .ins-cover{transform:scale(1.05)}
+.ins-card:hover .ins-link{color:var(--primary-blue);gap:10px}
+.ins-cover{aspect-ratio:16/9;background:linear-gradient(135deg,var(--navy) 0%,#1a4576 100%);position:relative;overflow:hidden;transition:transform .5s;display:flex;align-items:center;justify-content:center;color:#fff}
+.ins-cover.events-cover{background:linear-gradient(135deg,#1a4576 0%,var(--navy) 100%)}
+.ins-cover.blog-cover{background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 100%)}
+.ins-cover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top right,rgba(255,192,0,.15),transparent 60%);pointer-events:none}
+.ins-cover-icon{width:64px;height:64px;border:1.5px solid rgba(255,192,0,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--yellow);position:relative;z-index:1}
+.ins-cover-date{position:absolute;top:18px;left:18px;background:rgba(255,192,0,.2);backdrop-filter:blur(8px);border:1px solid rgba(255,192,0,.3);padding:6px 12px;border-radius:5px;color:var(--yellow);font-size:11px;font-weight:800;letter-spacing:.08em;z-index:2}
+.ins-body{padding:28px 28px 32px;display:flex;flex-direction:column;flex:1}
+.ins-meta{display:flex;align-items:center;gap:12px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.ins-tag{padding:5px 11px;background:rgba(255,192,0,.12);color:var(--primary-blue);border-radius:50px;font-weight:800}
+.ins-card h3{font-size:19px;font-weight:800;letter-spacing:-.02em;line-height:1.25;color:var(--heading);margin-bottom:14px}
+.ins-card p{font-size:14px;color:var(--body);line-height:1.6;margin-bottom:20px;flex:1}
+.ins-link{font-size:13px;font-weight:800;color:var(--link-blue);display:inline-flex;align-items:center;gap:6px;transition:var(--tr-q);letter-spacing:.02em}
+
+/* CTA */
+.cta-sec{background:linear-gradient(140deg,var(--navy-deep) 0%,var(--navy) 50%,#1a4f80 100%);color:#fff;position:relative;overflow:hidden}
+.cta-sec::before{content:'';position:absolute;top:-200px;right:-100px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(255,192,0,.1),transparent 60%);pointer-events:none}
+.cta-sec::after{content:'';position:absolute;bottom:-300px;left:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(91,143,201,.18),transparent 65%);pointer-events:none}
+.cta-in{position:relative;z-index:2;display:grid;grid-template-columns:1.4fr 1fr;gap:72px;align-items:center}
+.cta-in h2{color:#fff;margin-bottom:22px}
+.cta-in>div>p{font-size:17px;color:rgba(255,255,255,.75);line-height:1.65;margin-bottom:32px}
+.cta-trust{display:flex;gap:24px;flex-wrap:wrap}
+.cta-trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.7);font-weight:600}
+.cta-trust-item svg{color:var(--yellow);flex-shrink:0}
+.cta-r{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.cta-contact{margin-top:16px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;gap:8px;width:100%}
+.cta-contact-row{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.7)}
+.cta-contact-row svg{color:var(--yellow);flex-shrink:0;width:14px;height:14px}
+
+/* FOOTER */
+footer{background:#0a1828;color:rgba(255,255,255,.55);padding:80px 0 36px;position:relative}
+.ft-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.08)}
+.ft-logo{font-size:19px;font-weight:900;letter-spacing:.18em;color:#fff;display:inline-flex;align-items:baseline;margin-bottom:14px}
+.ft-logo .ch{font-size:12px;color:var(--yellow);font-weight:700}
+.ft-brand p{font-size:13px;line-height:1.75;max-width:220px;margin-bottom:24px}
+.ft-certs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.cert-pill{padding:5px 11px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:50px;font-size:10px;font-weight:800;color:rgba(255,255,255,.7);letter-spacing:.1em;text-transform:uppercase}
+.ft-social{display:flex;gap:10px}
+.ft-social a{width:38px;height:38px;border:1px solid rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);transition:var(--tr-q)}
+.ft-social a:hover{background:var(--yellow);border-color:var(--yellow);color:var(--navy-deep);transform:translateY(-2px)}
+.ft-col h5{font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:22px}
+.ft-col a{display:block;font-size:13px;color:rgba(255,255,255,.55);margin-bottom:10px;transition:var(--tr-q)}
+.ft-col a:hover{color:#fff}
+.ft-bot{padding-top:28px;display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.3);flex-wrap:wrap;gap:16px}
+
+.fade-up{opacity:0;transform:translateY(28px)}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .case-grid,.cta-in,.sec-2col{grid-template-columns:1fr;gap:48px}
+  .ft-top{grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+  .nav-links{gap:24px}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .cust-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:991px){
+  section{padding:90px 0}
+  .counter-sec,.customers-sec{padding:90px 0}
+  .nav-links{position:fixed;top:0;right:-100%;width:80%;max-width:340px;height:100vh;background:#fff;flex-direction:column;align-items:flex-start;padding:120px 32px 32px;gap:24px;transition:right .35s;box-shadow:-20px 0 60px rgba(0,0,0,.15)}
+  .nav-links.open{right:0}
+  .nav-links a{color:var(--heading)!important;font-size:17px;font-weight:700}
+  .burger{display:block}
+  .hero-inner{align-items:flex-start;text-align:left;margin-left:0}
+  .hero-kpis,.hero-btns{justify-content:flex-start}
+  .hero-kpis{grid-template-columns:repeat(2,1fr);row-gap:24px;margin-left:0}
+  .kpi:nth-child(2){border-right:none;padding-right:0}
+  .kpi:nth-child(3){padding-left:0;border-top:1px solid rgba(255,255,255,.12);padding-top:24px}
+  .kpi:nth-child(4){border-top:1px solid rgba(255,255,255,.12);padding-top:24px}
+  .cnt-grid,.phase-grid,.why-grid,.test-grid,.ins-grid,.intro-3{grid-template-columns:1fr}
+  .cnt{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);padding:32px 0}
+  .phase-card{border-right:none;border-bottom:1px solid var(--border)}
+  .phase-card:last-child{border-bottom:none}
+  .ic,.ic:nth-child(2),.ic:last-child{padding:32px 0;border-right:none;border-bottom:1px solid var(--border)}
+  .ic:last-child{border-bottom:none}
+  .ind-grid{grid-template-columns:repeat(3,1fr)}
+  .cust-grid{grid-template-columns:repeat(3,1fr)}
+  .ft-top{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:640px){
+  section{padding:64px 0}
+  .counter-sec,.customers-sec{padding:64px 0}
+  .con{padding:0 20px}
+  .svc-grid{grid-template-columns:1fr}
+  .cust-grid{grid-template-columns:repeat(2,1fr)}
+  .ind-grid{grid-template-columns:repeat(2,1fr)}
+  .ft-top{grid-template-columns:1fr}
+  .hero-btns{flex-direction:column;align-items:stretch}
+  .hero-btns .btn{justify-content:center}
+  .ft-bot{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Direkt zum Hauptinhalt springen</a>
+
+<nav id="nav" aria-label="Hauptnavigation">
+  <div class="nav-wrap">
+    <a href="#" class="nav-logo" aria-label="CYSPA Startseite">CYSPA<span class="ch">.ch</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#dienstleistungen">Dienstleistungen</a></li>
+      <li><a href="#vorgehen">Vorgehen</a></li>
+      <li><a href="#why">Unternehmen</a></li>
+      <li><a href="#referenzen">Referenzen</a></li>
+      <li><a href="#insights">Insights</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="https://cyspa.ch/kontakt-0" class="nav-cta"><span class="nav-cta-dot"></span>Kostenloser Basic Check</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ═══ HERO RECHTSBÜNDIG ═══ -->
+<section class="hero" aria-label="Einleitung">
+  <div class="hero-mesh"></div>
+  <div class="hero-grid"></div>
+  <div class="con">
+    <div class="hero-inner">
+      <div class="hero-badge fade-up"><span class="badge-dot"></span>Cyber Security Partners · Rotkreuz, Schweiz</div>
+      <h1 class="display fade-up">Digitale Sicherheit auf <span class="hl-gold">Schweizer Niveau</span>.</h1>
+      <p class="hero-sub fade-up">Das lösungs und produkteunabhängige Cyber Security Beratungsunternehmen für Schweizer Unternehmen. Sechs Disziplinen. Ein Senior Experten Pool. Eine klare Strategie für Ihre Resilienz.</p>
+      <div class="hero-btns fade-up">
+        <a href="https://cyspa.ch/kontakt-0" class="btn btn-lg">Kostenloser Basic Check <svg class="arr" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="#dienstleistungen" class="btn-ghost">Sechs Disziplinen entdecken <span class="arr">→</span></a>
+      </div>
+      <dl class="hero-kpis fade-up">
+        <div class="kpi"><dt class="kpi-l">Zufriedene Kunden</dt><dd class="kpi-n">50<em>+</em></dd></div>
+        <div class="kpi"><dt class="kpi-l">Disziplinen</dt><dd class="kpi-n">6</dd></div>
+        <div class="kpi"><dt class="kpi-l">Unabhängig</dt><dd class="kpi-n">100<em>%</em></dd></div>
+        <div class="kpi"><dt class="kpi-l">Jahre Erfahrung</dt><dd class="kpi-n">125<em>+</em></dd></div>
+      </dl>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">Scroll <div class="scroll-line"></div></div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-label="Kundenlogos"><div class="tick-wrap"><div class="tick-track">
+  <span class="tick-item">Swissgrid</span><span class="tick-sep">◆</span><span class="tick-item">AMAG</span><span class="tick-sep">◆</span><span class="tick-item">Zug Estates</span><span class="tick-sep">◆</span><span class="tick-item">Energie 360°</span><span class="tick-sep">◆</span><span class="tick-item">HIAG</span><span class="tick-sep">◆</span><span class="tick-item">Arthur Weber</span><span class="tick-sep">◆</span><span class="tick-item">Schoop + Co.</span><span class="tick-sep">◆</span><span class="tick-item">soxes AG</span><span class="tick-sep">◆</span><span class="tick-item">Penergetic</span><span class="tick-sep">◆</span><span class="tick-item">Verimag</span><span class="tick-sep">◆</span><span class="tick-item">Onestra</span><span class="tick-sep">◆</span><span class="tick-item">Switzerland Global Enterprise</span><span class="tick-sep">◆</span><span class="tick-item">Netwyl Informatik</span><span class="tick-sep">◆</span><span class="tick-item">Swissgrid</span><span class="tick-sep">◆</span><span class="tick-item">AMAG</span><span class="tick-sep">◆</span><span class="tick-item">Zug Estates</span><span class="tick-sep">◆</span><span class="tick-item">Energie 360°</span><span class="tick-sep">◆</span><span class="tick-item">HIAG</span><span class="tick-sep">◆</span><span class="tick-item">Arthur Weber</span><span class="tick-sep">◆</span><span class="tick-item">soxes AG</span>
+</div></div></div>
+
+<!-- INTRO -->
+<section id="about" aria-label="Über CYSPA">
+  <div class="con">
+    <span class="sec-lbl fade-up">ÜBER CYSPA</span>
+    <p class="intro-stmt fade-up">In einer Welt, in der <span class="ac">ein einziger Cyberangriff</span> ein Unternehmen existenziell bedrohen kann, brauchen Sie einen Partner, dem Sie bedingungslos vertrauen. <strong>Wir sind CYSPA. Schweizer Präzision, sechs Disziplinen, ein Senior Experten Pool.</strong></p>
+    <div class="intro-3">
+      <div class="ic fade-up"><h4>100% Unabhängig</h4><p>Kein Produkt, kein Hersteller beeinflusst unsere Empfehlungen. Ihre Sicherheit steht immer an erster Stelle, nicht Hersteller Margen.</p></div>
+      <div class="ic fade-up"><h4>Schweizer Expertise</h4><p>Gegründet in Rotkreuz, Kanton Zug. nDSG, FINMA und alle regulatorischen Anforderungen aus der täglichen Praxis.</p></div>
+      <div class="ic fade-up"><h4>Senior Only Experten Pool</h4><p>125 kombinierte Jahre Expertise. Ausschliesslich Senior Consultants und zertifizierte Penetration Tester, kein Junioren Einsatz.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTER -->
+<div class="counter-sec" aria-label="Kennzahlen">
+  <div class="con">
+    <div class="cnt-grid">
+      <div class="cnt fade-up"><span class="cnt-lbl">Zufriedene Kunden</span><span class="cnt-n"><span class="cntup" data-t="50">0</span><span class="cnt-suf">+</span></span><span class="cnt-desc">Industrie · Energie · Finanzen · KMU</span></div>
+      <div class="cnt fade-up"><span class="cnt-lbl">Disziplinen</span><span class="cnt-n"><span class="cntup" data-t="6">0</span></span><span class="cnt-desc">Vollständiges Security Portfolio</span></div>
+      <div class="cnt fade-up"><span class="cnt-lbl">Lösungsunabhängig</span><span class="cnt-n"><span class="cntup" data-t="100">0</span><span class="cnt-suf">%</span></span><span class="cnt-desc">Keine Hersteller oder Produktbindung</span></div>
+      <div class="cnt fade-up"><span class="cnt-lbl">Jahre Erfahrung</span><span class="cnt-n"><span class="cntup" data-t="125">0</span><span class="cnt-suf">+</span></span><span class="cnt-desc">Kombiniertes Team Expertenwissen</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- VORGEHEN 3 PHASEN -->
+<section class="phases-sec" id="vorgehen" aria-label="Vorgehen">
+  <div class="con">
+    <div class="sec-2col fade-up">
+      <div><span class="sec-lbl">VORGEHEN · VOR · WÄHREND · NACH</span><h2>Drei Phasen.<br>Eine Strategie.</h2></div>
+      <p class="lede">Cyber Sicherheit ist kein Projekt mit Anfang und Ende, sondern ein kontinuierlicher Prozess. CYSPA begleitet Sie strategisch durch alle drei Phasen eines möglichen Cyberangriffs.</p>
+    </div>
+    <div class="phase-grid">
+      <article class="phase-card fade-up">
+        <span class="ph-num">Phase 01</span>
+        <span class="ph-status">Vor dem Angriff</span>
+        <h3>Prävention &amp; Resilienz</h3>
+        <p>Risiken identifizieren, Schwachstellen schliessen, Mitarbeitende schulen. Wir bauen Ihre Verteidigung, bevor sie gebraucht wird.</p>
+        <ul class="ph-list">
+          <li>Security Audits &amp; ISO 27001 Readiness</li>
+          <li>Penetrationstests &amp; Red Teaming</li>
+          <li>ISMS Aufbau &amp; Governance</li>
+          <li>Awareness Schulungen &amp; Phishing Simulationen</li>
+        </ul>
+      </article>
+      <article class="phase-card fade-up">
+        <span class="ph-num">Phase 02</span>
+        <span class="ph-status">Während des Angriffs</span>
+        <h3>Beratung im Ernstfall</h3>
+        <p>Im Krisenfall zählt jede Minute. Unsere Senior Experten unterstützen Ihre Krisenleitung, schnell, strukturiert, klar.</p>
+        <ul class="ph-list">
+          <li>CISO as a Service · Krisenleitung</li>
+          <li>Risikobewertung in Echtzeit</li>
+          <li>VR und GL Reporting</li>
+          <li>Koordination mit Behörden &amp; Forensikern</li>
+        </ul>
+      </article>
+      <article class="phase-card fade-up">
+        <span class="ph-num">Phase 03</span>
+        <span class="ph-status">Nach dem Angriff</span>
+        <h3>Wiederherstellung &amp; Härtung</h3>
+        <p>Aus jedem Vorfall lernen, gestärkt herausgehen. Wir analysieren, dokumentieren und härten Ihre Systeme nachhaltig.</p>
+        <ul class="ph-list">
+          <li>Post Incident Audit</li>
+          <li>Lessons Learned Workshops</li>
+          <li>Strategische Roadmap Anpassung</li>
+          <li>Langfristige ISMS Reife</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NEUE SERVICES SEKTION (3x2 PREMIUM CARDS) ═══ -->
+<section class="svc-sec" id="dienstleistungen" aria-label="Dienstleistungen">
+  <div class="con">
+    <div class="sec-2col fade-up">
+      <div><span class="sec-lbl">UNSERE 6 DISZIPLINEN</span><h2>Sechs Disziplinen.<br>Ein Experten Pool.</h2></div>
+      <p class="lede">Vom strategischen CISO Mandat bis zum technischen Penetrationstest, wir decken das gesamte Spektrum moderner Cyber Sicherheit ab. Unabhängig, seniorisiert, Schweizer Präzision.</p>
+    </div>
+    <div class="svc-grid">
+
+      <a href="https://cyspa.ch/dienstleistungen/ciso-as-a-service" class="svc-card fade-up">
+        <div class="svc-card-head">
+          <span class="svc-card-num">01</span>
+          <div class="svc-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="8" r="3.5" stroke="currentColor" stroke-width="1.7"/><path d="M5 20c0-3.2 2.9-5.5 6-5.5 1.2 0 2.4.3 3.4.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M17 14l2 2v3l-2 2-2-2v-3l2-2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+        </div>
+        <span class="svc-card-tag">Strategisch · CISO</span>
+        <h3 class="svc-card-title">CISO as a Service</h3>
+        <p class="svc-card-desc">Externer Chief Information Security Officer auf Mandatsbasis. Volle Verantwortung, volle Expertise, ohne Fixkosten.</p>
+        <ul class="svc-card-list">
+          <li>Übernahme der CISO Funktion</li>
+          <li>Strategische Sicherheitssteuerung</li>
+          <li>Risikobasierte Roadmaps</li>
+          <li>VR und GL Beratung</li>
+        </ul>
+        <div class="svc-card-foot"><span class="svc-card-link">Mehr erfahren</span><span class="svc-card-arr">→</span></div>
+      </a>
+
+      <a href="https://cyspa.ch/dienstleistungen/security-consulting" class="svc-card fade-up">
+        <div class="svc-card-head">
+          <span class="svc-card-num">02</span>
+          <div class="svc-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="6" y="11" width="12" height="9" rx="1.5" stroke="currentColor" stroke-width="1.7"/><path d="M8 11V7.5a4 4 0 014-4v0a4 4 0 014 4V11" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        </div>
+        <span class="svc-card-tag">Governance · ISMS</span>
+        <h3 class="svc-card-title">Cyber Security Management</h3>
+        <p class="svc-card-desc">Aufbau und Betrieb eines funktionierenden Informationssicherheits Managementsystems.</p>
+        <ul class="svc-card-list">
+          <li>Aufbau und Betrieb eines ISMS</li>
+          <li>Governance &amp; Richtlinien</li>
+          <li>C Level Reporting</li>
+          <li>Risikoüberwachung</li>
+        </ul>
+        <div class="svc-card-foot"><span class="svc-card-link">Mehr erfahren</span><span class="svc-card-arr">→</span></div>
+      </a>
+
+      <a href="https://cyspa.ch/dienstleistungen/security-audit" class="svc-card fade-up">
+        <div class="svc-card-head">
+          <span class="svc-card-num">03</span>
+          <div class="svc-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="13" height="18" rx="1.5" stroke="currentColor" stroke-width="1.7"/><circle cx="10.5" cy="11" r="2.5" stroke="currentColor" stroke-width="1.7"/><path d="M12.5 13l2 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        </div>
+        <span class="svc-card-tag">Compliance · ISO 27001</span>
+        <h3 class="svc-card-title">Security Audits</h3>
+        <p class="svc-card-desc">Technische und organisatorische Überprüfung Ihrer Informationssicherheit. Transparent und handlungsorientiert.</p>
+        <ul class="svc-card-list">
+          <li>ISO 27001 Readiness</li>
+          <li>Gap Analysen</li>
+          <li>Compliance Prüfungen</li>
+          <li>Audit Vorbereitung &amp; Begleitung</li>
+        </ul>
+        <div class="svc-card-foot"><span class="svc-card-link">Mehr erfahren</span><span class="svc-card-arr">→</span></div>
+      </a>
+
+      <a href="https://cyspa.ch/dienstleistungen/security-testing" class="svc-card fade-up">
+        <div class="svc-card-head">
+          <span class="svc-card-num">04</span>
+          <div class="svc-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2.5l8 4v6.5c0 4-3.2 7-8 8.5-4.8-1.5-8-4.5-8-8.5V6.5l8-4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <span class="svc-card-tag">Offensiv · Technisch</span>
+        <h3 class="svc-card-title">Security Testing</h3>
+        <p class="svc-card-desc">Wir denken wie Angreifer, damit Ihre Verteidigung hält, wenn es darauf ankommt.</p>
+        <ul class="svc-card-list">
+          <li>Penetrationstests</li>
+          <li>Red Teaming</li>
+          <li>Attack Simulations</li>
+          <li>Technische Sicherheitsbewertungen</li>
+        </ul>
+        <div class="svc-card-foot"><span class="svc-card-link">Mehr erfahren</span><span class="svc-card-arr">→</span></div>
+      </a>
+
+      <a href="https://cyspa.ch/dienstleistungen/security-consulting" class="svc-card fade-up">
+        <div class="svc-card-head">
+          <span class="svc-card-num">05</span>
+          <div class="svc-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="5.5" width="16" height="14.5" rx="1.5" stroke="currentColor" stroke-width="1.7"/><path d="M4 10h16M9 3.5v4M15 3.5v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        </div>
+        <span class="svc-card-tag">Strategie · Architektur</span>
+        <h3 class="svc-card-title">Cyber Security Consulting</h3>
+        <p class="svc-card-desc">Strategische Beratung für Architektur, Cloud, Third Party Risiken und zukunftsfähige AI Governance.</p>
+        <ul class="svc-card-list">
+          <li>Security Architektur</li>
+          <li>Cloud und M365 Sicherheit</li>
+          <li>Third Party Risiken</li>
+          <li>AI Governance</li>
+        </ul>
+        <div class="svc-card-foot"><span class="svc-card-link">Mehr erfahren</span><span class="svc-card-arr">→</span></div>
+      </a>
+
+      <a href="https://cyspa.ch/dienstleistungen/security-awareness" class="svc-card fade-up">
+        <div class="svc-card-head">
+          <span class="svc-card-num">06</span>
+          <div class="svc-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 9.5l10-5 10 5-10 5L2 9.5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M6 11.5v4c0 1.4 2.7 3 6 3s6-1.6 6-3v-4" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        </div>
+        <span class="svc-card-tag">Human Factor</span>
+        <h3 class="svc-card-title">Security Awareness</h3>
+        <p class="svc-card-desc">Praxisnahe Simulationen, Live Hacking und Vorträge. Der Mensch als erste Verteidigungslinie.</p>
+        <ul class="svc-card-list">
+          <li>Quishing Simulation</li>
+          <li>Vishing Simulator</li>
+          <li>Live Hacking</li>
+          <li>Vorträge &amp; Workshops</li>
+        </ul>
+        <div class="svc-card-foot"><span class="svc-card-link">Mehr erfahren</span><span class="svc-card-arr">→</span></div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section class="case-sec" id="case" aria-label="Case Study">
+  <div class="con">
+    <span class="sec-lbl fade-up">CASE STUDY SPOTLIGHT</span>
+    <div class="case-grid">
+      <div class="fade-up">
+        <div class="case-meta">
+          <span class="case-meta-pill">Industrie</span>
+          <span class="case-meta-pill">ISO 27001</span>
+          <span class="case-meta-pill">12 Monate</span>
+        </div>
+        <h2 class="case-title">73 % weniger Risiko Exposition, nachweisbar zertifiziert.</h2>
+        <blockquote class="case-quote">"CYSPA hat uns mit pragmatischer Expertise von der Gap Analyse bis zur erfolgreichen ISO 27001 Zertifizierung begleitet. Was wir besonders schätzen: keine Standardisierung, sondern Beratung, die zu unserem Unternehmen passt."</blockquote>
+        <div class="case-author">
+          <div class="case-avatar">SI</div>
+          <div><strong>Swiss Industrie AG</strong><span>Geschäftsleitung · Mid Market</span></div>
+        </div>
+        <a href="#kontakt" class="btn">Ihren Erfolg planen <svg class="arr" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="case-stats fade-up">
+        <div class="case-stat"><span class="case-stat-n">73<span class="suf">%</span></span><span class="case-stat-lbl">Reduktion identifizierter Risiken</span></div>
+        <div class="case-stat"><span class="case-stat-n">100<span class="suf">%</span></span><span class="case-stat-lbl">Erfolgreiche ISO 27001:2022 Zertifizierung</span></div>
+        <div class="case-stat"><span class="case-stat-n">12<span class="suf">Mt</span></span><span class="case-stat-lbl">Vom Kickoff zur Zertifizierung</span></div>
+        <div class="case-stat"><span class="case-stat-n">0</span><span class="case-stat-lbl">Major Non Conformities im Zertifizierungsaudit</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="ind-sec" id="branchen" aria-label="Branchen Expertise">
+  <div class="con">
+    <div class="sec-2col fade-up">
+      <div><span class="sec-lbl">BRANCHEN EXPERTISE</span><h2>Sektorale<br>Bandbreite.</h2></div>
+      <p class="lede">Über 50 Schweizer Unternehmen aus diversen Branchen vertrauen auf CYSPA. Jeder Sektor bringt eigene regulatorische Anforderungen mit, wir kennen sie aus der täglichen Praxis.</p>
+    </div>
+    <div class="ind-grid">
+      <div class="ind-card fade-up"><div class="ind-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 21V11h6v10M9 21V7h6v14M15 21V3h6v18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Industrie</h4><p>OT/IT · ISO 27001 · BCM</p></div>
+      <div class="ind-card fade-up"><div class="ind-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div><h4>Energie</h4><p>KRITIS · NIS2 · Versorgung</p></div>
+      <div class="ind-card fade-up"><div class="ind-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 9h6M9 13h6M9 17h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Finanzen</h4><p>FINMA · Banken · Treuhand</p></div>
+      <div class="ind-card fade-up"><div class="ind-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 9.5L12 3l9 6.5V20a2 2 0 01-2 2H5a2 2 0 01-2-2V9.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 22V13h6v9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><h4>Immobilien</h4><p>Multi Tenant · M365 · Zutritt</p></div>
+      <div class="ind-card fade-up"><div class="ind-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18M8 14h2M14 14h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><h4>Service Provider</h4><p>Compliance · ISMS · SLAs</p></div>
+      <div class="ind-card fade-up"><div class="ind-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="8" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M3 20c0-2.5 2.7-4.5 6-4.5s6 2 6 4.5M13 20c0-2 2.2-3.5 5-3.5s5 1.5 5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><h4>KMU &amp; Mid Market</h4><p>Senior Beratung · Roadmaps</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why-sec" id="why" aria-label="Warum CYSPA">
+  <div class="con">
+    <div class="sec-2col fade-up">
+      <div><span class="sec-lbl">WARUM CYSPA</span><h2>Der CYSPA<br>Unterschied.</h2></div>
+      <p class="lede">Cyber Security ist Vertrauenssache. Was uns unterscheidet, ist nicht nur Expertise. Es ist die Art, wie wir arbeiten: unabhängig, seniorisiert, pragmatisch.</p>
+    </div>
+    <div class="why-grid">
+      <div class="wcard fade-up"><div class="wicon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#425b76" stroke-width="1.8"/><path d="M7.5 12l3 3 6-6" stroke="#425b76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>100% Unabhängig</h4><p>Kein Produkt, kein Hersteller beeinflusst unsere Empfehlungen. Wir empfehlen ausschliesslich, was für Sie das Beste ist.</p></div>
+      <div class="wcard fade-up"><div class="wicon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2.5l8 4v6.5c0 4-3.2 7-8 8.5-4.8-1.5-8-4.5-8-8.5V6.5l8-4z" stroke="#425b76" stroke-width="1.8" stroke-linejoin="round"/></svg></div><h4>Schweizer Expertise</h4><p>Gegründet in Rotkreuz, Kanton Zug. nDSG, FINMA und die Anforderungen des Schweizer Marktes aus der täglichen Praxis.</p></div>
+      <div class="wcard fade-up"><div class="wicon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12c0-4.97 4.03-9 9-9s9 4.03 9 9-4.03 9-9 9" stroke="#425b76" stroke-width="1.8" stroke-linecap="round"/><path d="M12 7v5l3 3" stroke="#425b76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Pragmatisch &amp; Effizient</h4><p>Klare Handlungsempfehlungen, die Ihr Team sofort umsetzen kann. Kein Overhead, kein unnötiger Ballast.</p></div>
+      <div class="wcard fade-up"><div class="wicon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="8.5" cy="7.5" r="3" stroke="#425b76" stroke-width="1.8"/><circle cx="16.5" cy="7.5" r="3" stroke="#425b76" stroke-width="1.8"/><path d="M2.5 21c0-3.31 2.69-6 6-6h7c3.31 0 6 2.69 6 6" stroke="#425b76" stroke-width="1.8" stroke-linecap="round"/></svg></div><h4>Senior Only Pool</h4><p>Ausschliesslich erfahrene Senior Consultants und zertifizierte Pentester. Persönliche Kontinuität durchgehend.</p></div>
+      <div class="wcard fade-up"><div class="wicon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#425b76" stroke-width="1.8"/><path d="M7 9h10M7 13h10M7 17h6" stroke="#425b76" stroke-width="1.8" stroke-linecap="round"/></svg></div><h4>Management Berichte</h4><p>Verständliche, handlungsorientierte Reports auf Ihr Management zugeschnitten. Entscheidungsgrundlagen statt Fachjargon.</p></div>
+      <div class="wcard feat fade-up"><div class="wbig">125+</div><h4>Jahre kombinierte Erfahrung</h4><p>Von Industrie und Energie über Finanzen bis zu Schweizer KMU. Wir kennen die Bedrohungslandschaft quer durch alle Sektoren.</p><a href="https://cyspa.ch/unternehmen" class="wlink">Team kennenlernen <span class="arr">→</span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="test-sec" id="referenzen" aria-label="Kundenstimmen">
+  <div class="con">
+    <div class="sec-2col fade-up">
+      <div><span class="sec-lbl">KUNDENSTIMMEN</span><h2>Was unsere<br>Kunden sagen.</h2></div>
+      <p class="lede">Persönlich, ehrlich, unverblümt. Ein Auszug aus unseren Referenzgesprächen mit Kunden aus diversen Branchen.</p>
+    </div>
+    <div class="test-grid">
+      <div class="tcard2 fade-up"><p class="tq">CYSPA hat uns höchst professionell beraten und bei diversen Projekten im Risk Management und Endpoint Security Bereich unterstützt. Das pragmatische und dennoch hochqualitative Vorgehen hat uns überzeugt.</p><div class="tau"><div class="tav">FF</div><div><strong>Fabian Fisecker</strong><span>Sr. Cyber Security Specialist, Swissgrid AG</span></div></div></div>
+      <div class="tcard2 fade-up"><p class="tq">Die Zusammenarbeit mit CYSPA war von Anfang an ein Gewinn. Durch die individuelle Beratung konnten wir eine erfolgreiche Cybersecurity Strategie entwickeln, die genau auf unsere Bedürfnisse zugeschnitten ist.</p><div class="tau"><div class="tav">PB</div><div><strong>Patrick Büchler</strong><span>CEO, soxes AG</span></div></div></div>
+      <div class="tcard2 fade-up"><p class="tq">Von der Planung über die Umsetzung bis zum Abschlussbericht sehr professionell. Wir haben exzellente Unterstützung für unsere Sicherheitsmassnahmen erhalten und würden jederzeit wieder mit CYSPA zusammenarbeiten.</p><div class="tau"><div class="tav">LB</div><div><strong>Laura Birlibescu</strong><span>Projektmanagement &amp; IT, Schoop + Co. AG</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CUSTOMERS LOGO SHOWCASE (NEU & STÄRKER) ═══ -->
+<section class="customers-sec" id="kunden" aria-label="Kundenlogos">
+  <div class="con">
+    <div class="cust-head fade-up">
+      <span class="sec-lbl">EINIGE UNSERER KUNDEN</span>
+      <h2>Schweizer Unternehmen<br>vertrauen auf CYSPA.</h2>
+      <p>Von nationaler Infrastruktur über etablierte Industrie bis zum dynamischen KMU. Mehr als 50 Organisationen aus diversen Branchen.</p>
+    </div>
+    <div class="cust-grid">
+      <div class="cust-cell fade-up"><div><span class="cust-name">Swissgrid</span><span class="cust-sub">Energie · National</span></div></div>
+      <div class="cust-cell fade-up"><div><span class="cust-name">AMAG</span><span class="cust-sub">Automotive · Retail</span></div></div>
+      <div class="cust-cell fade-up"><div><span class="cust-name">Zug Estates</span><span class="cust-sub">Immobilien · ZG</span></div></div>
+      <div class="cust-cell fade-up"><div><span class="cust-name">Energie 360°</span><span class="cust-sub">Energie · Versorger</span></div></div>
+      <div class="cust-cell fade-up"><div><span class="cust-name">HIAG</span><span class="cust-sub">Immobilien · Real Estate</span></div></div>
+      <div class="cust-cell fade-up"><div><span class="cust-name">S-GE</span><span class="cust-sub">Switzerland Global</span></div></div>
+      <div class="cust-cell fade-up"><div><span class="cust-name">Arthur Weber</span><span class="cust-sub">Industrie · Mid Market</span></div></div>
+      <div class="cust-cell fade-up"><div><span class="cust-name">Schoop + Co.</span><span class="cust-sub">Industrie · Engineering</span></div></div>
+      <div class="cust-cell fade-up"><div><span class="cust-name">soxes AG</span><span class="cust-sub">IT Service Provider</span></div></div>
+      <div class="cust-cell fade-up"><div><span class="cust-name">Penergetic</span><span class="cust-sub">Industrie · Agritech</span></div></div>
+      <div class="cust-cell fade-up"><div><span class="cust-name">Verimag</span><span class="cust-sub">Treuhand · Compliance</span></div></div>
+      <div class="cust-cell fade-up"><div><span class="cust-name">Onestra</span><span class="cust-sub">Industrie · Mid Market</span></div></div>
+    </div>
+    <p class="cust-stat fade-up">Und <strong>40+ weitere Schweizer Unternehmen</strong> vertrauen täglich auf unsere Senior Experten.</p>
+  </div>
+</section>
+
+<!-- ═══ INSIGHTS HUB (EVENTS + WHITEPAPER + BLOG) ═══ -->
+<section class="insights-sec" id="insights" aria-label="Insights">
+  <div class="con">
+    <div class="sec-2col fade-up">
+      <div><span class="sec-lbl">INSIGHTS HUB</span><h2>Aktuell wissen,<br>was schützt.</h2></div>
+      <p class="lede">Veranstaltungen, Whitepapers und Analysen aus der täglichen Praxis. Bleiben Sie informiert über die Schweizer Bedrohungslandschaft.</p>
+    </div>
+    <div class="ins-grid">
+
+      <article class="ins-card fade-up">
+        <div class="ins-cover events-cover">
+          <span class="ins-cover-date">JUN 2026</span>
+          <div class="ins-cover-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        </div>
+        <div class="ins-body">
+          <div class="ins-meta"><span class="ins-tag">Events</span><span>Webinar &amp; Live</span></div>
+          <h3>CYSPA Cyber Briefings 2026, Webinare &amp; Live Hacking Sessions</h3>
+          <p>Praxisnahe Veranstaltungen mit unseren Senior Experten. Live Hacking, Awareness Sessions und Vorträge für Schweizer Unternehmen, kostenlos und unverbindlich.</p>
+          <a href="https://cyspa.ch/de/cyber-security-blog" class="ins-link">Zu den Events <span class="arr">→</span></a>
+        </div>
+      </article>
+
+      <article class="ins-card fade-up">
+        <div class="ins-cover">
+          <div class="ins-cover-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M7 2h7l5 5v13a2 2 0 01-2 2H7a2 2 0 01-2-2V4a2 2 0 012-2z" stroke="currentColor" stroke-width="1.6"/><path d="M14 2v5h5M9 13h6M9 17h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        </div>
+        <div class="ins-body">
+          <div class="ins-meta"><span class="ins-tag">Whitepaper</span><span>2026</span></div>
+          <h3>Bedrohungslandschaft 2026, Schweizer KMU im Fokus</h3>
+          <p>Aktuelle Analyse der Cyber Bedrohungen für Schweizer Unternehmen. Konkrete Vorfälle, Angriffsmuster und Handlungsempfehlungen aus der Praxis.</p>
+          <a href="https://cyspa.ch/de/cyber-security-blog" class="ins-link">Whitepaper lesen <span class="arr">→</span></a>
+        </div>
+      </article>
+
+      <article class="ins-card fade-up">
+        <div class="ins-cover blog-cover">
+          <div class="ins-cover-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        </div>
+        <div class="ins-body">
+          <div class="ins-meta"><span class="ins-tag">Blog</span><span>Wöchentlich</span></div>
+          <h3>Cyber Security Blog, Aktuelle Artikel &amp; Analysen</h3>
+          <p>Wöchentliche Artikel zu aktuellen Bedrohungen, regulatorischen Entwicklungen (nDSG, FINMA, NIS2), AI Governance und praktischen Security Themen.</p>
+          <a href="https://cyspa.ch/de/cyber-security-blog" class="ins-link">Zum Blog <span class="arr">→</span></a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec" id="kontakt" aria-label="Kontakt">
+  <div class="con">
+    <div class="cta-in">
+      <div class="fade-up">
+        <span class="sec-lbl lt">JETZT HANDELN</span>
+        <h2>Wie sicher ist Ihr Unternehmen wirklich?</h2>
+        <p>Unser kostenloser IT Security Basic Check gibt Ihnen in 60 Minuten Klarheit über Ihre aktuelle Sicherheitslage, ohne Verpflichtungen, ohne Vendor Pitch.</p>
+        <div class="cta-trust">
+          <div class="cta-trust-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>60 Minuten Erstgespräch</div>
+          <div class="cta-trust-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Kostenlos &amp; unverbindlich</div>
+          <div class="cta-trust-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Senior Experte direkt</div>
+          <div class="cta-trust-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>nDSG konform</div>
+        </div>
+      </div>
+      <div class="cta-r fade-up">
+        <a href="https://cyspa.ch/kontakt-0" class="btn btn-lg">Kostenloser Basic Check <svg class="arr" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="https://cyspa.ch/kontakt" class="btn btn-outline">Beratungsgespräch anfragen</a>
+        <div class="cta-contact">
+          <div class="cta-contact-row"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 3h2l1 4-2 1c1 2 2 3 4 4l1-2 4 1v2c0 1-1 1-2 1-5 0-9-4-9-9 0-1 0-2 1-2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>+41 41 521 61 61</div>
+          <div class="cta-contact-row"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="3" width="10" height="8" rx="1" stroke="currentColor" stroke-width="1.4"/><path d="M2 4l5 4 5-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>info@cyspa.ch</div>
+          <div class="cta-contact-row"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l5 5v6a1 1 0 01-1 1H3a1 1 0 01-1-1V6l5-5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>Erlenstrasse 4B, CH-6343 Rotkreuz</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer aria-label="Footer">
+  <div class="con">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <span class="ft-logo">CYSPA<span class="ch">.ch</span></span>
+        <p>Cyber Security Partners GmbH<br>Erlenstrasse 4B<br>CH-6343 Rotkreuz, ZG</p>
+        <div class="ft-certs">
+          <span class="cert-pill">ISO 27001</span>
+          <span class="cert-pill">nDSG</span>
+          <span class="cert-pill">FINMA Ready</span>
+          <span class="cert-pill">100% CH</span>
+        </div>
+        <div class="ft-social">
+          <a href="https://www.linkedin.com/company/cyspa/" target="_blank" rel="noopener noreferrer" aria-label="CYSPA auf LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M13.6 13.6h-2.4V9.8c0-.9 0-2-1.2-2s-1.4 1-1.4 2v3.8H6.2V5.9h2.3V7h0c.3-.6 1.1-1.2 2.3-1.2 2.4 0 2.9 1.6 2.9 3.7v4.1zM3.5 4.9c-.8 0-1.4-.6-1.4-1.4S2.7 2 3.5 2s1.4.6 1.4 1.4-.6 1.5-1.4 1.5zM4.7 13.6H2.3V5.9h2.4v7.7z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="ft-col">
+        <h5>Dienstleistungen</h5>
+        <a href="/dienstleistungen/ciso-as-a-service">CISO as a Service</a>
+        <a href="/dienstleistungen/security-consulting">CS Management</a>
+        <a href="/dienstleistungen/security-audit">Security Audits</a>
+        <a href="/dienstleistungen/security-testing">Security Testing</a>
+        <a href="/dienstleistungen/security-consulting">CS Consulting</a>
+        <a href="/dienstleistungen/security-awareness">Security Awareness</a>
+      </div>
+      <div class="ft-col">
+        <h5>Unternehmen</h5>
+        <a href="/unternehmen">Über uns</a>
+        <a href="/karriere_1">Karriere</a>
+        <a href="/de/cyber-security-blog">Blog &amp; Insights</a>
+        <a href="/kontakt">Kontakt</a>
+        <a href="https://swissciso.ch" target="_blank" rel="noopener">SwissCISO ↗</a>
+      </div>
+      <div class="ft-col">
+        <h5>Rechtliches</h5>
+        <a href="/datenschutzerklärung">Datenschutz</a>
+        <a href="/impressum">Impressum</a>
+        <a href="/hubfs/AGB_CYSPA.pdf">AGB</a>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <span>© 2026 CYSPA GmbH · Alle Rechte vorbehalten</span>
+      <span>Rotkreuz · Kanton Zug · Schweiz</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('load', () => {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+    setTimeout(arguments.callee, 100); return;
+  }
+  gsap.registerPlugin(ScrollTrigger);
+
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('on', scrollY > 60));
+
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Menü schliessen' : 'Menü öffnen');
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+  }));
+
+  gsap.fromTo('.hero-badge', {opacity: 0, y: 16}, {opacity: 1, y: 0, duration: .7, delay: .2, ease: 'power3.out'});
+  gsap.fromTo('.hero h1, .hero-sub, .hero-btns, .hero-kpis', {opacity: 0, y: 40}, {opacity: 1, y: 0, duration: .85, ease: 'power3.out', stagger: .13, delay: .4});
+
+  document.querySelectorAll('section .fade-up, .counter-sec .fade-up').forEach(el => {
+    gsap.fromTo(el, {opacity: 0, y: 32}, {opacity: 1, y: 0, duration: .85, ease: 'power3.out',
+      scrollTrigger: {trigger: el, start: 'top 88%', toggleActions: 'play none none none'}
+    });
+  });
+
+  function animCount(el, target, dur = 1800) {
+    const start = performance.now();
+    (function step(now) {
+      const p = Math.min((now - start) / dur, 1);
+      const e = 1 - Math.pow(1 - p, 4);
+      el.textContent = Math.floor(e * target);
+      if (p < 1) requestAnimationFrame(step); else el.textContent = target;
+    })(start);
+  }
+  const cio = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { animCount(e.target, +e.target.dataset.t); cio.unobserve(e.target); }
+  }), {threshold: .5});
+  document.querySelectorAll('.cntup').forEach(c => cio.observe(c));
+});
+</script>
+
+</body>
+</html>

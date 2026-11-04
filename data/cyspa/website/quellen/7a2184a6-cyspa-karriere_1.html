@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karriere bei CYSPA – Senior Cyber Security Experts gesucht | Rotkreuz</title>
+<meta name="description" content="Starte deine Karriere bei CYSPA Cyber Security Partners. Senior Only Experten Pool in Rotkreuz. Offene Stellen, Unternehmenskultur und Benefits auf Schweizer Niveau.">
+<link rel="canonical" href="https://cyspa.ch/karriere">
+<meta property="og:title" content="Karriere bei CYSPA – Cyber Security auf Schweizer Niveau">
+<meta property="og:description" content="Senior Only Experten Pool. Offene Stellen bei CYSPA Cyber Security Partners in Rotkreuz, Kanton Zug.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<style>
+:root{
+  --yellow:#ffc000;--hover-blue:#2062af;--pb:#425b76;
+  --link-blue:#096bd8;--navy:#103157;--navy-deep:#071828;
+  --white:#fff;--gray:#f8f8f8;--gray-2:#f0f2f5;
+  --heading:#1a1a1a;--body:#5a5a5a;--muted:#8a8a8a;
+  --border:#e6e6e6;--tr:all .4s cubic-bezier(.4,0,.2,1);--tr-q:all .25s ease;
+  --sh-sm:0 1px 3px rgba(0,0,0,.04),0 4px 12px rgba(0,0,0,.04);
+  --sh-md:0 5px 15px rgba(0,0,0,.08);
+  --sh-lg:0 15px 40px rgba(0,0,0,.12);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{font-family:'Raleway',sans-serif;font-size:15px;font-weight:500;line-height:1.7;color:var(--body);background:#fff;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+
+.skip-link{position:absolute;top:-100px;left:24px;background:var(--navy);color:#fff;padding:14px 24px;border-radius:5px;font-weight:700;font-size:14px;z-index:9999;transition:top .25s}
+.skip-link:focus{top:24px}
+.con{max-width:1200px;margin:0 auto;padding:0 24px}
+
+h1,h2,h3,h4{font-weight:700;letter-spacing:-.025em;line-height:1.1;color:var(--heading)}
+.display{font-size:clamp(40px,5.8vw,72px);font-weight:800;letter-spacing:-.035em;line-height:1.02}
+h2{font-size:clamp(32px,4vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1.05}
+h3{font-size:22px;font-weight:700;line-height:1.2}
+h4{font-size:17px;font-weight:700;line-height:1.3}
+p{font-size:15px;font-weight:500;line-height:1.7}
+.lede{font-size:clamp(16px,1.3vw,18px);line-height:1.65;color:var(--body);font-weight:400}
+.sec-lbl{font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--pb);display:inline-flex;align-items:center;gap:10px;margin-bottom:18px}
+.sec-lbl::before{content:'';width:24px;height:1px;background:var(--yellow)}
+.sec-lbl.lt{color:rgba(255,255,255,.55)}
+.sec-lbl.lt::before{background:var(--yellow)}
+
+.btn{display:inline-flex;align-items:center;gap:11px;background:var(--yellow);color:var(--heading);border:1px solid var(--yellow);border-radius:5px;padding:16px 32px;font-family:'Raleway',sans-serif;font-weight:700;font-size:14px;letter-spacing:.02em;transition:var(--tr);cursor:pointer}
+.btn:hover{background:var(--hover-blue);border-color:var(--hover-blue);color:#fff;transform:translateY(-4px);box-shadow:0 12px 28px rgba(32,98,175,.35)}
+.btn-lg{padding:20px 40px;font-size:15px}
+.btn-outline{background:transparent;border-color:var(--yellow);color:var(--yellow)}
+.btn-outline:hover{background:var(--hover-blue);border-color:var(--hover-blue);color:#fff;transform:translateY(-4px)}
+.btn-ghost-dark{color:rgba(255,255,255,.9);border-bottom:1px solid rgba(255,255,255,.3);padding:6px 0;font-size:14px;font-weight:600;transition:var(--tr);background:none;border-left:none;border-right:none;border-top:none;border-radius:0}
+.btn-ghost-dark:hover{color:var(--yellow);border-bottom-color:var(--yellow)}
+.arr{display:inline-block;transition:transform .3s}
+.btn:hover .arr{transform:translateX(3px)}
+
+/* ══ NAV ══ */
+#nav{position:fixed;top:0;left:0;right:0;z-index:999;transition:var(--tr);background:rgba(255,255,255,.95);backdrop-filter:saturate(1.8) blur(20px);box-shadow:0 1px 24px rgba(0,0,0,.06)}
+.nav-wrap{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:80px}
+.nav-logo{display:flex;align-items:center}
+.nav-logo img{height:36px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:6px;list-style:none}
+.nav-links a{font-size:13.5px;font-weight:600;color:var(--heading);transition:var(--tr-q);padding:9px 14px;border-radius:5px}
+.nav-links a:hover{color:var(--pb);background:var(--gray)}
+.nav-cta{background:var(--yellow)!important;color:var(--heading)!important;padding:10px 20px;border-radius:5px;font-weight:700!important}
+.nav-cta:hover{background:var(--hover-blue)!important;color:#fff!important;transform:translateY(-2px);box-shadow:0 6px 18px rgba(32,98,175,.3)}
+.nav-back{color:var(--pb)!important;display:flex;align-items:center;gap:7px;font-weight:700!important}
+.nav-back:hover{color:var(--navy)!important}
+
+/* ══ KARRIERE HERO ══ */
+.hero{min-height:85vh;background:linear-gradient(155deg,var(--navy-deep) 0%,var(--navy) 55%,#1a4576 100%);color:#fff;display:flex;align-items:center;padding:140px 0 100px;position:relative;overflow:hidden;isolation:isolate}
+.hero-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 700px 400px at 80% 30%,rgba(255,192,0,.12) 0%,transparent 60%),radial-gradient(ellipse 600px 500px at 10% 70%,rgba(91,143,201,.2) 0%,transparent 65%);pointer-events:none;z-index:-1}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%);z-index:-1}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;color:var(--yellow);font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;border:1px solid rgba(255,192,0,.35);background:rgba(255,192,0,.05);border-radius:50px;padding:9px 18px;margin-bottom:32px}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--yellow);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
+.hero h1{color:#fff;margin-bottom:24px}
+.hero h1 em{color:var(--yellow);font-style:normal}
+.hero-sub{font-size:clamp(17px,1.4vw,19px);line-height:1.65;color:rgba(255,255,255,.78);margin-bottom:44px;font-weight:400}
+.hero-btns{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.hero-right{display:flex;flex-direction:column;gap:20px}
+.hero-fact{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:32px 28px;backdrop-filter:blur(8px)}
+.hero-fact-num{font-size:52px;font-weight:800;color:#fff;letter-spacing:-.04em;line-height:1;display:block;margin-bottom:6px}
+.hero-fact-num em{color:var(--yellow);font-style:normal;font-weight:300}
+.hero-fact-lbl{font-size:12px;color:rgba(255,255,255,.55);letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.hero-fact-sub{font-size:14px;color:rgba(255,255,255,.7);margin-top:8px;line-height:1.5}
+.hero-facts-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+/* ══ WHY CYSPA KARRIERE ══ */
+.why-sec{background:#fff}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--border);margin-top:64px}
+.why-card{padding:56px 40px 56px 0;border-right:1px solid var(--border)}
+.why-card:nth-child(2){padding:56px 40px;border-right:1px solid var(--border)}
+.why-card:last-child{border-right:none;padding:56px 0 56px 40px}
+.why-icon{width:56px;height:56px;background:rgba(255,192,0,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:24px;color:var(--navy)}
+.why-card h3{margin-bottom:14px}
+.why-card p{font-size:14px;line-height:1.65}
+
+/* ══ OPEN POSITIONS ══ */
+.jobs-sec{background:var(--gray)}
+.jobs-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:48px}
+.job-filter-btn{padding:10px 20px;border:1px solid var(--border);border-radius:50px;font-size:13px;font-weight:700;color:var(--body);background:#fff;cursor:pointer;transition:var(--tr-q)}
+.job-filter-btn.active,.job-filter-btn:hover{background:var(--navy);border-color:var(--navy);color:#fff}
+.jobs-list{display:flex;flex-direction:column;gap:0}
+.job-card{background:#fff;border:1px solid var(--border);border-radius:0;padding:0;margin-bottom:0;transition:var(--tr);display:flex;align-items:stretch;position:relative;overflow:hidden}
+.job-card:first-child{border-radius:8px 8px 0 0}
+.job-card:last-child{border-radius:0 0 8px 8px;border-top:none}
+.job-card:not(:first-child){border-top:none}
+.job-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--yellow);transform:scaleY(0);transform-origin:top;transition:transform .35s}
+.job-card:hover::before{transform:scaleY(1)}
+.job-card:hover{background:var(--gray);box-shadow:var(--sh-md);z-index:2}
+.job-card:hover .job-arr{background:var(--yellow);color:var(--navy)}
+.job-inner{display:grid;grid-template-columns:1fr 160px 140px 120px 64px;gap:24px;align-items:center;padding:28px 32px 28px 40px;width:100%}
+.job-category{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow);display:block;margin-bottom:6px}
+.job-title{font-size:20px;font-weight:800;color:var(--heading);letter-spacing:-.015em;line-height:1.2}
+.job-meta-item{display:flex;flex-direction:column;gap:4px}
+.job-meta-lbl{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.job-meta-val{font-size:14px;font-weight:700;color:var(--heading)}
+.job-pensum{font-size:13px;color:var(--pb);font-weight:700}
+.job-arr{width:44px;height:44px;border-radius:50%;background:#eef3f9;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:var(--tr-q);color:var(--pb);font-size:18px;font-weight:300}
+.jobs-cta{margin-top:48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;padding:40px;background:linear-gradient(135deg,var(--navy) 0%,#1a4576 100%);border-radius:8px;color:#fff}
+.jobs-cta h3{color:#fff;margin-bottom:8px}
+.jobs-cta p{color:rgba(255,255,255,.75);font-size:14px}
+
+/* ══ TEAM VOICES ══ */
+.voices-sec{background:#fff;overflow:hidden}
+.voices-intro{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:72px}
+.voices-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.voice-card{border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:var(--tr);position:relative}
+.voice-card:hover{transform:translateY(-8px);box-shadow:var(--sh-lg);border-color:transparent}
+.voice-cover{height:180px;position:relative;overflow:hidden;display:flex;align-items:flex-end}
+.voice-cover-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--navy) 0%,#1a4576 100%)}
+.voice-cover-bg.vc2{background:linear-gradient(135deg,#1a4576 0%,var(--pb) 100%)}
+.voice-cover-bg.vc3{background:linear-gradient(135deg,var(--pb) 0%,#2d5f8d 100%)}
+.voice-cover-bg.vc4{background:linear-gradient(135deg,#071828 0%,var(--navy) 100%)}
+.voice-cover-initial{position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);font-size:72px;font-weight:900;color:rgba(255,255,255,.12);letter-spacing:-.04em;font-family:'Raleway',sans-serif}
+.voice-cover-tag{position:absolute;top:18px;right:18px;background:var(--yellow);color:var(--navy);font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;padding:6px 12px;border-radius:50px;z-index:2}
+.voice-cover-person{position:relative;z-index:2;padding:20px 24px;width:100%}
+.voice-name{font-size:16px;font-weight:800;color:#fff;display:block;margin-bottom:2px}
+.voice-role{font-size:11px;color:rgba(255,255,255,.65);font-weight:600;letter-spacing:.06em}
+.voice-body{padding:28px 28px 32px}
+.voice-quote{font-size:15px;font-style:italic;color:var(--body);line-height:1.7;position:relative;padding-top:22px}
+.voice-quote::before{content:'\201C';position:absolute;top:-6px;left:0;font-size:56px;color:var(--yellow);line-height:.75;font-style:normal;font-weight:900;opacity:.5}
+.voice-cert{display:flex;gap:6px;flex-wrap:wrap;margin-top:20px;padding-top:18px;border-top:1px solid var(--border)}
+.vcert{padding:4px 10px;background:rgba(66,91,118,.08);border-radius:50px;font-size:10px;font-weight:800;color:var(--pb);letter-spacing:.1em;text-transform:uppercase}
+
+/* ══ KULTUR & VALUES ══ */
+.kultur-sec{background:linear-gradient(180deg,var(--gray) 0%,#fff 100%)}
+.kultur-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.kultur-visual{background:linear-gradient(135deg,var(--navy) 0%,#1a4576 100%);border-radius:12px;padding:64px 48px;color:#fff;position:relative;overflow:hidden}
+.kultur-visual::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,192,0,.12),transparent 70%);pointer-events:none}
+.kultur-visual h2{color:#fff;margin-bottom:24px}
+.kultur-visual p{color:rgba(255,255,255,.78);font-size:15px;line-height:1.7;margin-bottom:32px}
+.kultur-values{display:flex;flex-direction:column;gap:0}
+.kval{display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.kval:last-child{border-bottom:none}
+.kval-icon{width:36px;height:36px;background:rgba(255,192,0,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--yellow)}
+.kval-text{font-size:15px;color:rgba(255,255,255,.85);font-weight:600}
+.kultur-right{display:flex;flex-direction:column;gap:32px}
+.benefit-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:32px 28px;transition:var(--tr);display:flex;gap:20px;align-items:flex-start}
+.benefit-card:hover{transform:translateY(-4px);box-shadow:var(--sh-md);border-color:var(--yellow)}
+.benefit-icon{width:48px;height:48px;background:rgba(255,192,0,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--navy)}
+.benefit-card h4{margin-bottom:6px;color:var(--heading)}
+.benefit-card p{font-size:14px;color:var(--body);line-height:1.6}
+
+/* ══ BEWERBUNGSPROZESS ══ */
+.process-sec{background:var(--navy);color:#fff}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:64px;position:relative}
+.process-steps::before{content:'';position:absolute;top:32px;left:calc(12.5% + 16px);right:calc(12.5% + 16px);height:1px;background:rgba(255,255,255,.15);z-index:0}
+.pstep{text-align:center;position:relative;z-index:1;padding:0 16px}
+.pstep-num{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:var(--yellow);margin:0 auto 24px;transition:var(--tr)}
+.pstep:hover .pstep-num{background:var(--yellow);color:var(--navy);border-color:var(--yellow)}
+.pstep h4{color:#fff;margin-bottom:10px;font-size:16px}
+.pstep p{font-size:13px;color:rgba(255,255,255,.65);line-height:1.6}
+
+/* ══ NEWSLETTER / INITIATIVBEWERBUNG CTA ══ */
+.cta-sec{background:linear-gradient(140deg,var(--navy-deep) 0%,var(--navy) 50%,#1a4f80 100%);color:#fff;position:relative;overflow:hidden}
+.cta-sec::before{content:'';position:absolute;top:-200px;right:-100px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(255,192,0,.1),transparent 60%);pointer-events:none}
+.cta-in{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr 1fr;gap:72px;align-items:center}
+.cta-in h2{color:#fff;margin-bottom:20px}
+.cta-in p{font-size:17px;color:rgba(255,255,255,.75);line-height:1.65;margin-bottom:32px}
+.cta-trust{display:flex;gap:20px;flex-wrap:wrap}
+.cta-ti{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.7);font-weight:600}
+.cta-ti svg{color:var(--yellow);flex-shrink:0}
+.cta-r{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.cta-contact{margin-top:16px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12)}
+.cta-cr{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.65);margin-bottom:8px}
+
+/* ══ FOOTER ══ */
+footer{background:#0a1828;color:rgba(255,255,255,.55);padding:56px 0 28px}
+.ft-in{display:flex;align-items:center;justify-content:space-between;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.08);flex-wrap:wrap}
+.ft-logo img{height:32px}
+.ft-links{display:flex;gap:24px;flex-wrap:wrap}
+.ft-links a{font-size:13px;color:rgba(255,255,255,.55);transition:var(--tr-q)}
+.ft-links a:hover{color:#fff}
+.ft-social{display:flex;gap:10px}
+.ft-social a{width:36px;height:36px;border:1px solid rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);transition:var(--tr-q)}
+.ft-social a:hover{background:var(--yellow);border-color:var(--yellow);color:#0a1828;transform:translateY(-2px)}
+.ft-bot{display:flex;justify-content:space-between;padding-top:22px;font-size:12px;color:rgba(255,255,255,.3);flex-wrap:wrap;gap:10px}
+
+.fade-up{opacity:0;transform:translateY(28px)}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .hero-inner,.kultur-grid,.cta-in,.voices-intro{grid-template-columns:1fr;gap:48px}
+  .hero-right{flex-direction:row}
+  .hero-facts-row{grid-template-columns:1fr 1fr}
+}
+@media(max-width:991px){
+  section{padding:90px 0}
+  .voices-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .why-card,.why-card:nth-child(2),.why-card:last-child{padding:32px 0;border-right:none;border-bottom:1px solid var(--border)}
+  .why-card:last-child{border-bottom:none}
+  .process-steps{grid-template-columns:1fr 1fr;gap:40px}
+  .process-steps::before{display:none}
+  .job-inner{grid-template-columns:1fr auto;gap:16px}
+  .job-meta-item:nth-child(3),.job-meta-item:nth-child(4){display:none}
+}
+@media(max-width:640px){
+  .con{padding:0 18px}
+  .voices-grid,.why-grid{grid-template-columns:1fr}
+  .hero-right{flex-direction:column}
+  .hero-facts-row{grid-template-columns:1fr}
+  .ft-in{flex-direction:column;align-items:flex-start}
+  .ft-bot{flex-direction:column}
+  .process-steps{grid-template-columns:1fr}
+  .jobs-cta{flex-direction:column}
+}
+section{padding:130px 0}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+
+<!-- NAV -->
+<nav id="nav" aria-label="Navigation">
+  <div class="nav-wrap">
+    <a href="https://cyspa.ch" class="nav-logo" aria-label="CYSPA Startseite">
+      <img src="https://cyspa.ch/hubfs/CYSPA_Logo_300dpi.png"
+           onerror="this.src='https://cyspa.ch/hs-fs/hubfs/CYSPA%20Logo.png';this.onerror=null"
+           alt="CYSPA – Cyber Security Partners" height="36">
+    </a>
+    <ul class="nav-links" style="list-style:none">
+      <li><a href="https://cyspa.ch" class="nav-back">← Zurück zur Hauptseite</a></li>
+      <li><a href="#stellen">Offene Stellen</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#kultur">Kultur</a></li>
+      <li><a href="#prozess">Bewerbungsprozess</a></li>
+      <li><a href="https://cyspa.ch/kontakt-0" class="nav-cta">Initiativbewerbung</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ══ HERO ══ -->
+<section class="hero" aria-label="Karriere bei CYSPA">
+  <div class="hero-mesh"></div>
+  <div class="hero-grid"></div>
+  <div class="con">
+    <div class="hero-inner">
+      <div class="fade-up">
+        <div class="hero-badge"><span class="badge-dot"></span>Wir wachsen · Rotkreuz, Kanton Zug</div>
+        <h1 class="display">Cybersicherheit ist<br>unsere <em>Leidenschaft</em>.</h1>
+        <p class="hero-sub">Werde Teil eines Senior Only Experten Pools, der Schweizer Unternehmen auf höchstem Niveau schützt. Eigenverantwortung, Tiefgang und echte Wirkung, jeden Tag.</p>
+        <div class="hero-btns">
+          <a href="#stellen" class="btn btn-lg">Offene Stellen ansehen <svg class="arr" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="https://cyspa.ch/kontakt-0" class="btn-ghost-dark">Initiativbewerbung senden <span class="arr">→</span></a>
+        </div>
+      </div>
+      <div class="hero-right fade-up">
+        <div class="hero-fact">
+          <span class="hero-fact-num">80<em>+</em></span>
+          <span class="hero-fact-lbl">Kunden in der Schweiz</span>
+          <p class="hero-fact-sub">Von nationaler Energie-Infrastruktur bis zum dynamischen KMU.</p>
+        </div>
+        <div class="hero-facts-row">
+          <div class="hero-fact">
+            <span class="hero-fact-num">100<em>%</em></span>
+            <span class="hero-fact-lbl">Lösungsunabhängig</span>
+            <p class="hero-fact-sub">Kein Vendor-Druck, echte Objektivität.</p>
+          </div>
+          <div class="hero-fact">
+            <span class="hero-fact-num">125<em>+</em></span>
+            <span class="hero-fact-lbl">Jahre Erfahrung</span>
+            <p class="hero-fact-sub">Kombiniertes Wissen im Team.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WARUM CYSPA ══ -->
+<section class="why-sec" id="warum" aria-label="Warum CYSPA">
+  <div class="con">
+    <span class="sec-lbl fade-up">WARUM CYSPA</span>
+    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:end;max-width:100%">
+      <h2 class="fade-up">Wo deine Expertise<br>wirklich zählt.</h2>
+      <p class="lede fade-up">Bei CYSPA arbeitest du nicht als Rädchen in einem Grosskonzern. Du trägst Verantwortung, begleitest echte Entscheidungen auf GL und VR Ebene und prägst die Cyber Security Strategie namhafter Schweizer Unternehmen.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card fade-up">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M7.5 12l3 3 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Senior Only Kultur</h3>
+        <p>Kein Junioren Umfeld. Du arbeitest täglich mit erfahrenen Spezialisten zusammen, die auf Augenhöhe kommunizieren und echtes Fachwissen teilen.</p>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2.5l8 4v6.5c0 4-3.2 7-8 8.5-4.8-1.5-8-4.5-8-8.5V6.5l8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <h3>Volle Eigenverantwortung</h3>
+        <p>Du übernimmst Mandate eigenständig und gestaltest Lösungen von Grund auf. Keine starre Hierarchie, kein Micromanagement.</p>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12c0-4.97 4.03-9 9-9s9 4.03 9 9-4.03 9-9 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Echter Kundenkontakt</h3>
+        <p>Du arbeitest direkt mit Geschäftsleitungen, IT-Leitern und VR-Mitgliedern namhafter Schweizer Unternehmen zusammen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ OFFENE STELLEN ══ -->
+<section class="jobs-sec" id="stellen" aria-label="Offene Stellen">
+  <div class="con">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:56px">
+      <div>
+        <span class="sec-lbl fade-up">OFFENE STELLEN</span>
+        <h2 class="fade-up">Aktuell gesuchte<br>Profile.</h2>
+      </div>
+      <p class="lede fade-up">Wir suchen Persönlichkeiten mit tiefer Expertise, klarer Kommunikation und dem Willen, Schweizer Unternehmen nachhaltig sicherer zu machen.</p>
+    </div>
+
+    <div class="jobs-filter fade-up">
+      <button class="job-filter-btn active" data-filter="all">Alle Stellen</button>
+      <button class="job-filter-btn" data-filter="consulting">Security Consulting</button>
+      <button class="job-filter-btn" data-filter="testing">Security Testing</button>
+      <button class="job-filter-btn" data-filter="ciso">CISO as a Service</button>
+      <button class="job-filter-btn" data-filter="audits">Audits und Assessments</button>
+    </div>
+
+    <div class="jobs-list fade-up">
+
+      <a href="https://cyspa.ch/kontakt-0" class="job-card" data-dept="consulting">
+        <div class="job-inner">
+          <div>
+            <span class="job-category">Security Consulting</span>
+            <div class="job-title">Senior Security Consultant</div>
+          </div>
+          <div class="job-meta-item">
+            <span class="job-meta-lbl">Standort</span>
+            <span class="job-meta-val">Rotkreuz, ZG</span>
+          </div>
+          <div class="job-meta-item">
+            <span class="job-meta-lbl">Pensum</span>
+            <span class="job-pensum">80–100%</span>
+          </div>
+          <div class="job-meta-item">
+            <span class="job-meta-lbl">Einstieg</span>
+            <span class="job-meta-val">Nach Vereinbarung</span>
+          </div>
+          <div class="job-arr">→</div>
+        </div>
+      </a>
+
+      <a href="https://cyspa.ch/kontakt-0" class="job-card" data-dept="testing">
+        <div class="job-inner">
+          <div>
+            <span class="job-category">Security Testing</span>
+            <div class="job-title">Senior Penetration Tester</div>
+          </div>
+          <div class="job-meta-item">
+            <span class="job-meta-lbl">Standort</span>
+            <span class="job-meta-val">Rotkreuz, ZG</span>
+          </div>
+          <div class="job-meta-item">
+            <span class="job-meta-lbl">Pensum</span>
+            <span class="job-pensum">80–100%</span>
+          </div>
+          <div class="job-meta-item">
+            <span class="job-meta-lbl">Einstieg</span>
+            <span class="job-meta-val">Nach Vereinbarung</span>
+          </div>
+          <div class="job-arr">→</div>
+        </div>
+      </a>
+
+      <a href="https://cyspa.ch/kontakt-0" class="job-card" data-dept="ciso">
+        <div class="job-inner">
+          <div>
+            <span class="job-category">CISO as a Service</span>
+            <div class="job-title">vCISO / Informationssicherheitsbeauftragter</div>
+          </div>
+          <div class="job-meta-item">
+            <span class="job-meta-lbl">Standort</span>
+            <span class="job-meta-val">Hybrid</span>
+          </div>
+          <div class="job-meta-item">
+            <span class="job-meta-lbl">Pensum</span>
+            <span class="job-pensum">60–100%</span>
+          </div>
+          <div class="job-meta-item">
+            <span class="job-meta-lbl">Einstieg</span>
+            <span class="job-meta-val">Nach Vereinbarung</span>
+          </div>
+          <div class="job-arr">→</div>
+        </div>
+      </a>
+
+      <a href="https://cyspa.ch/kontakt-0" class="job-card" data-dept="audits">
+        <div class="job-inner">
+          <div>
+            <span class="job-category">Audits und Assessments</span>
+            <div class="job-title">Senior IT Security Auditor</div>
+          </div>
+          <div class="job-meta-item">
+            <span class="job-meta-lbl">Standort</span>
+            <span class="job-meta-val">Rotkreuz, ZG</span>
+          </div>
+          <div class="job-meta-item">
+            <span class="job-meta-lbl">Pensum</span>
+            <span class="job-pensum">80–100%</span>
+          </div>
+          <div class="job-meta-item">
+            <span class="job-meta-lbl">Einstieg</span>
+            <span class="job-meta-val">Nach Vereinbarung</span>
+          </div>
+          <div class="job-arr">→</div>
+        </div>
+      </a>
+
+      <a href="https://cyspa.ch/kontakt-0" class="job-card" data-dept="consulting">
+        <div class="job-inner">
+          <div>
+            <span class="job-category">Security Awareness</span>
+            <div class="job-title">Security Awareness Specialist</div>
+          </div>
+          <div class="job-meta-item">
+            <span class="job-meta-lbl">Standort</span>
+            <span class="job-meta-val">Rotkreuz, ZG</span>
+          </div>
+          <div class="job-meta-item">
+            <span class="job-meta-lbl">Pensum</span>
+            <span class="job-pensum">60–80%</span>
+          </div>
+          <div class="job-meta-item">
+            <span class="job-meta-lbl">Einstieg</span>
+            <span class="job-meta-val">Nach Vereinbarung</span>
+          </div>
+          <div class="job-arr">→</div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="jobs-cta fade-up">
+      <div>
+        <h3>Kein passendes Profil gefunden?</h3>
+        <p>Wir freuen uns über Initiativbewerbungen von erfahrenen Cyber Security Expertinnen und Experten. Zeig uns, was du kannst.</p>
+      </div>
+      <a href="https://cyspa.ch/kontakt-0" class="btn btn-lg">Initiativbewerbung senden <svg class="arr" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TEAM VOICES ══ -->
+<section class="voices-sec" id="team" aria-label="Team Stimmen">
+  <div class="con">
+    <div class="voices-intro fade-up">
+      <div><span class="sec-lbl">TEAM</span><h2>Was unser Team<br>sagt.</h2></div>
+      <p class="lede">Authentische Einblicke von Menschen, die täglich mit Leidenschaft für Cybersicherheit auf Schweizer Niveau arbeiten.</p>
+    </div>
+    <div class="voices-grid">
+
+      <div class="voice-card fade-up">
+        <div class="voice-cover">
+          <div class="voice-cover-bg"></div>
+          <div class="voice-cover-initial">MR</div>
+          <div class="voice-cover-tag">Managing Director</div>
+          <div class="voice-cover-person">
+            <span class="voice-name">Michael Russo</span>
+            <span class="voice-role">Managing Director · vCISO</span>
+          </div>
+        </div>
+        <div class="voice-body">
+          <p class="voice-quote">CYSPA gibt mir die Freiheit, wirklich unabhängig zu beraten. Kein Vendor-Druck, keine Standardlösungen, nur das, was für unsere Kunden wirklich richtig ist. Das ist der Unterschied, der uns ausmacht.</p>
+          <div class="voice-cert">
+            <span class="vcert">CISSP</span>
+            <span class="vcert">ISO 27001 LA</span>
+            <span class="vcert">CISM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="voice-card fade-up">
+        <div class="voice-cover">
+          <div class="voice-cover-bg vc2"></div>
+          <div class="voice-cover-initial">SD</div>
+          <div class="voice-cover-tag">Penetration Testing</div>
+          <div class="voice-cover-person">
+            <span class="voice-name">Simon Dejung</span>
+            <span class="voice-role">Senior Technical Consultant</span>
+          </div>
+        </div>
+        <div class="voice-body">
+          <p class="voice-quote">Ich schätze die technische Tiefe und das Vertrauen, das mir CYSPA gibt. Ich arbeite direkt mit Kunden, teste echte Systeme und sehe unmittelbar, wie meine Arbeit Unternehmen sicherer macht.</p>
+          <div class="voice-cert">
+            <span class="vcert">OSCP</span>
+            <span class="vcert">CEH</span>
+            <span class="vcert">GPEN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="voice-card fade-up">
+        <div class="voice-cover">
+          <div class="voice-cover-bg vc3"></div>
+          <div class="voice-cover-initial">TN</div>
+          <div class="voice-cover-tag">Security Consulting</div>
+          <div class="voice-cover-person">
+            <span class="voice-name">Thomas N.</span>
+            <span class="voice-role">Senior Security Consultant</span>
+          </div>
+        </div>
+        <div class="voice-body">
+          <p class="voice-quote">Was mich täglich antreibt, ist der direkte Kontakt mit Führungspersonen. Ich berate nicht irgendwen, sondern Geschäftsleitungen und Verwaltungsräte, die wirklich etwas bewegen wollen.</p>
+          <div class="voice-cert">
+            <span class="vcert">CISM</span>
+            <span class="vcert">ISO 27001 LA</span>
+            <span class="vcert">NIST</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ KULTUR & BENEFITS ══ -->
+<section class="kultur-sec" id="kultur" aria-label="Unternehmenskultur">
+  <div class="con">
+    <div class="kultur-grid">
+      <div class="kultur-visual fade-up">
+        <span class="sec-lbl lt" style="margin-bottom:20px">UNTERNEHMENSKULTUR</span>
+        <h2>Schweizer Niveau ist kein Slogan. Es ist unser Massstab.</h2>
+        <p>Wir glauben, dass herausragende Cyber Security nur durch herausragende Menschen entsteht. Deshalb setzen wir auf Senior Only, auf echte Eigenverantwortung und auf eine Kultur, die Tiefgang schätzt.</p>
+        <div class="kultur-values">
+          <div class="kval"><div class="kval-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="kval-text">Eigenverantwortung und Vertrauen</span></div>
+          <div class="kval"><div class="kval-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="kval-text">Kollegiales, offenes Arbeitsumfeld</span></div>
+          <div class="kval"><div class="kval-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="kval-text">Kontinuierliche Weiterentwicklung</span></div>
+          <div class="kval"><div class="kval-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="kval-text">Direkte Wirkung für Kunden</span></div>
+          <div class="kval"><div class="kval-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="kval-text">100% unabhängige Beratung</span></div>
+        </div>
+      </div>
+      <div class="kultur-right fade-up">
+        <div class="benefit-card">
+          <div class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M3 21c0-4 4-7 9-7s9 3 9 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div><h4>Senior Only Umfeld</h4><p>Kein Junioren-Einsatz auf Projekten. Du arbeitest mit Expertinnen und Experten auf Augenhöhe.</p></div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9h18M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div><h4>Flexible Arbeitsmodelle</h4><p>Hybrides Arbeiten, individuelle Pensum-Gestaltung und faire Rahmenbedingungen.</p></div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+          <div><h4>Weiterbildung und Zertifizierungen</h4><p>Unterstützung bei relevanten Zertifizierungen (CISSP, OSCP, CISM, ISO 27001 LA und weitere).</p></div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+          <div><h4>Standort Rotkreuz, Kanton Zug</h4><p>Zentraler Standort, gut erschlossen, attraktives Steuerumfeld und hohe Lebensqualität.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BEWERBUNGSPROZESS ══ -->
+<section class="process-sec" id="prozess" aria-label="Bewerbungsprozess">
+  <div class="con">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:0">
+      <div><span class="sec-lbl lt fade-up">BEWERBUNGSPROZESS</span><h2 class="fade-up" style="color:#fff">Einfach, schnell,<br>wertschätzend.</h2></div>
+      <p class="fade-up" style="color:rgba(255,255,255,.72);font-size:17px;line-height:1.65">Wir schätzen deine Zeit. Unser Bewerbungsprozess ist klar strukturiert und endet mit einer verbindlichen Rückmeldung innerhalb von 5 Arbeitstagen.</p>
+    </div>
+    <div class="process-steps">
+      <div class="pstep fade-up">
+        <div class="pstep-num">01</div>
+        <h4>Bewerbung</h4>
+        <p>Sende uns deinen Lebenslauf und ein kurzes Motivationsschreiben. Keine langen Formulare, kein Aufwand.</p>
+      </div>
+      <div class="pstep fade-up">
+        <div class="pstep-num">02</div>
+        <h4>Erstes Gespräch</h4>
+        <p>30 Minuten Video Call mit Michael Russo. Gegenseitiges Kennenlernen, offene Fragen beidseitig.</p>
+      </div>
+      <div class="pstep fade-up">
+        <div class="pstep-num">03</div>
+        <h4>Fachgespräch</h4>
+        <p>Vertieftes Gespräch zu deiner Fachexpertise und einem konkreten Praxisszenario aus unserem Alltag.</p>
+      </div>
+      <div class="pstep fade-up">
+        <div class="pstep-num">04</div>
+        <h4>Angebot</h4>
+        <p>Verbindliche Rückmeldung innerhalb von 5 Arbeitstagen nach dem Fachgespräch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="cta-sec" id="kontakt" aria-label="Kontakt">
+  <div class="con">
+    <div class="cta-in">
+      <div class="fade-up">
+        <span class="sec-lbl lt">JETZT BEWERBEN</span>
+        <h2>Bereit für den nächsten Schritt?</h2>
+        <p>Bewirb dich jetzt oder sende uns eine Initiativbewerbung. Wir melden uns innerhalb von 5 Arbeitstagen mit einer verbindlichen Rückmeldung.</p>
+        <div class="cta-trust">
+          <div class="cta-ti"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Senior Only Kultur</div>
+          <div class="cta-ti"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Rückmeldung in 5 Tagen</div>
+          <div class="cta-ti"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Standort Rotkreuz ZG</div>
+        </div>
+      </div>
+      <div class="cta-r fade-up">
+        <a href="#stellen" class="btn btn-lg">Offene Stellen ansehen <svg class="arr" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="https://cyspa.ch/kontakt-0" class="btn btn-outline">Initiativbewerbung senden</a>
+        <div class="cta-contact">
+          <div class="cta-cr"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="3" width="10" height="8" rx="1" stroke="currentColor" stroke-width="1.4"/><path d="M2 4l5 4 5-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>info@cyspa.ch</div>
+          <div class="cta-cr"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 3h2l1 4-2 1c1 2 2 3 4 4l1-2 4 1v2c0 1-1 1-2 1-5 0-9-4-9-9 0-1 0-2 1-2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>+41 41 521 61 61</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="con">
+    <div class="ft-in">
+      <a href="https://cyspa.ch" class="ft-logo" aria-label="CYSPA Startseite">
+        <img src="https://cyspa.ch/hubfs/CYSPA_Logo_white.png"
+             onerror="this.src='https://cyspa.ch/hs-fs/hubfs/CYSPA%20Logo%20weiss.png';this.onerror=null"
+             alt="CYSPA Cyber Security Partners" height="32">
+      </a>
+      <div class="ft-links">
+        <a href="https://cyspa.ch">Startseite</a>
+        <a href="#stellen">Offene Stellen</a>
+        <a href="https://cyspa.ch/kontakt">Kontakt</a>
+        <a href="https://cyspa.ch/impressum">Impressum</a>
+        <a href="https://cyspa.ch/datenschutzerklärung">Datenschutz</a>
+      </div>
+      <div class="ft-social">
+        <a href="https://www.linkedin.com/company/cyspa/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M13.6 13.6h-2.4V9.8c0-.9 0-2-1.2-2s-1.4 1-1.4 2v3.8H6.2V5.9h2.3V7c.3-.6 1.1-1.2 2.3-1.2 2.4 0 2.9 1.6 2.9 3.7v4.1zM3.5 4.9c-.8 0-1.4-.6-1.4-1.4S2.7 2 3.5 2s1.4.6 1.4 1.4-.6 1.5-1.4 1.5zM4.7 13.6H2.3V5.9h2.4v7.7z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <span>© 2026 CYSPA GmbH · Erlenstrasse 4B · CH-6343 Rotkreuz</span>
+      <span>Karriere bei CYSPA · Cyber Security auf Schweizer Niveau</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('load', () => {
+  if(typeof gsap === 'undefined'){setTimeout(arguments.callee,100);return;}
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Hero
+  gsap.fromTo('.hero-badge',{opacity:0,y:16},{opacity:1,y:0,duration:.7,delay:.2,ease:'power3.out'});
+  gsap.fromTo('.hero h1, .hero-sub, .hero-btns',{opacity:0,y:36},{opacity:1,y:0,duration:.85,ease:'power3.out',stagger:.12,delay:.4});
+  gsap.fromTo('.hero-right',{opacity:0,x:30},{opacity:1,x:0,duration:.9,ease:'power3.out',delay:.6});
+
+  // Scroll
+  document.querySelectorAll('section .fade-up, .jobs-cta.fade-up').forEach(el=>{
+    gsap.fromTo(el,{opacity:0,y:28},{opacity:1,y:0,duration:.8,ease:'power3.out',
+      scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}
+    });
+  });
+});
+
+// Jobs filter
+document.querySelectorAll('.job-filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.job-filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.job-card').forEach(c=>{
+      c.style.display = (f==='all' || c.dataset.dept===f) ? 'flex' : 'none';
+    });
+  });
+});
+</script>
+</body>
+</html>
