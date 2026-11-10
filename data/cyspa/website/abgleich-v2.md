@@ -20,7 +20,7 @@ Task: NGL-20261104-368091. Methode: sichtbarer Text aller Vorschau-Seiten gegen 
 ## Bewusst abweichend (Entscheide LWE oder Copy-Regeln CI)
 - "Senior Only" ersetzt durch "Senior Experten Pool"; abgrenzende Sätze zu Juniors und Einsteigern entfernt.
 - "6 Disziplinen" entfernt; "125 Jahre" als "Kombiniert im Team mehr als 125 Jahre Erfahrung".
-- Simon Dejung und Thomas N. entfernt; neues Team mit Michael Russo, Leila Weber, Rodney Fortuna und Experten Pool.
+- Simon Dejung und Thomas N. entfernt; neues Team mit Michael Russo, Leila Weber, Rodney Fortune und Experten Pool.
 - Gedankenstriche im Fliesstext, "&" und "·" nach CI-Copy-Regeln ersetzt.
 - Jahreszahl "2024" bei Checkliste und Serviceprofil entfernt (veraltet).
 - Kontakt mit drei Ansprechpersonen und Karte (Wunsch LWE).

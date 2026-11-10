@@ -387,7 +387,7 @@ const ICONS={
 
 const PEOPLE={
  MR:{name:"Michael Russo",role:"Managing Director, vCISO",certs:["CISSP","ISO 27001 LA","CISM"],cover:"",tag:"Managing Director",photo:"Michael",quote:"Bei CYSPA arbeite ich an echten, komplexen Sicherheitsprojekten. Kein Produktvertrieb, keine Kompromisse, nur echter Mehrwert für unsere Kunden."},
- RF:{name:"Rodney Fortuna",role:"Funktion folgt",certs:[],cover:"vc2",tag:"Team",quote:"",desc:"Profil und Foto folgen."},
+ RF:{name:"Rodney Fortune",role:"Senior Cybersecurity Consultant und vCISO",certs:[],cover:"vc2",tag:"vCISO",quote:"",desc:"Ihr Ansprechpartner für CISO-Mandate und strategische Sicherheitsberatung."},
  LW:{name:"Leila Weber",role:"Sales und Business Development",certs:[],cover:"vc4",tag:"Ihr Erstkontakt",quote:"",photo:"Leila",desc:"Ihre Ansprechpartnerin für Erstgespräche, Offerten und neue Zusammenarbeiten. Sie klärt Ihr Anliegen und bringt Sie mit den passenden Fachexperten zusammen."},
  CT:{name:"CYSPA Fachteam",role:"Senior Consultants",certs:[],cover:"vc3",tag:"Fachteam",quote:"",desc:"Unsere Senior Consultants dieses Fachbereichs begleiten Ihr Mandat von der Analyse bis zur Umsetzung."}
 };
@@ -566,7 +566,7 @@ P.kontakt=()=>pageHero({title:"Schreiben Sie uns. Wir melden uns innerhalb von 4
   <div class="field"><label for="f-nn">Nachname *</label><input id="f-nn" autocomplete="family-name" required></div>
   <div class="field"><label for="f-em">E-Mail *</label><input id="f-em" type="email" autocomplete="email" required></div>
   <div class="field"><label for="f-un">Unternehmen</label><input id="f-un" autocomplete="organization"></div>
-  <div class="field full"><label for="f-to">Ansprechperson</label><select id="f-to"><option>Keine Präferenz</option><option>Rodney Fortuna</option><option>Michael Russo</option><option>Leila Weber</option></select></div>
+  <div class="field full"><label for="f-to">Ansprechperson</label><select id="f-to"><option>Keine Präferenz</option><option>Rodney Fortune</option><option>Michael Russo</option><option>Leila Weber</option></select></div>
   <div class="field full"><label for="f-th">Thema</label><select id="f-th"><option>Kostenloser Basic Check</option>${SERVICES.map(s=>`<option>${s.title}</option>`).join("")}<option>Karriere</option><option>Anderes Thema</option></select></div>
   <div class="field full"><label for="f-msg">Nachricht</label><textarea id="f-msg"></textarea></div>
   <div class="full" style="grid-column:1/-1;display:flex;gap:18px;align-items:center;flex-wrap:wrap"><button class="btn" type="submit">Nachricht senden ${ARR}</button><span class="note">Ihre Daten werden vertraulich behandelt und nicht an Dritte weitergegeben.</span></div>
