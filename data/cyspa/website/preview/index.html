@@ -193,6 +193,12 @@ a.card:hover,.card.hov:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);
 .map-info b{color:var(--heading);font-size:17px;margin-bottom:4px}
 .map-info .btn{align-self:flex-start;margin:16px 0 6px}
 @media (max-width:860px){.map-card{grid-template-columns:1fr}}
+.skip-link{position:absolute;left:16px;top:-100px;background:var(--navy);color:#fff;padding:12px 20px;border-radius:5px;font-weight:700;z-index:2000}
+.skip-link:focus{top:12px}
+.modal{position:fixed;inset:0;z-index:3000;background:rgba(7,24,40,.6);display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.modal[hidden]{display:none}
+.modal-box{background:#fff;border-radius:10px;max-width:520px;width:100%;padding:32px 30px;position:relative;box-shadow:var(--sh-lg);max-height:100%;overflow:auto}
+.modal-x{position:absolute;top:12px;right:14px;border:0;background:none;font-size:28px;line-height:1;color:var(--muted);cursor:pointer}
 .sales-note{display:grid;gap:2px;padding:18px 24px 22px;border-top:1px solid var(--border);background:var(--gray);font-size:13.5px}
 .sales-note b{color:var(--heading);font-size:15px}
 .sales-note .btn-link{margin-top:6px}
@@ -329,11 +335,18 @@ footer .logo{color:#fff}
     <a href="#home" class="logo" aria-label="CYSPA Startseite">CYSPA<span>.ch</span></a>
     <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav-links">Menü</button>
     <div class="nav-links" id="nav-links"></div>
-    <a href="#kontakt" class="btn nav-cta desk">Kostenloser Basic Check</a>
+    <a href="#basic-check" class="btn nav-cta desk">Kostenloser Basic Check</a>
   </div>
 </nav>
 
+<a href="#app" class="skip-link">Zum Hauptinhalt springen</a>
 <main id="app"></main>
+<div class="modal" id="dl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="dl-title"><div class="modal-box">
+ <button type="button" class="modal-x" id="dl-close" aria-label="Schliessen">×</button>
+ <span class="pill">Kostenloser Download</span><h3 id="dl-title" style="margin-top:12px">Unterlagen herunterladen</h3><p id="dl-doc" style="font-weight:700;color:var(--navy);margin-top:6px"></p>
+ <p style="margin:8px 0 18px">Bitte hinterlassen Sie kurz Ihre Daten, damit wir Ihnen die Unterlagen zusenden können.</p>
+ <form class="contact" id="dl-form" novalidate><div class="field"><label for="d-vn">Vorname *</label><input id="d-vn" required></div><div class="field"><label for="d-nn">Nachname *</label><input id="d-nn" required></div><div class="field full"><label for="d-em">E-Mail *</label><input id="d-em" type="email" required></div><div class="field full"><label for="d-un">Unternehmen</label><input id="d-un"></div>
+ <div class="full" style="grid-column:1/-1"><button class="btn" type="submit">Jetzt herunterladen</button></div><p class="note full" style="grid-column:1/-1">Ihre Daten werden vertraulich behandelt und nicht an Dritte weitergegeben.</p><div class="ok" id="dl-ok" hidden>Vorschau: In HubSpot startet hier der Download nach dem Absenden des Formulars.</div></form></div></div>
 
 <section class="cta-sec" id="cta">
   <div class="con cta-in">
@@ -344,7 +357,7 @@ footer .logo{color:#fff}
       <div class="cta-trust" id="cta-trust"></div>
     </div>
     <div class="cta-r">
-      <a href="#kontakt" class="btn">Kostenlosen Basic Check starten <svg class="arr" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#basic-check" class="btn">Kostenlosen Basic Check starten <svg class="arr" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="#kontakt" class="btn btn-outline-y">Direkt Kontakt aufnehmen</a>
       <div class="cta-contact"><span>info@cyspa.ch</span><span>+41 41 521 61 61</span></div>
     </div>
@@ -424,7 +437,7 @@ const SERVICES=[
    ["Endpoint Security","Schutz Ihrer Endgeräte durch moderne EDR-Lösungen und Härtungskonzepte.",["EDR- und XDR-Implementierung","Endpoint Hardening","Mobile Device Management"]]]}
 ];
 
-const CUSTOMERS=["Swissgrid","AMAG","Zug Estates","Energie 360°","HIAG","Arthur Weber","Schoop + Co.","soxes AG","Penergetic","Verimag","Onestra","S-GE","Netwyl Informatik","Consenec","Helvetia Versicherungen","Baloise","Zuger Kantonalbank","Luzerner Kantonalbank","BDO Schweiz","Apleona","Burckhardt Compression","Autoneum","Mikron","Leica Geosystems"];
+const CUSTOMERS=["Swissgrid","AMAG","Zug Estates","Energie 360°","HIAG","Arthur Weber","Schoop + Co.","soxes AG","Penergetic","Verimag","Onestra","Switzerland Global Enterprise","Netwyl Informatik","Consenec","Helvetia Versicherungen","Baloise","Zuger Kantonalbank","Luzerner Kantonalbank","BDO Schweiz","Apleona","Burckhardt Compression","Autoneum","Mikron","Leica Geosystems"];
 const WHY=[["Unabhängigkeit","Keine Produkte, kein Hersteller, keine versteckten Incentives. Unsere Empfehlungen richten sich ausschliesslich nach Ihren Sicherheitsbedürfnissen.","check"],
  ["Erfahrung, die zählt","Ihre Mandate betreuen erfahrene Expertinnen und Experten persönlich. So haben Sie direkten Zugang zu fundiertem Know-how.","user"],
  ["Schweizer Kontext","nDSG, FINMA, kantonale Regulierungen. Wir kennen den Schweizer Rechts- und Geschäftskontext aus der täglichen Praxis.","shield"],
@@ -439,6 +452,7 @@ const POSTS=[{k:"Blog",d:"15. September 2026",t:"Ransomware 2026: Neue Angriffsw
  {k:"Event",d:"November 2026",t:"CYSPA Roundtable: Cyber Resilience 2027",p:"Exklusiver Austausch für CISOs und Security-Verantwortliche über die grössten Herausforderungen im kommenden Jahr.",c:"Platz reservieren",cv:"c3"}];
 const PAPERS=[["Whitepaper, PDF","Cyber Security Leitfaden für Schweizer KMU","Praktischer Leitfaden mit Schritt-für-Schritt-Anleitungen für die wichtigsten Sicherheitsmassnahmen, ohne IT-Studium."],["Checkliste, PDF","nDSG-Compliance-Checkliste","Die 30 wichtigsten Massnahmen, die Schweizer Unternehmen für die nDSG-Konformität umsetzen müssen."],["Flyer, PDF","CYSPA Serviceprofil","Übersicht aller CYSPA-Dienstleistungen, Referenzen und Zertifizierungen für Ihre Evaluation."]];
 const ABOUT=[["unternehmen","Unternehmen"],["porträt","Porträt: Zahlen und Fakten"],["team","Team"],["mission","Mission, Vision und Purpose"],["referenzen","Referenzen"],["zertifizierungen","Zertifizierungen"],["partner","Partner"]];
+const SPARRING=[["sparring","Sparringpartner"],["basic-check","Cyber Security Check"]];
 const INSIGHTS=[["aktuelles","Aktuelles"],["blog","Blog"],["events","Events"],["whitepaper","Whitepaper und Unterlagen"]];
 ABOUT[1][0]="portraet";
 
@@ -476,7 +490,7 @@ P.home=()=>`
   <div><div class="badge">Cyber Security Partners, Rotkreuz</div>
   <h1 class="display">Digitale Sicherheit auf <em class="y">Schweizer Niveau</em>.</h1>
   <p class="hero-sub">Prävention und Resilienz aus einer Hand. Wir unterstützen Unternehmen dabei, Cyberrisiken frühzeitig zu erkennen, wirksame Schutzmassnahmen umzusetzen und ihre Reaktionsfähigkeit bei Sicherheitsvorfällen systematisch zu stärken.</p>
-  <div class="hero-btns"><a href="#kontakt" class="btn">Kostenlosen Basic Check starten ${ARR}</a><a href="#dienstleistungen" class="btn-ghost">Dienstleistungen entdecken</a></div></div>
+  <div class="hero-btns"><a href="#basic-check" class="btn">Kostenlosen Basic Check starten ${ARR}</a><a href="#dienstleistungen" class="btn-ghost">Dienstleistungen entdecken</a></div></div>
   <div class="facts">
    <div class="fact"><span class="fact-num">100<em>+</em></span><span class="fact-lbl">Kunden in der Schweiz</span><p class="fact-sub">Von kritischen Infrastrukturen bis zum dynamischen KMU.</p></div>
    <div class="facts-row"><div class="fact"><span class="fact-num">100<em>%</em></span><span class="fact-lbl">Unabhängig</span><p class="fact-sub">Kein Hersteller, kein Produktdruck.</p></div><div class="fact"><span class="fact-num">125<em>+</em></span><span class="fact-lbl">Jahre Erfahrung</span><p class="fact-sub">Kombiniert im Team mehr als 125 Jahre Erfahrung.</p></div></div>
@@ -494,12 +508,7 @@ P.home=()=>`
 <section class="bg-gray"><div class="con">${headSplit("Dienstleistungen","Prävention und Resilienz aus einer Hand.","Unsere Leistungen sind auf drei strategische Ziele ausgerichtet: Risiken erkennen, Schutzmassnahmen umsetzen, Widerstandsfähigkeit stärken.")}
  <div class="grid3">${SERVICES.map(svcCard).join("")}</div></div></section>
 
-<section><div class="con two-col">
- <div>${lbl("Sparringpartner")}<h2>Strategische Sicherheitsberatung auf Augenhöhe.</h2><p class="lede" style="margin-top:22px">Als unabhängiger Sparringpartner unterstützen wir Geschäftsleitungen und Verwaltungsräte bei strategischen Entscheidungen zur Cybersicherheit. Ohne Interessenkonflikt, ohne Produktabhängigkeiten, ohne verdeckte Agenda.</p>
-  <div style="margin-top:32px"><a href="#kontakt" class="btn">Kostenlosen Basic Check starten ${ARR}</a></div></div>
- <div class="panel-navy"><p class="quote">Endlich ein Berater, der nicht verkauft, sondern berät. CYSPA gibt uns die ehrliche Einschätzung, die wir von einem Hersteller nie bekämen.</p><p style="margin-top:14px;font-size:13px;font-weight:700;color:#fff">CTO, Schweizer KMU, Finanzdienstleistungen</p>
-  <div class="vals">${[["Unabhängige Sicherheitsbeurteilung","Ehrliche Standortbestimmung ohne kommerziellen Bias."],["VR- und GL-Beratung","Sicherheitslagen verständlich erklären und entscheidungsreif aufbereiten."],["Persönliche Senior-Expertise","Sie arbeiten direkt mit erfahrenen Beraterinnen und Beratern."],["Kostenloser Basic Check","Erste Einschätzung Ihrer Sicherheitslage, ohne Kosten und ohne Verpflichtung."]].map(v=>`<div class="val"><span class="dot">${CHK}</span><div><b>${v[0]}</b><span>${v[1]}</span></div></div>`).join("")}</div></div>
-</div></section>
+${sparringSec()}
 
 <section class="bg-navy"><div class="con">${lbl("Porträt")}<h2 style="margin-bottom:48px">CYSPA in Zahlen.</h2>${statsBlock()}</div></section>
 
@@ -537,7 +546,13 @@ P.karriere=()=>`<section class="hero"><div class="con hero-inner"><div><div clas
  <section class="bg-navy"><div class="con">${headSplit("Bewerbungsprozess","In 4 Schritten ins Team.","Klar strukturiert und mit einer verbindlichen Rückmeldung innerhalb von 5 Arbeitstagen.")}${steps()}<div style="margin-top:48px;text-align:center"><a href="#kontakt" class="btn">Spontanbewerbung senden ${ARR}</a></div></div></section>`;
 
 P.insights=()=>pageHero({title:"Wissen, das wirkt.",lead:"Aktuelle Beiträge, praxisnahe Erkenntnisse und Branchentrends aus der Feder unserer Experten.",sub:subnav(INSIGHTS)})+`<section class="bg-gray"><div class="con"><div class="grid3">${POSTS.map(post).join("")}</div></div></section><section><div class="con">${headSplit("Whitepaper und Unterlagen","Kostenlose Ressourcen für Ihr Team.","Praxisnahe Leitfäden, Checklisten und Whitepaper, kostenlos verfügbar nach kurzer Registrierung.")}${papers()}</div></section>`;
-function papers(){return `<div class="grid3">${PAPERS.map(p=>`<div class="card hov"><span class="pill">${p[0]}</span><h4>${p[1]}</h4><p>${p[2]}</p><div class="card-foot"><a href="#kontakt" class="btn-link">Kostenlos anfordern</a>${ARR}</div></div>`).join("")}</div>`}
+const sparringSec=()=>`<section><div class="con two-col">
+ <div>${lbl("Sparringpartner")}<h2>Strategische Sicherheitsberatung auf Augenhöhe.</h2><p class="lede" style="margin-top:22px">Als unabhängiger Sparringpartner unterstützen wir Geschäftsleitungen und Verwaltungsräte bei strategischen Entscheidungen zur Cybersicherheit. Ohne Interessenkonflikt, ohne Produktabhängigkeiten, ohne verdeckte Agenda.</p>
+  <div style="margin-top:32px"><a href="#basic-check" class="btn">Kostenlosen Basic Check starten ${ARR}</a></div></div>
+ <div class="panel-navy"><p class="quote">Endlich ein Berater, der nicht verkauft, sondern berät. CYSPA gibt uns die ehrliche Einschätzung, die wir von einem Hersteller nie bekämen.</p><p style="margin-top:14px;font-size:13px;font-weight:700;color:#fff">CTO, Schweizer KMU, Finanzdienstleistungen</p>
+  <div class="vals">${[["Unabhängige Sicherheitsbeurteilung","Ehrliche Standortbestimmung ohne kommerziellen Bias."],["VR- und GL-Beratung","Sicherheitslagen verständlich erklären und entscheidungsreif aufbereiten."],["Persönliche Senior-Expertise","Sie arbeiten direkt mit erfahrenen Beraterinnen und Beratern."],["Kostenloser Basic Check","Erste Einschätzung Ihrer Sicherheitslage, ohne Kosten und ohne Verpflichtung."]].map(v=>`<div class="val"><span class="dot">${CHK}</span><div><b>${v[0]}</b><span>${v[1]}</span></div></div>`).join("")}</div></div>
+</div></section>`;
+function papers(){return `<div class="grid3">${PAPERS.map(p=>`<div class="card hov"><span class="pill">${p[0]}</span><h4>${p[1]}</h4><p>${p[2]}</p><div class="card-foot"><button type="button" class="btn-link dl" data-doc="${p[1]}" style="background:none;border:0;padding:0;cursor:pointer">Kostenlos herunterladen</button>${ARR}</div></div>`).join("")}</div>`}
 const insHero=(id,title,lead)=>pageHero({crumb:`<a href="#insights">Insights</a> / ${title}`,title,lead,sub:subnav(INSIGHTS,id)});
 P.aktuelles=()=>insHero("aktuelles","Aktuelles","Neuigkeiten aus CYSPA und zur Sicherheitslage in der Schweiz.")+`<section class="bg-gray"><div class="con"><div class="grid3">${post(POSTS[1])}</div></div></section>`;
 P.blog=()=>insHero("blog","Blog","Fachbeiträge zu Informationssicherheit, Regulierung und Praxis.")+`<section class="bg-gray"><div class="con"><div class="grid3">${post(POSTS[0])}</div></div></section>`;
@@ -575,16 +590,22 @@ function mapSVG(){return `<svg class="map-svg" viewBox="0 0 800 420" role="img" 
 <rect x="408" y="128" width="190" height="44" rx="6" fill="#fff" stroke="#e6e6e6"/><text x="420" y="147" font-family="Raleway,sans-serif" font-size="13" font-weight="800" fill="#1a1a1a">CYSPA</text><text x="420" y="163" font-family="Raleway,sans-serif" font-size="11.5" font-weight="600" fill="#5a5a5a">Erlenstrasse 4B</text>
 <text x="785" y="410" text-anchor="end" font-family="Raleway,sans-serif" font-size="10" fill="#8a8a8a">Schematische Darstellung</text></svg>`}
 
-const TITLES={home:"Startseite",dienstleistungen:"Dienstleistungen","ueber-uns":"Über uns",karriere:"Karriere",insights:"Insights",kontakt:"Kontakt",...Object.fromEntries(ABOUT),...Object.fromEntries(INSIGHTS)};
+P.sparring=()=>pageHero({title:"Sparringpartner",lead:"Unabhängige Sicherheitsberatung für Geschäftsleitung und Verwaltungsrat.",sub:subnav(SPARRING,"sparring")})+sparringSec()+`<section class="bg-gray"><div class="con">${headSplit("Warum CYSPA","Was uns von anderen unterscheidet.","Sechs Prinzipien, die jede unserer Entscheidungen leiten.")}${whyGrid()}</div></section>`;
+P["basic-check"]=()=>pageHero({crumb:`<a href="#sparring">Sparring</a> / Cyber Security Check`,title:"Kostenloser Basic Check",lead:"Unsere Senior Consultants geben Ihnen in 30 Minuten eine ehrliche Einschätzung Ihrer Sicherheitslage, ohne Obligation und ohne Verkaufsgespräch.",sub:subnav(SPARRING,"basic-check")})+
+ `<section><div class="con two-col" style="align-items:start"><div>${lbl("So läuft der Basic Check ab")}<div class="vals" style="margin-top:0">${[["Termin vereinbaren","Sie wählen Ihre Ansprechperson und schlagen einen Termin vor."],["30 Minuten Gespräch","Wir besprechen Ihre Systeme, Prozesse und Pflichten."],["Ehrliche Einschätzung","Sie erhalten eine erste Beurteilung Ihrer Sicherheitslage und die wichtigsten nächsten Schritte."]].map((v,i)=>`<div class="val" style="border-color:var(--border)"><span class="dot" style="background:rgba(255,192,0,.15);color:var(--navy);font-weight:800">${i+1}</span><div><b style="color:var(--heading)">${v[0]}</b><span>${v[1]}</span></div></div>`).join("")}</div>
+ <div style="margin-top:32px"><a href="#kontakt" class="btn" data-topic="Kostenloser Basic Check">Basic Check anfragen ${ARR}</a></div></div>
+ <div class="panel-navy"><h3>Was Sie erwarten dürfen</h3><div class="vals">${["Senior Experten Pool","100 % unabhängig, ohne Produktbindung","Antwort innerhalb von 48 Stunden","Kostenlos und unverbindlich"].map(v=>`<div class="val"><span class="dot">${CHK}</span><div><b>${v}</b></div></div>`).join("")}</div></div></div></section>`;
+
+const TITLES={home:"Startseite",sparring:"Sparringpartner","basic-check":"Cyber Security Check",dienstleistungen:"Dienstleistungen","ueber-uns":"Über uns",karriere:"Karriere",insights:"Insights",kontakt:"Kontakt",...Object.fromEntries(ABOUT),...Object.fromEntries(INSIGHTS)};
 SERVICES.forEach(s=>TITLES[s.id]=s.title);
-const GROUP=id=>SERVICES.some(s=>s.id===id)||id==="dienstleistungen"?"svc":ABOUT.some(a=>a[0]===id)||id==="ueber-uns"?"about":INSIGHTS.some(a=>a[0]===id)||id==="insights"?"ins":id;
+const GROUP=id=>SERVICES.some(s=>s.id===id)||id==="dienstleistungen"?"svc":ABOUT.some(a=>a[0]===id)||id==="ueber-uns"?"about":INSIGHTS.some(a=>a[0]===id)||id==="insights"?"ins":SPARRING.some(a=>a[0]===id)?"spar":id;
 
 /* Navigation und Fusszeile */
-const NAV=[["dienstleistungen","Dienstleistungen","svc",SERVICES.map(s=>[s.id,s.title])],["ueber-uns","Über uns","about",ABOUT],["karriere","Karriere","karriere"],["insights","Insights","ins",INSIGHTS],["kontakt","Kontakt","kontakt"]];
+const NAV=[["dienstleistungen","Dienstleistungen","svc",SERVICES.map(s=>[s.id,s.title])],["ueber-uns","Über uns","about",ABOUT],["sparring","Sparring","spar",SPARRING],["karriere","Karriere","karriere"],["insights","Insights","ins",INSIGHTS],["kontakt","Kontakt","kontakt"]];
 const navEl=document.getElementById("nav-links");
-navEl.innerHTML=NAV.map(n=>`<div class="nav-item"><a href="#${n[0]}" data-g="${n[2]}">${n[1]}${n[3]?' <span class="caret">▾</span>':""}</a>${n[3]?`<div class="drop">${n[3].map(([i,t])=>`<a href="#${i}">${t}</a>`).join("")}</div>`:""}</div>`).join("")+`<a href="#kontakt" class="btn nav-cta mob">Kostenloser Basic Check</a>`;
-document.getElementById("ft-grid").innerHTML=`<div><a href="#home" class="logo" aria-label="CYSPA Startseite">${logoSVG(true)}</a><p style="margin-top:16px;max-width:30ch">Cyber Security Partners GmbH. Ihr unabhängiger Schweizer Cybersecurity-Experte.</p><p style="margin-top:14px">info@cyspa.ch<br>+41 41 521 61 61</p></div>`+
- [["Dienstleistungen",SERVICES.map(s=>[s.id,s.title])],["Über uns",ABOUT],["Insights und Kontakt",[...INSIGHTS,["karriere","Karriere"],["kontakt","Kontakt"]]]].map(c=>`<div><h4>${c[0]}</h4><ul>${c[1].map(([i,t])=>`<li><a href="#${i}">${t}</a></li>`).join("")}</ul></div>`).join("");
+navEl.innerHTML=NAV.map(n=>`<div class="nav-item"><a href="#${n[0]}" data-g="${n[2]}">${n[1]}${n[3]?' <span class="caret">▾</span>':""}</a>${n[3]?`<div class="drop">${n[3].map(([i,t])=>`<a href="#${i}">${t}</a>`).join("")}</div>`:""}</div>`).join("")+`<a href="#basic-check" class="btn nav-cta mob">Kostenloser Basic Check</a>`;
+document.getElementById("ft-grid").innerHTML=`<div><a href="#home" class="logo" aria-label="CYSPA Startseite">${logoSVG(true)}</a><p style="margin-top:16px;max-width:30ch">Cyber Security Partners GmbH. Ihr unabhängiger Schweizer Cybersecurity-Experte.</p><p style="margin-top:14px">info@cyspa.ch<br>+41 41 521 61 61</p><p style="margin-top:14px"><a href="https://www.linkedin.com/company/cyspa/" target="_blank" rel="noopener" style="color:#fff;font-weight:700">LinkedIn</a></p></div>`+
+ [["Dienstleistungen",SERVICES.map(s=>[s.id,s.title])],["Über uns",ABOUT],["Insights und Kontakt",[...INSIGHTS,...SPARRING,["karriere","Karriere"],["kontakt","Kontakt"]]]].map(c=>`<div><h4>${c[0]}</h4><ul>${c[1].map(([i,t])=>`<li><a href="#${i}">${t}</a></li>`).join("")}</ul></div>`).join("");
 document.getElementById("cta-trust").innerHTML=["Senior Experten Pool","100 % unabhängig","Antwort in 48 Stunden"].map(t=>`<span>${CHK}${t}</span>`).join("");
 
 const app=document.getElementById("app"),menuBtn=document.getElementById("menu-btn");
@@ -601,11 +622,20 @@ function render(){
   navEl.classList.remove("open");menuBtn.setAttribute("aria-expanded","false");
   app.querySelectorAll(".filters button").forEach(b=>b.addEventListener("click",()=>{app.querySelectorAll(".filters button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));const f=b.dataset.filter;app.querySelectorAll(".job").forEach(j=>j.hidden=!(f==="all"||j.dataset.dept===f))}));
   app.querySelectorAll(".pick").forEach(b=>b.addEventListener("click",()=>{const s=document.getElementById("f-to");if(s){s.value=b.dataset.to;document.getElementById("form-sec").scrollIntoView({behavior:"smooth"});setTimeout(()=>document.getElementById("f-vn").focus({preventScroll:true}),400);}}));
+  app.querySelectorAll(".dl").forEach(b=>b.addEventListener("click",()=>{document.getElementById("dl-doc").textContent=b.dataset.doc;document.getElementById("dl-ok").hidden=true;modal.hidden=false;document.getElementById("d-vn").focus()}));
+  if(pendingTopic){const s=document.getElementById("f-th");if(s)s.value=pendingTopic;pendingTopic=null;}
+  app.querySelectorAll("[data-topic]").forEach(a=>a.addEventListener("click",()=>{pendingTopic=a.dataset.topic}));
   const f=document.getElementById("contact-form");
   if(f)f.addEventListener("submit",e=>{e.preventDefault();document.getElementById("form-ok").hidden=false});
   if((location.hash)==="#stellen"){const s=document.getElementById("stellen-sec");if(s){s.scrollIntoView();return;}}
   window.scrollTo(0,0);
 }
+let pendingTopic=null;
+const modal=document.getElementById("dl-modal");
+document.getElementById("dl-close").addEventListener("click",()=>{modal.hidden=true});
+modal.addEventListener("click",e=>{if(e.target===modal)modal.hidden=true});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")modal.hidden=true});
+document.getElementById("dl-form").addEventListener("submit",e=>{e.preventDefault();document.getElementById("dl-ok").hidden=false});
 window.addEventListener("hashchange",render);
 render();
 </script>
