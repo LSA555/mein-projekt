@@ -310,7 +310,10 @@ form.contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .cta-trust span{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:rgba(255,255,255,.72)}
 .cta-trust svg{color:var(--yellow);width:14px;height:14px}
 .cta-r{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
-.cta-contact{margin-top:10px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);display:grid;gap:6px;font-size:14px;color:rgba(255,255,255,.72)}
+.cta-contact{margin-top:18px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);display:grid;gap:12px;font-size:14px;color:rgba(255,255,255,.75);width:100%}
+.cta-contact span{display:flex;align-items:center;gap:12px}
+.cta-contact svg{color:var(--yellow);flex:none}
+.cta-main{width:100%;max-width:300px;justify-content:center;padding-block:20px}
 .btn-outline-y{background:transparent;color:var(--yellow);border-color:var(--yellow)}
 @media (max-width:1000px){.cta-in{grid-template-columns:1fr;gap:40px}}
 
@@ -354,15 +357,15 @@ footer .logo{color:#fff}
 <section class="cta-sec" id="cta">
   <div class="con cta-in">
     <div>
-      <span class="sec-lbl">Basic Check</span>
-      <h2>Bereit für Ihre Sicherheitsstrategie?</h2>
-      <p class="lede">Starten Sie mit einem kostenlosen Basic Check. Unsere Senior Consultants geben Ihnen in 30 Minuten eine ehrliche Einschätzung Ihrer Sicherheitslage, ohne Obligation und ohne Verkaufsgespräch.</p>
+      <span class="sec-lbl">Jetzt handeln</span>
+      <h2>Wie sicher ist Ihr Unternehmen wirklich?</h2>
+      <p class="lede">Unser kostenloser IT Security Basic Check gibt Ihnen in 60 Minuten Klarheit über Ihre aktuelle Sicherheitslage, ohne Verpflichtungen, ohne Vendor Pitch.</p>
       <div class="cta-trust" id="cta-trust"></div>
     </div>
     <div class="cta-r">
-      <a href="#basic-check" class="btn">Kostenlosen Basic Check starten <svg class="arr" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="#kontakt" class="btn btn-outline-y">Direkt Kontakt aufnehmen</a>
-      <div class="cta-contact"><span>info@cyspa.ch</span><span>+41 41 521 61 61</span></div>
+      <a href="#basic-check" class="btn cta-main">Kostenloser Basic Check <svg class="arr" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#kontakt" class="btn btn-outline-y cta-main">Beratungsgespräch anfragen</a>
+      <div class="cta-contact"><span><svg viewBox="0 0 16 16" fill="none" width="16" height="16" aria-hidden="true"><path d="M3.5 2.5h2.2l1 3-1.5 1c.8 1.7 2 2.9 3.8 3.8l1-1.5 3 1v2.2c0 .6-.5 1-1 1C6.8 13 3 9.2 2.5 3.5c0-.5.4-1 1-1z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>+41 41 521 61 61</span><span><svg viewBox="0 0 16 16" fill="none" width="16" height="16" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="1.2" stroke="currentColor" stroke-width="1.3"/><path d="M2.5 4.5L8 9l5.5-4.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>info@cyspa.ch</span><span><svg viewBox="0 0 16 16" fill="none" width="16" height="16" aria-hidden="true"><path d="M2.5 7.5L8 3l5.5 4.5V13H2.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Erlenstrasse 4B, CH-6343 Rotkreuz</span></div>
     </div>
   </div>
 </section>
@@ -595,10 +598,10 @@ function mapSVG(){return `<svg class="map-svg" viewBox="0 0 800 420" role="img" 
 <text x="785" y="410" text-anchor="end" font-family="Raleway,sans-serif" font-size="10" fill="#8a8a8a">Schematische Darstellung</text></svg>`}
 
 P.sparring=()=>pageHero({title:"Sparringpartner",lead:"Unabhängige Sicherheitsberatung für Geschäftsleitung und Verwaltungsrat.",sub:subnav(SPARRING,"sparring")})+sparringSec()+`<section class="bg-gray"><div class="con">${headSplit("Warum CYSPA","Was uns von anderen unterscheidet.","Sechs Prinzipien, die jede unserer Entscheidungen leiten.")}${whyGrid()}</div></section>`;
-P["basic-check"]=()=>pageHero({crumb:`<a href="#sparring">Sparring</a> / Cyber Security Check`,title:"Kostenloser Basic Check",lead:"Unsere Senior Consultants geben Ihnen in 30 Minuten eine ehrliche Einschätzung Ihrer Sicherheitslage, ohne Obligation und ohne Verkaufsgespräch.",sub:subnav(SPARRING,"basic-check")})+
- `<section><div class="con two-col" style="align-items:start"><div>${lbl("So läuft der Basic Check ab")}<div class="vals" style="margin-top:0">${[["Termin vereinbaren","Sie wählen Ihre Ansprechperson und schlagen einen Termin vor."],["30 Minuten Gespräch","Wir besprechen Ihre Systeme, Prozesse und Pflichten."],["Ehrliche Einschätzung","Sie erhalten eine erste Beurteilung Ihrer Sicherheitslage und die wichtigsten nächsten Schritte."]].map((v,i)=>`<div class="val" style="border-color:var(--border)"><span class="dot" style="background:rgba(255,192,0,.15);color:var(--navy);font-weight:800">${i+1}</span><div><b style="color:var(--heading)">${v[0]}</b><span>${v[1]}</span></div></div>`).join("")}</div>
+P["basic-check"]=()=>pageHero({crumb:`<a href="#sparring">Sparring</a> / Cyber Security Check`,title:"Kostenloser Basic Check",lead:"Unser kostenloser IT Security Basic Check gibt Ihnen in 60 Minuten Klarheit über Ihre aktuelle Sicherheitslage, ohne Verpflichtungen, ohne Vendor Pitch.",sub:subnav(SPARRING,"basic-check")})+
+ `<section><div class="con two-col" style="align-items:start"><div>${lbl("So läuft der Basic Check ab")}<div class="vals" style="margin-top:0">${[["Termin vereinbaren","Sie wählen Ihre Ansprechperson und schlagen einen Termin vor."],["60 Minuten Erstgespräch","Wir besprechen Ihre Systeme, Prozesse und Pflichten."],["Ehrliche Einschätzung","Sie erhalten eine erste Beurteilung Ihrer Sicherheitslage und die wichtigsten nächsten Schritte."]].map((v,i)=>`<div class="val" style="border-color:var(--border)"><span class="dot" style="background:rgba(255,192,0,.15);color:var(--navy);font-weight:800">${i+1}</span><div><b style="color:var(--heading)">${v[0]}</b><span>${v[1]}</span></div></div>`).join("")}</div>
  <div style="margin-top:32px"><a href="#kontakt" class="btn" data-topic="Kostenloser Basic Check">Basic Check anfragen ${ARR}</a></div></div>
- <div class="panel-navy"><h3>Was Sie erwarten dürfen</h3><div class="vals">${["Senior Experten Pool","100 % unabhängig, ohne Produktbindung","Antwort innerhalb von 48 Stunden","Kostenlos und unverbindlich"].map(v=>`<div class="val"><span class="dot">${CHK}</span><div><b>${v}</b></div></div>`).join("")}</div></div></div></section>`;
+ <div class="panel-navy"><h3>Was Sie erwarten dürfen</h3><div class="vals">${["60 Minuten Erstgespräch","Kostenlos und unverbindlich","Senior Experte direkt","nDSG-konform","100 % unabhängig, ohne Produktbindung"].map(v=>`<div class="val"><span class="dot">${CHK}</span><div><b>${v}</b></div></div>`).join("")}</div></div></div></section>`;
 
 const TITLES={home:"Startseite",sparring:"Sparringpartner","basic-check":"Cyber Security Check",dienstleistungen:"Dienstleistungen","ueber-uns":"Über uns",karriere:"Karriere",insights:"Insights",kontakt:"Kontakt",...Object.fromEntries(ABOUT),...Object.fromEntries(INSIGHTS)};
 SERVICES.forEach(s=>TITLES[s.id]=s.title);
@@ -610,7 +613,7 @@ const navEl=document.getElementById("nav-links");
 navEl.innerHTML=NAV.map(n=>`<div class="nav-item"><a href="#${n[0]}" data-g="${n[2]}">${n[1]}${n[3]?' <span class="caret">▾</span>':""}</a>${n[3]?`<div class="drop">${n[3].map(([i,t])=>`<a href="#${i}">${t}</a>`).join("")}</div>`:""}</div>`).join("")+`<a href="#basic-check" class="btn nav-cta mob">Kostenloser Basic Check</a>`;
 document.getElementById("ft-grid").innerHTML=`<div><a href="#home" class="logo" aria-label="CYSPA Startseite">${logoSVG(true)}</a><p style="margin-top:16px;max-width:30ch">Cyber Security Partners GmbH. Ihr unabhängiger Schweizer Cybersecurity-Experte.</p><p style="margin-top:14px">info@cyspa.ch<br>+41 41 521 61 61</p><p style="margin-top:14px"><a href="https://www.linkedin.com/company/cyspa/" target="_blank" rel="noopener" style="color:#fff;font-weight:700">LinkedIn</a></p></div>`+
  [["Dienstleistungen",SERVICES.map(s=>[s.id,s.title])],["Über uns",ABOUT],["Insights und Kontakt",[...INSIGHTS,...SPARRING,["karriere","Karriere"],["kontakt","Kontakt"]]]].map(c=>`<div><h4>${c[0]}</h4><ul>${c[1].map(([i,t])=>`<li><a href="#${i}">${t}</a></li>`).join("")}</ul></div>`).join("");
-document.getElementById("cta-trust").innerHTML=["Senior Experten Pool","100 % unabhängig","Antwort in 48 Stunden"].map(t=>`<span>${CHK}${t}</span>`).join("");
+document.getElementById("cta-trust").innerHTML=["60 Minuten Erstgespräch","Kostenlos und unverbindlich","Senior Experte direkt","nDSG-konform"].map(t=>`<span>${CHK}${t}</span>`).join("");
 
 const app=document.getElementById("app"),menuBtn=document.getElementById("menu-btn");
 menuBtn.addEventListener("click",()=>{const o=navEl.classList.toggle("open");menuBtn.setAttribute("aria-expanded",String(o))});
