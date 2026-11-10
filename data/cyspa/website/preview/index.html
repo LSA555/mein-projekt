@@ -215,13 +215,13 @@ a.card:hover,.card.hov:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);
 @media (max-width:1000px){.two-col{grid-template-columns:1fr;gap:44px}}
 
 /* Kennzahlen hell */
-.stats{display:grid;grid-template-columns:repeat(4,1fr)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr)}
 .stat{padding:8px 28px;border-left:1px solid rgba(255,255,255,.14)}
 .stat:first-child{border-left:none;padding-left:0}
 .stat b{display:block;font-size:clamp(44px,5vw,64px);font-weight:800;color:#fff;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
 .stat b em{color:var(--yellow);font-style:normal;font-weight:300}
 .stat .fact-lbl{display:block;margin:14px 0 6px}
-@media (max-width:800px){.stats{grid-template-columns:1fr 1fr;row-gap:32px}.stat:nth-child(3){border-left:none;padding-left:0}}
+@media (max-width:700px){.stats{grid-template-columns:1fr;row-gap:28px}.stat{border-left:none;padding-left:0}}
 
 /* Kundenlogos als Wortmarken */
 .logo-wall{display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--border);border-left:1px solid var(--border)}
@@ -463,7 +463,7 @@ const svcCard=(s,i)=>`<a class="card" href="#${s.id}"><div class="card-top"><spa
 const ticker=()=>{const row=CUSTOMERS.slice(0,14).map(c=>`<span>${c}</span><i></i>`).join("");return `<div class="ticker" aria-label="Kunden"><div class="ticker-track">${row}${row}</div></div>`};
 const logoWall=list=>`<div class="logo-wall">${list.map(c=>`<div>${c}</div>`).join("")}</div>`;
 const post=p=>`<a class="post" href="#${p.k==="Blog"?"blog":p.k==="Event"?"events":"aktuelles"}"><div class="post-cover ${p.cv}"><span>${p.k}</span></div><div class="post-body"><time>${p.d}</time><h3>${p.t}</h3><p>${p.p}</p><span class="btn-link">${p.c}</span></div></a>`;
-const statsBlock=()=>`<div class="stats"><div class="stat"><b>100<em>+</em></b><span class="fact-lbl">Kunden</span><span>in der Schweiz</span></div><div class="stat"><b>6</b><span class="fact-lbl">Disziplinen</span><span>vollständiges Security-Portfolio</span></div><div class="stat"><b>100<em>%</em></b><span class="fact-lbl">Unabhängig</span><span>keine Hersteller- oder Produktbindung</span></div><div class="stat"><b>125<em>+</em></b><span class="fact-lbl">Jahre Erfahrung</span><span>kombiniert im Team, mehr als 125 Jahre</span></div></div>`;
+const statsBlock=()=>`<div class="stats"><div class="stat"><b>100<em>+</em></b><span class="fact-lbl">Kunden</span><span>in der Schweiz</span></div><div class="stat"><b>100<em>%</em></b><span class="fact-lbl">Unabhängig</span><span>keine Hersteller- oder Produktbindung</span></div><div class="stat"><b>125<em>+</em></b><span class="fact-lbl">Jahre Erfahrung</span><span>kombiniert im Team, mehr als 125 Jahre</span></div></div>`;
 const whyGrid=()=>`<div class="grid3">${WHY.map((w,i)=>`<div class="card hov"><div class="card-top"><span class="ico">${ICONS[w[2]]}</span><span class="card-num">0${i+1}</span></div><h4>${w[0]}</h4><p>${w[1]}</p></div>`).join("")}</div>`;
 const jobsBlock=()=>`<div class="filters" role="group" aria-label="Stellen filtern">${["Alle Stellen","Consulting","Testing","CISO","Audits","Awareness"].map((f,i)=>`<button type="button" data-filter="${i?f:"all"}" aria-pressed="${i===0}">${f}</button>`).join("")}</div><div class="jobs">${JOBS.map(j=>`<a class="job" href="#kontakt" data-dept="${j[1]}"><div><span class="job-cat">${j[2]}</span><div class="job-title">${j[0]}</div></div><div class="m1"><span class="meta-lbl">Standort</span><span class="meta-val">${j[3]}</span></div><div class="m2"><span class="meta-lbl">Pensum</span><span class="meta-val">${j[4]}</span></div><span class="job-arr">${ARR}</span></a>`).join("")}</div>`;
 const steps=()=>`<div class="steps">${[["Spontanbewerbung","Formlos per E-Mail an careers@cyspa.ch, mit CV und einem kurzen Satz, warum CYSPA."],["Erstgespräch","30 Minuten Videokonferenz mit einem Partner. Kennenlernen, nicht testen."],["Fachgespräch","Vertieftes technisches oder strategisches Gespräch je nach Rolle."],["Angebot","Rasche Entscheidung und konkretes Angebot innerhalb von 5 Arbeitstagen."]].map((s,i)=>`<div class="step"><div class="step-num">0${i+1}</div><h4>${s[0]}</h4><p>${s[1]}</p></div>`).join("")}</div>`;
@@ -509,7 +509,7 @@ P.home=()=>`
 
 <section><div class="con">${headSplit("Insights","Wissen, das wirkt.","Aktuelle Beiträge, praxisnahe Erkenntnisse und Branchentrends aus der Feder unserer Experten.")}<div class="grid3">${POSTS.map(post).join("")}</div><div style="margin-top:32px"><a href="#insights" class="btn btn-outline">Alle Beiträge lesen</a></div></div></section>`;
 
-P.dienstleistungen=()=>pageHero({title:"Dienstleistungen",lead:"Sechs Disziplinen, ein Senior Experten Pool. Vom strategischen CISO-Mandat bis zum technischen Penetrationstest.",sub:subnav(SERVICES.map(s=>[s.id,s.title]))})+`<section class="bg-gray"><div class="con"><div class="grid3">${SERVICES.map(svcCard).join("")}</div></div></section>`;
+P.dienstleistungen=()=>pageHero({title:"Dienstleistungen",lead:"Ein Senior Experten Pool für Ihre Informationssicherheit. Vom strategischen CISO-Mandat bis zum technischen Penetrationstest.",sub:subnav(SERVICES.map(s=>[s.id,s.title]))})+`<section class="bg-gray"><div class="con"><div class="grid3">${SERVICES.map(svcCard).join("")}</div></div></section>`;
 
 SERVICES.forEach(s=>{P[s.id]=()=>pageHero({crumb:`<a href="#dienstleistungen">Dienstleistungen</a> / ${s.title}`,tags:s.kicker.split(", "),title:s.title,lead:s.lead,sub:subnav(SERVICES.map(x=>[x.id,x.title]),s.id)})+
  `<section><div class="con svc-layout"><div>${headSplit("Leistungen","Was wir für Sie tun.","")}<div class="grid2">${s.offers.map(o=>`<div class="card hov"><h4>${o[0]}</h4><p>${o[1]}</p><ul class="checks">${o[2].map(i=>`<li>${i}</li>`).join("")}</ul></div>`).join("")}</div></div>
