@@ -392,11 +392,11 @@ const PEOPLE={
  MR:{name:"Michael Russo",role:"Managing Director, vCISO",certs:["CISSP","ISO 27001 LA","CISM"],cover:"",tag:"Managing Director",photo:"Michael",quote:"Bei CYSPA arbeite ich an echten, komplexen Sicherheitsprojekten. Kein Produktvertrieb, keine Kompromisse, nur echter Mehrwert für unsere Kunden."},
  RF:{phbox:true,name:"Rodney Fortune",role:"Senior Cybersecurity Consultant und vCISO",certs:[],cover:"vc2",tag:"vCISO",quote:"",desc:"Ihr Ansprechpartner für CISO-Mandate und strategische Sicherheitsberatung."},
  LW:{name:"Leila Weber",role:"Sales und Business Development",certs:[],cover:"vc4",tag:"Ihr Erstkontakt",quote:"",photo:"Leila",desc:"Ihre Ansprechpartnerin für Erstgespräche, Offerten und neue Zusammenarbeiten. Sie klärt Ihr Anliegen und bringt Sie mit den passenden Fachexperten zusammen."},
- CT:{name:"CYSPA Fachteam",role:"Senior Consultants",certs:[],cover:"vc3",tag:"Fachteam",quote:"",desc:"Unsere Senior Consultants dieses Fachbereichs begleiten Ihr Mandat von der Analyse bis zur Umsetzung."}
+ CT:{name:"CYSPA Team",role:"Senior Consultants",certs:[],cover:"vc3",tag:"Team",quote:"",desc:"Unsere Senior Consultants dieses Fachbereichs begleiten Ihr Mandat von der Analyse bis zur Umsetzung."}
 };
 
 const SERVICES=[
- {id:"ciso",title:"CISO as a Service",short:"CISO as a Service",kicker:"Strategisch, Operativ",icon:"user",person:"MR",
+ {id:"ciso",title:"CISO as a Service",short:"CISO as a Service",kicker:"Strategisch, Operativ",icon:"user",person:"RF",
   lead:"Externe Übernahme der CISO-Funktion auf Mandatsbasis. Wir steuern Ihre Informationssicherheit strategisch und operativ, verbinden Management-Beratung mit Risiko- und Compliance-Management und entlasten die Geschäftsleitung mit klaren Berichten und Entscheidungsgrundlagen.",
   offers:[["Strategische Sicherheitsberatung","Aufbau und Weiterentwicklung des Informationssicherheitsmanagements auf Führungsebene.",["Sicherheitsstrategie und Roadmap","Steuerung von Sicherheitsmassnahmen","Unterstützung der Geschäftsleitung"]],
    ["Risiko- und Compliance-Management","Strukturiertes Management von Cyberrisiken und regulatorischen Anforderungen.",["Risikobewertung und Priorisierung","nDSG, FINMA, ISO 27001","C-Level Reporting"]],
@@ -409,7 +409,7 @@ const SERVICES=[
    ["Lieferanten- und Drittparteienprüfungen","Bewertung des Sicherheitsniveaus Ihrer externen Partner und kritischen Dienstleister.",["Vendor Security Assessments","Third Party Risk Reviews","Vertragsprüfungen"]],
    ["Security-Spezialisten auf Mandat","Erfahrene Spezialisten verstärken Ihre Organisation genau dort, wo Know-how fehlt.",["Security Officer auf Mandatsbasis","Fachspezialisten für Projekte","Befähigung interner Teams"]],
    ["Risikotransfer und Management-Beratung","Beratung zu Cyberversicherungen, Digital Risk Transfer und Management-Verantwortung.",["Cyberversicherungsanalyse","Digital Risk Transfer","GL- und VR-Beratung"]]]},
- {id:"security-testing",title:"Security Testing",short:"Security Testing",kicker:"Offensiv, Technisch",icon:"shield",person:"CT",
+ {id:"security-testing",title:"Security Testing",short:"Security Testing",kicker:"Offensiv, Technisch",icon:"shield",person:"RF",
   lead:"Wir prüfen Ihre Systeme mit den Methoden echter Angreifer. Von Penetration Tests über Simulationen und Social Engineering bis zu Cloud Security werden Schwachstellen identifiziert, bewertet und mit konkreten Massnahmen adressiert.",
   offers:[["Penetration Testing","Simulierte Angriffe auf Ihre Infrastruktur, Netzwerke und Anwendungen.",["Infrastruktur- und Netzwerktests","Application Security Testing","Red Teaming"]],
    ["Phishing und Social Engineering","Realistische Kampagnen zur Messung der menschlichen Verteidigungslinie.",["Phishing- und Quishing-Kampagnen","Vishing-Simulator","Physisches Social Engineering"]],
@@ -417,7 +417,7 @@ const SERVICES=[
    ["Schwachstellenanalysen","Systematische Identifikation von Sicherheitslücken in Systemen und Prozessen.",["Vulnerability Assessments","Technische Sicherheitsüberprüfungen","Kontinuierliches Schwachstellenmanagement"]],
    ["Simulation und Purple Teaming","Realistische Simulation komplexer Angriffskampagnen zur Überprüfung Ihrer Abwehrfähigkeit.",["Multi-Stage Attack Simulation","Detection Capability Testing","Purple Teaming"]],
    ["Cyber Security Assessment","Umfassende Prüfung Ihrer IT- und Sicherheitsinfrastruktur nach anerkannten Standards.",["IKT-Audits und Security Assessments","Reifegrad- und Gap-Analysen","ISO 27001 Readiness"]]]},
- {id:"audits",title:"Audits und Assessments",short:"Audits und Assessments",kicker:"Normkonform, Zertifiziert",icon:"doc",person:"CT",
+ {id:"audits",title:"Audits und Assessments",short:"Audits und Assessments",kicker:"Normkonform, Zertifiziert",icon:"doc",person:"MR",
   lead:"Unabhängige Prüfungen nach anerkannten Standards, von ISO 27001 bis NIST und FINMA. Wir liefern nachvollziehbare Ergebnisse, klare Massnahmenempfehlungen und konkrete Entscheidungsgrundlagen für Ihre Führungsebene.",
   offers:[["ISO 27001 Audit","Vorbereitung, Gap-Analyse und Begleitung zur ISO 27001-Zertifizierung.",["Gap-Analyse und Readiness-Check","ISMS-Aufbau und Dokumentation","Zertifizierungsbegleitung"]],
    ["FINMA-Compliance-Audit","Überprüfung der Cybersecurity-Anforderungen nach FINMA-Rundschreiben.",["FINMA RS 2023/1 Compliance","ICT-Risikomanagement","Aufsichtskonforme Dokumentation"]],
@@ -425,12 +425,12 @@ const SERVICES=[
    ["IKT-Revision","Unabhängige Revision Ihrer ICT-Sicherheitsmassnahmen und Governance-Strukturen.",["IKT-Revisionen für VR und GL","Governance und Compliance Review","Massnahmentracking"]],
    ["Cloud-Sicherheitsaudit","Überprüfung Ihrer Cloud-Konfigurationen und Prozesse nach Best Practices.",["Azure- und M365-Audits","Cloud Security Posture Review","Datenschutz in der Cloud"]],
    ["Vendor-Audit und Third-Party-Risk","Bewertung des Sicherheitsniveaus Ihrer Lieferanten und Dienstleister.",["Vendor Security Audits","Lieferantenbewertung und Scoring","Third-Party Risk Management"]]]},
- {id:"awareness",title:"Security Awareness",short:"Security Awareness",kicker:"Mensch, Kultur, Verhalten",icon:"people",person:"CT",
+ {id:"awareness",title:"Security Awareness",short:"Security Awareness",kicker:"Mensch, Kultur, Verhalten",icon:"people",person:"MR",
   lead:"Menschen sind die stärkste und gleichzeitig schwächste Sicherheitsschicht. Wir machen Ihre Mitarbeitenden zu einem aktiven Teil Ihrer Sicherheitskultur, mit massgeschneiderten Trainings, Kampagnen und kontinuierlicher Sensibilisierung.",
   offers:[["Phishing-Simulationen","Realistische Phishing-Kampagnen zur Messung und Steigerung der Wachsamkeit Ihrer Mitarbeitenden.",["Individualisierte Phishing-Kampagnen","Quishing (QR-Code-Phishing)","Detailliertes Reporting und Coaching"]],
    ["Awareness-Trainings","Massgeschneiderte Schulungen zu aktuellen Cyber-Bedrohungen und Sicherheitsverhalten.",["Interaktive Workshop-Formate","E-Learning und Micro-Trainings","Executive Awareness-Briefings"]],
    ["Security Culture Assessment","Messung und Entwicklung der Sicherheitskultur in Ihrer Organisation.",["Culture Baseline Assessment","Reifegrad-Messung","Kulturentwicklungs-Roadmap"]]]},
- {id:"architecture",title:"Architecture und Engineering",short:"Architecture und Engineering",kicker:"Technisch, Operativ",icon:"layers",person:"CT",
+ {id:"architecture",title:"Architecture und Engineering",short:"Architecture und Engineering",kicker:"Technisch, Operativ",icon:"layers",person:"RF",
   lead:"Wir helfen Ihnen, eine robuste und zukunftsfähige Sicherheitsarchitektur aufzubauen, von der Strategie bis zur Implementierung. Zero Trust, sichere Netzwerke, Identity Management und SIEM-Architekturen nach Schweizer Best Practices.",
   offers:[["Zero Trust Architecture","Implementierung eines Zero-Trust-Sicherheitsmodells für Ihre Infrastruktur.",["Zero Trust Design und Konzeption","Microsegmentierung","Identity-first Security"]],
    ["Netzwerksicherheit","Sichere Netzwerkarchitekturen mit modernen Perimeter- und Segmentierungskonzepten.",["Firewall- und DMZ-Konzepte","VLAN und Netzwerksegmentierung","SD-WAN Security"]],
