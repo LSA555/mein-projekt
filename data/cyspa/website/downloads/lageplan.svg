@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 560" role="img" aria-label="Lageplan CYSPA, Erlenstrasse 4B, Rotkreuz: Eingang an der Forrenstrasse, Besucherparkplätze an der Erlenstrasse" font-family="Raleway,system-ui,sans-serif">
+  <defs>
+    <marker id="lp-arr" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#ffc000"/></marker>
+    <pattern id="lp-park" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(32)"><rect width="12" height="12" fill="#2062af" fill-opacity=".16"/><line x1="0" y1="0" x2="0" y2="12" stroke="#2062af" stroke-opacity=".45" stroke-width="2"/></pattern>
+  </defs>
+  <!-- Grund -->
+  <rect width="700" height="560" fill="#eef2f6"/>
+  <path d="M0 0 L120 0 L95 150 L0 210 Z" fill="#dfe9dc"/>
+  <path d="M520 0 L700 0 L700 70 Z" fill="#dfe9dc"/>
+  <!-- Strassen -->
+  <g fill="none" stroke="#ffffff" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M300 18 C420 30 560 75 712 150" stroke-width="44"/>
+    <path d="M-10 375 C90 405 190 455 300 560" stroke-width="40"/>
+    <path d="M300 560 L710 560" stroke-width="40"/>
+    <path d="M300 18 L250 -20" stroke-width="30"/>
+  </g>
+  <g font-size="15" font-weight="700" fill="#425b76" letter-spacing=".04em">
+    <text transform="translate(395 30) rotate(9)">Forrenstrasse</text>
+    <text transform="translate(222 488) rotate(40)">Erlenstrasse</text>
+    <text x="470" y="548">Erlenstrasse</text>
+  </g>
+  <!-- Vorplatz / Parkfläche Nord -->
+  <path d="M330 52 C430 66 530 104 640 166 L560 205 L455 165 L352 112 Z" fill="#e3e8ee"/>
+  <!-- Nachbargebäude Ost -->
+  <path d="M478 200 L690 312 L690 535 L362 535 L360 400 Z" fill="#c9d1db"/>
+  <text x="565" y="430" text-anchor="middle" font-size="13" font-weight="600" fill="#5a5a5a">Nachbargebäude</text>
+  <!-- Gebäude 4B -->
+  <path d="M175 88 L318 58 L462 178 L440 300 L338 440 L248 448 L150 312 L160 200 Z" fill="#103157"/>
+  <path d="M175 88 L318 58 L462 178 L440 300 L338 440 L248 448 L150 312 L160 200 Z" fill="none" stroke="#071828" stroke-width="2"/>
+  <text x="300" y="262" text-anchor="middle" font-size="34" font-weight="900" fill="#ffffff">4B</text>
+  <text x="300" y="288" text-anchor="middle" font-size="14" font-weight="600" fill="#c9d3df">Erlenstrasse 4B</text>
+  <!-- CYSPA-Pin -->
+  <g transform="translate(300 205)">
+    <path d="M0 0 C-13 -16 -17 -24 -17 -31 A17 17 0 0 1 17 -31 C17 -24 13 -16 0 0Z" fill="#ffc000"/>
+    <circle cy="-31" r="6" fill="#103157"/>
+  </g>
+  <!-- Parkplätze -->
+  <path d="M132 382 L222 410 L242 478 L148 482 L108 430 Z" fill="url(#lp-park)" stroke="#2062af" stroke-width="2.5"/>
+  <g transform="translate(176 446)"><rect x="-15" y="-15" width="30" height="30" rx="5" fill="#2062af"/><text y="7" text-anchor="middle" font-size="20" font-weight="800" fill="#fff">P</text></g>
+  <g font-size="16" font-weight="800" fill="#2062af"><text x="64" y="520">Besucherparkplätze</text></g>
+  <path d="M138 500 L160 474" stroke="#2062af" stroke-width="3" marker-end="url(#lp-arr)" fill="none"/>
+  <!-- Eingang -->
+  <path d="M500 128 L374 110" stroke="#ffc000" stroke-width="7" stroke-linecap="round" marker-end="url(#lp-arr)" fill="none"/>
+  <g transform="translate(505 112)"><rect x="0" y="0" width="118" height="36" rx="18" fill="#ffc000"/><text x="59" y="24" text-anchor="middle" font-size="16" font-weight="800" fill="#071828">Eingang</text></g>
+  <circle cx="352" cy="106" r="9" fill="#ffc000" stroke="#071828" stroke-width="2.5"/>
+  <text x="690" y="20" text-anchor="end" font-size="10" font-weight="600" fill="#8a8a8a">Schematisch, nicht massstabsgetreu</text>
+</svg>
