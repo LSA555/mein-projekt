@@ -97,7 +97,7 @@ Keine Statistiken oder Zahlen ausser den Mengenangaben des eigenen Leitfadens.
 2. **Download-Weg:** frei herunterladbar oder mit Formular (dann Lead-Erfassung mit Rechtsgrundlage nach revDSG). Davon hängen Landingpage und UTM-Test ab.
 3. **CI des Downloads:** Der Leitfaden ist im Word-Design (Cyan/Montserrat) gesetzt. Social-Assets laufen in CI v3.0 (Navy/Gold/Raleway). Für einen öffentlichen Download die Gestaltung angleichen?
 4. **Slot:** Für ein Carousel sind 5 Arbeitstage Vorlauf vorgesehen. Der 17.11. ist mit Fachreview, Kreation, Gates und Landingpage nicht zu halten. Vorschlag: Do 26.11. oder Di 01.12.2026.
-5. **Annahmen bestätigen:** Batch 1 ist durch, der Slot 17.11.2026 gilt, dieser Post ist der vorgesehene P12-Anker aus Batch 2.
+5. **Annahmen bestätigen:** Batch 1 ist durch, und dieser Post ist der vorgesehene P12-Anker aus Batch 2. Der Termin hängt an Entscheid 4; bis dahin bleibt 17.11.2026 im Steckbrief als Arbeitsstand.
 
 ## Quality-Gate-Vermerke
 - Fachreview (IR + GRC): offen.
