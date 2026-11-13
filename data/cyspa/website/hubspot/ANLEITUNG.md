@@ -9,6 +9,12 @@ source: Export aus data/cyspa/website/preview/index.html (Nigel-Task NGL-2026110
 
 Das Paket enthält jede Seite als fertigen HTML-Block. Die Navigation, die Fusszeile und der Basic-Check-Abschnitt liegen als globale Bausteine bei. Das CSS gilt für alle Seiten gemeinsam.
 
+## Schnellweg: Kopiervorlagen pro Seite
+
+- `kopiervorlagen/01-startseite.md` bis `25-kontakt.md`: je Seite die Einstellungen (Name, Slug, Titel, Meta), das Head-HTML und **ein** HTML-Block mit allem (Gestaltung, Navigation, Inhalt, Basic-Check-Abschnitt, Fusszeile, Skript). In ein einziges Modul "Benutzerdefiniertes HTML" einfügen, fertig.
+- `kopierhilfe.html`: dieselben Inhalte mit Kopier-Buttons und Abhakliste.
+- Voraussetzung: Bilder aus `bilder/` im File Manager in den Ordner `website-2026` hochladen (Dateinamen unverändert). Die Vorlagen verweisen auf `https://cyspa.ch/hubfs/website-2026/<datei>`. Liegt der File Manager auf einer anderen Domain, die Adresse einmal per Suchen und Ersetzen anpassen.
+
 ## Inhalt dieses Ordners
 
 | Datei | Zweck |
